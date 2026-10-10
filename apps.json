@@ -1,22 +1,21 @@
 {
-  "_comment": "Edit this file to run the Danny's apps page. When the apps are in the stores, paste the store links into ios and android and set status to 'live'. price is shown as written.",
+  "_comment": "Edit this file to run the Danny's apps page. When the apps are in the stores, paste the store links into ios and android and set status to 'live'. price is shown as written. The unlock is a yearly auto-renewing subscription.",
   "siteUrl": "https://transformativa.github.io/Dellis.World/",
   "apps": [
     {
       "id": "world-people",
       "name": "All World People Encyclopedia",
       "tagline": "Every people and country on Earth, with a fun fact, something special, and the famous people from there.",
-      "price": "$2.99",
-      "priceNote": "One-time. No subscription. No ads.",
+      "price": "$2.99 / year",
+      "priceNote": "Yearly. Cancel anytime in your phone settings. No ads.",
       "status": "coming-soon",
       "ios": "",
       "android": "",
       "features": [
-        "219 countries and 36 peoples, all searchable",
-        "A fun fact and something special for every one",
-        "What the world knows, and the five best-known people from each country",
+        "Free to download. Search all 219 countries and 36 peoples.",
+        "A fun fact, something special, and the five best-known people from each country",
         "Fresh numbers every month",
-        "My Roots: pick the peoples and countries in your family and get a card of fun facts (coming soon, not a DNA test)"
+        "Unlock My Roots for $2.99 a year: pick the peoples and countries in your family and get a card of fun facts (a for-fun card, not a DNA test)"
       ]
     }
   ]
