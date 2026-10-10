@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "All World People",
-    "slug": "world-people",
+    "slug": "dellis-world",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,6 +26,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "scheme": "worldpeople"
+    "scheme": "worldpeople",
+    "owner": "transformativas-team"
   }
 }

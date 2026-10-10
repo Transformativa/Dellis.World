@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   ActivityIndicator, FlatList, Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View,
 } from "react-native";
@@ -10,6 +11,10 @@ import { theme as t } from "./src/theme";
 
 const KINDS = [["all", "All"], ["people", "Peoples"], ["country", "Countries"]] as const;
 const now = new Date();
+const SIZES = { small: 0.88, medium: 1, large: 1.25 } as const;
+type Size = keyof typeof SIZES;
+const Styles = createContext<ReturnType<typeof mk>>(null as any);
+const useS = () => useContext(Styles);
 
 function factsFor(it: Item, L: Loaded) {
   return it.kind === "people"
@@ -26,12 +31,17 @@ export default function App() {
   const [favs, setFavs] = useState<string[]>([]);
   const [unlocked, setUnlocked] = useState(false);
   const [paywall, setPaywall] = useState(false);
+  const [size, setSize] = useState<Size>("medium");
+  const s = useMemo(() => mk(SIZES[size]), [size]);
+  const pickSize = (n: Size) => { setSize(n); AsyncStorage.setItem("textSize", n).catch(() => {}); };
 
   useEffect(() => {
     (async () => {
       setL(await loadData());
       setFavs(await loadFavs());
       setUnlocked(await isUnlocked());
+      const saved = await AsyncStorage.getItem("textSize").catch(() => null);
+      if (saved && saved in SIZES) setSize(saved as Size);
       if (await refreshData()) setL(await loadData());
     })();
   }, []);
@@ -46,7 +56,7 @@ export default function App() {
     return F.search(pool, q) as Item[];
   }, [L, q, kind]);
 
-  if (!L) return <View style={s.center}><ActivityIndicator color={t.orange} /></View>;
+  if (!L) return <View style={mk(1).center}><ActivityIndicator color={t.orange} /></View>;
 
   const toggleFav = (it: Item) => {
     if (!unlocked) return setPaywall(true);
@@ -56,6 +66,7 @@ export default function App() {
   const wf = F.worldFactOfMonth(L.ctx, L.curated.world, now);
 
   return (
+    <Styles.Provider value={s}>
     <SafeAreaView style={s.screen}>
       <StatusBar style="dark" />
       <View style={s.header}>
@@ -75,6 +86,15 @@ export default function App() {
                   <Text style={[s.chipTx, kind === k && s.chipTxOn]}>{label}</Text>
                 </Pressable>
               ))}
+            </View>
+            <View style={s.chips}>
+              {(["small", "medium", "large"] as Size[]).map((n) => (
+                <Pressable key={n} onPress={() => pickSize(n)} accessibilityRole="button" accessibilityLabel={n + " text"} accessibilityState={{ selected: size === n }}
+                  style={[s.chip, size === n && s.chipOn]}>
+                  <Text style={[s.chipTx, size === n && s.chipTxOn, { fontSize: (n === "small" ? 13 : n === "medium" ? 16 : 20) }]}>A</Text>
+                </Pressable>
+              ))}
+              <Text style={[s.muted, { alignSelf: "center" }]}>Text size</Text>
             </View>
           </View>
           <FlatList
@@ -113,14 +133,17 @@ export default function App() {
         <Paywall onClose={() => setPaywall(false)} onDone={() => { setUnlocked(true); setPaywall(false); }} />
       </Modal>
     </SafeAreaView>
+    </Styles.Provider>
   );
 }
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
+  const s = useS();
   return <View style={s.sec}><Text style={s.lab}>{label.toUpperCase()}</Text>{children}</View>;
 }
 
 function Detail({ it, L, fav, onFav, onClose }: { it: Item; L: Loaded; fav: boolean; onFav: () => void; onClose: () => void }) {
+  const s = useS();
   const f = factsFor(it, L);
   const people: { name: string; desc: string }[] = (it.kind === "country" ? L.famous?.countries?.[it.data.code] : L.famousPeoples?.peoples?.[it.data.id]) || [];
   return (
@@ -153,6 +176,7 @@ function Detail({ it, L, fav, onFav, onClose }: { it: Item; L: Loaded; fav: bool
 }
 
 function Roots({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlocked: boolean; onUnlock: () => void }) {
+  const s = useS();
   if (!unlocked) {
     return (
       <View style={s.pad}>
@@ -178,6 +202,7 @@ function Roots({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unl
 }
 
 function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
+  const s = useS();
   const [msg, setMsg] = useState("");
   return (
     <View style={s.scrim}>
@@ -196,41 +221,41 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
   );
 }
 
-const s = StyleSheet.create({
+const mk = (z: number) => StyleSheet.create({
   screen: { flex: 1, backgroundColor: t.bg },
   center: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: t.bg },
   header: { paddingHorizontal: 16, paddingTop: 8, gap: 4 },
-  brand: { color: t.orange, fontSize: 14, fontWeight: "700", letterSpacing: 1 },
-  title: { color: t.fg, fontSize: 30, lineHeight: 34 },
+  brand: { color: t.orange, fontSize: 14 * z, fontWeight: "700", letterSpacing: 1 },
+  title: { color: t.fg, fontSize: 30 * z, lineHeight: 34 * z },
   hl: { backgroundColor: t.green },
   bar: { padding: 16, gap: 10 },
-  input: { borderWidth: 1, borderColor: t.line, borderRadius: t.radius, backgroundColor: t.surface, paddingHorizontal: 14, paddingVertical: 12, fontSize: 17, color: t.fg },
+  input: { borderWidth: 1, borderColor: t.line, borderRadius: t.radius, backgroundColor: t.surface, paddingHorizontal: 14, paddingVertical: 12, fontSize: 17 * z, color: t.fg },
   chips: { flexDirection: "row", gap: 8 },
   chip: { borderWidth: 1.5, borderColor: t.fg, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   chipOn: { backgroundColor: t.fg },
   chipTx: { color: t.fg, fontWeight: "600" },
   chipTxOn: { color: t.bg },
   wfm: { margin: 16, marginTop: 0, padding: 16, borderRadius: t.radius, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, gap: 6 },
-  lab: { fontSize: 12, letterSpacing: 1, color: t.muted, fontWeight: "700" },
-  body: { color: t.fg, fontSize: 17, lineHeight: 25 },
-  muted: { color: t.muted, fontSize: 14 },
+  lab: { fontSize: 12 * z, letterSpacing: 1, color: t.muted, fontWeight: "700" },
+  body: { color: t.fg, fontSize: 17 * z, lineHeight: 25 * z },
+  muted: { color: t.muted, fontSize: 14 * z },
   empty: { textAlign: "center", color: t.muted, padding: 24 },
   row: { flexDirection: "row", alignItems: "center", paddingHorizontal: 16, paddingVertical: 14, borderTopWidth: 1, borderColor: t.line },
-  rowName: { color: t.fg, fontSize: 18, fontWeight: "600" },
-  rowSub: { color: t.muted, fontSize: 14, marginTop: 2 },
-  star: { color: t.orange, fontSize: 20 },
+  rowName: { color: t.fg, fontSize: 18 * z, fontWeight: "600" },
+  rowSub: { color: t.muted, fontSize: 14 * z, marginTop: 2 },
+  star: { color: t.orange, fontSize: 20 * z },
   tabs: { flexDirection: "row", borderTopWidth: 1, borderColor: t.line, backgroundColor: t.surface },
   tab: { flex: 1, alignItems: "center", paddingVertical: 14 },
-  tabTx: { color: t.muted, fontSize: 16, fontWeight: "600" },
+  tabTx: { color: t.muted, fontSize: 16 * z, fontWeight: "600" },
   tabOn: { color: t.fg, textDecorationLine: "underline" },
   dhead: { flexDirection: "row", justifyContent: "space-between", padding: 16 },
-  link: { color: t.orange, fontSize: 16, fontWeight: "600" },
-  dtitle: { color: t.fg, fontSize: 28, lineHeight: 32 },
+  link: { color: t.orange, fontSize: 16 * z, fontWeight: "600" },
+  dtitle: { color: t.fg, fontSize: 28 * z, lineHeight: 32 * z },
   sec: { gap: 6 },
   pad: { padding: 16, gap: 14 },
   card: { padding: 16, borderRadius: t.radius, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, gap: 6 },
   btn: { backgroundColor: t.fg, borderRadius: 999, minHeight: 48, alignItems: "center", justifyContent: "center", paddingHorizontal: 22 },
-  btnTx: { color: t.bg, fontSize: 17, fontWeight: "700" },
+  btnTx: { color: t.bg, fontSize: 17 * z, fontWeight: "700" },
   scrim: { flex: 1, backgroundColor: "rgba(0,0,0,.4)", justifyContent: "flex-end" },
   sheet: { backgroundColor: t.bg, padding: 20, gap: 14, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
 });

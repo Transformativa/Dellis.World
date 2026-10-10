@@ -20,8 +20,8 @@ Run `npm run sync-data` and commit before every release so the bundled copy is f
 
 ## Put it on your Expo account
 
-1. `npm i -g eas-cli` then `eas login` (account: transformativa)
-2. `cd mobile && eas init` (creates the project on your account and writes the project id into app.json)
+1. `npm i -g eas-cli` then `eas login`
+2. `cd mobile && eas init --id <project id>` links this folder to the existing Expo project `transformativas-team/dellis-world` (copy the project id from the project page) and writes it into app.json
 3. Test build for friends and family, which unlocks without paying: `eas build --profile preview --platform all`
 4. Store release: `eas build --profile production --platform all`, then `eas submit`
 
