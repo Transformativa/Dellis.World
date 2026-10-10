@@ -10,14 +10,28 @@ export function pickGroup(code, wbRegion, aliases) {
   return (aliases.wbRegionToGroup || {})[key] || "europe";
 }
 
+/** "Ukrainian" -> ["Ukrainian", "Ukrainians"], so searching a nationality finds the country. */
+export function demonymForms(list = []) {
+  const out = [];
+  for (const d of list) {
+    out.push(d);
+    if (!/(ese|ish|ch|ss|s)$/i.test(d)) out.push(d + "s");
+  }
+  return out;
+}
+function mergeAka(aka, code, aliases) {
+  return [...new Set([...aka, ...demonymForms((aliases.demonyms || {})[code])])];
+}
+
 export function normalizeRows(rows, aliases, extras = []) {
   const notRanked = new Set(aliases.notRanked || []);
   const countries = rows.map((r) => {
     const [name, code, capital, pop, area, wbRegion, income, year] = r;
     const display = (aliases.display || {})[code] || name;
     const fixedCapital = (aliases.capitalFix || {})[code] || capital || "";
-    const aka = [...((aliases.aka || {})[code] || [])];
+    let aka = [...((aliases.aka || {})[code] || [])];
     if (display !== name) aka.push(name);
+    aka = mergeAka(aka, code, aliases);
     return {
       code,
       name,
@@ -35,7 +49,7 @@ export function normalizeRows(rows, aliases, extras = []) {
   const have = new Set(countries.map((c) => c.code));
   for (const e of extras) {
     if (have.has(e.code)) continue;
-    countries.push({ aka: (aliases.aka || {})[e.code] || [], year: e.asOf || "", ...e });
+    countries.push({ year: e.asOf || "", ...e, aka: mergeAka([...((aliases.aka || {})[e.code] || [])], e.code, aliases) });
   }
   countries.sort((a, b) => a.display.localeCompare(b.display));
   return countries;
