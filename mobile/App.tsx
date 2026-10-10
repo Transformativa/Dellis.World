@@ -18,6 +18,19 @@ const REGION_COLOR: Record<string, string> = {
   africa: "#E44E0F", americas: "#3BD60B", asia: "#F2B705", europe: "#232323", mena: "#7FA386", oceania: "#1B9AAA",
 };
 const now = new Date();
+// A different, mixed handful each time the app opens: shuffled with a per-open seed, then spread across kinds.
+function pickMix(items: Item[], n: number, seed: number): Item[] {
+  let x = seed || 1;
+  const rnd = () => ((x = (x * 1664525 + 1013904223) % 4294967296) / 4294967296);
+  const byKind = new Map<string, Item[]>();
+  for (const it of items) byKind.set(it.kind, [...(byKind.get(it.kind) || []), it]);
+  const lists = [...byKind.values()].map((l) => l.map((v) => [rnd(), v] as const).sort((a, b) => a[0] - b[0]).map((p) => p[1]));
+  const out: Item[] = [];
+  for (let i = 0; out.length < n && lists.some((l) => i < l.length); i++)
+    for (const l of lists) if (i < l.length && out.length < n) out.push(l[i]);
+  return out;
+}
+
 const SIZES = { small: 0.88, medium: 1, large: 1.25 } as const;
 type Size = keyof typeof SIZES;
 const DISPLAY = "Questrial_400Regular";
@@ -57,6 +70,7 @@ export default function App() {
   const [paywall, setPaywall] = useState(false);
   const [looks, setLooks] = useState(0);
   const [size, setSize] = useState<Size>("medium");
+  const [seed] = useState(() => Math.floor(Math.random() * 1e9));
   const [fact, setFact] = useState<{ name: string; text: string } | null>(null);
   const s = useMemo(() => mk(SIZES[size]), [size]);
   const pickSize = (n: Size) => { setSize(n); AsyncStorage.setItem("textSize", n).catch(() => {}); };
@@ -78,14 +92,15 @@ export default function App() {
   }, []);
 
   const view = useMemo(() => {
-    if (!L) return { rows: [] as Item[], featuredOnly: false, nCountries: 0 };
+    if (!L) return { rows: [] as Item[], featuredOnly: false, totalFeatured: 0, nCountries: 0 };
     const pool = L.items.filter((i) => (kind === "all" || i.kind === kind) && (region === "all" || i.group === region));
     const featuredOnly = !q.trim() && kind === "all";
-    let rows = featuredOnly ? pool.filter((i) => i.featured) : (F.search(pool, q) as Item[]);
+    const featured = pool.filter((i) => i.featured);
+    let rows = featuredOnly ? pickMix(featured, 25, seed) : (F.search(pool, q) as Item[]);
     if (sort === "size") rows = [...rows].sort((a, b) => b.popM - a.popM);
     else if (!q.trim()) rows = [...rows].sort((a, b) => a.name.localeCompare(b.name));
-    return { rows, featuredOnly, nCountries: L.items.filter((i) => i.kind === "country").length };
-  }, [L, q, kind, region, sort]);
+    return { rows, featuredOnly, totalFeatured: featured.length, nCountries: L.items.filter((i) => i.kind === "country").length };
+  }, [L, q, kind, region, sort, seed]);
 
   if (!L || !fontsOk) return <View style={mk(1).center}><ActivityIndicator color={t.orange} /></View>;
 
@@ -114,7 +129,7 @@ export default function App() {
     if (extra) rows = [extra, ...rows];
   }
   const count = view.featuredOnly
-    ? `${rows.length} featured. Search to find any of ${view.nCountries} countries.`
+    ? `Showing ${rows.length} of ${view.totalFeatured}. Pick a category or search to see more, including any of ${view.nCountries} countries.`
     : `${rows.length} ${rows.length === 1 ? "result" : "results"}`;
 
   const header = (
