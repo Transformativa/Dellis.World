@@ -16,6 +16,13 @@
     },
     "production": {
       "autoIncrement": true
+    },
+    "testflight": {
+      "distribution": "store",
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_DEV_UNLOCK": "1"
+      }
     }
   },
   "submit": {
