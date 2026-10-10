@@ -27,6 +27,11 @@
       "favicon": "./assets/favicon.png"
     },
     "scheme": "worldpeople",
-    "owner": "transformativas-team"
+    "owner": "transformativas-team",
+    "extra": {
+      "eas": {
+        "projectId": "d7a46707-46ac-4c88-9ad2-d057e99f8c0e"
+      }
+    }
   }
 }
