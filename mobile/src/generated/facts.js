@@ -222,6 +222,55 @@
     };
   }
 
+  /* ---- Entries built only from public databases (used by the phone app). ---- */
+
+  /* A language: speakers and countries from Unicode CLDR with World Bank populations, family from Glottolog, writing system from CLDR. */
+  function languageEntry(code, d, countriesByCode) {
+    var total = d.speakers || 0;
+    var top = (d.countries || []).slice(0, 4).map(function (c) { var k = countriesByCode[c.code]; return k ? k.display : ""; }).filter(Boolean);
+    var stats = [];
+    if (total) stats.push(["Speakers", "about " + fmtPop(total)]);
+    if (d.family) stats.push(["Family", d.family]);
+    if (d.script) stats.push(["Writing", d.script]);
+    var known = [];
+    if (total) known.push("Used by about " + fmtPop(total) + " people. The estimate includes people who speak it as a second language.");
+    if (d.officialIn) known.push("Official in " + d.officialIn + (d.officialIn === 1 ? " country." : " countries."));
+    if (top.length) known.push("Most speakers live in " + top.join(", ") + ".");
+    if (d.family) known.push("Language family: " + d.family + (d.family === "Language isolate" ? ", which means it has no known relatives." : "."));
+    if (d.script) known.push("Usual writing system: " + d.script + ".");
+    return {
+      id: code, n: d.name, aka: [], g: "", p: total / 1e6, pl: total ? "about " + fmtPop(total) : "",
+      s: d.name + (total ? " is used by about " + fmtPop(total) + " people" : " is spoken") + (top.length ? ", mostly in " + top.slice(0, 3).join(", ") + "." : "."),
+      fun: "", special: "", known: known, stats: stats, family: d.family || "", script: d.script || "", records: []
+    };
+  }
+
+  /* The people of one country. Population, homeland and languages come from the World Bank and Unicode CLDR for that country. */
+  function nationalEntry(p, c, langs) {
+    var main = (langs || []).slice(0, 3);
+    var pop = c.pop || 0;
+    var stats = [];
+    if (pop) stats.push(["Live in " + c.display, "about " + fmtPop(pop)]);
+    stats.push(["Homeland", c.display + (c.capital ? " (capital: " + c.capital + ")" : "")]);
+    if (main.length) stats.push(["Main languages", main.map(function (l) { return l.name; }).join(", ")]);
+    var known = [];
+    if (pop) known.push("About " + fmtPop(pop) + " people live in " + c.display + ". That count includes everyone who lives there.");
+    if (c.capital) known.push("Capital: " + c.capital + ".");
+    main.forEach(function (l, i) { known.push((i === 0 ? "Most spoken language: " : "Also spoken: ") + l.name + ", about " + fmtPop(l.speakers) + " speakers" + (l.official ? " (official)." : ".")); });
+    if (c.group && GROUPS[c.group]) known.push("Region: " + GROUPS[c.group] + ".");
+    return {
+      id: p.id, code: c.code, n: p.n, g: c.group, p: pop / 1e6, pl: pop ? "about " + fmtPop(pop) : "", home: c.display,
+      s: p.n + " are the people of " + c.display + (pop ? ", a country of about " + fmtPop(pop) + " people." : "."),
+      fun: "", special: "", known: known, stats: stats, records: []
+    };
+  }
+
+  /* A faith: Pew Research Center figures only. */
+  function faithEntry(f) {
+    var known = (f.stats || []).map(function (r) { return r[0] + ": " + r[1] + "."; });
+    return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl || "", s: "", fun: "", special: "", known: known, stats: f.stats || [], records: [] };
+  }
+
   function faithRecord(f) {
     return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl, home: f.home, s: f.s, fun: f.fun, special: f.special, known: f.known, records: [] };
   }
@@ -255,6 +304,6 @@
     GROUPS: GROUPS, STALE_AFTER_DAYS: STALE_AFTER_DAYS,
     ordinal: ordinal, fmtPop: fmtPop, fmtArea: fmtArea, fmtDensity: fmtDensity, norm: norm,
     buildContext: buildContext, countryFacts: countryFacts, peopleFacts: peopleFacts,
-    worldFactOfMonth: worldFactOfMonth, languageRecord: languageRecord, faithRecord: faithRecord, freshness: freshness, search: search, monthSeed: monthSeed
+    worldFactOfMonth: worldFactOfMonth, languageRecord: languageRecord, languageEntry: languageEntry, nationalEntry: nationalEntry, faithEntry: faithEntry, faithRecord: faithRecord, freshness: freshness, search: search, monthSeed: monthSeed
   };
 });

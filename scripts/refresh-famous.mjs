@@ -80,22 +80,5 @@ async function main() {
   };
   await writeFile(new URL("../data/famous.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
   console.log(`Wrote famous people for ${have} countries (${failed} failed).`);
-  await refreshPeoples(countries, out.meta.generatedAt);
 }
-// Peoples that match one country (Ukrainians, Italians...) take that country's fresh list. Others keep their hand-written list.
-async function refreshPeoples(countries, generatedAt) {
-  const map = (await readJson("../data/peoples-countries.json")).peoples;
-  const file = await readJson("../data/famous-peoples.json");
-  let updated = 0;
-  for (const [id, code] of Object.entries(map)) {
-    const fresh = (countries[code] || []).filter((x) => x.name && x.desc);
-    if (fresh.length < 3) continue; // too thin: keep what we had
-    file.peoples[id] = fresh.slice(0, 5).map((x) => ({ name: x.name, desc: x.desc }));
-    updated++;
-  }
-  file.meta = { generatedAt, source: "Wikidata (CC0) for peoples tied to one country; hand-written for the rest", refreshed: updated };
-  await writeFile(new URL("../data/famous-peoples.json", import.meta.url), JSON.stringify(file, null, 1) + "\n");
-  console.log(`Refreshed famous people for ${updated} peoples from their country's list.`);
-}
-
 main().catch((e) => { console.error(e); process.exit(1); });

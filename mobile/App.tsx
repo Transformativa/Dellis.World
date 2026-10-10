@@ -43,7 +43,7 @@ const useS = () => useContext(Styles);
 function factsFor(it: Item, L: Loaded) {
   return it.kind !== "country"
     ? F.peopleFacts(it.data, now)
-    : F.countryFacts(it.data, L.ctx, L.curated.countries?.[it.data.code], now);
+    : F.countryFacts(it.data, L.ctx, null, now);
 }
 
 /** A different fun fact each time the app opens (and on "Another fact"). */
@@ -53,7 +53,7 @@ function randomFact(L: Loaded): { name: string; text: string } {
     const f = factsFor(it, L);
     if (f?.fun) return { name: it.name, text: f.fun };
   }
-  return { name: "The world", text: F.worldFactOfMonth(L.ctx, L.curated.world, now).text };
+  return { name: "The world", text: F.worldFactOfMonth(L.ctx, [], now).text };
 }
 
 export default function App() {
@@ -144,7 +144,7 @@ export default function App() {
       <View style={s.pad}>
         <Text style={s.eyebrow}>Empowering minds, celebrating differences.</Text>
         <Text style={s.title}>World <Text style={{ fontStyle: "italic" }}>Facts</Text></Text>
-        <Text style={s.lede}>Search any people, country, language or faith. Every one comes with a fun fact, something special, facts the world knows, and records.</Text>
+        <Text style={s.lede}>Search any people, country, language or faith. Every number comes from a public database, and the sources are listed at the bottom.</Text>
         <LinearGradient colors={["#4CFC0F", "#F7FEF9"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.rule} />
 
         {fact ? (
@@ -171,7 +171,13 @@ export default function App() {
         {kind === "language" ? (
           <View style={s.note}>
             <Text style={s.noteHead}>Why these languages?</Text>
-            <Text style={s.noteTx}>About 7,000 languages exist. We list the 120 most spoken, because the speaker numbers come from Unicode CLDR, which tracks widely used languages, and we only show numbers we can back up. 33 of them have hand-written facts. The rest show speakers and countries only. The small label under each name is its language family, the group of related languages it belongs to.</Text>
+            <Text style={s.noteTx}>About 7,000 languages exist. We list the 120 most spoken, because the speaker numbers come from Unicode CLDR, which tracks widely used languages, and we only show numbers we can back up. Families come from Glottolog, the language catalogue. The small label under each name is its family, the group of related languages it belongs to.</Text>
+          </View>
+        ) : null}
+        {kind === "people" ? (
+          <View style={s.note}>
+            <Text style={s.noteHead}>Why these peoples?</Text>
+            <Text style={s.noteTx}>Each people here is the people of one country, such as the Italians or the Ukrainians. Population, languages and famous people come from public databases for that country, so the population counts everyone who lives there, not one ethnic group. Peoples that don't match one country, such as the Kurds or the Roma, are not listed yet, because we have no public database we can check them against.</Text>
           </View>
         ) : null}
         {kind === "faith" ? (
@@ -217,9 +223,10 @@ export default function App() {
                 <Text style={s.srcTx}>
                   Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
                   {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
-                  {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR"}. Speaker numbers are estimates that include second-language speakers. Only the 120 most spoken of about 7,000 languages are listed; names are from the Unicode CLDR English names.
+                  {"\n"}Peoples: the figures are for the whole country (World Bank population, Unicode CLDR languages), not for one ethnic group.
+                  {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR and Glottolog"}. Speaker numbers are estimates that include second-language speakers. Only the 120 most spoken of about 7,000 languages are listed.
                   {"\n"}Faiths: {L.faiths?.meta?.citation} {L.faiths?.meta?.disclaimer} Figures are for {L.faiths?.meta?.asOf}.
-                  {"\n"}Fun facts, special facts and records are written by Dellis from widely cited sources and are not independently checked.
+                  {"\n"}Comparisons and records are calculated from the population and area figures above.
                   {"\n"}Numbers refresh on the 1st of each month. Last refreshed {L.live?.generatedAt ? new Date(L.live.generatedAt).toDateString() : "recently"}.
                 </Text>
               </View>
@@ -284,14 +291,10 @@ function Bullet({ children }: { children: React.ReactNode }) {
 function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav: () => void }) {
   const s = useS();
   const f = factsFor(it, L);
-  const people: { name: string; desc: string }[] = (it.kind === "country" ? L.famous?.countries?.[it.data.code] : L.famousPeoples?.peoples?.[it.data.id]) || [];
+  const people: { name: string; desc: string }[] = L.famous?.countries?.[it.data.code] || [];
   const d = it.data;
-  const stats: [string, string][] = it.kind === "language"
-    ? [["Speakers", d.pl], ["Family", d.family], ["Writing", d.script]]
-    : it.kind === "faith"
-    ? [["Followers", d.pl], ["Origin", d.home]]
-    : it.kind === "people"
-    ? [["Population", d.pl], ["Homeland", d.home], ["Language", d.lang]]
+  const stats: [string, string][] = it.kind !== "country"
+    ? d.stats || []
     : [
         ["Population", d.pop ? "about " + F.fmtPop(d.pop) + (d.year ? " (" + d.year + ")" : "") : ""],
         ["Surface area", d.area ? "about " + F.fmtArea(d.area) : ""],
@@ -328,7 +331,7 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
     return (
       <ScrollView contentContainerStyle={s.pad}>
         <Text style={s.h2}>My Favorites</Text>
-        <Text style={s.body}>Subscribe to unlock everything: every people and country, and your own favorites card of fun facts.</Text>
+        <Text style={s.body}>Subscribe to unlock everything: every people, country, language and faith, and your own favorites card.</Text>
         <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text></Pressable>
       </ScrollView>
     );
@@ -337,7 +340,7 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
   return (
     <ScrollView contentContainerStyle={[s.pad, { gap: 14 }]}>
       <Text style={s.h2}>My Favorites</Text>
-      {!items.length ? <Text style={s.body}>Open any people or country and tap "Add to My Favorites". Your card builds here.</Text> : null}
+      {!items.length ? <Text style={s.body}>Open anything and tap "Add to My Favorites". Your card builds here.</Text> : null}
       {items.map((it) => (
         <View key={it.id} style={s.card}>
           <Text style={s.rowName}>{it.name}</Text>
@@ -355,7 +358,7 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
     <View style={s.scrim}>
       <View style={s.sheet}>
         <Text style={s.h2}>Keep exploring</Text>
-        <Text style={s.body}>Every people and country, fun facts, famous people, records, and My Favorites. No ads.</Text>
+        <Text style={s.body}>Every people, country, language and faith, famous people, records, and My Favorites. No ads.</Text>
         <Text style={s.body}>You have used your free looks. Subscribe for {PRICE_LABEL}. It renews each year until you cancel, and you can cancel any time in your phone's subscription settings.</Text>
         <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
           <Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text>

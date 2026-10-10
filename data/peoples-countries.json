@@ -1,56 +1,260 @@
 {
- "_comment": "Peoples that match one country closely. The monthly refresh takes their famous-people list from that country's Wikidata list. Peoples not listed here (for example the Kurds or the Maya) keep their hand-written list.",
- "peoples": {
-  "russians": "RUS",
-  "germans": "DEU",
-  "japanese": "JPN",
-  "koreans": "KOR",
-  "vietnamese-kinh": "VNM",
-  "irish": "IRL",
-  "ukrainians": "UKR",
-  "italians": "ITA",
-  "french": "FRA",
-  "spaniards": "ESP",
-  "poles": "POL",
-  "greeks": "GRC",
-  "filipinos": "PHL",
-  "brazilians": "BRA",
-  "mexicans": "MEX",
-  "kazakhs": "KAZ",
-  "uzbeks": "UZB",
-  "thais": "THA",
-  "burmese": "MMR",
-  "portuguese": "PRT",
-  "dutch": "NLD",
-  "swedes": "SWE",
-  "norwegians": "NOR",
-  "danes": "DNK",
-  "finns": "FIN",
-  "czechs": "CZE",
-  "hungarians": "HUN",
-  "romanians": "ROU",
-  "serbs": "SRB",
-  "bulgarians": "BGR",
-  "british": "GBR",
-  "americans": "USA",
-  "canadians": "CAN",
-  "australians": "AUS",
-  "egyptians": "EGY",
-  "argentines": "ARG",
-  "colombians": "COL",
-  "peruvians": "PER",
-  "chileans": "CHL",
-  "cubans": "CUB",
-  "venezuelans": "VEN",
-  "kyrgyz": "KGZ",
-  "tajiks": "TJK",
-  "azerbaijanis": "AZE",
-  "georgians": "GEO",
-  "croats": "HRV",
-  "lithuanians": "LTU",
-  "estonians": "EST",
-  "albanians": "ALB",
-  "icelanders": "ISL",
-  "somalis": "SOM"
- }
+ "_comment": "Each 'people' shown in the app is the people of one country: its population, languages and famous people all come from public databases (World Bank, Unicode CLDR, Wikidata). Add a row to add a people.",
+ "peoples": [
+  {
+   "id": "russians",
+   "n": "Russians",
+   "code": "RUS"
+  },
+  {
+   "id": "germans",
+   "n": "Germans",
+   "code": "DEU"
+  },
+  {
+   "id": "japanese",
+   "n": "Japanese",
+   "code": "JPN"
+  },
+  {
+   "id": "vietnamese-kinh",
+   "n": "Vietnamese",
+   "code": "VNM"
+  },
+  {
+   "id": "irish",
+   "n": "Irish",
+   "code": "IRL"
+  },
+  {
+   "id": "ukrainians",
+   "n": "Ukrainians",
+   "code": "UKR"
+  },
+  {
+   "id": "italians",
+   "n": "Italians",
+   "code": "ITA"
+  },
+  {
+   "id": "french",
+   "n": "French",
+   "code": "FRA"
+  },
+  {
+   "id": "spaniards",
+   "n": "Spanish (Spaniards)",
+   "code": "ESP"
+  },
+  {
+   "id": "poles",
+   "n": "Poles (Polish)",
+   "code": "POL"
+  },
+  {
+   "id": "greeks",
+   "n": "Greeks",
+   "code": "GRC"
+  },
+  {
+   "id": "filipinos",
+   "n": "Filipinos",
+   "code": "PHL"
+  },
+  {
+   "id": "brazilians",
+   "n": "Brazilians",
+   "code": "BRA"
+  },
+  {
+   "id": "mexicans",
+   "n": "Mexicans",
+   "code": "MEX"
+  },
+  {
+   "id": "kazakhs",
+   "n": "Kazakhs",
+   "code": "KAZ"
+  },
+  {
+   "id": "uzbeks",
+   "n": "Uzbeks",
+   "code": "UZB"
+  },
+  {
+   "id": "thais",
+   "n": "Thais",
+   "code": "THA"
+  },
+  {
+   "id": "burmese",
+   "n": "Burmese",
+   "code": "MMR"
+  },
+  {
+   "id": "portuguese",
+   "n": "Portuguese",
+   "code": "PRT"
+  },
+  {
+   "id": "dutch",
+   "n": "Dutch",
+   "code": "NLD"
+  },
+  {
+   "id": "swedes",
+   "n": "Swedes (Swedish)",
+   "code": "SWE"
+  },
+  {
+   "id": "norwegians",
+   "n": "Norwegians",
+   "code": "NOR"
+  },
+  {
+   "id": "danes",
+   "n": "Danes (Danish)",
+   "code": "DNK"
+  },
+  {
+   "id": "finns",
+   "n": "Finns (Finnish)",
+   "code": "FIN"
+  },
+  {
+   "id": "czechs",
+   "n": "Czechs",
+   "code": "CZE"
+  },
+  {
+   "id": "hungarians",
+   "n": "Hungarians",
+   "code": "HUN"
+  },
+  {
+   "id": "romanians",
+   "n": "Romanians",
+   "code": "ROU"
+  },
+  {
+   "id": "serbs",
+   "n": "Serbs (Serbian)",
+   "code": "SRB"
+  },
+  {
+   "id": "bulgarians",
+   "n": "Bulgarians",
+   "code": "BGR"
+  },
+  {
+   "id": "british",
+   "n": "British",
+   "code": "GBR"
+  },
+  {
+   "id": "americans",
+   "n": "Americans",
+   "code": "USA"
+  },
+  {
+   "id": "canadians",
+   "n": "Canadians",
+   "code": "CAN"
+  },
+  {
+   "id": "australians",
+   "n": "Australians",
+   "code": "AUS"
+  },
+  {
+   "id": "egyptians",
+   "n": "Egyptians",
+   "code": "EGY"
+  },
+  {
+   "id": "argentines",
+   "n": "Argentines (Argentinians)",
+   "code": "ARG"
+  },
+  {
+   "id": "colombians",
+   "n": "Colombians",
+   "code": "COL"
+  },
+  {
+   "id": "peruvians",
+   "n": "Peruvians",
+   "code": "PER"
+  },
+  {
+   "id": "chileans",
+   "n": "Chileans",
+   "code": "CHL"
+  },
+  {
+   "id": "cubans",
+   "n": "Cubans",
+   "code": "CUB"
+  },
+  {
+   "id": "venezuelans",
+   "n": "Venezuelans",
+   "code": "VEN"
+  },
+  {
+   "id": "kyrgyz",
+   "n": "Kyrgyz",
+   "code": "KGZ"
+  },
+  {
+   "id": "tajiks",
+   "n": "Tajiks",
+   "code": "TJK"
+  },
+  {
+   "id": "azerbaijanis",
+   "n": "Azerbaijanis",
+   "code": "AZE"
+  },
+  {
+   "id": "georgians",
+   "n": "Georgians",
+   "code": "GEO"
+  },
+  {
+   "id": "croats",
+   "n": "Croats",
+   "code": "HRV"
+  },
+  {
+   "id": "lithuanians",
+   "n": "Lithuanians",
+   "code": "LTU"
+  },
+  {
+   "id": "estonians",
+   "n": "Estonians",
+   "code": "EST"
+  },
+  {
+   "id": "albanians",
+   "n": "Albanians",
+   "code": "ALB"
+  },
+  {
+   "id": "icelanders",
+   "n": "Icelanders",
+   "code": "ISL"
+  },
+  {
+   "id": "somalis",
+   "n": "Somalis",
+   "code": "SOM"
+  },
+  {
+   "id": "turks",
+   "n": "Turks",
+   "code": "TUR"
+  }
+ ]
 }

@@ -112,3 +112,18 @@ npm run check:full    # the same, plus a full iOS and Android bundle build (abou
 ```
 
 If someone reports a search that finds nothing (for example a nationality), add it to `NATIONALITIES` in `test/search-coverage.test.mjs`.
+
+## Where everything in the phone app comes from
+
+Nothing shown in the phone app is hand-written. Every line comes from a public database:
+
+| Shown | Database | Refreshed |
+|---|---|---|
+| Country population, area, capital, region, income | World Bank Open Data | Monthly |
+| Famous people (countries and peoples) | Wikidata (CC0) | Monthly |
+| Languages: speakers, countries, names, writing system | Unicode CLDR | Monthly |
+| Languages: family | Glottolog (CC BY 4.0) | Monthly |
+| Faiths: followers, share, change | Pew Research Center (2020 report, typed in once) | Checked yearly |
+| Comparisons and records | Calculated from the World Bank numbers | Monthly |
+
+A "people" is the people of one country (list in `data/peoples-countries.json`), so it shows that country's figures. Peoples that do not match one country (Kurds, Roma, Maya...) are not shown until there is a database to source them from. The older hand-written files (`data/peoples.json`, `data/curated.json` and others) are used only by the unpublished web page `app.html`.

@@ -4,65 +4,61 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "curated", "peoples", "famous", "famousPeoples", "languages"] as const;
+const FILES = ["live", "famous", "languages"] as const;
+// Everything shown comes from public databases: World Bank, Unicode CLDR, Glottolog, Wikidata and Pew Research.
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
-  curated: require("./generated/curated.json"),
-  peoples: require("./generated/peoples.json"),
   famous: require("./generated/famous.json"),
-  famousPeoples: require("./generated/famous-peoples.json"),
   languages: require("./generated/languages.json"),
-  languagesCurated: require("./generated/languages-curated.json"),
   faiths: require("./generated/faiths.json"),
+  peoplesMap: require("./generated/peoples-countries.json"),
 };
 
 export type Item = {
   kind: "people" | "country" | "language" | "faith"; id: string; name: string; aka: string[]; group: string; popM: number;
   popLabel: string; body: string; featured: boolean; data: any;
 };
-export type Loaded = { items: Item[]; ctx: any; live: any; curated: any; famous: any; famousPeoples: any; fresh: any; languages: any; faiths: any };
+export type Loaded = { items: Item[]; ctx: any; live: any; famous: any; fresh: any; languages: any; faiths: any };
 
 export { F };
 
-export function buildItems(peoples: any[], countries: any[], curated: any, more: { languages?: any; languagesCurated?: any; faiths?: any } = {}): Item[] {
+const label = (m: number) => (m ? "~" + F.fmtPop(m * 1e6) : "");
+
+export function buildItems(countries: any[], peoplesMap: any[], languages: any, faiths: any): Item[] {
   const out: Item[] = [];
-  for (const p of peoples) {
+  const byCode: Record<string, any> = Object.fromEntries(countries.map((c) => [c.code, c]));
+  const bigCountries = new Set([...countries].sort((a, b) => b.pop - a.pop).slice(0, 40).map((c) => c.code));
+
+  for (const p of peoplesMap) {
+    const c = byCode[p.code];
+    if (!c) continue;
+    const rec = F.nationalEntry(p, c, languages?.countryLanguages?.[p.code] || []);
     out.push({
-      kind: "people", id: "p-" + p.id, name: p.n, aka: [], group: p.g, popM: p.p,
-      popLabel: p.pl.split(",")[0].replace("about ", "~").replace("over ", ">"),
-      body: [p.home, p.lang, p.s, p.fun, p.special].join(" "), featured: true, data: p,
+      kind: "people", id: "p-" + p.id, name: p.n, aka: [], group: c.group, popM: rec.p, popLabel: label(rec.p),
+      body: [c.display, c.capital, ...(languages?.countryLanguages?.[p.code] || []).map((l: any) => l.name)].join(" "), featured: true, data: rec,
     });
   }
   for (const c of countries) {
     out.push({
       kind: "country", id: "c-" + c.code, name: c.display, aka: c.aka || [], group: c.group,
       popM: c.pop / 1e6, popLabel: c.pop ? "~" + F.fmtPop(c.pop) : "", body: [c.capital, c.name].join(" "),
-      featured: !!(curated.countries && curated.countries[c.code]), data: c,
+      featured: bigCountries.has(c.code), data: c,
     });
   }
-  const byCode: Record<string, any> = Object.fromEntries(countries.map((c) => [c.code, c]));
-  for (const cur of more.languagesCurated?.languages || []) {
-    const rec = F.languageRecord(cur, more.languages?.languages?.[cur.id], byCode);
+  const langs = Object.entries<any>(languages?.languages || {}).filter(([, d]) => d.name);
+  const topLangs = new Set([...langs].sort((a, b) => b[1].speakers - a[1].speakers).slice(0, 30).map(([code]) => code));
+  for (const [code, d] of langs) {
+    const rec = F.languageEntry(code, d, byCode);
     out.push({
-      kind: "language", id: "l-" + cur.id, name: cur.n, aka: cur.aka || [], group: "", popM: rec.p,
-      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: [cur.family, cur.script, cur.s, cur.fun, cur.special].join(" "), featured: true, data: rec,
+      kind: "language", id: "l-" + code, name: d.name, aka: [], group: "", popM: rec.p, popLabel: label(rec.p),
+      body: [d.name, d.family, d.script].join(" "), featured: topLangs.has(code), data: rec,
     });
   }
-  // The rest of the 120 most-spoken languages (from Unicode CLDR) get an automatic entry, searchable but not in the "All" mix.
-  const written = new Set((more.languagesCurated?.languages || []).map((c: any) => c.id));
-  for (const [code, d] of Object.entries<any>(more.languages?.languages || {})) {
-    if (written.has(code) || !d.name) continue;
-    const rec = F.languageRecord({ id: code, n: d.name }, d, byCode);
+  for (const f of faiths?.faiths || []) {
+    const rec = F.faithEntry(f);
     out.push({
-      kind: "language", id: "l-" + code, name: d.name, aka: [], group: "", popM: rec.p,
-      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: d.name, featured: false, data: rec,
-    });
-  }
-  for (const f of more.faiths?.faiths || []) {
-    const rec = F.faithRecord(f);
-    out.push({
-      kind: "faith", id: "f-" + f.id, name: f.n, aka: f.aka || [], group: "", popM: rec.p,
-      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: [f.home, f.s, f.fun, f.special].join(" "), featured: true, data: rec,
+      kind: "faith", id: "f-" + f.id, name: f.n, aka: f.aka || [], group: "", popM: rec.p, popLabel: rec.pl ? "~" + rec.pl.replace("about ", "") : "",
+      body: f.n, featured: true, data: rec,
     });
   }
   return out;
@@ -71,8 +67,8 @@ export function buildItems(peoples: any[], countries: any[], curated: any, more:
 export function assemble(d: Record<string, any>, now = new Date()): Loaded {
   const ctx = F.buildContext(d.live.countries);
   return {
-    items: buildItems(d.peoples.peoples, d.live.countries, d.curated, { languages: d.languages, languagesCurated: d.languagesCurated, faiths: d.faiths }),
-    ctx, live: d.live, curated: d.curated, famous: d.famous, famousPeoples: d.famousPeoples, languages: d.languages, faiths: d.faiths, fresh: F.freshness(d.live.generatedAt, now),
+    items: buildItems(d.live.countries, d.peoplesMap.peoples, d.languages, d.faiths),
+    ctx, live: d.live, famous: d.famous, languages: d.languages, faiths: d.faiths, fresh: F.freshness(d.live.generatedAt, now),
   };
 }
 
@@ -99,8 +95,8 @@ export async function refreshData(): Promise<boolean> {
   try {
     const last = Number((await AsyncStorage.getItem("data:checkedAt")) || 0);
     if (Date.now() - last < 12 * 3600 * 1000) return false;
-    for (const f of ["live", "famous", "famousPeoples", "languages"] as const) {
-      const res = await fetch(BASE + f.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase()) + ".json", { headers: { "cache-control": "no-cache" } });
+    for (const f of ["live", "famous", "languages"] as const) {
+      const res = await fetch(BASE + f + ".json", { headers: { "cache-control": "no-cache" } });
       if (!res.ok) continue;
       const json = await res.json();
       const cur = JSON.parse((await AsyncStorage.getItem("data:" + f)) || "null") || bundled[f];
