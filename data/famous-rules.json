@@ -1,0 +1,41 @@
+{
+  "_comment": "Edit this to change who can appear in 'Famous people from here'. blockWords are matched against the one-line description (lower case). exclude is a list of exact names. pin puts a person first for a country: { \"JPN\": [\"Hayao Miyazaki\"] }. blockPatterns are regular expressions matched against the description; the defaults keep out sitting politicians so the list stays about heritage, not current news. sameCountryQids lists extra Wikidata ids that count as the same country (the Netherlands is filed under Kingdom of the Netherlands too).",
+  "blockWords": [
+    "nazi",
+    "dictator",
+    "führer",
+    "fuhrer",
+    "war criminal",
+    "terrorist",
+    "serial killer",
+    "murderer",
+    "convicted",
+    "pornographic",
+    "adult film",
+    "porn ",
+    "genocide",
+    "fugitive",
+    "mobster",
+    "drug lord",
+    "gangster"
+  ],
+  "exclude": [
+    "Vladimir Putin",
+    "Elon Musk",
+    "Augusto Pinochet",
+    "Qasem Soleimani"
+  ],
+  "pin": {},
+  "blockPatterns": [
+    "since (19|20)\\d\\d",
+    "[–-] ?pres",
+    "\\(\\d{4}[–-]\\)",
+    "incumbent",
+    "current "
+  ],
+  "sameCountryQids": {
+    "NLD": [
+      "Q29999"
+    ]
+  }
+}

@@ -6,7 +6,7 @@ It is a static site: `index.html`, `facts.js` and three data files. No build ste
 
 ## How the facts work
 
-Every entry, including all 219 countries, gets four things.
+Every entry, including all 219 countries, gets four things. Countries also get a fifth: the five best-known people from there.
 
 | Part | Where it comes from |
 | --- | --- |
@@ -14,6 +14,7 @@ Every entry, including all 219 countries, gets four things.
 | Something special | Same rule. |
 | What the world knows | Hand-written facts, plus facts worked out from the live numbers: population and area rankings, capital, income level. |
 | Records | Hand-written records with a named source, plus rankings that are true right now (most populous, largest, most densely populated, and so on). |
+| Famous people | The five people with the most Wikipedia language editions, from Wikidata (free, CC0). Filtered by `data/famous-rules.json`. |
 
 `facts.js` holds that logic. It has no page code in it, so the same file runs in the browser and in the tests.
 
@@ -24,9 +25,10 @@ The page also shows a **World fact of the month** at the top. It picks from the 
 `.github/workflows/refresh-monthly.yml` runs at 05:17 UTC on the 1st of every month. It:
 
 1. runs `scripts/refresh.mjs`, which pulls population, area, capitals and income groups from the [World Bank Open Data API](https://data.worldbank.org/) and rewrites `data/live.json`,
-2. runs the tests against the new data,
-3. commits `data/live.json` if it changed,
-4. opens an issue if anything failed.
+2. runs `scripts/refresh-famous.mjs`, which asks Wikidata for each country's best-known people and rewrites `data/famous.json` (this step takes up to an hour and is allowed to fail without stopping the rest),
+3. runs the tests against the new data,
+4. commits `data/live.json` and `data/famous.json` if they changed,
+5. opens an issue if anything failed.
 
 If the download looks wrong (fewer than 200 countries, a world population total that does not add up, a missing major country), the script exits with an error and leaves the old file in place.
 
@@ -36,7 +38,8 @@ To refresh by hand, use **Actions → Refresh world facts → Run workflow**, or
 
 ### What the refresh does not update
 
-- **Hand-written facts and records.** The Guinness World Records site has no open data feed, so records in `data/curated.json` and `data/peoples.json` are not refreshed automatically. Each record carries a `src` field. Use `Guinness World Records` only for records Guinness itself recognises, and review these entries now and then.
+- **Hand-written facts and records.** Records in `data/curated.json` and `data/peoples.json` are not refreshed automatically. Each record carries a `src` field (for example `Widely cited`). The app does not use Guinness World Records, which are licensed. Review these entries now and then.
+- **Famous people rules.** `data/famous-rules.json` lists words that keep someone out (dictators, criminals and so on), names to exclude, and names to pin first. Check the list each month; ranking by Wikipedia coverage is a good guide, not a judge of character.
 - **Vatican City and Taiwan.** They are not in the World Bank feed, so they live in `data/extra-countries.json` and need a manual check each year.
 - **Area corrections.** `data/aliases.json` has an `areaFixes` list for places where the World Bank area disagrees with national statistics (Canada and Monaco at the moment).
 
@@ -44,7 +47,7 @@ To refresh by hand, use **Actions → Refresh world facts → Run workflow**, or
 
 ```
 npm run serve      # then open http://localhost:8000
-npm test           # 14 tests
+npm test           # 17 tests
 npm run refresh    # fetch fresh numbers (needs internet)
 ```
 
@@ -62,11 +65,14 @@ Opening `index.html` straight from disk will not work, because the browser block
 index.html                  the app (Dellis brand bar, search, fact panels)
 facts.js                    the fact engine
 data/live.json              country numbers, rewritten monthly by the refresh job
+data/famous.json            top five people per country, rewritten monthly
+data/famous-rules.json      who is allowed in that list
 data/curated.json           hand-written country facts, records, and the world fact list
 data/peoples.json           the 36 peoples, with fun facts and records
 data/aliases.json           display names, search nicknames, region groups, area corrections
 data/extra-countries.json   countries missing from the World Bank feed
 scripts/refresh.mjs         the monthly refresh
+scripts/refresh-famous.mjs  the monthly famous-people refresh (Wikidata)
 scripts/lib/normalize.mjs   turns raw World Bank rows into live.json records, and checks them
 scripts/seed/               the first saved snapshot
 test/                       node:test suites

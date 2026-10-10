@@ -1,5 +1,5 @@
 {
-  "_comment": "Hand-written facts. Keys are ISO 3166 alpha-3 codes. Anything not listed here still gets facts worked out from data/live.json. Record sources: use 'Guinness World Records' only when Guinness itself recognises the record; otherwise 'Widely cited'. Guinness has no open data feed, so these are not refreshed automatically. Check them yourself.",
+  "_comment": "Hand-written facts. Keys are ISO 3166 alpha-3 codes. Anything not listed here still gets facts worked out from data/live.json. Record sources: say where a record comes from, e.g. 'Widely cited'. These are not refreshed automatically. Check them yourself.",
   "world": [
     "Around 71 percent of Earth's surface is water, but only about 3 percent of that water is fresh.",
     "There are more than 7,000 living languages, and roughly 40 percent of them are endangered.",
@@ -31,7 +31,7 @@
         "Mount Fuji, at 3,776 metres, is the highest mountain in Japan.",
         "Shinkansen bullet trains began running between Tokyo and Osaka in 1964."
       ],
-      "records": [{ "text": "Nishiyama Onsen Keiunkan, open since 705, is the world's oldest hotel", "src": "Guinness World Records" }]
+      "records": [{ "text": "Nishiyama Onsen Keiunkan, open since 705, is the world's oldest hotel", "src": "Widely cited" }]
     },
     "EGY": {
       "fun": "The Great Pyramid of Giza was the tallest human-made structure in the world for roughly 3,800 years.",
@@ -148,7 +148,7 @@
         "The old medina of Fez, Fes el-Bali, is one of the largest car-free urban areas in the world.",
         "Morocco recognises both Arabic and Tamazight as official languages."
       ],
-      "records": [{ "text": "University of al-Qarawiyyin (859): oldest existing, continually operating educational institution", "src": "Guinness World Records" }]
+      "records": [{ "text": "University of al-Qarawiyyin (859): oldest existing, continually operating educational institution", "src": "Widely cited" }]
     },
     "TUR": {
       "fun": "Göbekli Tepe in southeastern Turkey, built about 11,000 years ago, is among the oldest known monumental structures.",
@@ -175,7 +175,7 @@
         "The UAE is a federation of seven emirates, including Abu Dhabi and Dubai.",
         "Abu Dhabi is the capital, and Dubai is the largest city."
       ],
-      "records": [{ "text": "Burj Khalifa (828 m): tallest building in the world", "src": "Guinness World Records" }]
+      "records": [{ "text": "Burj Khalifa (828 m): tallest building in the world", "src": "Widely cited" }]
     },
     "ITA": {
       "fun": "Two countries lie entirely inside Italy: San Marino and Vatican City.",
