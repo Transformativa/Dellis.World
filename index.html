@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>All World People Encyclopedia</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
 <style>
@@ -63,9 +65,9 @@ button:focus-visible, summary:focus-visible, .chip:focus-visible, a:focus-visibl
 
 /* Dellis brand bar */
 .brandbar { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-.wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.9rem; letter-spacing: -0.02em; line-height: 1; color: var(--fg); text-decoration: none; }
-.wordmark i { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px var(--glow); }
-.brand-sub { font-size: .85rem; color: var(--muted); }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.wordmark .mark { width: 40px; height: 40px; flex: none; }
+.wordmark .word { height: 40px; width: auto; flex: none; }
 .visit { margin-left: auto; font-weight: 700; font-size: .9rem; text-decoration: none; background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: 10px 18px; min-height: 40px; display: inline-flex; align-items: center; }
 .eyebrow { font-family: var(--font-display); font-size: .95rem; color: var(--muted); margin: 0 0 10px; }
 .lede { color: var(--muted); margin: 12px 0 0; max-width: 52ch; }
@@ -120,8 +122,7 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 <body>
 <div class="wrap">
   <div class="brandbar">
-    <a class="wordmark" href="https://www.dellis.store" target="_blank" rel="noopener" aria-label="Dellis, visit dellis.store"><i aria-hidden="true"></i>Dellis</a>
-    <span class="brand-sub">Danny the Mighty Diver</span>
+    <a class="wordmark" href="https://www.dellis.store" target="_blank" rel="noopener" aria-label="Dellis, visit dellis.store"><img class="mark" src="assets/dellis-mark.png" alt="" width="40" height="40"><img class="word" src="assets/dellis-wordmark.png" alt="Dellis" width="91" height="40"></a>
     <a class="visit" href="https://www.dellis.store" target="_blank" rel="noopener">dellis.store</a>
   </div>
 

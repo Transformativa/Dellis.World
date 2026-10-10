@@ -33,6 +33,7 @@ jobs:
           mkdir _site
           cp index.html facts.js _site/
           cp -r data _site/data
+          cp -r assets _site/assets
 
       - uses: actions/configure-pages@v5
 
