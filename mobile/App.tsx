@@ -157,7 +157,7 @@ export default function App() {
           </View>
         ) : null}
 
-        <TextInput style={s.input} placeholder="Search a people, country, language or faith" placeholderTextColor="#6b6b6b"
+        <TextInput style={s.input} placeholder="Try Italian, Hindi or Islam" placeholderTextColor="#6b6b6b"
           value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
           {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => setKind(k)} />)}
@@ -399,7 +399,7 @@ const mk = (z: number) => StyleSheet.create({
   chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
-  note: { marginHorizontal: 16, marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
+  note: { marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
   noteHead: { color: t.orange, fontSize: 13 * z, fontWeight: "700", letterSpacing: 0.4 },
   noteTx: { color: t.fg, fontSize: 14 * z, lineHeight: 21 * z },
   sources: { marginHorizontal: 16, marginTop: 20, gap: 6 },
@@ -435,7 +435,7 @@ const mk = (z: number) => StyleSheet.create({
   meterFill: { height: "100%" },
   dl: { gap: 6 },
   dlRow: { flexDirection: "row", gap: 14 },
-  dt: { color: t.muted, fontSize: 15 * z, lineHeight: 22 * z, width: 110 },
+  dt: { color: t.muted, fontSize: 15 * z, lineHeight: 22 * z, width: 132 },
   dd: { color: t.fg, fontSize: 15 * z, lineHeight: 22 * z, flex: 1 },
   favBtn: { alignSelf: "flex-start", borderWidth: 2, borderColor: t.fg, borderRadius: 999, minHeight: 44, paddingHorizontal: 18, justifyContent: "center" },
   favBtnTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },

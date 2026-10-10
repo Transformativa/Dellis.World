@@ -127,3 +127,13 @@ Nothing shown in the phone app is hand-written. Every line comes from a public d
 | Comparisons and records | Calculated from the World Bank numbers | Monthly |
 
 A "people" is the people of one country (list in `data/peoples-countries.json`), so it shows that country's figures. Peoples that do not match one country (Kurds, Roma, Maya...) are not shown until there is a database to source them from. The older hand-written files (`data/peoples.json`, `data/curated.json` and others) are used only by the unpublished web page `app.html`.
+
+## Before every republish
+
+```
+npm run release-check
+```
+
+This runs everything: data, search and "things we agreed on" tests (`test/agreements.test.mjs`), source freshness, the app type check, iOS and Android bundle builds, and a look-and-feel check (`scripts/visual-check.mjs`). The look-and-feel check opens the app in a phone-sized browser, checks fonts, brand colours, layout and broken text on eight screens, and compares screenshots with the saved ones in `test/visual/baseline`. Pictures of the latest run are in `test/visual/latest`.
+
+If a change to the design or to an agreement is on purpose, update `test/agreements.test.mjs` and run `node scripts/visual-check.mjs --update` in the same commit.

@@ -62,7 +62,7 @@ test("faiths carry their source, year and required Pew disclaimer", () => {
     assert.ok(f.n && f.stats?.length, f.id + " needs a name and Pew figures");
     const rec = F.faithEntry(f);
     assert.equal(rec.fun, ""); assert.equal(rec.special, ""); assert.equal(rec.s, "");
-    assert.doesNotMatch(rec.known.join(" "), /undefined|NaN/);
+    assert.doesNotMatch(F.peopleFacts(rec).known.join(" ") + rec.stats.flat().join(" "), /undefined|NaN/);
   }
 });
 test("search finds languages and faiths by name and by what people call them", () => {

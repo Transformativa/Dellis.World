@@ -159,7 +159,7 @@
   function peopleFacts(p, date) {
     var seed = monthSeed(date || new Date()) + hash(p.n);
     var known = asList(p.known).slice();
-    if (!known.length) {
+    if (!known.length && p.home && p.lang) {
       known = ["Homeland: " + p.home + ".", "Language: " + p.lang + ".", "Population: " + p.pl + "."];
     }
     var f = asList(p.fun), s = asList(p.special);
@@ -233,11 +233,10 @@
     if (d.family) stats.push(["Family", d.family]);
     if (d.script) stats.push(["Writing", d.script]);
     var known = [];
-    if (total) known.push("Used by about " + fmtPop(total) + " people. The estimate includes people who speak it as a second language.");
+    if (total) known.push("The speaker estimate includes people who speak it as a second language.");
     if (d.officialIn) known.push("Official in " + d.officialIn + (d.officialIn === 1 ? " country." : " countries."));
     if (top.length) known.push("Most speakers live in " + top.join(", ") + ".");
-    if (d.family) known.push("Language family: " + d.family + (d.family === "Language isolate" ? ", which means it has no known relatives." : "."));
-    if (d.script) known.push("Usual writing system: " + d.script + ".");
+    if (d.family === "Language isolate") known.push("A language isolate has no known relatives.");
     return {
       id: code, n: d.name, aka: [], g: "", p: total / 1e6, pl: total ? "about " + fmtPop(total) : "",
       s: d.name + (total ? " is used by about " + fmtPop(total) + " people" : " is spoken") + (top.length ? ", mostly in " + top.slice(0, 3).join(", ") + "." : "."),
@@ -254,8 +253,7 @@
     stats.push(["Homeland", c.display + (c.capital ? " (capital: " + c.capital + ")" : "")]);
     if (main.length) stats.push(["Main languages", main.map(function (l) { return l.name; }).join(", ")]);
     var known = [];
-    if (pop) known.push("About " + fmtPop(pop) + " people live in " + c.display + ". That count includes everyone who lives there.");
-    if (c.capital) known.push("Capital: " + c.capital + ".");
+    if (pop) known.push("The population counts everyone who lives in " + c.display + ", not only one ethnic group.");
     main.forEach(function (l, i) { known.push((i === 0 ? "Most spoken language: " : "Also spoken: ") + l.name + ", about " + fmtPop(l.speakers) + " speakers" + (l.official ? " (official)." : ".")); });
     if (c.group && GROUPS[c.group]) known.push("Region: " + GROUPS[c.group] + ".");
     return {
@@ -267,8 +265,7 @@
 
   /* A faith: Pew Research Center figures only. */
   function faithEntry(f) {
-    var known = (f.stats || []).map(function (r) { return r[0] + ": " + r[1] + "."; });
-    return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl || "", s: "", fun: "", special: "", known: known, stats: f.stats || [], records: [] };
+    return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl || "", s: "", fun: "", special: "", known: [], stats: f.stats || [], records: [] };
   }
 
   function faithRecord(f) {
