@@ -47,6 +47,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/live.json data/famous.json
           git commit -m "chore: monthly world facts refresh ($(date -u +%Y-%m))"
+          git pull --rebase origin main
           git push
 
       - name: Open an issue if the refresh failed
