@@ -1,0 +1,13 @@
+{
+  "name": "dellis-world",
+  "version": "1.0.0",
+  "private": true,
+  "description": "All World People Encyclopedia by Dellis. A static site with monthly-refreshed world facts.",
+  "scripts": {
+    "test": "node --test",
+    "refresh": "node scripts/refresh.mjs",
+    "refresh:seed": "node scripts/refresh.mjs --seed scripts/seed/worldbank-2026-10-10.json",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,52 @@
+name: Refresh world facts
+
+# Runs at 05:17 UTC on the 1st of every month, and on demand from the Actions tab.
+on:
+  schedule:
+    - cron: "17 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: refresh-world-facts
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch fresh numbers from the World Bank
+        run: node scripts/refresh.mjs
+
+      - name: Check the new data with the test suite
+        run: node --test
+
+      - name: Commit the new data
+        run: |
+          if git diff --quiet -- data/live.json; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "dellis-world-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live.json
+          git commit -m "chore: monthly world facts refresh ($(date -u +%Y-%m))"
+          git push
+
+      - name: Open an issue if the refresh failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Monthly world facts refresh failed ($(date -u +%Y-%m))" \
+            --body "The refresh did not finish, so the site is still showing last month's numbers. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

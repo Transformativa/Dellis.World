@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All World People Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
+<style>
+/* Layout: one column. Dellis brand bar, title, world fact of the month, sticky search and filters, then expandable entries. */
+:root {
+  --bg: #f7fef9;
+  --surface: #ffffff;
+  --fg: #232323;
+  --muted: #4a4a4a;
+  --line: #e1eae3;
+  --accent: #232323;
+  --accent-fg: #f7fef9;
+  --link: #e44e0f;
+  --green: #4cfc0f;
+  --glow: rgba(76, 252, 15, .16);
+  --grad: linear-gradient(90deg, #4cfc0f 0%, #f7fef9 100%);
+  --warn-bg: #fff1ea;
+  --warn-fg: #8a2f08;
+  --r-africa: #e44e0f;
+  --r-americas: #3bd60b;
+  --r-asia: #f2b705;
+  --r-europe: #232323;
+  --r-mena: #7fa386;
+  --r-oceania: #1b9aaa;
+  --font-display: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1510; --surface: #142019; --fg: #f7fef9; --muted: #a9b9ae; --line: #24352a;
+    --accent: #f7fef9; --accent-fg: #0d1510; --link: #ff8969; --green: #4cfc0f; --glow: rgba(76, 252, 15, .14);
+    --grad: linear-gradient(90deg, #4cfc0f 0%, #0d1510 100%);
+    --warn-bg: #3a1f14; --warn-fg: #ffb199;
+    --r-africa: #ff6a33; --r-americas: #4cfc0f; --r-asia: #ffd23f; --r-europe: #f7fef9; --r-mena: #8fb596; --r-oceania: #4cc3d3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1510; --surface: #142019; --fg: #f7fef9; --muted: #a9b9ae; --line: #24352a;
+  --accent: #f7fef9; --accent-fg: #0d1510; --link: #ff8969; --green: #4cfc0f; --glow: rgba(76, 252, 15, .14);
+  --grad: linear-gradient(90deg, #4cfc0f 0%, #0d1510 100%);
+  --warn-bg: #3a1f14; --warn-fg: #ffb199;
+  --r-africa: #ff6a33; --r-americas: #4cfc0f; --r-asia: #ffd23f; --r-europe: #f7fef9; --r-mena: #8fb596; --r-oceania: #4cc3d3;
+  color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.55; padding-inline: 16px; padding-block: 16px 48px; }
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.3rem, 9vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h1 em { font-style: italic; }
+p { margin: 0; }
+a { color: var(--link); }
+button:focus-visible, summary:focus-visible, .chip:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* Dellis brand bar */
+.brandbar { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.9rem; letter-spacing: -0.02em; line-height: 1; color: var(--fg); text-decoration: none; }
+.wordmark i { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px var(--glow); }
+.brand-sub { font-size: .85rem; color: var(--muted); }
+.visit { margin-left: auto; font-weight: 700; font-size: .9rem; text-decoration: none; background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: 10px 18px; min-height: 40px; display: inline-flex; align-items: center; }
+.eyebrow { font-family: var(--font-display); font-size: .95rem; color: var(--muted); margin: 0 0 10px; }
+.lede { color: var(--muted); margin: 12px 0 0; max-width: 52ch; }
+header::after { content: ""; display: block; height: 6px; border-radius: 99px; background: var(--grad); margin-top: 20px; }
+
+/* World fact of the month */
+.wfm { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; box-shadow: 0 0 0 5px var(--glow); display: flex; flex-direction: column; gap: 6px; }
+.wfm .lab { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.wfm p { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.3; text-wrap: pretty; }
+
+/* Controls */
+.controls { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); padding-block: 10px; z-index: 2; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--line); }
+.search { font: inherit; width: 100%; padding: 12px 20px; min-height: 48px; border-radius: 999px; border: 2px solid var(--line); background: var(--surface); color: var(--fg); }
+.search:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px var(--glow); }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.chip { font: inherit; font-size: .9rem; font-weight: 700; white-space: nowrap; padding: 8px 14px; min-height: 40px; border-radius: 999px; border: 2px solid var(--line); background: transparent; color: var(--fg); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: .9rem; color: var(--muted); }
+.bar button { font: inherit; font-weight: 700; font-size: .9rem; color: var(--link); background: none; border: 0; padding: 8px 4px; min-height: 40px; cursor: pointer; }
+.bar .tools { display: flex; gap: 12px; }
+
+/* List */
+.list { background: var(--surface); border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
+details { border-bottom: 1px solid var(--line); }
+details:last-child { border-bottom: 0; }
+summary { list-style: none; cursor: pointer; padding: 14px 16px; display: grid; grid-template-columns: 10px 1fr auto; gap: 12px; align-items: center; min-height: 48px; }
+summary::-webkit-details-marker { display: none; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.nm { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; line-height: 1.15; overflow-wrap: anywhere; }
+.rg { display: block; font-size: .75rem; color: var(--muted); letter-spacing: .06em; margin-top: 2px; }
+.pp { font-variant-numeric: tabular-nums; font-size: .9rem; font-weight: 700; text-align: right; }
+.body { padding: 0 16px 18px 38px; display: flex; flex-direction: column; gap: 14px; }
+.body p, .body li { max-width: 60ch; }
+.fact { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.fact .lab { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.fact ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; }
+.fact small { color: var(--muted); font-size: .8rem; }
+.meter { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--c); }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: .92rem; }
+dt { color: var(--muted); }
+dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.empty { padding: 28px 16px; text-align: center; color: var(--muted); }
+
+/* Footer notes */
+.status { font-size: .9rem; color: var(--muted); }
+.status.warn { background: var(--warn-bg); color: var(--warn-fg); border-radius: 14px; padding: 12px 16px; }
+.note { font-size: .85rem; color: var(--muted); max-width: 60ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandbar">
+    <a class="wordmark" href="https://www.dellis.store" target="_blank" rel="noopener" aria-label="Dellis, visit dellis.store"><i aria-hidden="true"></i>Dellis</a>
+    <span class="brand-sub">Danny the Mighty Diver</span>
+    <a class="visit" href="https://www.dellis.store" target="_blank" rel="noopener">dellis.store</a>
+  </div>
+
+  <header>
+    <p class="eyebrow">Empowering minds, celebrating differences.</p>
+    <h1>All World <em>People</em> Encyclopedia</h1>
+    <p class="lede">Search any people or country. Every one comes with a fun fact, something special, facts the world knows, and records.</p>
+  </header>
+
+  <section class="wfm" aria-live="polite">
+    <span class="lab" id="wfmLab">World fact of the month</span>
+    <p id="wfmText">Loading this month's fact.</p>
+  </section>
+
+  <div class="controls">
+    <input class="search" id="q" type="search" placeholder="Search a people or a country" aria-label="Search peoples and countries" autocomplete="off">
+    <div class="chips" id="kinds" role="group" aria-label="Show"></div>
+    <div class="chips" id="chips" role="group" aria-label="Region"></div>
+  </div>
+
+  <div class="bar">
+    <span id="count" aria-live="polite"></span>
+    <span class="tools">
+      <button id="sort" type="button">Sort: A to Z</button>
+      <button id="rand" type="button">Random</button>
+    </span>
+  </div>
+
+  <div class="list" id="list"><div class="empty">Loading.</div></div>
+  <p class="status" id="status"></p>
+  <p class="note" id="note"></p>
+</div>
+
+<script src="facts.js"></script>
+<script>
+(function () {
+  var F = window.DellisFacts;
+  var REGION_VAR = { africa: "--r-africa", americas: "--r-americas", asia: "--r-asia", europe: "--r-europe", mena: "--r-mena", oceania: "--r-oceania" };
+  var state = { q: "", kind: "all", g: "all", sort: "az" };
+  var items = [], ctx = null, live = null, curated = null, now = new Date();
+  var listEl = document.getElementById("list");
+  var countEl = document.getElementById("count");
+  var sortBtn = document.getElementById("sort");
+  var lo = Math.log10(0.0005), hi = Math.log10(1500);
+
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function sizeWidth(m) { return Math.max(3, Math.min(100, Math.round((Math.log10(Math.max(m, 0.0005)) - lo) / (hi - lo) * 100))); }
+  function getJson(url) {
+    return fetch(url, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " returned " + r.status);
+      return r.json();
+    });
+  }
+
+  function buildItems(peoples, countries, cur) {
+    var out = [];
+    peoples.forEach(function (p) {
+      out.push({
+        kind: "people", id: "p-" + p.id, name: p.n, aka: [], code: "", group: p.g, popM: p.p,
+        popLabel: p.pl.split(",")[0].replace("about ", "~").replace("over ", ">"),
+        body: [p.home, p.lang, p.s, p.fun, p.special].join(" "), data: p, featured: true
+      });
+    });
+    countries.forEach(function (c) {
+      out.push({
+        kind: "country", id: "c-" + c.code, name: c.display, aka: c.aka || [], code: c.code, group: c.group,
+        popM: c.pop / 1e6, popLabel: c.pop ? "~" + F.fmtPop(c.pop) : "", body: [c.capital, c.name].join(" "),
+        data: c, featured: !!(cur.countries && cur.countries[c.code])
+      });
+    });
+    return out;
+  }
+
+  function block(label, content) {
+    var d = el("div", "fact");
+    d.appendChild(el("span", "lab", label));
+    if (typeof content === "string") d.appendChild(el("p", "", content)); else d.appendChild(content);
+    return d;
+  }
+  function list(arr) { var ul = el("ul"); arr.forEach(function (t) { ul.appendChild(el("li", "", t)); }); return ul; }
+  function recordList(arr) {
+    var ul = el("ul");
+    arr.forEach(function (r) {
+      var li = el("li", "", r.text + " ");
+      li.appendChild(el("small", "", "(" + r.src + ")"));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+  function stats(rows) {
+    var dl = el("dl");
+    rows.forEach(function (r) { if (!r[1]) return; dl.appendChild(el("dt", "", r[0])); dl.appendChild(el("dd", "", r[1])); });
+    return dl;
+  }
+
+  function fillBody(it, body) {
+    var facts, rows;
+    if (it.kind === "people") {
+      var p = it.data;
+      facts = F.peopleFacts(p, now);
+      body.appendChild(el("p", "", p.s));
+      rows = [["Population", p.pl], ["Homeland", p.home], ["Language", p.lang]];
+    } else {
+      var c = it.data;
+      facts = F.countryFacts(c, ctx, curated.countries[c.code], now);
+      rows = [
+        ["Population", c.pop ? "about " + F.fmtPop(c.pop) + (c.year ? " (" + c.year + ")" : "") : ""],
+        ["Surface area", c.area ? "about " + F.fmtArea(c.area) : ""],
+        ["Capital", c.capital], ["Region", F.GROUPS[c.group]], ["Income level", c.income]
+      ];
+    }
+    if (facts.fun) body.appendChild(block("Fun fact", facts.fun));
+    if (facts.special) body.appendChild(block("Something special", facts.special));
+    if (facts.known.length) body.appendChild(block("What the world knows", list(facts.known)));
+    if (facts.records.length) body.appendChild(block("Records", recordList(facts.records)));
+    if (it.popM > 0) { var m = el("div", "meter"); var i = el("i"); i.style.width = sizeWidth(it.popM) + "%"; m.appendChild(i); body.appendChild(m); }
+    body.appendChild(stats(rows));
+  }
+
+  function visible() {
+    var q = state.q.trim();
+    var pool = items.filter(function (it) {
+      if (state.kind !== "all" && it.kind !== (state.kind === "peoples" ? "people" : "country")) return false;
+      if (state.g !== "all" && it.group !== state.g) return false;
+      return true;
+    });
+    var featuredOnly = !q && state.kind === "all";
+    var rows = featuredOnly ? pool.filter(function (it) { return it.featured; }) : F.search(pool, q);
+    if (state.sort === "size") rows = rows.slice().sort(function (a, b) { return b.popM - a.popM; });
+    else if (!q) rows = rows.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    return { rows: rows, total: pool.length, featuredOnly: featuredOnly };
+  }
+
+  function render(openId) {
+    var v = visible(), rows = v.rows;
+    if (openId && !rows.some(function (r) { return r.id === openId; })) {
+      var extra = items.filter(function (it) { return it.id === openId; })[0];
+      if (extra) rows = [extra].concat(rows);
+    }
+    listEl.innerHTML = "";
+    if (!rows.length) listEl.appendChild(el("div", "empty", "Nothing matches that search. Try a country's common name, such as Russia or South Korea."));
+    rows.forEach(function (it) {
+      var d = el("details");
+      d.id = it.id;
+      d.style.setProperty("--c", "var(" + REGION_VAR[it.group] + ")");
+      var s = el("summary");
+      s.appendChild(el("span", "dot"));
+      var t = el("span");
+      t.appendChild(el("span", "nm", it.name));
+      t.appendChild(el("span", "rg", (it.kind === "people" ? "PEOPLE" : "COUNTRY") + " · " + (F.GROUPS[it.group] || "").toUpperCase()));
+      s.appendChild(t);
+      s.appendChild(el("span", "pp", it.popLabel));
+      d.appendChild(s);
+      var built = false;
+      d.addEventListener("toggle", function () {
+        if (!d.open || built) return;
+        built = true;
+        var b = el("div", "body");
+        fillBody(it, b);
+        d.appendChild(b);
+      });
+      if (openId === it.id) d.open = true;
+      listEl.appendChild(d);
+    });
+    var shown = rows.length;
+    if (v.featuredOnly) {
+      var nCountries = items.filter(function (i) { return i.kind === "country"; }).length;
+      countEl.textContent = shown + " featured. Search to find any of " + nCountries + " countries.";
+    } else {
+      countEl.textContent = shown + (shown === 1 ? " result" : " results");
+    }
+  }
+
+  function chip(parent, key, label, current, onPick) {
+    var b = el("button", "chip", label); b.type = "button";
+    b.setAttribute("aria-pressed", current === key ? "true" : "false");
+    b.addEventListener("click", function () { onPick(key); });
+    parent.appendChild(b);
+  }
+  function drawChips() {
+    var k = document.getElementById("kinds"); k.innerHTML = "";
+    [["all", "All"], ["peoples", "Peoples"], ["countries", "Countries"]].forEach(function (x) {
+      chip(k, x[0], x[1], state.kind, function (key) { state.kind = key; drawChips(); render(); });
+    });
+    var r = document.getElementById("chips"); r.innerHTML = "";
+    chip(r, "all", "All regions", state.g, function (key) { state.g = key; drawChips(); render(); });
+    Object.keys(F.GROUPS).forEach(function (g) {
+      chip(r, g, F.GROUPS[g], state.g, function (key) { state.g = key; drawChips(); render(); });
+    });
+  }
+
+  function showFreshness() {
+    var fr = F.freshness(live.generatedAt, now);
+    var status = document.getElementById("status");
+    var when = fr.generated.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    var next = fr.nextRefresh.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    if (fr.stale) {
+      status.className = "status warn";
+      status.textContent = "These world facts were last refreshed on " + when + ", " + fr.days + " days ago. The monthly refresh may not have run. If you run this site, check the Actions tab of the repository.";
+    } else {
+      status.textContent = "World facts last refreshed " + when + ". They refresh on the 1st of each month, next on " + next + ".";
+    }
+    document.getElementById("note").textContent = "Population and area come from " + (live.source || "the World Bank") + (live.populationYear ? ", " + live.populationYear : "") + ". Figures are rounded and sources differ. Records marked Guinness World Records are recognised by Guinness. Others are widely cited and not independently checked.";
+  }
+
+  function start(data) {
+    live = data[0]; curated = data[1];
+    ctx = F.buildContext(live.countries);
+    items = buildItems(data[2].peoples, live.countries, curated);
+    var w = F.worldFactOfMonth(ctx, curated.world, now);
+    document.getElementById("wfmLab").textContent = "World fact · " + w.month;
+    document.getElementById("wfmText").textContent = w.text;
+    showFreshness();
+    drawChips();
+    render();
+  }
+
+  document.getElementById("q").addEventListener("input", function (e) { state.q = e.target.value; render(); });
+  sortBtn.addEventListener("click", function () {
+    state.sort = state.sort === "az" ? "size" : "az";
+    sortBtn.textContent = state.sort === "az" ? "Sort: A to Z" : "Sort: largest first";
+    render();
+  });
+  document.getElementById("rand").addEventListener("click", function () {
+    if (!items.length) return;
+    var pool = items.filter(function (it) { return state.kind === "all" || it.kind === (state.kind === "peoples" ? "people" : "country"); });
+    var pick = pool[Math.floor(Math.random() * pool.length)];
+    state.q = ""; document.getElementById("q").value = ""; state.g = "all"; drawChips();
+    render(pick.id);
+    var node = document.getElementById(pick.id);
+    if (node) node.scrollIntoView({ block: "center", behavior: "smooth" });
+  });
+
+  Promise.all([getJson("data/live.json"), getJson("data/curated.json"), getJson("data/peoples.json")])
+    .then(start)
+    .catch(function (err) {
+      listEl.innerHTML = "";
+      listEl.appendChild(el("div", "empty", "The data files did not load (" + err.message + "). If you opened index.html straight from your computer, start a local server in this folder, for example python3 -m http.server, and open http://localhost:8000."));
+      document.getElementById("wfmText").textContent = "Facts unavailable until the data loads.";
+    });
+})();
+</script>
+</body>
+</html>

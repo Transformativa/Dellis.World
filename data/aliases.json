@@ -1,0 +1,63 @@
+{
+  "_comment": "Presentation rules applied on top of World Bank data by scripts/lib/normalize.mjs. Edit by hand; the monthly refresh never overwrites this file.",
+  "display": {
+    "BHS": "The Bahamas", "COD": "DR Congo", "COG": "Republic of the Congo", "CIV": "Ivory Coast",
+    "EGY": "Egypt", "GMB": "The Gambia", "HKG": "Hong Kong", "IRN": "Iran", "PRK": "North Korea",
+    "KOR": "South Korea", "KGZ": "Kyrgyzstan", "LAO": "Laos", "MAC": "Macao", "FSM": "Micronesia",
+    "NRU": "Nauru", "RUS": "Russia", "SVK": "Slovakia", "SOM": "Somalia", "KNA": "Saint Kitts and Nevis",
+    "LCA": "Saint Lucia", "MAF": "Saint Martin", "VCT": "Saint Vincent and the Grenadines",
+    "SYR": "Syria", "TUR": "Turkey", "VEN": "Venezuela", "VNM": "Vietnam", "YEM": "Yemen",
+    "BRN": "Brunei", "PRI": "Puerto Rico", "SXM": "Sint Maarten", "VIR": "US Virgin Islands",
+    "PSE": "Palestinian territories", "STP": "Sao Tome and Principe", "XKX": "Kosovo"
+  },
+  "aka": {
+    "USA": ["USA", "US", "America", "United States of America"],
+    "GBR": ["UK", "Britain", "Great Britain", "England"],
+    "ARE": ["UAE", "Emirates"],
+    "RUS": ["Russian Federation"],
+    "TUR": ["Turkiye", "Türkiye"],
+    "CZE": ["Czech Republic"],
+    "CIV": ["Cote d'Ivoire", "Côte d'Ivoire"],
+    "SWZ": ["Swaziland"],
+    "MMR": ["Burma"],
+    "TLS": ["East Timor"],
+    "NLD": ["Holland"],
+    "CPV": ["Cape Verde"],
+    "COD": ["Democratic Republic of the Congo", "Congo-Kinshasa"],
+    "COG": ["Congo-Brazzaville"],
+    "KOR": ["Republic of Korea"],
+    "PRK": ["DPRK"],
+    "MKD": ["Macedonia"],
+    "PSE": ["Palestine", "West Bank", "Gaza"],
+    "VAT": ["Holy See", "Vatican"],
+    "TWN": ["Republic of China", "Chinese Taipei"],
+    "VNM": ["Viet Nam"]
+  },
+  "capitalFix": { "UKR": "Kyiv", "ALB": "Tirana" },
+  "areaFixes": {
+    "_comment": "Surface area in km2 where the World Bank figure disagrees with national statistics. Re-check each year.",
+    "CAN": 9984670,
+    "MCO": 2.02
+  },
+  "notRanked": [
+    "ASM", "ABW", "BMU", "VGB", "CYM", "CHI", "CUW", "FRO", "PYF", "GIB", "GRL", "GUM", "HKG", "IMN",
+    "MAC", "NCL", "MNP", "PRI", "SXM", "MAF", "TCA", "VIR", "PSE", "XKX"
+  ],
+  "groupOverrides": {
+    "oceania": ["AUS", "NZL", "FJI", "PNG", "SLB", "VUT", "WSM", "TON", "KIR", "TUV", "NRU", "MHL", "FSM", "PLW", "ASM", "GUM", "MNP", "NCL", "PYF"],
+    "asia": ["KAZ", "KGZ", "TJK", "TKM", "UZB", "AFG", "PAK"],
+    "mena": ["TUR", "ARM", "AZE", "GEO"],
+    "africa": ["DJI"],
+    "europe": ["MLT"],
+    "americas": ["GRL"]
+  },
+  "wbRegionToGroup": {
+    "Sub-Saharan Africa": "africa",
+    "Latin America & Caribbean": "americas",
+    "North America": "americas",
+    "South Asia": "asia",
+    "East Asia & Pacific": "asia",
+    "Europe & Central Asia": "europe",
+    "Middle East, North Africa, Afghanistan & Pakistan": "mena"
+  }
+}

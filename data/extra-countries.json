@@ -1,0 +1,15 @@
+{
+  "_comment": "Countries the World Bank feed does not carry. Maintained by hand and untouched by the monthly refresh. Check these figures when you review the refresh each month.",
+  "countries": [
+    {
+      "code": "VAT", "name": "Vatican City", "display": "Vatican City", "capital": "Vatican City",
+      "pop": 800, "area": 0.44, "group": "europe", "income": "", "rank": true, "manual": true, "asOf": "2025",
+      "note": "Population is an approximate count of residents."
+    },
+    {
+      "code": "TWN", "name": "Taiwan", "display": "Taiwan", "capital": "Taipei",
+      "pop": 23400000, "area": 36197, "group": "asia", "income": "", "rank": false, "manual": true, "asOf": "2025",
+      "note": "Not in World Bank data. Left out of world rankings because its international recognition is contested."
+    }
+  ]
+}
