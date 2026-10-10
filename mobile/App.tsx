@@ -1,18 +1,27 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
-  ActivityIndicator, FlatList, Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View,
+  ActivityIndicator, FlatList, Image, Linking, Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { LinearGradient } from "expo-linear-gradient";
+import { useFonts, Questrial_400Regular } from "@expo-google-fonts/questrial";
 import { F, Item, Loaded, loadData, refreshData } from "./src/data";
 import { PRICE_LABEL, buy, isUnlocked, restore } from "./src/purchase";
 import { loadFavs, saveFavs } from "./src/favs";
 import { theme as t } from "./src/theme";
 
 const KINDS = [["all", "All"], ["people", "Peoples"], ["country", "Countries"]] as const;
+const REGION_COLOR: Record<string, string> = {
+  africa: "#E44E0F", americas: "#3BD60B", asia: "#F2B705", europe: "#232323", mena: "#7FA386", oceania: "#1B9AAA",
+};
 const now = new Date();
 const SIZES = { small: 0.88, medium: 1, large: 1.25 } as const;
 type Size = keyof typeof SIZES;
+const DISPLAY = "Questrial_400Regular";
+const lo = Math.log10(0.0005), hi = Math.log10(1500);
+const sizeWidth = (m: number) => Math.max(3, Math.min(100, Math.round(((Math.log10(Math.max(m, 0.0005)) - lo) / (hi - lo)) * 100)));
+
 const Styles = createContext<ReturnType<typeof mk>>(null as any);
 const useS = () => useContext(Styles);
 
@@ -22,22 +31,38 @@ function factsFor(it: Item, L: Loaded) {
     : F.countryFacts(it.data, L.ctx, L.curated.countries?.[it.data.code], now);
 }
 
+/** A different fun fact each time the app opens (and on "Another fact"). */
+function randomFact(L: Loaded): { name: string; text: string } {
+  for (let n = 0; n < 60; n++) {
+    const it = L.items[Math.floor(Math.random() * L.items.length)];
+    const f = factsFor(it, L);
+    if (f?.fun) return { name: it.name, text: f.fun };
+  }
+  return { name: "The world", text: F.worldFactOfMonth(L.ctx, L.curated.world, now).text };
+}
+
 export default function App() {
+  const [fontsOk] = useFonts({ Questrial_400Regular });
   const [L, setL] = useState<Loaded | null>(null);
   const [q, setQ] = useState("");
   const [kind, setKind] = useState<(typeof KINDS)[number][0]>("all");
-  const [open, setOpen] = useState<Item | null>(null);
-  const [tab, setTab] = useState<"explore" | "roots">("explore");
+  const [region, setRegion] = useState("all");
+  const [sort, setSort] = useState<"az" | "size">("az");
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [tab, setTab] = useState<"explore" | "favs">("explore");
   const [favs, setFavs] = useState<string[]>([]);
   const [unlocked, setUnlocked] = useState(false);
   const [paywall, setPaywall] = useState(false);
   const [size, setSize] = useState<Size>("medium");
+  const [fact, setFact] = useState<{ name: string; text: string } | null>(null);
   const s = useMemo(() => mk(SIZES[size]), [size]);
   const pickSize = (n: Size) => { setSize(n); AsyncStorage.setItem("textSize", n).catch(() => {}); };
 
   useEffect(() => {
     (async () => {
-      setL(await loadData());
+      const first = await loadData();
+      setL(first);
+      setFact(randomFact(first));
       setFavs(await loadFavs());
       setUnlocked(await isUnlocked());
       const saved = await AsyncStorage.getItem("textSize").catch(() => null);
@@ -46,151 +71,203 @@ export default function App() {
     })();
   }, []);
 
-  const rows = useMemo(() => {
-    if (!L) return [];
-    let pool = L.items.filter((i) => kind === "all" || i.kind === kind);
-    if (!q.trim()) {
-      pool = kind === "all" ? pool.filter((i) => i.featured) : pool;
-      return [...pool].sort((a, b) => a.name.localeCompare(b.name));
-    }
-    return F.search(pool, q) as Item[];
-  }, [L, q, kind]);
+  const view = useMemo(() => {
+    if (!L) return { rows: [] as Item[], featuredOnly: false, nCountries: 0 };
+    const pool = L.items.filter((i) => (kind === "all" || i.kind === kind) && (region === "all" || i.group === region));
+    const featuredOnly = !q.trim() && kind === "all";
+    let rows = featuredOnly ? pool.filter((i) => i.featured) : (F.search(pool, q) as Item[]);
+    if (sort === "size") rows = [...rows].sort((a, b) => b.popM - a.popM);
+    else if (!q.trim()) rows = [...rows].sort((a, b) => a.name.localeCompare(b.name));
+    return { rows, featuredOnly, nCountries: L.items.filter((i) => i.kind === "country").length };
+  }, [L, q, kind, region, sort]);
 
-  if (!L) return <View style={mk(1).center}><ActivityIndicator color={t.orange} /></View>;
+  if (!L || !fontsOk) return <View style={mk(1).center}><ActivityIndicator color={t.orange} /></View>;
 
   const toggleFav = (it: Item) => {
     if (!unlocked) return setPaywall(true);
     const next = favs.includes(it.id) ? favs.filter((x) => x !== it.id) : [...favs, it.id];
     setFavs(next); saveFavs(next);
   };
-  const wf = F.worldFactOfMonth(L.ctx, L.curated.world, now);
+  const random = () => {
+    const it = L.items[Math.floor(Math.random() * L.items.length)];
+    setQ(""); setKind("all"); setRegion("all"); setOpenId(it.id);
+  };
+  let rows = view.rows;
+  if (openId && !rows.some((r) => r.id === openId)) {
+    const extra = L.items.find((i) => i.id === openId);
+    if (extra) rows = [extra, ...rows];
+  }
+  const count = view.featuredOnly
+    ? `${rows.length} featured. Search to find any of ${view.nCountries} countries.`
+    : `${rows.length} ${rows.length === 1 ? "result" : "results"}`;
+
+  const header = (
+    <View>
+      <View style={s.brandbar}>
+        <Pressable onPress={() => Linking.openURL("https://www.dellis.store")} accessibilityRole="link" accessibilityLabel="Dellis, visit dellis.store" style={s.wordmark}>
+          <Image source={require("./assets/dellis-mark.png")} style={s.mark} />
+          <Image source={require("./assets/dellis-wordmark.png")} style={s.word} resizeMode="contain" />
+        </Pressable>
+      </View>
+
+      <View style={s.pad}>
+        <Text style={s.eyebrow}>Empowering minds, celebrating differences.</Text>
+        <Text style={s.title}>All World <Text style={{ fontStyle: "italic" }}>People</Text> Encyclopedia</Text>
+        <Text style={s.lede}>Search any people or country. Every one comes with a fun fact, something special, facts the world knows, and records.</Text>
+        <LinearGradient colors={["#4CFC0F", "#F7FEF9"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.rule} />
+
+        {fact ? (
+          <View style={s.wfm}>
+            <View style={s.rowBetween}>
+              <Text style={s.lab}>WORLD FACT · {fact.name.toUpperCase()}</Text>
+              <Pressable onPress={() => setFact(randomFact(L))} accessibilityRole="button" hitSlop={8}><Text style={s.smallLink}>Another fact</Text></Pressable>
+            </View>
+            <Text style={s.wfmTx}>{fact.text}</Text>
+          </View>
+        ) : null}
+
+        <TextInput style={s.input} placeholder="Search a people or a country" placeholderTextColor="#6b6b6b"
+          value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
+          {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => setKind(k)} />)}
+        </ScrollView>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
+          <Chip on={region === "all"} label="All regions" onPress={() => setRegion("all")} />
+          {Object.keys(F.GROUPS).map((g) => <Chip key={g} on={region === g} label={F.GROUPS[g]} onPress={() => setRegion(g)} dot={REGION_COLOR[g]} />)}
+        </ScrollView>
+
+        <Text style={s.muted}>{count}</Text>
+        <View style={s.tools}>
+          <View style={s.sizeRow}>
+            {(["small", "medium", "large"] as Size[]).map((n) => (
+              <Pressable key={n} onPress={() => pickSize(n)} accessibilityRole="button" accessibilityLabel={n + " text"} accessibilityState={{ selected: size === n }}
+                style={[s.sizeBtn, size === n && s.sizeOn]}>
+                <Text style={[s.sizeTx, size === n && s.sizeTxOn, { fontSize: n === "small" ? 13 : n === "medium" ? 16 : 21 }]}>A</Text>
+              </Pressable>
+            ))}
+          </View>
+          <Pressable onPress={() => setSort(sort === "az" ? "size" : "az")} accessibilityRole="button" hitSlop={6}>
+            <Text style={s.smallLink}>{sort === "az" ? "Sort: A to Z" : "Sort: Largest"}</Text>
+          </Pressable>
+          <Pressable onPress={random} accessibilityRole="button" hitSlop={6}><Text style={s.smallLink}>Random</Text></Pressable>
+        </View>
+      </View>
+    </View>
+  );
 
   return (
     <Styles.Provider value={s}>
-    <SafeAreaView style={s.screen}>
-      <StatusBar style="dark" />
-      <View style={s.header}>
-        <Text style={s.brand}>Dellis</Text>
-        <Text style={s.title}>All World <Text style={s.hl}>People</Text> Encyclopedia</Text>
-      </View>
-
-      {tab === "explore" ? (
-        <>
-          <View style={s.bar}>
-            <TextInput style={s.input} placeholder="Search a people or country" placeholderTextColor="#6b6b6b"
-              value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
-            <View style={s.chips}>
-              {KINDS.map(([k, label]) => (
-                <Pressable key={k} onPress={() => setKind(k)} accessibilityRole="button" accessibilityState={{ selected: kind === k }}
-                  style={[s.chip, kind === k && s.chipOn]}>
-                  <Text style={[s.chipTx, kind === k && s.chipTxOn]}>{label}</Text>
-                </Pressable>
-              ))}
-            </View>
-            <View style={s.chips}>
-              {(["small", "medium", "large"] as Size[]).map((n) => (
-                <Pressable key={n} onPress={() => pickSize(n)} accessibilityRole="button" accessibilityLabel={n + " text"} accessibilityState={{ selected: size === n }}
-                  style={[s.chip, size === n && s.chipOn]}>
-                  <Text style={[s.chipTx, size === n && s.chipTxOn, { fontSize: (n === "small" ? 13 : n === "medium" ? 16 : 20) }]}>A</Text>
-                </Pressable>
-              ))}
-              <Text style={[s.muted, { alignSelf: "center" }]}>Text size</Text>
-            </View>
-          </View>
+      <SafeAreaView style={s.screen}>
+        <StatusBar style="dark" />
+        {tab === "explore" ? (
           <FlatList
-            data={rows} keyExtractor={(i) => i.id} keyboardShouldPersistTaps="handled"
-            ListHeaderComponent={!q.trim() ? (
-              <View style={s.wfm}><Text style={s.lab}>WORLD FACT · {wf.month.toUpperCase()}</Text><Text style={s.body}>{wf.text}</Text></View>
-            ) : null}
-            ListEmptyComponent={<Text style={s.empty}>Nothing matches that search.</Text>}
-            renderItem={({ item }) => (
-              <Pressable onPress={() => setOpen(item)} style={s.row} accessibilityRole="button">
-                <View style={{ flex: 1 }}>
-                  <Text style={s.rowName}>{item.name}</Text>
-                  <Text style={s.rowSub}>{item.kind === "people" ? "People" : "Country"}{item.popLabel ? " · " + item.popLabel : ""} · {F.GROUPS[item.group]}</Text>
-                </View>
-                {favs.includes(item.id) ? <Text style={s.star}>★</Text> : null}
-              </Pressable>
+            data={rows} keyExtractor={(i) => i.id} keyboardShouldPersistTaps="handled" extraData={[openId, favs, size]}
+            ListHeaderComponent={header}
+            ListEmptyComponent={<Text style={s.empty}>Nothing matches that search. Try a country's common name, such as Russia or South Korea.</Text>}
+            contentContainerStyle={{ paddingBottom: 24 }}
+            renderItem={({ item, index }) => (
+              <View style={[s.listWrap, index === 0 && s.listTop, index === rows.length - 1 && s.listBottom]}>
+                <Pressable onPress={() => setOpenId(openId === item.id ? null : item.id)} style={s.row} accessibilityRole="button" accessibilityState={{ expanded: openId === item.id }}>
+                  <View style={[s.dot, { backgroundColor: REGION_COLOR[item.group] || t.fg }]} />
+                  <View style={{ flex: 1 }}>
+                    <Text style={s.rowName}>{item.name}</Text>
+                    <Text style={s.rowSub}>{(item.kind === "people" ? "PEOPLE" : "COUNTRY") + " · " + (F.GROUPS[item.group] || "").toUpperCase()}</Text>
+                  </View>
+                  {favs.includes(item.id) ? <Text style={s.star}>★</Text> : null}
+                  <Text style={s.pp}>{item.popLabel}</Text>
+                </Pressable>
+                {openId === item.id ? <Body it={item} L={L} fav={favs.includes(item.id)} onFav={() => toggleFav(item)} /> : null}
+              </View>
             )}
           />
-        </>
-      ) : (
-        <Roots L={L} favs={favs} unlocked={unlocked} onUnlock={() => setPaywall(true)} />
-      )}
+        ) : (
+          <Favs L={L} favs={favs} unlocked={unlocked} onUnlock={() => setPaywall(true)} />
+        )}
 
-      <View style={s.tabs}>
-        {([["explore", "Explore"], ["roots", "My Roots"]] as const).map(([k, label]) => (
-          <Pressable key={k} onPress={() => setTab(k)} style={s.tab} accessibilityRole="tab" accessibilityState={{ selected: tab === k }}>
-            <Text style={[s.tabTx, tab === k && s.tabOn]}>{label}</Text>
-          </Pressable>
-        ))}
-      </View>
+        <View style={s.tabs}>
+          {([["explore", "Explore"], ["favs", "My Favorites"]] as const).map(([k, label]) => (
+            <Pressable key={k} onPress={() => setTab(k)} style={s.tab} accessibilityRole="tab" accessibilityState={{ selected: tab === k }}>
+              <Text style={[s.tabTx, tab === k && s.tabOn]}>{label}</Text>
+            </Pressable>
+          ))}
+        </View>
 
-      <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)}>
-        {open && <Detail it={open} L={L} fav={favs.includes(open.id)} onFav={() => toggleFav(open)} onClose={() => setOpen(null)} />}
-      </Modal>
-      <Modal visible={paywall} animationType="fade" transparent onRequestClose={() => setPaywall(false)}>
-        <Paywall onClose={() => setPaywall(false)} onDone={() => { setUnlocked(true); setPaywall(false); }} />
-      </Modal>
-    </SafeAreaView>
+        <Modal visible={paywall} animationType="fade" transparent onRequestClose={() => setPaywall(false)}>
+          <Paywall onClose={() => setPaywall(false)} onDone={() => { setUnlocked(true); setPaywall(false); }} />
+        </Modal>
+      </SafeAreaView>
     </Styles.Provider>
   );
 }
 
-function Section({ label, children }: { label: string; children: React.ReactNode }) {
+function Chip({ on, label, onPress, dot }: { on: boolean; label: string; onPress: () => void; dot?: string }) {
   const s = useS();
-  return <View style={s.sec}><Text style={s.lab}>{label.toUpperCase()}</Text>{children}</View>;
-}
-
-function Detail({ it, L, fav, onFav, onClose }: { it: Item; L: Loaded; fav: boolean; onFav: () => void; onClose: () => void }) {
-  const s = useS();
-  const f = factsFor(it, L);
-  const people: { name: string; desc: string }[] = (it.kind === "country" ? L.famous?.countries?.[it.data.code] : L.famousPeoples?.peoples?.[it.data.id]) || [];
   return (
-    <SafeAreaView style={s.screen}>
-      <View style={s.dhead}>
-        <Pressable onPress={onClose} accessibilityRole="button"><Text style={s.link}>Close</Text></Pressable>
-        <Pressable onPress={onFav} accessibilityRole="button" accessibilityLabel={fav ? "Remove from My Roots" : "Add to My Roots"}>
-          <Text style={s.link}>{fav ? "★ In My Roots" : "☆ Add to My Roots"}</Text>
-        </Pressable>
-      </View>
-      <ScrollView contentContainerStyle={{ padding: 16, gap: 18 }}>
-        <Text style={s.dtitle}>{it.name}</Text>
-        {it.kind === "people" ? <Text style={s.body}>{it.data.s}</Text> : null}
-        {f.fun ? <Section label="Fun fact"><Text style={s.body}>{f.fun}</Text></Section> : null}
-        {f.special ? <Section label="Something special"><Text style={s.body}>{f.special}</Text></Section> : null}
-        {f.known?.length ? <Section label="What the world knows">{f.known.map((k: string, i: number) => <Text key={i} style={s.body}>• {k}</Text>)}</Section> : null}
-        {people.length ? <Section label={it.kind === "people" ? "Famous people" : "Famous people from here"}>{people.map((p) => <Text key={p.name} style={s.body}>• {p.name} <Text style={s.muted}>({p.desc})</Text></Text>)}</Section> : null}
-        {f.records?.length ? <Section label="Records">{f.records.map((r: any, i: number) => <Text key={i} style={s.body}>• {r.text} <Text style={s.muted}>({r.src})</Text></Text>)}</Section> : null}
-        <Section label="Numbers">
-          {it.kind === "people"
-            ? <Text style={s.body}>Population {it.data.pl}. Homeland: {it.data.home}. Language: {it.data.lang}.</Text>
-            : <Text style={s.body}>
-                {it.data.pop ? `Population about ${F.fmtPop(it.data.pop)}. ` : ""}{it.data.area ? `Area about ${F.fmtArea(it.data.area)}. ` : ""}
-                {it.data.capital ? `Capital: ${it.data.capital}.` : ""}
-              </Text>}
-        </Section>
-      </ScrollView>
-    </SafeAreaView>
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: on }} style={[s.chip, on && s.chipOn]}>
+      {dot ? <View style={[s.chipDot, { backgroundColor: dot }]} /> : null}
+      <Text style={[s.chipTx, on && s.chipTxOn]}>{label}</Text>
+    </Pressable>
   );
 }
 
-function Roots({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlocked: boolean; onUnlock: () => void }) {
+function Fact({ label, children }: { label: string; children: React.ReactNode }) {
+  const s = useS();
+  return <View style={s.fact}><Text style={s.lab}>{label.toUpperCase()}</Text>{children}</View>;
+}
+
+function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav: () => void }) {
+  const s = useS();
+  const f = factsFor(it, L);
+  const people: { name: string; desc: string }[] = (it.kind === "country" ? L.famous?.countries?.[it.data.code] : L.famousPeoples?.peoples?.[it.data.id]) || [];
+  const d = it.data;
+  const stats: [string, string][] = it.kind === "people"
+    ? [["Population", d.pl], ["Homeland", d.home], ["Language", d.lang]]
+    : [
+        ["Population", d.pop ? "about " + F.fmtPop(d.pop) + (d.year ? " (" + d.year + ")" : "") : ""],
+        ["Surface area", d.area ? "about " + F.fmtArea(d.area) : ""],
+        ["Capital", d.capital], ["Region", F.GROUPS[d.group]], ["Income level", d.income],
+      ];
+  return (
+    <View style={s.bodyBox}>
+      {it.kind === "people" ? <Text style={s.body}>{d.s}</Text> : null}
+      {f.fun ? <Fact label="Fun fact"><Text style={s.body}>{f.fun}</Text></Fact> : null}
+      {f.special ? <Fact label="Something special"><Text style={s.body}>{f.special}</Text></Fact> : null}
+      {f.known?.length ? <Fact label="What the world knows">{f.known.map((k: string, i: number) => <Text key={i} style={s.body}>•  {k}</Text>)}</Fact> : null}
+      {f.records?.length ? <Fact label="Records">{f.records.map((r: any, i: number) => <Text key={i} style={s.body}>•  {r.text} <Text style={s.small}>({r.src})</Text></Text>)}</Fact> : null}
+      {people.length ? (
+        <Fact label={it.kind === "people" ? "Famous people" : "Famous people from here"}>
+          {people.map((p) => <Text key={p.name} style={s.body}>•  {p.name} <Text style={s.small}>({p.desc})</Text></Text>)}
+        </Fact>
+      ) : null}
+      {it.popM > 0 ? <View style={s.meter}><View style={[s.meterFill, { width: `${sizeWidth(it.popM)}%`, backgroundColor: REGION_COLOR[it.group] || t.fg }]} /></View> : null}
+      <View style={s.dl}>
+        {stats.filter((r) => r[1]).map(([k, v]) => (
+          <View key={k} style={s.dlRow}><Text style={s.dt}>{k}</Text><Text style={s.dd}>{v}</Text></View>
+        ))}
+      </View>
+      <Pressable onPress={onFav} style={s.favBtn} accessibilityRole="button" accessibilityLabel={fav ? "Remove from My Favorites" : "Add to My Favorites"}>
+        <Text style={s.favBtnTx}>{fav ? "★  In My Favorites" : "☆  Add to My Favorites"}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlocked: boolean; onUnlock: () => void }) {
   const s = useS();
   if (!unlocked) {
     return (
-      <View style={s.pad}>
-        <Text style={s.dtitle}>My Roots</Text>
-        <Text style={s.body}>Pick the peoples and countries in your family and get one card of fun facts. A for-fun heritage card. It is not a DNA test.</Text>
+      <ScrollView contentContainerStyle={s.pad}>
+        <Text style={s.h2}>My Favorites</Text>
+        <Text style={s.body}>Save the peoples and countries you love or come from, and get one card of fun facts about them. Just for fun.</Text>
         <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Unlock for {PRICE_LABEL}</Text></Pressable>
-      </View>
+      </ScrollView>
     );
   }
   const items = favs.map((id) => L.items.find((i) => i.id === id)).filter(Boolean) as Item[];
   return (
-    <ScrollView contentContainerStyle={{ padding: 16, gap: 14 }}>
-      <Text style={s.dtitle}>My Roots</Text>
-      {!items.length ? <Text style={s.body}>Open any people or country and tap "Add to My Roots". Your card builds here. This is for fun and is not a DNA test.</Text> : null}
+    <ScrollView contentContainerStyle={[s.pad, { gap: 14 }]}>
+      <Text style={s.h2}>My Favorites</Text>
+      {!items.length ? <Text style={s.body}>Open any people or country and tap "Add to My Favorites". Your card builds here.</Text> : null}
       {items.map((it) => (
         <View key={it.id} style={s.card}>
           <Text style={s.rowName}>{it.name}</Text>
@@ -207,8 +284,8 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
   return (
     <View style={s.scrim}>
       <View style={s.sheet}>
-        <Text style={s.dtitle}>Unlock My Roots</Text>
-        <Text style={s.body}>Save the peoples and countries in your family and get your own fun-facts card.</Text>
+        <Text style={s.h2}>Unlock My Favorites</Text>
+        <Text style={s.body}>Save the peoples and countries you love or come from, and get your own fun-facts card.</Text>
         <Text style={s.body}>{PRICE_LABEL}. Renews each year until you cancel in your phone's subscription settings. Browsing everything stays free.</Text>
         <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
           <Text style={s.btnTx}>Unlock for {PRICE_LABEL}</Text>
@@ -224,35 +301,65 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
 const mk = (z: number) => StyleSheet.create({
   screen: { flex: 1, backgroundColor: t.bg },
   center: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: t.bg },
-  header: { paddingHorizontal: 16, paddingTop: 8, gap: 4 },
-  brand: { color: t.orange, fontSize: 14 * z, fontWeight: "700", letterSpacing: 1 },
-  title: { color: t.fg, fontSize: 30 * z, lineHeight: 34 * z },
-  hl: { backgroundColor: t.green },
-  bar: { padding: 16, gap: 10 },
-  input: { borderWidth: 1, borderColor: t.line, borderRadius: t.radius, backgroundColor: t.surface, paddingHorizontal: 14, paddingVertical: 12, fontSize: 17 * z, color: t.fg },
-  chips: { flexDirection: "row", gap: 8 },
-  chip: { borderWidth: 1.5, borderColor: t.fg, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
-  chipOn: { backgroundColor: t.fg },
-  chipTx: { color: t.fg, fontWeight: "600" },
+  pad: { padding: 16, gap: 14 },
+  brandbar: { flexDirection: "row", alignItems: "center", marginHorizontal: 16, marginTop: 8, paddingBottom: 14, borderBottomWidth: 1, borderColor: t.line },
+  wordmark: { flexDirection: "row", alignItems: "center", gap: 12 },
+  mark: { width: 40, height: 40 },
+  word: { width: 91, height: 40 },
+  eyebrow: { fontFamily: DISPLAY, color: t.muted, fontSize: 15 * z },
+  title: { fontFamily: DISPLAY, color: t.fg, fontSize: 38 * z, lineHeight: 41 * z, letterSpacing: -0.7 },
+  lede: { color: t.muted, fontSize: 17 * z, lineHeight: 25 * z },
+  rule: { height: 6, borderRadius: 99 },
+  wfm: {
+    backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, borderRadius: t.radius, padding: 16, gap: 8,
+    shadowColor: t.green, shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 0 }, elevation: 2,
+  },
+  wfmTx: { fontFamily: DISPLAY, color: t.fg, fontSize: 20 * z, lineHeight: 26 * z },
+  lab: { fontSize: 12 * z, letterSpacing: 1.2, color: t.muted, fontWeight: "700", flexShrink: 1 },
+  rowBetween: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 },
+  smallLink: { color: t.orange, fontSize: 15 * z, fontWeight: "700" },
+  input: { borderWidth: 2, borderColor: t.line, borderRadius: 999, backgroundColor: t.surface, paddingHorizontal: 20, minHeight: 48, fontSize: 17 * z, color: t.fg },
+  chips: { flexDirection: "row", gap: 8, paddingRight: 8 },
+  chip: { flexDirection: "row", alignItems: "center", gap: 6, borderWidth: 2, borderColor: t.line, borderRadius: 999, paddingHorizontal: 14, minHeight: 40 },
+  chipOn: { backgroundColor: t.fg, borderColor: t.fg },
+  chipDot: { width: 8, height: 8, borderRadius: 4 },
+  chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
-  wfm: { margin: 16, marginTop: 0, padding: 16, borderRadius: t.radius, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, gap: 6 },
-  lab: { fontSize: 12 * z, letterSpacing: 1, color: t.muted, fontWeight: "700" },
+  muted: { color: t.muted, fontSize: 15 * z },
+  tools: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  sizeRow: { flexDirection: "row", alignItems: "center", gap: 6 },
+  sizeBtn: { width: 40, height: 40, borderRadius: 10, alignItems: "center", justifyContent: "center", borderWidth: 1.5, borderColor: t.line },
+  sizeOn: { backgroundColor: t.fg, borderColor: t.fg },
+  sizeTx: { fontFamily: DISPLAY, color: t.fg, textAlign: "center", includeFontPadding: false, textAlignVertical: "center", lineHeight: 24 },
+  sizeTxOn: { color: t.bg },
+  empty: { textAlign: "center", color: t.muted, padding: 28, fontSize: 16 * z },
+  listWrap: { backgroundColor: t.surface, marginHorizontal: 16, borderLeftWidth: 1, borderRightWidth: 1, borderBottomWidth: 1, borderColor: t.line },
+  listTop: { borderTopWidth: 1, borderTopLeftRadius: t.radius, borderTopRightRadius: t.radius },
+  listBottom: { borderBottomLeftRadius: t.radius, borderBottomRightRadius: t.radius },
+  row: { flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 16, paddingVertical: 14, minHeight: 56 },
+  dot: { width: 10, height: 10, borderRadius: 5 },
+  rowName: { fontFamily: DISPLAY, color: t.fg, fontSize: 20 * z, lineHeight: 24 * z },
+  rowSub: { color: t.muted, fontSize: 12 * z, letterSpacing: 0.7, marginTop: 2 },
+  pp: { color: t.fg, fontSize: 14 * z, fontWeight: "700", textAlign: "right" },
+  star: { color: t.orange, fontSize: 18 * z },
+  bodyBox: { paddingLeft: 38, paddingRight: 16, paddingBottom: 18, gap: 14 },
   body: { color: t.fg, fontSize: 17 * z, lineHeight: 25 * z },
-  muted: { color: t.muted, fontSize: 14 * z },
-  empty: { textAlign: "center", color: t.muted, padding: 24 },
-  row: { flexDirection: "row", alignItems: "center", paddingHorizontal: 16, paddingVertical: 14, borderTopWidth: 1, borderColor: t.line },
-  rowName: { color: t.fg, fontSize: 18 * z, fontWeight: "600" },
-  rowSub: { color: t.muted, fontSize: 14 * z, marginTop: 2 },
-  star: { color: t.orange, fontSize: 20 * z },
+  small: { color: t.muted, fontSize: 13 * z },
+  fact: { gap: 4 },
+  meter: { height: 6, backgroundColor: t.line, borderRadius: 99, overflow: "hidden" },
+  meterFill: { height: "100%" },
+  dl: { gap: 4 },
+  dlRow: { flexDirection: "row", gap: 14 },
+  dt: { color: t.muted, fontSize: 15 * z, width: 110 },
+  dd: { color: t.fg, fontSize: 15 * z, flex: 1 },
+  favBtn: { alignSelf: "flex-start", borderWidth: 2, borderColor: t.fg, borderRadius: 999, minHeight: 44, paddingHorizontal: 18, justifyContent: "center" },
+  favBtnTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   tabs: { flexDirection: "row", borderTopWidth: 1, borderColor: t.line, backgroundColor: t.surface },
   tab: { flex: 1, alignItems: "center", paddingVertical: 14 },
   tabTx: { color: t.muted, fontSize: 16 * z, fontWeight: "600" },
   tabOn: { color: t.fg, textDecorationLine: "underline" },
-  dhead: { flexDirection: "row", justifyContent: "space-between", padding: 16 },
   link: { color: t.orange, fontSize: 16 * z, fontWeight: "600" },
-  dtitle: { color: t.fg, fontSize: 28 * z, lineHeight: 32 * z },
-  sec: { gap: 6 },
-  pad: { padding: 16, gap: 14 },
+  h2: { fontFamily: DISPLAY, color: t.fg, fontSize: 30 * z, lineHeight: 34 * z },
   card: { padding: 16, borderRadius: t.radius, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, gap: 6 },
   btn: { backgroundColor: t.fg, borderRadius: 999, minHeight: 48, alignItems: "center", justifyContent: "center", paddingHorizontal: 22 },
   btnTx: { color: t.bg, fontSize: 17 * z, fontWeight: "700" },
