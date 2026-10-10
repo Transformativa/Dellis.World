@@ -954,6 +954,478 @@
         "name": "Benito Juarez",
         "desc": "President and national hero"
       }
+    ],
+    "kazakhs": [
+      {
+        "name": "Abai Kunanbaev",
+        "desc": "National poet and philosopher"
+      },
+      {
+        "name": "Chokan Valikhanov",
+        "desc": "Explorer and ethnographer of Central Asia"
+      },
+      {
+        "name": "Dimash Qudaibergen",
+        "desc": "Singer known for a wide vocal range"
+      },
+      {
+        "name": "Gennady Golovkin",
+        "desc": "Boxing world champion"
+      }
+    ],
+    "uzbeks": [
+      {
+        "name": "Timur",
+        "desc": "Conqueror who made Samarkand his capital"
+      },
+      {
+        "name": "Ulugh Beg",
+        "desc": "Astronomer and ruler who built an observatory"
+      },
+      {
+        "name": "Alisher Navoi",
+        "desc": "Poet who helped shape Turkic literature"
+      },
+      {
+        "name": "Babur",
+        "desc": "Founder of the Mughal Empire, born in Andijan"
+      }
+    ],
+    "thais": [
+      {
+        "name": "King Bhumibol Adulyadej",
+        "desc": "Long-reigning king and jazz musician"
+      },
+      {
+        "name": "Chang and Eng Bunker",
+        "desc": "Original Siamese twins"
+      },
+      {
+        "name": "Tony Jaa",
+        "desc": "Martial arts film star"
+      },
+      {
+        "name": "Lisa",
+        "desc": "Singer and member of Blackpink"
+      }
+    ],
+    "burmese": [
+      {
+        "name": "Aung San",
+        "desc": "Independence leader"
+      },
+      {
+        "name": "Aung San Suu Kyi",
+        "desc": "Nobel Peace Prize winner"
+      },
+      {
+        "name": "U Thant",
+        "desc": "Third Secretary-General of the United Nations"
+      }
+    ],
+    "portuguese": [
+      {
+        "name": "Vasco da Gama",
+        "desc": "Navigator who sailed to India"
+      },
+      {
+        "name": "Prince Henry the Navigator",
+        "desc": "Sponsor of early ocean exploration"
+      },
+      {
+        "name": "Fernando Pessoa",
+        "desc": "Poet of many pen names"
+      },
+      {
+        "name": "Cristiano Ronaldo",
+        "desc": "Footballer"
+      }
+    ],
+    "dutch": [
+      {
+        "name": "Rembrandt",
+        "desc": "Painter of The Night Watch"
+      },
+      {
+        "name": "Johannes Vermeer",
+        "desc": "Painter of Girl with a Pearl Earring"
+      },
+      {
+        "name": "Vincent van Gogh",
+        "desc": "Painter of Starry Night"
+      },
+      {
+        "name": "Erasmus",
+        "desc": "Humanist scholar"
+      }
+    ],
+    "swedes": [
+      {
+        "name": "Alfred Nobel",
+        "desc": "Inventor of dynamite and founder of the Nobel Prizes"
+      },
+      {
+        "name": "Carl Linnaeus",
+        "desc": "Botanist who created the system of naming species"
+      },
+      {
+        "name": "Ingmar Bergman",
+        "desc": "Film director"
+      },
+      {
+        "name": "Greta Thunberg",
+        "desc": "Climate activist"
+      }
+    ],
+    "norwegians": [
+      {
+        "name": "Roald Amundsen",
+        "desc": "First to reach the South Pole"
+      },
+      {
+        "name": "Edvard Munch",
+        "desc": "Painter of The Scream"
+      },
+      {
+        "name": "Henrik Ibsen",
+        "desc": "Playwright"
+      },
+      {
+        "name": "Edvard Grieg",
+        "desc": "Composer"
+      }
+    ],
+    "danes": [
+      {
+        "name": "Hans Christian Andersen",
+        "desc": "Writer of The Little Mermaid"
+      },
+      {
+        "name": "Niels Bohr",
+        "desc": "Physicist and Nobel Prize winner"
+      },
+      {
+        "name": "Soren Kierkegaard",
+        "desc": "Philosopher"
+      },
+      {
+        "name": "Tycho Brahe",
+        "desc": "Astronomer"
+      }
+    ],
+    "finns": [
+      {
+        "name": "Jean Sibelius",
+        "desc": "Composer of Finlandia"
+      },
+      {
+        "name": "Alvar Aalto",
+        "desc": "Architect and designer"
+      },
+      {
+        "name": "Tove Jansson",
+        "desc": "Creator of the Moomins"
+      },
+      {
+        "name": "Linus Torvalds",
+        "desc": "Creator of Linux"
+      }
+    ],
+    "czechs": [
+      {
+        "name": "Antonin Dvorak",
+        "desc": "Composer of the New World Symphony"
+      },
+      {
+        "name": "Vaclav Havel",
+        "desc": "Playwright and first president of the Czech Republic"
+      },
+      {
+        "name": "Milan Kundera",
+        "desc": "Novelist"
+      },
+      {
+        "name": "Jan Hus",
+        "desc": "Religious reformer"
+      }
+    ],
+    "hungarians": [
+      {
+        "name": "Franz Liszt",
+        "desc": "Composer and virtuoso pianist"
+      },
+      {
+        "name": "Bela Bartok",
+        "desc": "Composer and folk music collector"
+      },
+      {
+        "name": "Erno Rubik",
+        "desc": "Inventor of the Rubik's Cube"
+      },
+      {
+        "name": "Katalin Kariko",
+        "desc": "Nobel Prize winner for mRNA research"
+      }
+    ],
+    "romanians": [
+      {
+        "name": "Nadia Comaneci",
+        "desc": "Gymnast who scored a perfect 10"
+      },
+      {
+        "name": "Constantin Brancusi",
+        "desc": "Sculptor"
+      },
+      {
+        "name": "George Enescu",
+        "desc": "Composer and violinist"
+      },
+      {
+        "name": "Eugene Ionesco",
+        "desc": "Playwright"
+      }
+    ],
+    "serbs": [
+      {
+        "name": "Nikola Tesla",
+        "desc": "Inventor and electrical engineer"
+      },
+      {
+        "name": "Novak Djokovic",
+        "desc": "Tennis champion"
+      },
+      {
+        "name": "Ivo Andric",
+        "desc": "Nobel Prize winning novelist"
+      },
+      {
+        "name": "Mihajlo Pupin",
+        "desc": "Physicist and inventor"
+      }
+    ],
+    "bulgarians": [
+      {
+        "name": "Hristo Stoichkov",
+        "desc": "Footballer"
+      },
+      {
+        "name": "Vasil Levski",
+        "desc": "National hero of the independence movement"
+      },
+      {
+        "name": "Christo",
+        "desc": "Artist who wrapped buildings and landscapes"
+      },
+      {
+        "name": "Grigor Dimitrov",
+        "desc": "Tennis player"
+      }
+    ],
+    "british": [
+      {
+        "name": "William Shakespeare",
+        "desc": "Playwright"
+      },
+      {
+        "name": "Isaac Newton",
+        "desc": "Physicist who described gravity"
+      },
+      {
+        "name": "Charles Darwin",
+        "desc": "Naturalist who proposed evolution by natural selection"
+      },
+      {
+        "name": "Jane Austen",
+        "desc": "Novelist"
+      },
+      {
+        "name": "Winston Churchill",
+        "desc": "Prime Minister during World War II"
+      }
+    ],
+    "americans": [
+      {
+        "name": "Abraham Lincoln",
+        "desc": "16th president"
+      },
+      {
+        "name": "Martin Luther King Jr.",
+        "desc": "Civil rights leader"
+      },
+      {
+        "name": "Thomas Edison",
+        "desc": "Inventor"
+      },
+      {
+        "name": "Neil Armstrong",
+        "desc": "First person on the Moon"
+      },
+      {
+        "name": "Maya Angelou",
+        "desc": "Poet and author"
+      }
+    ],
+    "canadians": [
+      {
+        "name": "Terry Fox",
+        "desc": "Runner who raised money for cancer research"
+      },
+      {
+        "name": "Margaret Atwood",
+        "desc": "Novelist"
+      },
+      {
+        "name": "Wayne Gretzky",
+        "desc": "Ice hockey legend"
+      },
+      {
+        "name": "Celine Dion",
+        "desc": "Singer"
+      }
+    ],
+    "australians": [
+      {
+        "name": "Don Bradman",
+        "desc": "Cricketer with the highest Test batting average"
+      },
+      {
+        "name": "Nicole Kidman",
+        "desc": "Actress"
+      },
+      {
+        "name": "Steve Irwin",
+        "desc": "Wildlife conservationist"
+      },
+      {
+        "name": "Howard Florey",
+        "desc": "Scientist who helped develop penicillin as a medicine"
+      }
+    ],
+    "egyptians": [
+      {
+        "name": "Ramesses II",
+        "desc": "Pharaoh who ruled for 66 years"
+      },
+      {
+        "name": "Naguib Mahfouz",
+        "desc": "Nobel Prize winning novelist"
+      },
+      {
+        "name": "Umm Kulthum",
+        "desc": "Singer known as the Star of the East"
+      },
+      {
+        "name": "Mohamed Salah",
+        "desc": "Footballer"
+      }
+    ],
+    "argentines": [
+      {
+        "name": "Lionel Messi",
+        "desc": "Footballer"
+      },
+      {
+        "name": "Jorge Luis Borges",
+        "desc": "Writer"
+      },
+      {
+        "name": "Diego Maradona",
+        "desc": "Footballer"
+      },
+      {
+        "name": "Eva Peron",
+        "desc": "First Lady and political figure"
+      }
+    ],
+    "colombians": [
+      {
+        "name": "Gabriel Garcia Marquez",
+        "desc": "Nobel Prize winning novelist"
+      },
+      {
+        "name": "Shakira",
+        "desc": "Singer"
+      },
+      {
+        "name": "Fernando Botero",
+        "desc": "Painter and sculptor"
+      },
+      {
+        "name": "Egan Bernal",
+        "desc": "Tour de France winner"
+      }
+    ],
+    "peruvians": [
+      {
+        "name": "Mario Vargas Llosa",
+        "desc": "Nobel Prize winning novelist"
+      },
+      {
+        "name": "Pachacuti",
+        "desc": "Inca emperor who built the empire"
+      },
+      {
+        "name": "Tupac Amaru II",
+        "desc": "Leader of an 1780 uprising"
+      },
+      {
+        "name": "Yma Sumac",
+        "desc": "Singer with a famous vocal range"
+      }
+    ],
+    "chileans": [
+      {
+        "name": "Pablo Neruda",
+        "desc": "Nobel Prize winning poet"
+      },
+      {
+        "name": "Gabriela Mistral",
+        "desc": "Nobel Prize winning poet"
+      },
+      {
+        "name": "Isabel Allende",
+        "desc": "Novelist"
+      },
+      {
+        "name": "Violeta Parra",
+        "desc": "Folk singer"
+      }
+    ],
+    "cubans": [
+      {
+        "name": "Jose Marti",
+        "desc": "Poet and independence hero"
+      },
+      {
+        "name": "Celia Cruz",
+        "desc": "Salsa singer known as the Queen of Salsa"
+      },
+      {
+        "name": "Wifredo Lam",
+        "desc": "Painter"
+      },
+      {
+        "name": "Alicia Alonso",
+        "desc": "Ballerina"
+      }
+    ],
+    "venezuelans": [
+      {
+        "name": "Simon Bolivar",
+        "desc": "Liberator of northern South America"
+      },
+      {
+        "name": "Gustavo Dudamel",
+        "desc": "Conductor"
+      },
+      {
+        "name": "Carolina Herrera",
+        "desc": "Fashion designer"
+      },
+      {
+        "name": "Andres Bello",
+        "desc": "Poet and scholar"
+      }
     ]
   }
 }
