@@ -203,6 +203,26 @@
     return { generated: gen, days: days, stale: days > STALE_AFTER_DAYS, nextRefresh: next };
   }
 
+  /* A language entry shaped like a people entry, so the same page layout works. cur is the hand-written text, data is the CLDR row. */
+  function languageRecord(cur, data, countriesByCode) {
+    var known = [];
+    var total = data && data.speakers ? data.speakers : 0;
+    known.push("Language family: " + cur.family + ".");
+    known.push("Writing system: " + cur.script + ".");
+    if (total) known.push("Used by about " + fmtPop(total) + " people (an estimate that includes people who speak it as a second language).");
+    if (data && data.officialIn) known.push("Official in " + data.officialIn + (data.officialIn === 1 ? " country." : " countries."));
+    var top = ((data && data.countries) || []).slice(0, 4).map(function (c) { var k = countriesByCode[c.code]; return k ? k.display : ""; }).filter(Boolean);
+    if (top.length) known.push("Most speakers live in " + top.join(", ") + ".");
+    return {
+      id: cur.id, n: cur.n, aka: cur.aka || [], g: "", p: total / 1e6, pl: total ? "about " + fmtPop(total) + " people" : "",
+      s: cur.s, fun: cur.fun, special: cur.special, known: known, family: cur.family, script: cur.script, records: []
+    };
+  }
+
+  function faithRecord(f) {
+    return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl, home: f.home, s: f.s, fun: f.fun, special: f.special, known: f.known, records: [] };
+  }
+
   /* Higher score means a better match. 0 means no match. */
   function score(item, q) {
     if (!q) return 1;
@@ -232,6 +252,6 @@
     GROUPS: GROUPS, STALE_AFTER_DAYS: STALE_AFTER_DAYS,
     ordinal: ordinal, fmtPop: fmtPop, fmtArea: fmtArea, fmtDensity: fmtDensity, norm: norm,
     buildContext: buildContext, countryFacts: countryFacts, peopleFacts: peopleFacts,
-    worldFactOfMonth: worldFactOfMonth, freshness: freshness, search: search, monthSeed: monthSeed
+    worldFactOfMonth: worldFactOfMonth, languageRecord: languageRecord, faithRecord: faithRecord, freshness: freshness, search: search, monthSeed: monthSeed
   };
 });

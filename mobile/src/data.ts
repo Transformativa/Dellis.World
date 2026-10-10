@@ -4,24 +4,27 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "curated", "peoples", "famous"] as const; // famous-peoples is hand-written, so it ships with the app only
+const FILES = ["live", "curated", "peoples", "famous", "languages"] as const; // famous-peoples is hand-written, so it ships with the app only
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
   curated: require("./generated/curated.json"),
   peoples: require("./generated/peoples.json"),
   famous: require("./generated/famous.json"),
   famousPeoples: require("./generated/famous-peoples.json"),
+  languages: require("./generated/languages.json"),
+  languagesCurated: require("./generated/languages-curated.json"),
+  faiths: require("./generated/faiths.json"),
 };
 
 export type Item = {
-  kind: "people" | "country"; id: string; name: string; aka: string[]; group: string; popM: number;
+  kind: "people" | "country" | "language" | "faith"; id: string; name: string; aka: string[]; group: string; popM: number;
   popLabel: string; body: string; featured: boolean; data: any;
 };
-export type Loaded = { items: Item[]; ctx: any; live: any; curated: any; famous: any; famousPeoples: any; fresh: any };
+export type Loaded = { items: Item[]; ctx: any; live: any; curated: any; famous: any; famousPeoples: any; fresh: any; languages: any; faiths: any };
 
 export { F };
 
-export function buildItems(peoples: any[], countries: any[], curated: any): Item[] {
+export function buildItems(peoples: any[], countries: any[], curated: any, more: { languages?: any; languagesCurated?: any; faiths?: any } = {}): Item[] {
   const out: Item[] = [];
   for (const p of peoples) {
     out.push({
@@ -37,14 +40,29 @@ export function buildItems(peoples: any[], countries: any[], curated: any): Item
       featured: !!(curated.countries && curated.countries[c.code]), data: c,
     });
   }
+  const byCode: Record<string, any> = Object.fromEntries(countries.map((c) => [c.code, c]));
+  for (const cur of more.languagesCurated?.languages || []) {
+    const rec = F.languageRecord(cur, more.languages?.languages?.[cur.id], byCode);
+    out.push({
+      kind: "language", id: "l-" + cur.id, name: cur.n, aka: cur.aka || [], group: "", popM: rec.p,
+      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: [cur.family, cur.script, cur.s, cur.fun, cur.special].join(" "), featured: true, data: rec,
+    });
+  }
+  for (const f of more.faiths?.faiths || []) {
+    const rec = F.faithRecord(f);
+    out.push({
+      kind: "faith", id: "f-" + f.id, name: f.n, aka: f.aka || [], group: "", popM: rec.p,
+      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: [f.home, f.s, f.fun, f.special].join(" "), featured: true, data: rec,
+    });
+  }
   return out;
 }
 
 export function assemble(d: Record<string, any>, now = new Date()): Loaded {
   const ctx = F.buildContext(d.live.countries);
   return {
-    items: buildItems(d.peoples.peoples, d.live.countries, d.curated),
-    ctx, live: d.live, curated: d.curated, famous: d.famous, famousPeoples: d.famousPeoples, fresh: F.freshness(d.live.generatedAt, now),
+    items: buildItems(d.peoples.peoples, d.live.countries, d.curated, { languages: d.languages, languagesCurated: d.languagesCurated, faiths: d.faiths }),
+    ctx, live: d.live, curated: d.curated, famous: d.famous, famousPeoples: d.famousPeoples, languages: d.languages, faiths: d.faiths, fresh: F.freshness(d.live.generatedAt, now),
   };
 }
 
@@ -71,7 +89,7 @@ export async function refreshData(): Promise<boolean> {
   try {
     const last = Number((await AsyncStorage.getItem("data:checkedAt")) || 0);
     if (Date.now() - last < 12 * 3600 * 1000) return false;
-    for (const f of ["live", "famous"] as const) {
+    for (const f of ["live", "famous", "languages"] as const) {
       const res = await fetch(BASE + f + ".json", { headers: { "cache-control": "no-cache" } });
       if (!res.ok) continue;
       const json = await res.json();

@@ -34,27 +34,42 @@ jobs:
         continue-on-error: true
         run: node scripts/refresh-famous.mjs
 
+      # Language use by country comes from Unicode CLDR (newest release). CLDR publishes twice a year, so most months nothing changes.
+      - name: Fetch language data from Unicode CLDR
+        id: languages
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/refresh-languages.mjs
+
+      # Faith numbers are written from Pew Research's published report and are not scraped (Pew's terms forbid that).
+      # This step fails, and opens an issue, when those numbers are more than 3 years old so a person checks for a new Pew release.
+      - name: Check how old the faith numbers are
+        id: sources
+        continue-on-error: true
+        run: node scripts/check-sources.mjs
+
       - name: Check the new data with the test suite
         run: node --test
 
       - name: Commit the new data
         run: |
-          if git diff --quiet -- data/live.json data/famous.json; then
+          if git diff --quiet -- data/live.json data/famous.json data/languages.json; then
             echo "Nothing changed."
             exit 0
           fi
           git config user.name "dellis-world-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/live.json data/famous.json
+          git add data/live.json data/famous.json data/languages.json
           git commit -m "chore: monthly world facts refresh ($(date -u +%Y-%m))"
           git pull --rebase origin main
           git push
 
       - name: Open an issue if the refresh failed
-        if: failure() || steps.famous.outcome == 'failure'
+        if: failure() || steps.famous.outcome == 'failure' || steps.languages.outcome == 'failure' || steps.sources.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh issue create \
             --title "Monthly world facts refresh failed ($(date -u +%Y-%m))" \
-            --body "The refresh did not finish, so some of the site is still showing last month's data (the famous people list, the numbers, or both). Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            --body "The refresh did not finish, so some of the site is still showing last month's data (the famous people list, the numbers, the language data, or the faith numbers). Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

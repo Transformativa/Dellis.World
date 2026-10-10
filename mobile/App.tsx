@@ -11,7 +11,9 @@ import { FREE_LOOKS, PRICE_LABEL, buy, isUnlocked, restore } from "./src/purchas
 import { loadFavs, saveFavs } from "./src/favs";
 import { theme as t } from "./src/theme";
 
-const KINDS = [["all", "All"], ["people", "Peoples"], ["country", "Countries"]] as const;
+const KINDS = [["all", "All"], ["people", "Peoples"], ["country", "Countries"], ["language", "Languages"], ["faith", "Faiths"]] as const;
+const KIND_LABEL: Record<string, string> = { people: "PEOPLE", country: "COUNTRY", language: "LANGUAGE", faith: "FAITH" };
+const KIND_COLOR: Record<string, string> = { language: "#1B9AAA", faith: "#7FA386" };
 const REGION_COLOR: Record<string, string> = {
   africa: "#E44E0F", americas: "#3BD60B", asia: "#F2B705", europe: "#232323", mena: "#7FA386", oceania: "#1B9AAA",
 };
@@ -26,7 +28,7 @@ const Styles = createContext<ReturnType<typeof mk>>(null as any);
 const useS = () => useContext(Styles);
 
 function factsFor(it: Item, L: Loaded) {
-  return it.kind === "people"
+  return it.kind !== "country"
     ? F.peopleFacts(it.data, now)
     : F.countryFacts(it.data, L.ctx, L.curated.countries?.[it.data.code], now);
 }
@@ -127,7 +129,7 @@ export default function App() {
       <View style={s.pad}>
         <Text style={s.eyebrow}>Empowering minds, celebrating differences.</Text>
         <Text style={s.title}>World <Text style={{ fontStyle: "italic" }}>Facts</Text></Text>
-        <Text style={s.lede}>Search any people or country. Every one comes with a fun fact, something special, facts the world knows, and records.</Text>
+        <Text style={s.lede}>Search any people, country, language or faith. Every one comes with a fun fact, something special, facts the world knows, and records.</Text>
         <LinearGradient colors={["#4CFC0F", "#F7FEF9"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.rule} />
 
         {fact ? (
@@ -140,7 +142,7 @@ export default function App() {
           </View>
         ) : null}
 
-        <TextInput style={s.input} placeholder="Search a people or a country" placeholderTextColor="#6b6b6b"
+        <TextInput style={s.input} placeholder="Search a people, country, language or faith" placeholderTextColor="#6b6b6b"
           value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
           {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => setKind(k)} />)}
@@ -188,6 +190,8 @@ export default function App() {
                 <Text style={s.srcTx}>
                   Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
                   {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
+                  {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR"}. Speaker numbers are estimates that include second-language speakers.
+                  {"\n"}Faiths: {L.faiths?.meta?.citation} {L.faiths?.meta?.disclaimer} Figures are for {L.faiths?.meta?.asOf}.
                   {"\n"}Fun facts, special facts and records are written by Dellis from widely cited sources and are not independently checked.
                   {"\n"}Numbers refresh on the 1st of each month. Last refreshed {L.live?.generatedAt ? new Date(L.live.generatedAt).toDateString() : "recently"}.
                 </Text>
@@ -198,10 +202,10 @@ export default function App() {
             renderItem={({ item, index }) => (
               <View style={[s.listWrap, index === 0 && s.listTop, index === rows.length - 1 && s.listBottom]}>
                 <Pressable onPress={() => openRow(item.id)} style={s.row} accessibilityRole="button" accessibilityState={{ expanded: openId === item.id }}>
-                  <View style={[s.dot, { backgroundColor: REGION_COLOR[item.group] || t.fg }]} />
+                  <View style={[s.dot, { backgroundColor: REGION_COLOR[item.group] || KIND_COLOR[item.kind] || t.fg }]} />
                   <View style={{ flex: 1 }}>
                     <Text style={s.rowName}>{item.name}</Text>
-                    <Text style={s.rowSub}>{(item.kind === "people" ? "PEOPLE" : "COUNTRY") + " · " + (F.GROUPS[item.group] || "").toUpperCase()}</Text>
+                    <Text style={s.rowSub}>{KIND_LABEL[item.kind] + (item.kind === "language" ? " · " + String(item.data.family).split(" (")[0].toUpperCase() : F.GROUPS[item.group] ? " · " + F.GROUPS[item.group].toUpperCase() : "")}</Text>
                   </View>
                   {favs.includes(item.id) ? <Text style={s.star}>★</Text> : null}
                   <Text style={s.pp}>{item.popLabel}</Text>
@@ -255,7 +259,11 @@ function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav:
   const f = factsFor(it, L);
   const people: { name: string; desc: string }[] = (it.kind === "country" ? L.famous?.countries?.[it.data.code] : L.famousPeoples?.peoples?.[it.data.id]) || [];
   const d = it.data;
-  const stats: [string, string][] = it.kind === "people"
+  const stats: [string, string][] = it.kind === "language"
+    ? [["Speakers", d.pl], ["Family", d.family], ["Writing", d.script]]
+    : it.kind === "faith"
+    ? [["Followers", d.pl], ["Origin", d.home]]
+    : it.kind === "people"
     ? [["Population", d.pl], ["Homeland", d.home], ["Language", d.lang]]
     : [
         ["Population", d.pop ? "about " + F.fmtPop(d.pop) + (d.year ? " (" + d.year + ")" : "") : ""],
@@ -264,7 +272,7 @@ function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav:
       ];
   return (
     <View style={s.bodyBox}>
-      {it.kind === "people" ? <Text style={s.body}>{d.s}</Text> : null}
+      {it.kind !== "country" ? <Text style={s.body}>{d.s}</Text> : null}
       {f.fun ? <Fact label="Fun fact"><Text style={s.body}>{f.fun}</Text></Fact> : null}
       {f.special ? <Fact label="Something special"><Text style={s.body}>{f.special}</Text></Fact> : null}
       {f.known?.length ? <Fact label="What the world knows">{f.known.map((k: string, i: number) => <Bullet key={i}>{k}</Bullet>)}</Fact> : null}

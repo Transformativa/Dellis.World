@@ -1,0 +1,181 @@
+{
+ "meta": {
+  "source": "Pew Research Center",
+  "asOf": 2020,
+  "citation": "Hackett, Stonawski, Tong, Kramer, Shi and Fahmy. \"How the Global Religious Landscape Changed From 2010 to 2020.\" Pew Research Center, Washington, D.C. (June 9, 2025). https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/",
+  "disclaimer": "Pew Research Center bears no responsibility for the analyses or interpretations of the data presented here.",
+  "note": "Worldwide figures for 2020, written by hand from Pew's published report. Pew does not publish new global estimates monthly, so check data/faiths.json when Pew releases a new dataset."
+ },
+ "faiths": [
+  {
+   "id": "christianity",
+   "n": "Christianity",
+   "aka": [
+    "Christian",
+    "Christians",
+    "Catholic",
+    "Protestant",
+    "Orthodox"
+   ],
+   "p": 2300,
+   "pl": "2.3 billion (28.8% of the world)",
+   "home": "Judea, 1st century",
+   "s": "A faith centered on the life and teachings of Jesus of Nazareth, which began in the 1st century in the Roman province of Judea.",
+   "fun": "The Bible has been translated, in whole or in part, into well over 3,000 languages.",
+   "special": "Christianity is the world's largest religion, and sub-Saharan Africa now has more Christians than any other region.",
+   "known": [
+    "Origin: Judea, in the 1st century.",
+    "Holy book: the Bible.",
+    "Main branches: Catholic, Protestant and Orthodox.",
+    "Followers in 2020: about 2.3 billion, 28.8% of the world."
+   ]
+  },
+  {
+   "id": "islam",
+   "n": "Islam",
+   "aka": [
+    "Muslim",
+    "Muslims",
+    "Sunni",
+    "Shia"
+   ],
+   "p": 2000,
+   "pl": "about 2 billion (25.6% of the world)",
+   "home": "Arabian Peninsula, 7th century",
+   "s": "A faith that follows the message revealed to the Prophet Muhammad in 7th-century Arabia, with the Quran as its holy book.",
+   "fun": "The Islamic calendar follows the moon, so the month of Ramadan arrives about 11 days earlier each year on the usual calendar.",
+   "special": "Muslims were the fastest-growing major religious group from 2010 to 2020, growing by 347 million people.",
+   "known": [
+    "Origin: the Arabian Peninsula, in the 7th century.",
+    "Holy book: the Quran.",
+    "Main branches: Sunni and Shia.",
+    "Followers in 2020: about 2 billion, 25.6% of the world."
+   ]
+  },
+  {
+   "id": "hinduism",
+   "n": "Hinduism",
+   "aka": [
+    "Hindu",
+    "Hindus"
+   ],
+   "p": 1200,
+   "pl": "1.2 billion (14.9% of the world)",
+   "home": "Indian subcontinent",
+   "s": "One of the world's oldest living religions, with roots in the Indian subcontinent and a wide range of traditions, texts and practices.",
+   "fun": "Diwali, the festival of lights, is celebrated by Hindus and also by Sikhs, Jains and some Buddhists.",
+   "special": "About 95% of the world's Hindus live in India.",
+   "known": [
+    "Origin: the Indian subcontinent, thousands of years ago.",
+    "Texts: the Vedas, the Upanishads and the Bhagavad Gita.",
+    "Followers in 2020: about 1.2 billion, 14.9% of the world."
+   ]
+  },
+  {
+   "id": "buddhism",
+   "n": "Buddhism",
+   "aka": [
+    "Buddhist",
+    "Buddhists",
+    "Zen",
+    "Theravada"
+   ],
+   "p": 324,
+   "pl": "324 million (4.1% of the world)",
+   "home": "Northern India, about 2,500 years ago",
+   "s": "A tradition based on the teachings of Siddhartha Gautama, the Buddha, who lived in northern India about 2,500 years ago.",
+   "fun": "The word Buddha means awakened one.",
+   "special": "Buddhists were the only major group with fewer people in 2020 than in 2010.",
+   "known": [
+    "Origin: northern India, about 2,500 years ago.",
+    "Main traditions: Theravada, Mahayana and Vajrayana.",
+    "Followers in 2020: about 324 million, 4.1% of the world."
+   ]
+  },
+  {
+   "id": "judaism",
+   "n": "Judaism",
+   "aka": [
+    "Jewish",
+    "Jews",
+    "Torah"
+   ],
+   "p": 14.8,
+   "pl": "14.8 million (about 0.2% of the world)",
+   "home": "Ancient Israel and Judah",
+   "s": "One of the oldest monotheistic faiths, rooted in the Hebrew Bible and in the covenant between God and the people of Israel.",
+   "fun": "The Jewish day begins at sundown, so the Sabbath, Shabbat, starts on Friday evening.",
+   "special": "Israel is home to 6.8 million Jews, which is 46% of the world's Jews.",
+   "known": [
+    "Origin: ancient Israel and Judah, in the Middle East.",
+    "Texts: the Hebrew Bible (the Tanakh) and the Talmud.",
+    "Followers in 2020: about 14.8 million, about 0.2% of the world."
+   ]
+  },
+  {
+   "id": "sikhism",
+   "n": "Sikhism",
+   "aka": [
+    "Sikh",
+    "Sikhs",
+    "Gurdwara"
+   ],
+   "p": 0,
+   "pl": "counted by Pew with other religions (2.2% of the world)",
+   "home": "Punjab, late 15th century",
+   "s": "A faith founded by Guru Nanak in the Punjab region in the late 15th century, centered on one God, equality and service.",
+   "fun": "Sikh gurdwaras serve a free community meal, called langar, to everyone who comes, whatever their background.",
+   "special": "The Guru Granth Sahib, the Sikh holy book, is treated as the final living guru.",
+   "known": [
+    "Origin: the Punjab region, in the late 15th century.",
+    "Holy book: the Guru Granth Sahib.",
+    "Followers: Pew counts Sikhs in its other religions group, which is 2.2% of the world together with folk religions and others."
+   ]
+  },
+  {
+   "id": "folk-and-other",
+   "n": "Folk and other religions",
+   "aka": [
+    "Folk religion",
+    "Indigenous religions",
+    "Jainism",
+    "Bahai",
+    "Baha'i",
+    "Shinto"
+   ],
+   "p": 0,
+   "pl": "2.2% of the world (with Sikhs)",
+   "home": "Worldwide",
+   "s": "A wide group of traditions, such as Jainism, the Baháʼí Faith and many Indigenous and ancestral practices, counted together in Pew's data.",
+   "fun": "Many of these traditions are passed down through stories, ceremonies and songs rather than written books.",
+   "special": "Together with Sikhs, these traditions were 2.2% of the world's people in 2020.",
+   "known": [
+    "Origin: all over the world.",
+    "Examples: Jainism, the Baháʼí Faith and many Indigenous traditions.",
+    "Followers in 2020: 2.2% of the world, counted together with Sikhs."
+   ]
+  },
+  {
+   "id": "unaffiliated",
+   "n": "Religiously unaffiliated",
+   "aka": [
+    "No religion",
+    "Atheist",
+    "Agnostic",
+    "Nones",
+    "Secular",
+    "Non-religious"
+   ],
+   "p": 1900,
+   "pl": "1.9 billion (24.2% of the world)",
+   "home": "Worldwide",
+   "s": "People who identify as atheist, agnostic or with no particular religion. Many still hold spiritual beliefs.",
+   "fun": "The group is often called the nones, because on surveys they answer none when asked their religion.",
+   "special": "The unaffiliated were 24.2% of the world in 2020, the third-largest group after Christians and Muslims.",
+   "known": [
+    "Includes: atheists, agnostics and people with no particular religion.",
+    "Followers in 2020: about 1.9 billion, 24.2% of the world."
+   ]
+  }
+ ]
+}
