@@ -1426,6 +1426,264 @@
         "name": "Andres Bello",
         "desc": "Poet and scholar"
       }
+    ],
+    "kyrgyz": [
+      {
+        "name": "Chinghiz Aitmatov",
+        "desc": "Novelist who wrote Jamilia"
+      },
+      {
+        "name": "Kurmanjan Datka",
+        "desc": "Leader known as the Queen of the Alay"
+      },
+      {
+        "name": "Manas",
+        "desc": "Hero of the Kyrgyz national epic"
+      }
+    ],
+    "tajiks": [
+      {
+        "name": "Rudaki",
+        "desc": "Poet called the father of Persian poetry"
+      },
+      {
+        "name": "Ismoil Somoni",
+        "desc": "Founder of the Samanid dynasty"
+      },
+      {
+        "name": "Sadriddin Ayni",
+        "desc": "Writer and scholar"
+      }
+    ],
+    "azerbaijanis": [
+      {
+        "name": "Nizami Ganjavi",
+        "desc": "Poet of the 1100s"
+      },
+      {
+        "name": "Fuzuli",
+        "desc": "Poet of the 1500s"
+      },
+      {
+        "name": "Uzeyir Hajibeyov",
+        "desc": "Composer of the first opera in the Muslim world"
+      },
+      {
+        "name": "Lotfi Zadeh",
+        "desc": "Mathematician who created fuzzy logic"
+      }
+    ],
+    "georgians": [
+      {
+        "name": "Shota Rustaveli",
+        "desc": "Poet of The Knight in the Panther's Skin"
+      },
+      {
+        "name": "Queen Tamar",
+        "desc": "Medieval ruler of the golden age"
+      },
+      {
+        "name": "Niko Pirosmani",
+        "desc": "Self-taught painter"
+      }
+    ],
+    "croats": [
+      {
+        "name": "Luka Modric",
+        "desc": "Footballer and Ballon d'Or winner"
+      },
+      {
+        "name": "Ruder Boskovic",
+        "desc": "Scientist and philosopher of the 1700s"
+      },
+      {
+        "name": "Ivan Mestrovic",
+        "desc": "Sculptor"
+      },
+      {
+        "name": "Goran Ivanisevic",
+        "desc": "Wimbledon champion"
+      }
+    ],
+    "lithuanians": [
+      {
+        "name": "Vytautas the Great",
+        "desc": "Grand Duke of Lithuania"
+      },
+      {
+        "name": "M. K. Ciurlionis",
+        "desc": "Painter and composer"
+      },
+      {
+        "name": "Marija Gimbutas",
+        "desc": "Archaeologist"
+      },
+      {
+        "name": "Arvydas Sabonis",
+        "desc": "Basketball great"
+      }
+    ],
+    "estonians": [
+      {
+        "name": "Arvo Part",
+        "desc": "Composer"
+      },
+      {
+        "name": "Lennart Meri",
+        "desc": "Writer, film maker and president"
+      },
+      {
+        "name": "Paul Keres",
+        "desc": "Chess grandmaster"
+      },
+      {
+        "name": "Jaan Tallinn",
+        "desc": "Programmer and co-founder of Skype"
+      }
+    ],
+    "albanians": [
+      {
+        "name": "Skanderbeg",
+        "desc": "Medieval hero who fought the Ottomans"
+      },
+      {
+        "name": "Mother Teresa",
+        "desc": "Nobel Peace Prize winner"
+      },
+      {
+        "name": "Ismail Kadare",
+        "desc": "Novelist"
+      },
+      {
+        "name": "Dua Lipa",
+        "desc": "Singer"
+      }
+    ],
+    "icelanders": [
+      {
+        "name": "Snorri Sturluson",
+        "desc": "Author of the Prose Edda"
+      },
+      {
+        "name": "Leif Erikson",
+        "desc": "Explorer who reached North America"
+      },
+      {
+        "name": "Halldor Laxness",
+        "desc": "Nobel Prize winning novelist"
+      },
+      {
+        "name": "Bjork",
+        "desc": "Singer"
+      }
+    ],
+    "somalis": [
+      {
+        "name": "Waris Dirie",
+        "desc": "Model and author"
+      },
+      {
+        "name": "Mo Farah",
+        "desc": "Olympic distance runner"
+      },
+      {
+        "name": "Ilhan Omar",
+        "desc": "US Congresswoman"
+      },
+      {
+        "name": "Warsan Shire",
+        "desc": "Poet"
+      }
+    ],
+    "xhosa": [
+      {
+        "name": "Nelson Mandela",
+        "desc": "Anti-apartheid leader and president"
+      },
+      {
+        "name": "Miriam Makeba",
+        "desc": "Singer known as Mama Africa"
+      },
+      {
+        "name": "Steve Biko",
+        "desc": "Anti-apartheid activist"
+      },
+      {
+        "name": "Trevor Noah",
+        "desc": "Comedian"
+      }
+    ],
+    "akan": [
+      {
+        "name": "Kofi Annan",
+        "desc": "Secretary-General of the United Nations"
+      },
+      {
+        "name": "Kwame Nkrumah",
+        "desc": "Ghana's first president"
+      },
+      {
+        "name": "Yaa Asantewaa",
+        "desc": "Queen mother who led the Ashanti against British forces"
+      },
+      {
+        "name": "Osei Tutu",
+        "desc": "Founder of the Ashanti Empire"
+      }
+    ],
+    "native-hawaiians": [
+      {
+        "name": "Kamehameha I",
+        "desc": "King who united the Hawaiian Islands"
+      },
+      {
+        "name": "Queen Liliuokalani",
+        "desc": "Last reigning monarch of Hawaii"
+      },
+      {
+        "name": "Duke Kahanamoku",
+        "desc": "Olympic swimmer who helped spread surfing"
+      },
+      {
+        "name": "Israel Kamakawiwoole",
+        "desc": "Singer known for Over the Rainbow"
+      }
+    ],
+    "tibetans": [
+      {
+        "name": "Tenzin Gyatso",
+        "desc": "The 14th Dalai Lama and Nobel Peace Prize winner"
+      },
+      {
+        "name": "Songtsen Gampo",
+        "desc": "Emperor who built the Tibetan Empire"
+      },
+      {
+        "name": "Milarepa",
+        "desc": "Poet and yogi"
+      }
+    ],
+    "malays": [
+      {
+        "name": "Tunku Abdul Rahman",
+        "desc": "First prime minister of Malaysia"
+      },
+      {
+        "name": "Hang Tuah",
+        "desc": "Legendary warrior of Melaka"
+      },
+      {
+        "name": "Siti Nurhaliza",
+        "desc": "Singer"
+      },
+      {
+        "name": "Mahathir Mohamad",
+        "desc": "Longest-serving prime minister of Malaysia"
+      }
     ]
+  },
+  "meta": {
+    "generatedAt": "2026-10-10T00:00:00Z",
+    "source": "Hand-written; refreshed monthly from Wikidata for peoples tied to one country"
   }
 }

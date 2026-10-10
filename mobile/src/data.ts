@@ -4,7 +4,7 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "curated", "peoples", "famous", "languages"] as const; // famous-peoples is hand-written, so it ships with the app only
+const FILES = ["live", "curated", "peoples", "famous", "famousPeoples", "languages"] as const;
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
   curated: require("./generated/curated.json"),
@@ -89,8 +89,8 @@ export async function refreshData(): Promise<boolean> {
   try {
     const last = Number((await AsyncStorage.getItem("data:checkedAt")) || 0);
     if (Date.now() - last < 12 * 3600 * 1000) return false;
-    for (const f of ["live", "famous", "languages"] as const) {
-      const res = await fetch(BASE + f + ".json", { headers: { "cache-control": "no-cache" } });
+    for (const f of ["live", "famous", "famousPeoples", "languages"] as const) {
+      const res = await fetch(BASE + f.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase()) + ".json", { headers: { "cache-control": "no-cache" } });
       if (!res.ok) continue;
       const json = await res.json();
       const cur = JSON.parse((await AsyncStorage.getItem("data:" + f)) || "null") || bundled[f];

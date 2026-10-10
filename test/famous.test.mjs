@@ -49,3 +49,14 @@ test("data/famous-peoples.json covers every people with at most five clean entri
     }
   }
 });
+
+test("every people tied to a country points at a real people and a real country", async () => {
+  const map = JSON.parse(await readFile(new URL("../data/peoples-countries.json", import.meta.url), "utf8")).peoples;
+  const peoples = JSON.parse(await readFile(new URL("../data/peoples.json", import.meta.url), "utf8")).peoples;
+  const live = JSON.parse(await readFile(new URL("../data/live.json", import.meta.url), "utf8"));
+  const ids = new Set(peoples.map((p) => p.id)), codes = new Set(live.countries.map((c) => c.code));
+  for (const [id, code] of Object.entries(map)) {
+    assert.ok(ids.has(id), `${id} is not a people`);
+    assert.ok(codes.has(code), `${id}: ${code} is not a country`);
+  }
+});

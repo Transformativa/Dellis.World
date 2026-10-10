@@ -24,7 +24,7 @@ test("every country gets a fun fact, something special and known facts", () => {
 });
 
 test("every people has a fun fact and something special", () => {
-  assert.equal(peoples.length, 71);
+  assert.equal(peoples.length, 86);
   for (const p of peoples) {
     const f = F.peopleFacts(p, JAN);
     assert.ok(f.fun && f.special, p.n);
