@@ -1,0 +1,547 @@
+{
+ "peoples": [
+  {
+   "id": "han-chinese",
+   "n": "Han Chinese",
+   "g": "asia",
+   "p": 1400,
+   "pl": "about 1.4 billion",
+   "home": "China, Taiwan, Singapore, worldwide",
+   "lang": "Mandarin and other Sinitic languages",
+   "s": "The largest ethnic group on Earth. Han Chinese make up about 90 percent of China's population and share a written tradition that stretches back more than three thousand years.",
+   "fun": "Chinese characters are one of the oldest writing systems still in daily use, with roots in oracle-bone inscriptions about 3,300 years old.",
+   "special": "The name Han comes from the Han dynasty (206 BCE to 220 CE), when a shared written culture spread across the empire.",
+   "records": [
+    {
+     "text": "Largest ethnic group in the world",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "bengali",
+   "n": "Bengali",
+   "g": "asia",
+   "p": 270,
+   "pl": "about 270 million",
+   "home": "Bangladesh and West Bengal, India",
+   "lang": "Bengali (Indo-Aryan)",
+   "s": "A people of the Ganges delta known for a rich literary tradition. Bengali is the national language of Bangladesh, and the Language Movement of 1952 is commemorated each year as International Mother Language Day.",
+   "fun": "International Mother Language Day, 21 February, honours Bengali speakers who protested for their language in Dhaka in 1952.",
+   "special": "Rabindranath Tagore, a Bengali poet, won the 1913 Nobel Prize in Literature and wrote the words of the national anthems of both India and Bangladesh.",
+   "records": [
+    {
+     "text": "Tagore was the first non-European winner of the Nobel Prize in Literature",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "punjabi",
+   "n": "Punjabi",
+   "g": "asia",
+   "p": 150,
+   "pl": "over 100 million",
+   "home": "Punjab, in Pakistan and India",
+   "lang": "Punjabi (Indo-Aryan)",
+   "s": "Named for the land of five rivers. Punjabis are among the largest peoples in South Asia and have large communities in Britain, Canada and the Gulf.",
+   "fun": "Bhangra, a Punjabi harvest dance, has become a dance style performed around the world.",
+   "special": "Langar, the free communal meal served in Sikh gurdwaras, is open to everyone regardless of background.",
+   "records": []
+  },
+  {
+   "id": "tamil",
+   "n": "Tamil",
+   "g": "asia",
+   "p": 80,
+   "pl": "about 80 million",
+   "home": "Tamil Nadu in India, northern Sri Lanka, Singapore",
+   "lang": "Tamil (Dravidian)",
+   "s": "Tamil literature is more than two thousand years old, and Tamil is one of the oldest living classical languages.",
+   "fun": "Tamil has a distinctive retroflex sound, written ழ, that few other languages share.",
+   "special": "The Brihadisvara Temple in Thanjavur, completed in 1010 under the Chola dynasty, is a UNESCO World Heritage Site.",
+   "records": [
+    {
+     "text": "Tamil is among the oldest living classical languages",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "pashtun",
+   "n": "Pashtun",
+   "g": "asia",
+   "p": 45,
+   "pl": "about 40 to 50 million",
+   "home": "Southern and eastern Afghanistan, northwest Pakistan",
+   "lang": "Pashto (Indo-Iranian)",
+   "s": "The largest people in Afghanistan and a very large one in Pakistan. Traditional society is organised around tribes and a code of conduct called Pashtunwali.",
+   "fun": "Melmastia, the Pashtun custom of hospitality, obliges a host to feed and protect any guest.",
+   "special": "Khushal Khan Khattak, a 17th-century warrior and poet, is celebrated as a national poet of the Pashtuns.",
+   "records": []
+  },
+  {
+   "id": "japanese",
+   "n": "Japanese",
+   "g": "asia",
+   "p": 125,
+   "pl": "about 125 million",
+   "home": "Japan",
+   "lang": "Japanese (Japonic)",
+   "s": "One of the most homogeneous large nations. Japan combines an ancient imperial and Shinto tradition with a highly industrialised modern society.",
+   "fun": "Written Japanese mixes three scripts at once: kanji, hiragana and katakana.",
+   "special": "Wabi-sabi, an aesthetic that finds beauty in imperfection and impermanence, shapes tea ceremony, ceramics and gardens.",
+   "records": [
+    {
+     "text": "Nishiyama Onsen Keiunkan, open since 705, is recognised as the world's oldest hotel",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "koreans",
+   "n": "Koreans",
+   "g": "asia",
+   "p": 80,
+   "pl": "about 80 million",
+   "home": "Korean Peninsula, plus communities in China, the US, Japan, Russia",
+   "lang": "Korean (a language isolate or Koreanic family)",
+   "s": "Koreans share one language and history across two states. The Korean alphabet, Hangul, was created in the 15th century under King Sejong.",
+   "fun": "Hangul was designed in the 1440s so that ordinary people could learn to read quickly. South Korea celebrates Hangul Day on 9 October.",
+   "special": "Kimjang, the making and sharing of kimchi, is on UNESCO's list of intangible cultural heritage.",
+   "records": []
+  },
+  {
+   "id": "javanese",
+   "n": "Javanese",
+   "g": "asia",
+   "p": 100,
+   "pl": "about 100 million",
+   "home": "Java, Indonesia",
+   "lang": "Javanese (Austronesian)",
+   "s": "The largest ethnic group in Indonesia. Javanese court culture is known for gamelan orchestras, shadow puppetry and batik cloth.",
+   "fun": "Javanese has speech levels, so the words you choose change with the age and status of the person you are speaking to.",
+   "special": "Borobudur, a 9th-century Buddhist temple in Central Java, is often described as the largest Buddhist temple in the world.",
+   "records": [
+    {
+     "text": "Borobudur is often called the largest Buddhist temple in the world",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "vietnamese-kinh",
+   "n": "Vietnamese (Kinh)",
+   "g": "asia",
+   "p": 85,
+   "pl": "about 85 million",
+   "home": "Vietnam",
+   "lang": "Vietnamese (Austroasiatic)",
+   "s": "The majority people of Vietnam. Vietnam also recognises 53 other ethnic groups, many living in the highlands.",
+   "fun": "Vietnamese is written in Latin letters with accent marks that show its six tones, a system developed with European missionaries in the 1600s.",
+   "special": "Tet, the Lunar New Year, is the biggest holiday of the year, when families gather and honour their ancestors.",
+   "records": []
+  },
+  {
+   "id": "mongols",
+   "n": "Mongols",
+   "g": "asia",
+   "p": 10,
+   "pl": "about 10 million",
+   "home": "Mongolia and Inner Mongolia, China",
+   "lang": "Mongolian (Mongolic)",
+   "s": "A traditionally nomadic herding people who built the largest contiguous land empire in history under Genghis Khan in the 13th century.",
+   "fun": "The Mongol Empire ran a relay messenger system called the Yam, with stations where riders could swap tired horses for fresh ones.",
+   "special": "Naadam, a festival of wrestling, archery and horse racing, is on UNESCO's list of intangible cultural heritage.",
+   "records": [
+    {
+     "text": "The Mongol Empire became the largest contiguous land empire in history",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "uyghurs",
+   "n": "Uyghurs",
+   "g": "asia",
+   "p": 12,
+   "pl": "about 12 million",
+   "home": "Xinjiang, western China, and Central Asia",
+   "lang": "Uyghur (Turkic)",
+   "s": "A Turkic, mostly Muslim people of the oasis towns along the old Silk Road. Their homeland is in the Xinjiang region of China.",
+   "fun": "Uyghur Muqam, a classical musical tradition from Xinjiang, is on UNESCO's list of intangible cultural heritage.",
+   "special": "Oasis cities such as Kashgar and Turpan were important stops on the Silk Road.",
+   "records": []
+  },
+  {
+   "id": "arabs",
+   "n": "Arabs",
+   "g": "mena",
+   "p": 400,
+   "pl": "about 400 million",
+   "home": "Arabian Peninsula, the Levant, North Africa",
+   "lang": "Arabic (Semitic)",
+   "s": "A people defined mainly by shared language and culture across 22 countries. Classical Arabic is the language of the Quran and a major medium of science and poetry in the medieval world.",
+   "fun": "The word algebra comes from the Arabic al-jabr, the title of a 9th-century book by the mathematician al-Khwarizmi.",
+   "special": "Scholars at the House of Wisdom in Baghdad translated and built on Greek, Persian and Indian science during the medieval period.",
+   "records": []
+  },
+  {
+   "id": "persians",
+   "n": "Persians",
+   "g": "mena",
+   "p": 55,
+   "pl": "tens of millions",
+   "home": "Iran, Afghanistan, Tajikistan, and diaspora",
+   "lang": "Persian or Farsi (Indo-Iranian)",
+   "s": "Heirs to the Achaemenid Empire of the 6th century BCE. Persian poetry by writers such as Hafez, Rumi and Ferdowsi is read across the world.",
+   "fun": "The Persian Achaemenid Empire built the Royal Road and an early postal relay across its territory.",
+   "special": "Nowruz, the Persian New Year, is celebrated at the spring equinox and has been marked for more than 3,000 years.",
+   "records": []
+  },
+  {
+   "id": "turks",
+   "n": "Turks",
+   "g": "mena",
+   "p": 70,
+   "pl": "about 70 million",
+   "home": "Turkey, Cyprus, Germany and the Balkans",
+   "lang": "Turkish (Turkic)",
+   "s": "Turkic peoples migrated from Central Asia into Anatolia from the 11th century. The Ottoman Empire, which lasted until 1922, shaped the modern state.",
+   "fun": "Turkish coffee, brewed in a small pot called a cezve, is on UNESCO's list of intangible cultural heritage.",
+   "special": "The Mevlevi sema, the whirling ceremony associated with the poet Rumi, is also on UNESCO's list.",
+   "records": []
+  },
+  {
+   "id": "jewish-people",
+   "n": "Jewish people",
+   "g": "mena",
+   "p": 15.7,
+   "pl": "about 15 million",
+   "home": "Israel, the United States, France, Canada, the UK and elsewhere",
+   "lang": "Hebrew, plus Yiddish, Ladino and local languages",
+   "s": "An ancient people and religious community whose history begins in the Land of Israel. After centuries of dispersion, communities now live on every inhabited continent, and Hebrew is again a spoken national language in Israel.",
+   "fun": "Hebrew was revived as an everyday spoken language in modern times, thanks largely to Eliezer Ben-Yehuda and others who worked on it from the 1880s.",
+   "special": "Shabbat, a weekly day of rest, has been kept by Jewish communities for thousands of years.",
+   "known": [
+    "Jewish communities developed languages of their own, including Yiddish in Central and Eastern Europe and Ladino among Jews of Spanish origin.",
+    "Homeland: Israel, the United States, France, Canada, the UK and elsewhere.",
+    "Population: about 15 million."
+   ],
+   "records": [
+    {
+     "text": "Hebrew is often described as the only language successfully revived from mainly religious use to a national spoken language",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "kurds",
+   "n": "Kurds",
+   "g": "mena",
+   "p": 35,
+   "pl": "about 30 to 40 million",
+   "home": "Southeastern Turkey, northern Iraq, Iran, Syria",
+   "lang": "Kurdish (Indo-Iranian)",
+   "s": "One of the largest peoples in the world without a state of their own. Their homeland, Kurdistan, spans four countries.",
+   "fun": "Newroz, the spring new year, is marked with bonfires and dancing in Kurdish communities.",
+   "special": "Kurdish has two major groups of dialects, Kurmanji and Sorani, written in different scripts.",
+   "records": [
+    {
+     "text": "Among the largest peoples in the world without a state of their own",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "armenians",
+   "n": "Armenians",
+   "g": "mena",
+   "p": 10,
+   "pl": "about 10 million, mostly abroad",
+   "home": "Armenia, plus Russia, the US, France, Lebanon",
+   "lang": "Armenian (its own branch of Indo-European)",
+   "s": "Armenia was the first state to adopt Christianity as its official religion, in 301 CE. The Armenian alphabet dates to the year 405.",
+   "fun": "The oldest known leather shoe, about 5,500 years old, was found in the Areni-1 cave in Armenia.",
+   "special": "The Armenian alphabet was created by Mesrop Mashtots in 405 CE and is still used today.",
+   "records": [
+    {
+     "text": "Armenia was the first state to adopt Christianity as its official religion, in 301 CE",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "yoruba",
+   "n": "Yoruba",
+   "g": "africa",
+   "p": 45,
+   "pl": "about 45 million",
+   "home": "Southwest Nigeria, Benin, Togo",
+   "lang": "Yoruba (Niger-Congo)",
+   "s": "Known for the ancient city-states of Ife and Oyo and for bronze and terracotta sculpture. Yoruba religious traditions also shaped practices across the Americas, such as Santería.",
+   "fun": "Yoruba is a tonal language, and the talking drum (dundun) imitates the rise and fall of speech.",
+   "special": "Ife, a Yoruba city, is known for naturalistic bronze and terracotta heads made centuries ago.",
+   "records": []
+  },
+  {
+   "id": "igbo",
+   "n": "Igbo",
+   "g": "africa",
+   "p": 32,
+   "pl": "about 30 million",
+   "home": "Southeastern Nigeria",
+   "lang": "Igbo (Niger-Congo)",
+   "s": "Traditionally organised in village democracies rather than kingdoms. Igbo-Ukwu bronzes date to about the 9th century.",
+   "fun": "Bronzes found at Igbo-Ukwu, dated to about the 9th century, show highly advanced lost-wax casting.",
+   "special": "The New Yam Festival, Iri ji, marks the harvest with feasting and dancing.",
+   "records": []
+  },
+  {
+   "id": "hausa",
+   "n": "Hausa",
+   "g": "africa",
+   "p": 60,
+   "pl": "tens of millions",
+   "home": "Northern Nigeria and southern Niger",
+   "lang": "Hausa (Afro-Asiatic)",
+   "s": "Hausa is a trade language across West Africa. The Hausa city-states, such as Kano, were centres of commerce and Islamic scholarship.",
+   "fun": "Hausa was written for centuries in an Arabic-based script called Ajami before the Latin alphabet became common.",
+   "special": "Kano, a Hausa city, has been a trading centre for roughly a thousand years, and parts of its old city wall still stand.",
+   "records": []
+  },
+  {
+   "id": "oromo",
+   "n": "Oromo",
+   "g": "africa",
+   "p": 40,
+   "pl": "about 40 million",
+   "home": "Ethiopia and northern Kenya",
+   "lang": "Oromo (Cushitic)",
+   "s": "The largest ethnic group in Ethiopia. The traditional Gadaa system organised society into generational grades with elected leaders.",
+   "fun": "UNESCO recognised the Gadaa system, in which leaders are chosen by generational grades, as intangible cultural heritage in 2016.",
+   "special": "Irreecha, a thanksgiving festival held at the end of the rainy season, draws huge crowds each year.",
+   "records": []
+  },
+  {
+   "id": "zulu",
+   "n": "Zulu",
+   "g": "africa",
+   "p": 12,
+   "pl": "about 12 million",
+   "home": "KwaZulu-Natal, South Africa",
+   "lang": "Zulu (Bantu)",
+   "s": "The largest ethnic group in South Africa. In the early 19th century King Shaka forged the Zulu kingdom into a major regional power.",
+   "fun": "Zulu beadwork uses colour combinations that can carry messages between people.",
+   "special": "Zulu is the most widely spoken home language in South Africa.",
+   "records": []
+  },
+  {
+   "id": "maasai",
+   "n": "Maasai",
+   "g": "africa",
+   "p": 1.5,
+   "pl": "about 1.5 million",
+   "home": "Southern Kenya and northern Tanzania",
+   "lang": "Maa (Nilotic)",
+   "s": "Semi-nomadic cattle herders famous for red shukas, beadwork and the adumu jumping dance.",
+   "fun": "A traditional Maasai greeting, Kasserian ingera, means 'And how are the children?'",
+   "special": "Maasai have traditionally measured wealth in cattle, and their red shukas are among the most recognisable dress in East Africa.",
+   "records": []
+  },
+  {
+   "id": "amazigh-berbers",
+   "n": "Amazigh (Berbers)",
+   "g": "africa",
+   "p": 30,
+   "pl": "tens of millions",
+   "home": "Morocco, Algeria, Tunisia, Libya, the Sahara",
+   "lang": "Tamazight languages (Afro-Asiatic)",
+   "s": "The indigenous people of North Africa, present long before the Arab conquests. The Tuareg of the Sahara are one Amazigh group.",
+   "fun": "Tifinagh, an ancient script, is still used to write Tamazight languages, and Yennayer, the Amazigh New Year, falls in mid-January.",
+   "special": "Morocco (2011) and Algeria (2016) both recognise Tamazight as an official language.",
+   "records": []
+  },
+  {
+   "id": "russians",
+   "n": "Russians",
+   "g": "europe",
+   "p": 130,
+   "pl": "over 100 million",
+   "home": "Russia, Ukraine, Kazakhstan, and diaspora",
+   "lang": "Russian (East Slavic)",
+   "s": "The largest Slavic people and the biggest ethnic group in Europe. Russian is spoken as a first or second language across much of the former Soviet Union.",
+   "fun": "Russian is written in the Cyrillic alphabet, which grew out of work by followers of the missionaries Cyril and Methodius in the 9th century.",
+   "special": "The first matryoshka nesting doll was carved in the 1890s.",
+   "records": []
+  },
+  {
+   "id": "germans",
+   "n": "Germans",
+   "g": "europe",
+   "p": 100,
+   "pl": "about 100 million",
+   "home": "Germany, Austria, Switzerland, and diaspora",
+   "lang": "German (West Germanic)",
+   "s": "Germany was a patchwork of states until unification in 1871. Germans have shaped modern philosophy, music and science.",
+   "fun": "In German, all nouns are written with a capital letter.",
+   "special": "The Brothers Grimm collected folk tales in the early 1800s, preserving stories such as Hansel and Gretel.",
+   "records": []
+  },
+  {
+   "id": "irish",
+   "n": "Irish",
+   "g": "europe",
+   "p": 5,
+   "pl": "about 5 million in Ireland, many more abroad",
+   "home": "Ireland, with large diasporas in the US, UK, Australia",
+   "lang": "Irish Gaelic and English",
+   "s": "Tens of millions of people worldwide claim Irish ancestry. The Great Famine of the 1840s drove one of the largest emigrations in European history.",
+   "fun": "Irish (Gaeilge) is the first official language of the Republic of Ireland and has one of the oldest written traditions in Europe.",
+   "special": "St Patrick's Day is celebrated by Irish communities and many others around the world every 17 March.",
+   "records": []
+  },
+  {
+   "id": "basques",
+   "n": "Basques",
+   "g": "europe",
+   "p": 3,
+   "pl": "about 3 million",
+   "home": "Basque Country, northern Spain and southwest France",
+   "lang": "Basque, a language isolate",
+   "s": "Their language is unrelated to any other living language, and is thought to predate the arrival of Indo-European languages in Europe.",
+   "fun": "Euskara, the Basque language, has no known living relatives.",
+   "special": "Basque pelota, a handball-like game, is played on special courts called frontons.",
+   "records": [
+    {
+     "text": "Basque is Europe's best-known language isolate",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "sami",
+   "n": "Sámi",
+   "g": "europe",
+   "p": 0.1,
+   "pl": "about 80,000 to 100,000",
+   "home": "Northern Norway, Sweden, Finland and Russia's Kola Peninsula",
+   "lang": "Sámi languages (Uralic)",
+   "s": "The indigenous people of northern Scandinavia. Many Sámi have herded reindeer for centuries.",
+   "fun": "Sámi languages have a rich vocabulary for snow, ice and reindeer, reflecting generations of herding.",
+   "special": "Joik, a traditional Sámi form of song, expresses a person, animal or place rather than telling a story about it.",
+   "records": []
+  },
+  {
+   "id": "roma",
+   "n": "Roma",
+   "g": "europe",
+   "p": 11,
+   "pl": "about 10 to 12 million",
+   "home": "Across Europe, especially the Balkans and Central Europe",
+   "lang": "Romani (Indo-Aryan)",
+   "s": "Language and genetic studies trace the Roma to northern India about a thousand years ago. They are Europe's largest ethnic minority.",
+   "fun": "The Romani flag and anthem were adopted at the first World Romani Congress, held near London in 1971. 8 April is International Romani Day.",
+   "special": "Romani musicians influenced flamenco in Spain and the brass and string ensembles of Central and Eastern Europe.",
+   "records": [
+    {
+     "text": "Europe's largest ethnic minority",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "quechua",
+   "n": "Quechua",
+   "g": "americas",
+   "p": 9,
+   "pl": "about 8 to 10 million",
+   "home": "The Andes of Peru, Bolivia and Ecuador",
+   "lang": "Quechua (Quechuan family)",
+   "s": "Descendants of the Inca and neighbouring peoples. Quechua is spoken today by millions and is an official language in Peru and Bolivia.",
+   "fun": "The Inca built the Qhapaq Ñan, a road network of about 30,000 km across the Andes.",
+   "special": "The Inca kept records with the quipu, a system of knotted cords.",
+   "records": []
+  },
+  {
+   "id": "maya",
+   "n": "Maya",
+   "g": "americas",
+   "p": 7,
+   "pl": "about 6 to 7 million",
+   "home": "Southern Mexico, Guatemala, Belize",
+   "lang": "About 30 Mayan languages",
+   "s": "Builders of Tikal and Chichén Itzá, with a hieroglyphic writing system and an advanced calendar. Maya communities and languages remain very much alive.",
+   "fun": "Maya mathematicians used a symbol for zero in their number system.",
+   "special": "The Maya used cacao in ceremonial drinks, long before chocolate reached Europe.",
+   "records": []
+  },
+  {
+   "id": "navajo-dine",
+   "n": "Navajo (Diné)",
+   "g": "americas",
+   "p": 0.4,
+   "pl": "about 400,000 enrolled citizens",
+   "home": "Navajo Nation, in Arizona, New Mexico and Utah",
+   "lang": "Navajo, or Diné bizaad (Athabaskan)",
+   "s": "The Navajo Nation is the largest reservation in the United States. Navajo code talkers served in the US Marines in World War II.",
+   "fun": "During World War II, Navajo code talkers developed a spoken code that was never broken.",
+   "special": "Navajo weaving and silversmithing are admired and collected around the world.",
+   "records": [
+    {
+     "text": "The Navajo Nation is the largest reservation in the United States",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "inuit",
+   "n": "Inuit",
+   "g": "americas",
+   "p": 0.18,
+   "pl": "about 180,000",
+   "home": "Arctic Canada, Greenland, Alaska",
+   "lang": "Inuit languages",
+   "s": "Peoples of the Arctic who built a way of life around hunting and the sea ice. Nunavut, in Canada, was created as an Inuit-majority territory in 1999.",
+   "fun": "Inuit developed the kayak, a boat built to move quietly while hunting on cold water.",
+   "special": "The inuksuk, a stone landmark, helps people find their way and marks good hunting and fishing places.",
+   "records": []
+  },
+  {
+   "id": "maori",
+   "n": "Māori",
+   "g": "oceania",
+   "p": 0.9,
+   "pl": "about 900,000",
+   "home": "Aotearoa New Zealand",
+   "lang": "Te reo Māori (Polynesian)",
+   "s": "Polynesian navigators who reached New Zealand around the 13th century. Te reo Māori is an official language of New Zealand.",
+   "fun": "The haka, a ceremonial dance with chanting, is used for welcomes, farewells and challenges.",
+   "special": "Whakapapa, or genealogy, connects people to their ancestors, to each other and to the land.",
+   "records": [
+    {
+     "text": "New Zealand was the first self-governing country to give women the vote in national elections, in 1893",
+     "src": "Widely cited"
+    }
+   ]
+  },
+  {
+   "id": "aboriginal-australians",
+   "n": "Aboriginal Australians",
+   "g": "oceania",
+   "p": 1,
+   "pl": "about one million, including Torres Strait Islanders",
+   "home": "Across Australia",
+   "lang": "More than 250 languages originally",
+   "s": "Among the oldest continuous cultures on Earth, with a presence on the continent for at least 50,000 years.",
+   "fun": "The Budj Bim eel traps in Victoria, part of a UNESCO World Heritage Site, are thousands of years old.",
+   "special": "Dreaming stories pass on knowledge of law, land and living things through story, song and art.",
+   "records": [
+    {
+     "text": "Among the oldest continuous living cultures on Earth",
+     "src": "Widely cited"
+    }
+   ]
+  }
+ ]
+}

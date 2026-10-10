@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "All World People",
+    "slug": "world-people",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "store.dellis.worldpeople",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F7FEF9",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "store.dellis.worldpeople"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "worldpeople"
+  }
+}

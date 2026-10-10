@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git rm *)",
+      "Bash(rm -rf mobile/.git)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'fix: add mobile app files instead of an embedded repo *)",
+      "Bash(git push *)"
+    ]
+  }
+}
