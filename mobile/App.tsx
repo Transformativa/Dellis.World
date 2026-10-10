@@ -127,7 +127,7 @@ export default function App() {
 
       <View style={s.pad}>
         <Text style={s.eyebrow}>Empowering minds, celebrating differences.</Text>
-        <Text style={s.title}>All World <Text style={{ fontStyle: "italic" }}>People</Text> Encyclopedia</Text>
+        <Text style={s.title}>World <Text style={{ fontStyle: "italic" }}>Facts</Text></Text>
         <Text style={s.lede}>Search any people or country. Every one comes with a fun fact, something special, facts the world knows, and records.</Text>
         <LinearGradient colors={["#4CFC0F", "#F7FEF9"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.rule} />
 
