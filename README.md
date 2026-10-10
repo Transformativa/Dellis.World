@@ -103,3 +103,12 @@ Colors, type and shapes follow [dellis.store](https://www.dellis.store): mint-wh
 ## Danny's Apps page
 
 Edit `apps.json`. When an app is in the stores, paste its App Store and Google Play links and set `status` to `live`. The buttons turn on and the "coming soon" line disappears. Phones see their own store first. Computers see a QR code. If the site address changes (for example to apps.dellis.store), update `siteUrl` and run `node scripts/make-qr.mjs`.
+
+## Checking everything before a release
+
+```
+npm run check         # data + search tests, source freshness, app type check (about 30 seconds)
+npm run check:full    # the same, plus a full iOS and Android bundle build (about 2 minutes)
+```
+
+If someone reports a search that finds nothing (for example a nationality), add it to `NATIONALITIES` in `test/search-coverage.test.mjs`.

@@ -7,7 +7,11 @@
     "test": "node --test",
     "refresh": "node scripts/refresh.mjs",
     "refresh:seed": "node scripts/refresh.mjs --seed scripts/seed/worldbank-2026-10-10.json",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "check": "bash scripts/run-tests.sh",
+    "check:full": "bash scripts/run-tests.sh --full"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
