@@ -35,3 +35,17 @@ test("data/famous.json is well formed", async () => {
     }
   }
 });
+
+test("data/famous-peoples.json covers every people with at most five clean entries", async () => {
+  const fp = JSON.parse(await readFile(new URL("../data/famous-peoples.json", import.meta.url), "utf8"));
+  const peoples = JSON.parse(await readFile(new URL("../data/peoples.json", import.meta.url), "utf8")).peoples;
+  const block = rules.blockWords.map((w) => w.toLowerCase());
+  for (const p of peoples) {
+    const list = fp.peoples[p.id];
+    assert.ok(list && list.length >= 3 && list.length <= 5, `${p.id} needs 3 to 5 people`);
+    for (const x of list) {
+      assert.ok(x.name && x.desc, `${p.id} entry needs name and desc`);
+      assert.ok(!block.some((w) => x.desc.toLowerCase().includes(w)), `${p.id}: ${x.name} has a blocked word`);
+    }
+  }
+});

@@ -1,0 +1,765 @@
+{
+ "_comment": "Hand-picked, kid-safe, well-documented figures for each people. Not refreshed automatically. Keep to people with a clear public record. Up to five each; fewer is fine.",
+ "peoples": {
+  "han-chinese": [
+   {
+    "name": "Confucius",
+    "desc": "Philosopher and teacher whose ideas shaped East Asia"
+   },
+   {
+    "name": "Li Bai",
+    "desc": "Tang dynasty poet"
+   },
+   {
+    "name": "Zheng He",
+    "desc": "Ming dynasty admiral who led great sea voyages"
+   },
+   {
+    "name": "Yao Ming",
+    "desc": "Basketball star who played in the NBA"
+   },
+   {
+    "name": "Jackie Chan",
+    "desc": "Actor and martial artist"
+   }
+  ],
+  "bengali": [
+   {
+    "name": "Rabindranath Tagore",
+    "desc": "Poet, first non-European to win the Nobel Prize in Literature"
+   },
+   {
+    "name": "Satyajit Ray",
+    "desc": "Filmmaker"
+   },
+   {
+    "name": "Muhammad Yunus",
+    "desc": "Economist and Nobel Peace Prize winner, founder of Grameen Bank"
+   },
+   {
+    "name": "Amartya Sen",
+    "desc": "Economist and Nobel Prize winner"
+   },
+   {
+    "name": "Jagadish Chandra Bose",
+    "desc": "Physicist and plant scientist"
+   }
+  ],
+  "punjabi": [
+   {
+    "name": "Guru Nanak",
+    "desc": "Founder of Sikhism"
+   },
+   {
+    "name": "Abdus Salam",
+    "desc": "Physicist, Nobel Prize in Physics 1979"
+   },
+   {
+    "name": "Milkha Singh",
+    "desc": "Sprinter known as the Flying Sikh"
+   },
+   {
+    "name": "Kapil Dev",
+    "desc": "Cricketer who captained India to the 1983 World Cup"
+   },
+   {
+    "name": "Bhagat Singh",
+    "desc": "Young independence revolutionary"
+   }
+  ],
+  "tamil": [
+   {
+    "name": "A. R. Rahman",
+    "desc": "Composer and Oscar winner"
+   },
+   {
+    "name": "Srinivasa Ramanujan",
+    "desc": "Self-taught mathematician"
+   },
+   {
+    "name": "C. V. Raman",
+    "desc": "Physicist, Nobel Prize in Physics 1930"
+   },
+   {
+    "name": "Sundar Pichai",
+    "desc": "Chief executive of Google and Alphabet"
+   },
+   {
+    "name": "Thiruvalluvar",
+    "desc": "Poet who wrote the Tirukkural"
+   }
+  ],
+  "pashtun": [
+   {
+    "name": "Malala Yousafzai",
+    "desc": "Education activist and youngest Nobel Peace Prize winner"
+   },
+   {
+    "name": "Abdul Ghaffar Khan",
+    "desc": "Leader of nonviolent resistance, known as the Frontier Gandhi"
+   },
+   {
+    "name": "Ahmad Shah Durrani",
+    "desc": "Founder of the Durrani Empire"
+   },
+   {
+    "name": "Rahman Baba",
+    "desc": "Sufi poet"
+   },
+   {
+    "name": "Shahid Afridi",
+    "desc": "Cricketer"
+   }
+  ],
+  "japanese": [
+   {
+    "name": "Katsushika Hokusai",
+    "desc": "Artist who made The Great Wave"
+   },
+   {
+    "name": "Akira Kurosawa",
+    "desc": "Filmmaker"
+   },
+   {
+    "name": "Hayao Miyazaki",
+    "desc": "Animator and co-founder of Studio Ghibli"
+   },
+   {
+    "name": "Haruki Murakami",
+    "desc": "Novelist"
+   },
+   {
+    "name": "Shohei Ohtani",
+    "desc": "Baseball star"
+   }
+  ],
+  "koreans": [
+   {
+    "name": "King Sejong the Great",
+    "desc": "Ruler who had the Korean alphabet, Hangul, created"
+   },
+   {
+    "name": "Yi Sun-sin",
+    "desc": "Admiral who won famous naval battles"
+   },
+   {
+    "name": "Bong Joon-ho",
+    "desc": "Director of Parasite"
+   },
+   {
+    "name": "Yuna Kim",
+    "desc": "Olympic champion figure skater"
+   },
+   {
+    "name": "Han Kang",
+    "desc": "Novelist, Nobel Prize in Literature 2024"
+   }
+  ],
+  "javanese": [
+   {
+    "name": "Kartini",
+    "desc": "Pioneer of education for girls"
+   },
+   {
+    "name": "Pramoedya Ananta Toer",
+    "desc": "Novelist"
+   },
+   {
+    "name": "Diponegoro",
+    "desc": "Prince who led the Java War"
+   },
+   {
+    "name": "Gajah Mada",
+    "desc": "Prime minister of the Majapahit Empire"
+   },
+   {
+    "name": "Sukarno",
+    "desc": "First president of Indonesia"
+   }
+  ],
+  "vietnamese-kinh": [
+   {
+    "name": "Nguyễn Du",
+    "desc": "Poet who wrote The Tale of Kieu"
+   },
+   {
+    "name": "Thich Nhat Hanh",
+    "desc": "Zen master and peace activist"
+   },
+   {
+    "name": "The Trưng Sisters",
+    "desc": "Leaders of a rebellion in the year 40"
+   },
+   {
+    "name": "Ho Chi Minh",
+    "desc": "Founder of modern Vietnam"
+   },
+   {
+    "name": "Ngô Bảo Châu",
+    "desc": "Mathematician, Fields Medal 2010"
+   }
+  ],
+  "mongols": [
+   {
+    "name": "Genghis Khan",
+    "desc": "Founder of the Mongol Empire"
+   },
+   {
+    "name": "Kublai Khan",
+    "desc": "Founder of the Yuan dynasty in China"
+   },
+   {
+    "name": "Ögedei Khan",
+    "desc": "Second Great Khan of the Mongol Empire"
+   },
+   {
+    "name": "Mandukhai the Wise",
+    "desc": "Queen who reunited the Mongols"
+   },
+   {
+    "name": "Damdin Sükhbaatar",
+    "desc": "Leader of the 1921 revolution"
+   }
+  ],
+  "uyghurs": [
+   {
+    "name": "Mahmud al-Kashgari",
+    "desc": "11th-century scholar who wrote the first Turkic dictionary"
+   },
+   {
+    "name": "Yusuf Khass Hajib",
+    "desc": "11th-century poet, author of the Kutadgu Bilig"
+   },
+   {
+    "name": "Abdurehim Ötkür",
+    "desc": "20th-century poet and writer"
+   },
+   {
+    "name": "Amannisa Khan",
+    "desc": "16th-century queen and poet, credited with gathering the Twelve Muqam"
+   }
+  ],
+  "arabs": [
+   {
+    "name": "Ibn Khaldun",
+    "desc": "Historian and early thinker on society and economics"
+   },
+   {
+    "name": "Averroes (Ibn Rushd)",
+    "desc": "Philosopher and physician of Andalusia"
+   },
+   {
+    "name": "Umm Kulthum",
+    "desc": "Egyptian singer loved across the Arab world"
+   },
+   {
+    "name": "Naguib Mahfouz",
+    "desc": "Egyptian novelist, Nobel Prize in Literature 1988"
+   },
+   {
+    "name": "Fairuz",
+    "desc": "Lebanese singer"
+   }
+  ],
+  "persians": [
+   {
+    "name": "Cyrus the Great",
+    "desc": "Founder of the Achaemenid Persian Empire"
+   },
+   {
+    "name": "Ferdowsi",
+    "desc": "Poet who wrote the Shahnameh"
+   },
+   {
+    "name": "Hafez",
+    "desc": "Poet of Shiraz"
+   },
+   {
+    "name": "Avicenna (Ibn Sina)",
+    "desc": "Physician and philosopher"
+   },
+   {
+    "name": "Maryam Mirzakhani",
+    "desc": "Mathematician, first woman to win the Fields Medal"
+   }
+  ],
+  "turks": [
+   {
+    "name": "Mimar Sinan",
+    "desc": "Chief architect of the Ottoman Empire"
+   },
+   {
+    "name": "Suleiman the Magnificent",
+    "desc": "Ottoman sultan"
+   },
+   {
+    "name": "Mustafa Kemal Atatürk",
+    "desc": "Founder of the Republic of Türkiye"
+   },
+   {
+    "name": "Orhan Pamuk",
+    "desc": "Novelist, Nobel Prize in Literature 2006"
+   },
+   {
+    "name": "Aziz Sancar",
+    "desc": "Biochemist, Nobel Prize in Chemistry 2015"
+   }
+  ],
+  "jewish-people": [
+   {
+    "name": "Albert Einstein",
+    "desc": "Physicist"
+   },
+   {
+    "name": "Maimonides",
+    "desc": "Medieval philosopher and physician"
+   },
+   {
+    "name": "Anne Frank",
+    "desc": "Diarist whose writing is read around the world"
+   },
+   {
+    "name": "Ruth Bader Ginsburg",
+    "desc": "US Supreme Court justice"
+   },
+   {
+    "name": "Steven Spielberg",
+    "desc": "Film director"
+   }
+  ],
+  "kurds": [
+   {
+    "name": "Saladin",
+    "desc": "Sultan of Egypt and Syria, of Kurdish family"
+   },
+   {
+    "name": "Ahmad Khani",
+    "desc": "17th-century poet who wrote Mem û Zîn"
+   },
+   {
+    "name": "Sharaf Khan Bidlisi",
+    "desc": "Historian who wrote the Sharafnama"
+   },
+   {
+    "name": "Yılmaz Güney",
+    "desc": "Filmmaker and actor"
+   }
+  ],
+  "armenians": [
+   {
+    "name": "Mesrop Mashtots",
+    "desc": "Created the Armenian alphabet"
+   },
+   {
+    "name": "Komitas",
+    "desc": "Composer and musicologist"
+   },
+   {
+    "name": "Aram Khachaturian",
+    "desc": "Composer of the Sabre Dance"
+   },
+   {
+    "name": "Hovhannes Aivazovsky",
+    "desc": "Painter of the sea"
+   },
+   {
+    "name": "Charles Aznavour",
+    "desc": "Singer and songwriter"
+   }
+  ],
+  "yoruba": [
+   {
+    "name": "Wole Soyinka",
+    "desc": "Playwright, Nobel Prize in Literature 1986"
+   },
+   {
+    "name": "Fela Kuti",
+    "desc": "Musician who created Afrobeat"
+   },
+   {
+    "name": "Funmilayo Ransome-Kuti",
+    "desc": "Women's rights campaigner"
+   },
+   {
+    "name": "Hakeem Olajuwon",
+    "desc": "Basketball Hall of Famer"
+   },
+   {
+    "name": "Wizkid",
+    "desc": "Afrobeats star"
+   }
+  ],
+  "igbo": [
+   {
+    "name": "Chinua Achebe",
+    "desc": "Novelist who wrote Things Fall Apart"
+   },
+   {
+    "name": "Chimamanda Ngozi Adichie",
+    "desc": "Novelist and speaker"
+   },
+   {
+    "name": "Nnamdi Azikiwe",
+    "desc": "First president of Nigeria"
+   },
+   {
+    "name": "Olaudah Equiano",
+    "desc": "Writer and campaigner against the slave trade"
+   },
+   {
+    "name": "Ngozi Okonjo-Iweala",
+    "desc": "Economist, head of the World Trade Organization"
+   }
+  ],
+  "hausa": [
+   {
+    "name": "Queen Amina of Zazzau",
+    "desc": "Warrior queen of the 16th century"
+   },
+   {
+    "name": "Abubakar Tafawa Balewa",
+    "desc": "First prime minister of Nigeria"
+   },
+   {
+    "name": "Aminu Kano",
+    "desc": "Politician from Kano who spoke up for ordinary people"
+   }
+  ],
+  "oromo": [
+   {
+    "name": "Abebe Bikila",
+    "desc": "Marathon runner who won Olympic gold barefoot in 1960"
+   },
+   {
+    "name": "Haile Gebrselassie",
+    "desc": "Long-distance running legend"
+   },
+   {
+    "name": "Kenenisa Bekele",
+    "desc": "Long-distance runner and Olympic champion"
+   },
+   {
+    "name": "Tirunesh Dibaba",
+    "desc": "Long-distance runner and Olympic champion"
+   },
+   {
+    "name": "Ali Birra",
+    "desc": "Singer called the father of modern Oromo music"
+   }
+  ],
+  "zulu": [
+   {
+    "name": "Shaka",
+    "desc": "King who built the Zulu kingdom"
+   },
+   {
+    "name": "Cetshwayo",
+    "desc": "King who defeated the British at Isandlwana"
+   },
+   {
+    "name": "Albert Luthuli",
+    "desc": "Leader against apartheid, Nobel Peace Prize 1960"
+   },
+   {
+    "name": "Joseph Shabalala",
+    "desc": "Founder of Ladysmith Black Mambazo"
+   },
+   {
+    "name": "Princess Constance Magogo",
+    "desc": "Composer and singer"
+   }
+  ],
+  "maasai": [
+   {
+    "name": "David Rudisha",
+    "desc": "Runner who set the 800 metres world record"
+   },
+   {
+    "name": "Lenana",
+    "desc": "Maasai spiritual leader (laibon) of the late 1800s"
+   },
+   {
+    "name": "Mbatian",
+    "desc": "Maasai spiritual leader (laibon) of the 1800s"
+   },
+   {
+    "name": "Joseph Lekuton",
+    "desc": "Teacher, author and member of Kenya's parliament"
+   }
+  ],
+  "amazigh-berbers": [
+   {
+    "name": "Dihya (the Kahina)",
+    "desc": "Warrior queen who resisted the Arab conquest"
+   },
+   {
+    "name": "Masinissa",
+    "desc": "First king of united Numidia"
+   },
+   {
+    "name": "Jugurtha",
+    "desc": "Numidian king who fought Rome"
+   },
+   {
+    "name": "Ibn Battuta",
+    "desc": "Traveler who journeyed about 120,000 kilometres"
+   },
+   {
+    "name": "Zinedine Zidane",
+    "desc": "Footballer of Kabyle family, World Cup winner with France"
+   }
+  ],
+  "russians": [
+   {
+    "name": "Leo Tolstoy",
+    "desc": "Novelist who wrote War and Peace"
+   },
+   {
+    "name": "Fyodor Dostoevsky",
+    "desc": "Novelist who wrote Crime and Punishment"
+   },
+   {
+    "name": "Pyotr Tchaikovsky",
+    "desc": "Composer of Swan Lake and The Nutcracker"
+   },
+   {
+    "name": "Yuri Gagarin",
+    "desc": "First human in space"
+   },
+   {
+    "name": "Dmitri Mendeleev",
+    "desc": "Chemist who created the periodic table"
+   }
+  ],
+  "germans": [
+   {
+    "name": "Johann Sebastian Bach",
+    "desc": "Composer"
+   },
+   {
+    "name": "Ludwig van Beethoven",
+    "desc": "Composer"
+   },
+   {
+    "name": "Johann Wolfgang von Goethe",
+    "desc": "Poet and writer"
+   },
+   {
+    "name": "Albert Einstein",
+    "desc": "Physicist"
+   },
+   {
+    "name": "Johannes Gutenberg",
+    "desc": "Inventor of the European printing press"
+   }
+  ],
+  "irish": [
+   {
+    "name": "Oscar Wilde",
+    "desc": "Playwright and wit"
+   },
+   {
+    "name": "James Joyce",
+    "desc": "Novelist who wrote Ulysses"
+   },
+   {
+    "name": "W. B. Yeats",
+    "desc": "Poet, Nobel Prize in Literature 1923"
+   },
+   {
+    "name": "Seamus Heaney",
+    "desc": "Poet, Nobel Prize in Literature 1995"
+   },
+   {
+    "name": "Grace O'Malley",
+    "desc": "Sixteenth-century sea captain and clan chief, the pirate queen"
+   }
+  ],
+  "basques": [
+   {
+    "name": "Juan Sebastián Elcano",
+    "desc": "Completed the first voyage around the world"
+   },
+   {
+    "name": "Ignatius of Loyola",
+    "desc": "Founder of the Jesuits"
+   },
+   {
+    "name": "Cristóbal Balenciaga",
+    "desc": "Fashion designer"
+   },
+   {
+    "name": "Eduardo Chillida",
+    "desc": "Sculptor"
+   },
+   {
+    "name": "Miguel de Unamuno",
+    "desc": "Writer and philosopher"
+   }
+  ],
+  "sami": [
+   {
+    "name": "Nils-Aslak Valkeapää",
+    "desc": "Poet, musician and artist"
+   },
+   {
+    "name": "Mari Boine",
+    "desc": "Singer"
+   },
+   {
+    "name": "Elsa Laula Renberg",
+    "desc": "Organised the first Sámi national meeting in 1917"
+   },
+   {
+    "name": "Johan Turi",
+    "desc": "Author of the first book in Sámi about Sámi life"
+   },
+   {
+    "name": "Sofia Jannok",
+    "desc": "Singer and activist"
+   }
+  ],
+  "roma": [
+   {
+    "name": "Django Reinhardt",
+    "desc": "Jazz guitarist"
+   },
+   {
+    "name": "Papusza (Bronisława Wajs)",
+    "desc": "Poet"
+   },
+   {
+    "name": "Esma Redžepova",
+    "desc": "Singer known as the Queen of Roma music"
+   },
+   {
+    "name": "Ceija Stojka",
+    "desc": "Artist and writer"
+   }
+  ],
+  "quechua": [
+   {
+    "name": "Pachacuti",
+    "desc": "Inca emperor who built Machu Picchu's empire"
+   },
+   {
+    "name": "Atahualpa",
+    "desc": "Last emperor of the Inca"
+   },
+   {
+    "name": "Túpac Amaru II",
+    "desc": "Led a great uprising in 1780"
+   },
+   {
+    "name": "José María Arguedas",
+    "desc": "Writer who wrote in Quechua and Spanish"
+   }
+  ],
+  "maya": [
+   {
+    "name": "Pakal the Great",
+    "desc": "Ruler of Palenque for 68 years"
+   },
+   {
+    "name": "Rigoberta Menchú",
+    "desc": "K'iche' Maya activist, Nobel Peace Prize 1992"
+   },
+   {
+    "name": "Lady Xoc",
+    "desc": "Queen of Yaxchilan"
+   },
+   {
+    "name": "Jasaw Chan K'awiil I",
+    "desc": "Ruler who revived the city of Tikal"
+   }
+  ],
+  "navajo-dine": [
+   {
+    "name": "Manuelito",
+    "desc": "Navajo leader and chief"
+   },
+   {
+    "name": "Annie Dodge Wauneka",
+    "desc": "Health campaigner, Presidential Medal of Freedom"
+   },
+   {
+    "name": "Chester Nez",
+    "desc": "One of the original Navajo code talkers"
+   },
+   {
+    "name": "R. C. Gorman",
+    "desc": "Artist"
+   },
+   {
+    "name": "Hosteen Klah",
+    "desc": "Weaver and medicine man"
+   }
+  ],
+  "inuit": [
+   {
+    "name": "Kenojuak Ashevak",
+    "desc": "Artist from Cape Dorset"
+   },
+   {
+    "name": "Tanya Tagaq",
+    "desc": "Throat singer and musician"
+   },
+   {
+    "name": "Zacharias Kunuk",
+    "desc": "Director of Atanarjuat: The Fast Runner"
+   },
+   {
+    "name": "Susan Aglukark",
+    "desc": "Singer-songwriter"
+   },
+   {
+    "name": "Mary Simon",
+    "desc": "Governor General of Canada, the first Indigenous person in the role"
+   }
+  ],
+  "maori": [
+   {
+    "name": "Whina Cooper",
+    "desc": "Land rights leader who led the 1975 hikoi"
+   },
+   {
+    "name": "Apirana Ngata",
+    "desc": "Politician and scholar"
+   },
+   {
+    "name": "Taika Waititi",
+    "desc": "Film director"
+   },
+   {
+    "name": "Kiri Te Kanawa",
+    "desc": "Opera singer"
+   },
+   {
+    "name": "Hone Tuwhare",
+    "desc": "Poet"
+   }
+  ],
+  "aboriginal-australians": [
+   {
+    "name": "Cathy Freeman",
+    "desc": "Olympic 400 metres champion"
+   },
+   {
+    "name": "Albert Namatjira",
+    "desc": "Painter of the central Australian landscape"
+   },
+   {
+    "name": "Evonne Goolagong Cawley",
+    "desc": "Tennis champion"
+   },
+   {
+    "name": "David Unaipon",
+    "desc": "Inventor and writer"
+   },
+   {
+    "name": "Archie Roach",
+    "desc": "Singer-songwriter"
+   }
+  ]
+ }
+}

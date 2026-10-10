@@ -162,7 +162,7 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
   var F = window.DellisFacts;
   var REGION_VAR = { africa: "--r-africa", americas: "--r-americas", asia: "--r-asia", europe: "--r-europe", mena: "--r-mena", oceania: "--r-oceania" };
   var state = { q: "", kind: "all", g: "all", sort: "az" };
-  var items = [], ctx = null, live = null, curated = null, famous = null, now = new Date();
+  var items = [], ctx = null, live = null, curated = null, famous = null, famousPeoples = null, now = new Date();
   var listEl = document.getElementById("list");
   var countEl = document.getElementById("count");
   var sortBtn = document.getElementById("sort");
@@ -238,8 +238,10 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
     if (facts.special) body.appendChild(block("Something special", facts.special));
     if (facts.known.length) body.appendChild(block("What the world knows", list(facts.known)));
     if (facts.records.length) body.appendChild(block("Records", recordList(facts.records)));
-    var fam = it.kind === "country" && famous && famous.countries && famous.countries[it.data.code];
-    if (fam && fam.length) body.appendChild(block("Famous people from here", list(fam.map(function (f) { return f.name + " (" + f.desc + ")"; }))));
+    var fam = it.kind === "country"
+      ? famous && famous.countries && famous.countries[it.data.code]
+      : famousPeoples && famousPeoples.peoples && famousPeoples.peoples[it.data.id];
+    if (fam && fam.length) body.appendChild(block(it.kind === "people" ? "Famous people from this people" : "Famous people from here", list(fam.map(function (f) { return f.name + " (" + f.desc + ")"; }))));
     if (it.popM > 0) { var m = el("div", "meter"); var i = el("i"); i.style.width = sizeWidth(it.popM) + "%"; m.appendChild(i); body.appendChild(m); }
     body.appendChild(stats(rows));
   }
@@ -331,7 +333,7 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
   }
 
   function start(data) {
-    live = data[0]; curated = data[1]; famous = data[3];
+    live = data[0]; curated = data[1]; famous = data[3]; famousPeoples = data[4];
     ctx = F.buildContext(live.countries);
     items = buildItems(data[2].peoples, live.countries, curated);
     var w = F.worldFactOfMonth(ctx, curated.world, now);
@@ -358,7 +360,7 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
     if (node) node.scrollIntoView({ block: "center", behavior: "smooth" });
   });
 
-  Promise.all([getJson("data/live.json"), getJson("data/curated.json"), getJson("data/peoples.json"), getJson("data/famous.json").catch(function () { return null; })])
+  Promise.all([getJson("data/live.json"), getJson("data/curated.json"), getJson("data/peoples.json"), getJson("data/famous.json").catch(function () { return null; }), getJson("data/famous-peoples.json").catch(function () { return null; })])
     .then(start)
     .catch(function (err) {
       listEl.innerHTML = "";

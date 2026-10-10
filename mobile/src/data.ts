@@ -4,19 +4,20 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "curated", "peoples", "famous"] as const;
+const FILES = ["live", "curated", "peoples", "famous"] as const; // famous-peoples is hand-written, so it ships with the app only
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
   curated: require("./generated/curated.json"),
   peoples: require("./generated/peoples.json"),
   famous: require("./generated/famous.json"),
+  famousPeoples: require("./generated/famous-peoples.json"),
 };
 
 export type Item = {
   kind: "people" | "country"; id: string; name: string; aka: string[]; group: string; popM: number;
   popLabel: string; body: string; featured: boolean; data: any;
 };
-export type Loaded = { items: Item[]; ctx: any; live: any; curated: any; famous: any; fresh: any };
+export type Loaded = { items: Item[]; ctx: any; live: any; curated: any; famous: any; famousPeoples: any; fresh: any };
 
 export { F };
 
@@ -43,7 +44,7 @@ export function assemble(d: Record<string, any>, now = new Date()): Loaded {
   const ctx = F.buildContext(d.live.countries);
   return {
     items: buildItems(d.peoples.peoples, d.live.countries, d.curated),
-    ctx, live: d.live, curated: d.curated, famous: d.famous, fresh: F.freshness(d.live.generatedAt, now),
+    ctx, live: d.live, curated: d.curated, famous: d.famous, famousPeoples: d.famousPeoples, fresh: F.freshness(d.live.generatedAt, now),
   };
 }
 
