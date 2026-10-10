@@ -31,7 +31,7 @@ jobs:
       - name: Keep only the site files
         run: |
           mkdir _site
-          cp index.html facts.js _site/
+          cp index.html apps.json _site/
           cp -r data _site/data
           cp -r assets _site/assets
 

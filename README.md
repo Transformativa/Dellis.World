@@ -2,7 +2,7 @@
 
 **All World People Encyclopedia**, a Dellis app. Search any people or country and get a fun fact, something special, what the world knows about it, and records.
 
-It is a static site: `index.html`, `facts.js` and three data files. No build step and no dependencies.
+The encyclopedia is the paid mobile app (`app.html` is its working copy, with `facts.js` and the data files). The public website is only the **Danny's Apps** download page (`index.html` and `apps.json`). The data files are still published as JSON so the app can pick up each monthly refresh. No build step and no dependencies.
 
 ## How the facts work
 
@@ -51,7 +51,7 @@ npm test           # 17 tests
 npm run refresh    # fetch fresh numbers (needs internet)
 ```
 
-Opening `index.html` straight from disk will not work, because the browser blocks `fetch` for local files. Use the server above.
+Opening `app.html` or `index.html` straight from disk will not work, because the browser blocks `fetch` for local files. Use the server above.
 
 ## Publish with GitHub Pages
 
@@ -62,7 +62,10 @@ Opening `index.html` straight from disk will not work, because the browser block
 ## Files
 
 ```
-index.html                  the app (Dellis brand bar, search, fact panels)
+index.html                  Danny's Apps download page (public site)
+apps.json                   the apps on that page: price, status, store links
+app.html                    the encyclopedia app (brand bar, search, fact panels). Not published.
+scripts/make-qr.mjs         makes assets/qr.svg from the site URL in apps.json
 facts.js                    the fact engine
 data/live.json              country numbers, rewritten monthly by the refresh job
 data/famous.json            top five people per country, rewritten monthly
@@ -96,3 +99,7 @@ Run `npm test` after any change. The tests check that every country and every pe
 ## Brand
 
 Colors, type and shapes follow [dellis.store](https://www.dellis.store): mint-white background, near-black text, neon green and coral accents, Questrial headings, pill buttons and 14px corners.
+
+## Danny's Apps page
+
+Edit `apps.json`. When an app is in the stores, paste its App Store and Google Play links and set `status` to `live`. The buttons turn on and the "coming soon" line disappears. Phones see their own store first. Computers see a QR code. If the site address changes (for example to apps.dellis.store), update `siteUrl` and run `node scripts/make-qr.mjs`.
