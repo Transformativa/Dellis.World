@@ -182,6 +182,17 @@ export default function App() {
           <FlatList
             data={rows} keyExtractor={(i) => i.id} keyboardShouldPersistTaps="handled" extraData={[openId, favs, size]}
             ListHeaderComponent={header}
+            ListFooterComponent={
+              <View style={s.sources}>
+                <Text style={s.srcHead}>SOURCES</Text>
+                <Text style={s.srcTx}>
+                  Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
+                  {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
+                  {"\n"}Fun facts, special facts and records are written by Dellis from widely cited sources and are not independently checked.
+                  {"\n"}Numbers refresh on the 1st of each month. Last refreshed {L.live?.generatedAt ? new Date(L.live.generatedAt).toDateString() : "recently"}.
+                </Text>
+              </View>
+            }
             ListEmptyComponent={<Text style={s.empty}>Nothing matches that search. Try a country's common name, such as Russia or South Korea.</Text>}
             contentContainerStyle={{ paddingBottom: 24 }}
             renderItem={({ item, index }) => (
@@ -350,6 +361,9 @@ const mk = (z: number) => StyleSheet.create({
   chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
+  sources: { marginHorizontal: 16, marginTop: 20, gap: 6 },
+  srcHead: { color: t.muted, fontSize: 11 * z, letterSpacing: 1.2, fontWeight: "700" },
+  srcTx: { color: t.muted, fontSize: 12 * z, lineHeight: 18 * z },
   trialBar: { backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, borderRadius: t.radius, padding: 12 },
   trialTx: { color: t.fg, fontSize: 15 * z, lineHeight: 22 * z },
   tools: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
