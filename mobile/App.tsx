@@ -7,7 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts, Questrial_400Regular } from "@expo-google-fonts/questrial";
 import { F, Item, Loaded, loadData, refreshData } from "./src/data";
-import { FREE_LOOKS, PRICE_LABEL, TRIAL_LABEL, buy, isUnlocked, restore } from "./src/purchase";
+import { FREE_LOOKS, PRICE_LABEL, buy, isUnlocked, restore } from "./src/purchase";
 import { loadFavs, saveFavs } from "./src/favs";
 import { theme as t } from "./src/theme";
 
@@ -69,7 +69,6 @@ export default function App() {
       setUnlocked(u);
       const n = Number((await AsyncStorage.getItem("freeLooks").catch(() => "0")) || 0);
       setLooks(n);
-      if (!u) setPaywall(true); // the trial screen shows each time the app opens until subscribed
       const saved = await AsyncStorage.getItem("textSize").catch(() => null);
       if (saved && saved in SIZES) setSize(saved as Size);
       if (await refreshData()) setL(await loadData());
@@ -154,7 +153,7 @@ export default function App() {
         <Text style={s.muted}>{count}</Text>
         {!unlocked ? (
           <Pressable onPress={() => setPaywall(true)} accessibilityRole="button" style={s.trialBar}>
-            <Text style={s.trialTx}>{Math.max(0, FREE_LOOKS - looks)} free {FREE_LOOKS - looks === 1 ? "look" : "looks"} left. <Text style={s.smallLink}>Start your {TRIAL_LABEL}</Text></Text>
+            <Text style={s.trialTx}>{Math.max(0, FREE_LOOKS - looks)} free {FREE_LOOKS - looks === 1 ? "look" : "looks"} left. <Text style={s.smallLink}>Subscribe for {PRICE_LABEL}</Text></Text>
           </Pressable>
         ) : null}
         <View style={s.tools}>
@@ -284,7 +283,7 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
       <ScrollView contentContainerStyle={s.pad}>
         <Text style={s.h2}>My Favorites</Text>
         <Text style={s.body}>Subscribe to unlock everything: every people and country, and your own favorites card of fun facts.</Text>
-        <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Start {TRIAL_LABEL}</Text></Pressable>
+        <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text></Pressable>
       </ScrollView>
     );
   }
@@ -309,11 +308,11 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
   return (
     <View style={s.scrim}>
       <View style={s.sheet}>
-        <Text style={s.h2}>Start your {TRIAL_LABEL}</Text>
+        <Text style={s.h2}>Keep exploring</Text>
         <Text style={s.body}>Every people and country, fun facts, famous people, records, and My Favorites. No ads.</Text>
-        <Text style={s.body}>Try it free for 3 days, then {PRICE_LABEL}. It renews each year until you cancel. You can cancel any time in your phone's subscription settings, and if you cancel during the trial you pay nothing.</Text>
+        <Text style={s.body}>You have used your free looks. Subscribe for {PRICE_LABEL}. It renews each year until you cancel, and you can cancel any time in your phone's subscription settings.</Text>
         <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
-          <Text style={s.btnTx}>Start free trial</Text>
+          <Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text>
         </Pressable>
         <Pressable onPress={async () => { const r = await restore(); setMsg(r.message); if (r.ok) onDone(); }} accessibilityRole="button"><Text style={s.link}>Restore purchase</Text></Pressable>
         {msg ? <Text style={s.muted}>{msg}</Text> : null}
