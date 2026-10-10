@@ -30,7 +30,12 @@ else {
 }
 const live = JSON.parse(await readFile(path.join(root, "data", "live.json"), "utf8"));
 const totals = languageTotals(parseCldr(xml), live.countries);
-const ranked = Object.entries(totals).sort((a, b) => b[1].speakers - a[1].speakers).slice(0, 120);
+// English names come from the built-in ICU names; a few regional languages are missing there, so they are named here.
+const FALLBACK_NAMES = { apc: "Levantine Arabic", apd: "Sudanese Arabic", skr: "Saraiki", rkt: "Rangpuri", tts: "Northeastern Thai (Isan)", hne: "Chhattisgarhi", fuv: "Nigerian Fulfulde", dcc: "Deccan", mey: "Hassaniya Arabic", syl: "Sylheti" };
+const displayNames = new Intl.DisplayNames(["en"], { type: "language" });
+const nameOf = (code) => { let n; try { n = displayNames.of(code); } catch {} return n && n !== code ? n : FALLBACK_NAMES[code]; };
+const ranked = Object.entries(totals).sort((a, b) => b[1].speakers - a[1].speakers).slice(0, 120)
+  .map(([code, v]) => [code, { ...v, name: nameOf(code) }]).filter(([, v]) => v.name);
 if (ranked.length < 50) throw new Error("Too few languages parsed (" + ranked.length + "); keeping the old file");
 const out = {
   meta: {

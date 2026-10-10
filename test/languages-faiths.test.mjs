@@ -51,3 +51,16 @@ test("search finds languages and faiths by name and by what people call them", (
     assert.equal(F.search(items, q)[0]?.name, n, q);
   }
 });
+
+test("every one of the 120 languages has a name and gets a readable automatic entry", () => {
+  const data = JSON.parse(readFileSync(new URL("../data/languages.json", import.meta.url), "utf8")).languages;
+  const codes = Object.keys(data);
+  assert.ok(codes.length >= 100);
+  for (const [code, d] of Object.entries(data)) {
+    assert.ok(d.name && d.name !== code, `${code} has no name`);
+    const rec = F.languageRecord({ id: code, n: d.name }, d, {});
+    assert.ok(rec.s.includes(d.name), code);
+    assert.doesNotMatch([rec.s, ...rec.known].join(" "), /undefined|NaN|null/, code);
+    assert.equal(rec.family, "");
+  }
+});

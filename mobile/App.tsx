@@ -168,6 +168,18 @@ export default function App() {
         </ScrollView>
 
         <Text style={s.muted}>{count}</Text>
+        {kind === "language" ? (
+          <View style={s.note}>
+            <Text style={s.noteHead}>Why these languages?</Text>
+            <Text style={s.noteTx}>About 7,000 languages exist. We list the 120 most spoken, because the speaker numbers come from Unicode CLDR, which tracks widely used languages, and we only show numbers we can back up. 33 of them have hand-written facts. The rest show speakers and countries only. The small label under each name is its language family, the group of related languages it belongs to.</Text>
+          </View>
+        ) : null}
+        {kind === "faith" ? (
+          <View style={s.note}>
+            <Text style={s.noteHead}>Why these groups?</Text>
+            <Text style={s.noteTx}>Faiths are grouped the way Pew Research Center counts them worldwide: Christians, Muslims, Hindus, Buddhists, Jews, people with no religion, and other religions. We show Sikhism on its own. Smaller faiths and folk traditions sit inside "Folk and other". Each group has many branches and traditions.</Text>
+          </View>
+        ) : null}
         {!unlocked ? (
           <Pressable onPress={() => setPaywall(true)} accessibilityRole="button" style={s.trialBar}>
             <Text style={s.trialTx}>{Math.max(0, FREE_LOOKS - looks)} free {FREE_LOOKS - looks === 1 ? "look" : "looks"} left. <Text style={s.smallLink}>Subscribe for {PRICE_LABEL}</Text></Text>
@@ -205,7 +217,7 @@ export default function App() {
                 <Text style={s.srcTx}>
                   Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
                   {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
-                  {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR"}. Speaker numbers are estimates that include second-language speakers.
+                  {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR"}. Speaker numbers are estimates that include second-language speakers. Only the 120 most spoken of about 7,000 languages are listed; names are from the Unicode CLDR English names.
                   {"\n"}Faiths: {L.faiths?.meta?.citation} {L.faiths?.meta?.disclaimer} Figures are for {L.faiths?.meta?.asOf}.
                   {"\n"}Fun facts, special facts and records are written by Dellis from widely cited sources and are not independently checked.
                   {"\n"}Numbers refresh on the 1st of each month. Last refreshed {L.live?.generatedAt ? new Date(L.live.generatedAt).toDateString() : "recently"}.
@@ -220,7 +232,7 @@ export default function App() {
                   <View style={[s.dot, { backgroundColor: REGION_COLOR[item.group] || KIND_COLOR[item.kind] || t.fg }]} />
                   <View style={{ flex: 1 }}>
                     <Text style={s.rowName}>{item.name}</Text>
-                    <Text style={s.rowSub}>{KIND_LABEL[item.kind] + (item.kind === "language" ? " · " + String(item.data.family).split(" (")[0].toUpperCase() : F.GROUPS[item.group] ? " · " + F.GROUPS[item.group].toUpperCase() : "")}</Text>
+                    <Text style={s.rowSub}>{KIND_LABEL[item.kind] + (item.kind === "language" ? " · " + (item.data.family ? String(item.data.family).split(" (")[0].toUpperCase() : "SPEAKER DATA ONLY") : F.GROUPS[item.group] ? " · " + F.GROUPS[item.group].toUpperCase() : "")}</Text>
                   </View>
                   {favs.includes(item.id) ? <Text style={s.star}>★</Text> : null}
                   <Text style={s.pp}>{item.popLabel}</Text>
@@ -384,6 +396,9 @@ const mk = (z: number) => StyleSheet.create({
   chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
+  note: { marginHorizontal: 16, marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
+  noteHead: { color: t.orange, fontSize: 13 * z, fontWeight: "700", letterSpacing: 0.4 },
+  noteTx: { color: t.fg, fontSize: 14 * z, lineHeight: 21 * z },
   sources: { marginHorizontal: 16, marginTop: 20, gap: 6 },
   srcHead: { color: t.muted, fontSize: 11 * z, letterSpacing: 1.2, fontWeight: "700" },
   srcTx: { color: t.muted, fontSize: 12 * z, lineHeight: 18 * z },

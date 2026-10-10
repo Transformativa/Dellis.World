@@ -207,15 +207,18 @@
   function languageRecord(cur, data, countriesByCode) {
     var known = [];
     var total = data && data.speakers ? data.speakers : 0;
-    known.push("Language family: " + cur.family + ".");
-    known.push("Writing system: " + cur.script + ".");
+    var top = ((data && data.countries) || []).slice(0, 4).map(function (c) { var k = countriesByCode[c.code]; return k ? k.display : ""; }).filter(Boolean);
+    if (cur.family) known.push("Language family: " + cur.family + ".");
+    if (cur.script) known.push("Writing system: " + cur.script + ".");
     if (total) known.push("Used by about " + fmtPop(total) + " people (an estimate that includes people who speak it as a second language).");
     if (data && data.officialIn) known.push("Official in " + data.officialIn + (data.officialIn === 1 ? " country." : " countries."));
-    var top = ((data && data.countries) || []).slice(0, 4).map(function (c) { var k = countriesByCode[c.code]; return k ? k.display : ""; }).filter(Boolean);
     if (top.length) known.push("Most speakers live in " + top.join(", ") + ".");
+    // Languages without hand-written text get a plain summary built from the numbers.
+    var auto = !cur.s;
+    var summary = cur.s || (cur.n + (total ? " is used by about " + fmtPop(total) + " people" : " is spoken") + (top.length ? ", mostly in " + top.slice(0, 3).join(", ") + "." : "."));
     return {
       id: cur.id, n: cur.n, aka: cur.aka || [], g: "", p: total / 1e6, pl: total ? "about " + fmtPop(total) + " people" : "",
-      s: cur.s, fun: cur.fun, special: cur.special, known: known, family: cur.family, script: cur.script, records: []
+      s: summary, fun: cur.fun, special: cur.special, known: known, family: cur.family || "", script: cur.script || "", auto: auto, records: []
     };
   }
 

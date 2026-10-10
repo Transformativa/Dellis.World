@@ -48,6 +48,16 @@ export function buildItems(peoples: any[], countries: any[], curated: any, more:
       popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: [cur.family, cur.script, cur.s, cur.fun, cur.special].join(" "), featured: true, data: rec,
     });
   }
+  // The rest of the 120 most-spoken languages (from Unicode CLDR) get an automatic entry, searchable but not in the "All" mix.
+  const written = new Set((more.languagesCurated?.languages || []).map((c: any) => c.id));
+  for (const [code, d] of Object.entries<any>(more.languages?.languages || {})) {
+    if (written.has(code) || !d.name) continue;
+    const rec = F.languageRecord({ id: code, n: d.name }, d, byCode);
+    out.push({
+      kind: "language", id: "l-" + code, name: d.name, aka: [], group: "", popM: rec.p,
+      popLabel: rec.p ? "~" + F.fmtPop(rec.p * 1e6) : "", body: d.name, featured: false, data: rec,
+    });
+  }
   for (const f of more.faiths?.faiths || []) {
     const rec = F.faithRecord(f);
     out.push({
