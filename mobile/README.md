@@ -3,7 +3,7 @@
 The Expo / React Native app for the Dellis encyclopedia. It uses the same fact engine (`facts.js`) and data files as the repo root.
 
 - **Free:** search everything, fun facts, famous people, world fact of the month.
-- **Unlock, $2.99 / year (auto-renewing):** My Favorites, a card of fun facts for the peoples and countries in your family. Not a DNA test.
+- **Subscription, $2.99 / year with a 3-day free trial (auto-renewing). The app shows the trial screen when it opens and after 3 free looks:** My Favorites, a card of fun facts for the peoples and countries in your family. Not a DNA test.
 - **Data:** a copy ships inside the app, so it works offline. On launch it checks `https://transformativa.github.io/Dellis.World/data/` for the newer monthly copy and uses that next time.
 
 ## Run it

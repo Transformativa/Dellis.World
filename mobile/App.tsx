@@ -7,7 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts, Questrial_400Regular } from "@expo-google-fonts/questrial";
 import { F, Item, Loaded, loadData, refreshData } from "./src/data";
-import { PRICE_LABEL, buy, isUnlocked, restore } from "./src/purchase";
+import { FREE_LOOKS, PRICE_LABEL, TRIAL_LABEL, buy, isUnlocked, restore } from "./src/purchase";
 import { loadFavs, saveFavs } from "./src/favs";
 import { theme as t } from "./src/theme";
 
@@ -53,6 +53,7 @@ export default function App() {
   const [favs, setFavs] = useState<string[]>([]);
   const [unlocked, setUnlocked] = useState(false);
   const [paywall, setPaywall] = useState(false);
+  const [looks, setLooks] = useState(0);
   const [size, setSize] = useState<Size>("medium");
   const [fact, setFact] = useState<{ name: string; text: string } | null>(null);
   const s = useMemo(() => mk(SIZES[size]), [size]);
@@ -64,7 +65,11 @@ export default function App() {
       setL(first);
       setFact(randomFact(first));
       setFavs(await loadFavs());
-      setUnlocked(await isUnlocked());
+      const u = await isUnlocked();
+      setUnlocked(u);
+      const n = Number((await AsyncStorage.getItem("freeLooks").catch(() => "0")) || 0);
+      setLooks(n);
+      if (!u) setPaywall(true); // the trial screen shows each time the app opens until subscribed
       const saved = await AsyncStorage.getItem("textSize").catch(() => null);
       if (saved && saved in SIZES) setSize(saved as Size);
       if (await refreshData()) setL(await loadData());
@@ -88,9 +93,19 @@ export default function App() {
     const next = favs.includes(it.id) ? favs.filter((x) => x !== it.id) : [...favs, it.id];
     setFavs(next); saveFavs(next);
   };
+  const openRow = (id: string) => {
+    if (openId === id) return setOpenId(null);
+    if (!unlocked) {
+      if (looks >= FREE_LOOKS) return setPaywall(true);
+      const n = looks + 1;
+      setLooks(n); AsyncStorage.setItem("freeLooks", String(n)).catch(() => {});
+    }
+    setOpenId(id);
+  };
   const random = () => {
+    if (!unlocked && looks >= FREE_LOOKS) return setPaywall(true);
     const it = L.items[Math.floor(Math.random() * L.items.length)];
-    setQ(""); setKind("all"); setRegion("all"); setOpenId(it.id);
+    setQ(""); setKind("all"); setRegion("all"); openRow(it.id);
   };
   let rows = view.rows;
   if (openId && !rows.some((r) => r.id === openId)) {
@@ -137,6 +152,11 @@ export default function App() {
         </ScrollView>
 
         <Text style={s.muted}>{count}</Text>
+        {!unlocked ? (
+          <Pressable onPress={() => setPaywall(true)} accessibilityRole="button" style={s.trialBar}>
+            <Text style={s.trialTx}>{Math.max(0, FREE_LOOKS - looks)} free {FREE_LOOKS - looks === 1 ? "look" : "looks"} left. <Text style={s.smallLink}>Start your {TRIAL_LABEL}</Text></Text>
+          </Pressable>
+        ) : null}
         <View style={s.tools}>
           <View style={s.sizeRow}>
             {(["small", "medium", "large"] as Size[]).map((n) => (
@@ -167,7 +187,7 @@ export default function App() {
             contentContainerStyle={{ paddingBottom: 24 }}
             renderItem={({ item, index }) => (
               <View style={[s.listWrap, index === 0 && s.listTop, index === rows.length - 1 && s.listBottom]}>
-                <Pressable onPress={() => setOpenId(openId === item.id ? null : item.id)} style={s.row} accessibilityRole="button" accessibilityState={{ expanded: openId === item.id }}>
+                <Pressable onPress={() => openRow(item.id)} style={s.row} accessibilityRole="button" accessibilityState={{ expanded: openId === item.id }}>
                   <View style={[s.dot, { backgroundColor: REGION_COLOR[item.group] || t.fg }]} />
                   <View style={{ flex: 1 }}>
                     <Text style={s.rowName}>{item.name}</Text>
@@ -263,8 +283,8 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
     return (
       <ScrollView contentContainerStyle={s.pad}>
         <Text style={s.h2}>My Favorites</Text>
-        <Text style={s.body}>Save the peoples and countries you love or come from, and get one card of fun facts about them. Just for fun.</Text>
-        <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Unlock for {PRICE_LABEL}</Text></Pressable>
+        <Text style={s.body}>Subscribe to unlock everything: every people and country, and your own favorites card of fun facts.</Text>
+        <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Start {TRIAL_LABEL}</Text></Pressable>
       </ScrollView>
     );
   }
@@ -289,15 +309,15 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
   return (
     <View style={s.scrim}>
       <View style={s.sheet}>
-        <Text style={s.h2}>Unlock My Favorites</Text>
-        <Text style={s.body}>Save the peoples and countries you love or come from, and get your own fun-facts card.</Text>
-        <Text style={s.body}>{PRICE_LABEL}. Renews each year until you cancel in your phone's subscription settings. Browsing everything stays free.</Text>
+        <Text style={s.h2}>Start your {TRIAL_LABEL}</Text>
+        <Text style={s.body}>Every people and country, fun facts, famous people, records, and My Favorites. No ads.</Text>
+        <Text style={s.body}>Try it free for 3 days, then {PRICE_LABEL}. It renews each year until you cancel. You can cancel any time in your phone's subscription settings, and if you cancel during the trial you pay nothing.</Text>
         <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
-          <Text style={s.btnTx}>Unlock for {PRICE_LABEL}</Text>
+          <Text style={s.btnTx}>Start free trial</Text>
         </Pressable>
         <Pressable onPress={async () => { const r = await restore(); setMsg(r.message); if (r.ok) onDone(); }} accessibilityRole="button"><Text style={s.link}>Restore purchase</Text></Pressable>
         {msg ? <Text style={s.muted}>{msg}</Text> : null}
-        <Pressable onPress={onClose} accessibilityRole="button"><Text style={s.link}>Not now</Text></Pressable>
+        <Pressable onPress={onClose} accessibilityRole="button"><Text style={s.muted}>Maybe later</Text></Pressable>
       </View>
     </View>
   );
@@ -331,6 +351,8 @@ const mk = (z: number) => StyleSheet.create({
   chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
+  trialBar: { backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, borderRadius: t.radius, padding: 12 },
+  trialTx: { color: t.fg, fontSize: 15 * z, lineHeight: 22 * z },
   tools: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
   sizeRow: { flexDirection: "row", alignItems: "center", gap: 6 },
   sizeBtn: { width: 40, height: 40, borderRadius: 10, alignItems: "center", justifyContent: "center", borderWidth: 1.5, borderColor: t.line },

@@ -4,6 +4,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // This file is the only place that knows about purchases. To go live, connect it to the store
 // (RevenueCat's react-native-purchases is the usual way) and keep these three functions.
 export const PRICE_LABEL = "$2.99 / year";
+export const TRIAL_LABEL = "3-day free trial"; // set up as an introductory offer on the subscription in App Store Connect and Google Play
+export const FREE_LOOKS = 3; // entries a visitor can open before the trial screen
 
 // For testing only: builds made with EXPO_PUBLIC_DEV_UNLOCK=1 can unlock without paying.
 const DEV = process.env.EXPO_PUBLIC_DEV_UNLOCK === "1";
