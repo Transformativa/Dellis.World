@@ -137,7 +137,7 @@ function Detail({ it, L, fav, onFav, onClose }: { it: Item; L: Loaded; fav: bool
         {f.fun ? <Section label="Fun fact"><Text style={s.body}>{f.fun}</Text></Section> : null}
         {f.special ? <Section label="Something special"><Text style={s.body}>{f.special}</Text></Section> : null}
         {f.known?.length ? <Section label="What the world knows">{f.known.map((k: string, i: number) => <Text key={i} style={s.body}>• {k}</Text>)}</Section> : null}
-        {people.length ? <Section label={it.kind === "people" ? "Famous people from this people" : "Famous people from here"}>{people.map((p) => <Text key={p.name} style={s.body}>• {p.name} <Text style={s.muted}>({p.desc})</Text></Text>)}</Section> : null}
+        {people.length ? <Section label={it.kind === "people" ? "Famous people" : "Famous people from here"}>{people.map((p) => <Text key={p.name} style={s.body}>• {p.name} <Text style={s.muted}>({p.desc})</Text></Text>)}</Section> : null}
         {f.records?.length ? <Section label="Records">{f.records.map((r: any, i: number) => <Text key={i} style={s.body}>• {r.text} <Text style={s.muted}>({r.src})</Text></Text>)}</Section> : null}
         <Section label="Numbers">
           {it.kind === "people"

@@ -241,7 +241,7 @@ dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
     var fam = it.kind === "country"
       ? famous && famous.countries && famous.countries[it.data.code]
       : famousPeoples && famousPeoples.peoples && famousPeoples.peoples[it.data.id];
-    if (fam && fam.length) body.appendChild(block(it.kind === "people" ? "Famous people from this people" : "Famous people from here", list(fam.map(function (f) { return f.name + " (" + f.desc + ")"; }))));
+    if (fam && fam.length) body.appendChild(block(it.kind === "people" ? "Famous people" : "Famous people from here", list(fam.map(function (f) { return f.name + " (" + f.desc + ")"; }))));
     if (it.popM > 0) { var m = el("div", "meter"); var i = el("i"); i.style.width = sizeWidth(it.popM) + "%"; m.appendChild(i); body.appendChild(m); }
     body.appendChild(stats(rows));
   }
