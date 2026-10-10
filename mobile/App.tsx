@@ -212,7 +212,12 @@ function Chip({ on, label, onPress, dot }: { on: boolean; label: string; onPress
 
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
   const s = useS();
-  return <View style={s.fact}><Text style={s.lab}>{label.toUpperCase()}</Text>{children}</View>;
+  return <View style={s.fact}><Text style={s.head}>{label.toUpperCase()}</Text>{children}</View>;
+}
+
+function Bullet({ children }: { children: React.ReactNode }) {
+  const s = useS();
+  return <View style={s.bullet}><Text style={s.dotTx}>•</Text><Text style={s.bulletTx}>{children}</Text></View>;
 }
 
 function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav: () => void }) {
@@ -232,11 +237,11 @@ function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav:
       {it.kind === "people" ? <Text style={s.body}>{d.s}</Text> : null}
       {f.fun ? <Fact label="Fun fact"><Text style={s.body}>{f.fun}</Text></Fact> : null}
       {f.special ? <Fact label="Something special"><Text style={s.body}>{f.special}</Text></Fact> : null}
-      {f.known?.length ? <Fact label="What the world knows">{f.known.map((k: string, i: number) => <Text key={i} style={s.body}>•  {k}</Text>)}</Fact> : null}
-      {f.records?.length ? <Fact label="Records">{f.records.map((r: any, i: number) => <Text key={i} style={s.body}>•  {r.text} <Text style={s.small}>({r.src})</Text></Text>)}</Fact> : null}
+      {f.known?.length ? <Fact label="What the world knows">{f.known.map((k: string, i: number) => <Bullet key={i}>{k}</Bullet>)}</Fact> : null}
+      {f.records?.length ? <Fact label="Records">{f.records.map((r: any, i: number) => <Bullet key={i}>{r.text} <Text style={s.dim}>({r.src})</Text></Bullet>)}</Fact> : null}
       {people.length ? (
         <Fact label={it.kind === "people" ? "Famous people" : "Famous people from here"}>
-          {people.map((p) => <Text key={p.name} style={s.body}>•  {p.name} <Text style={s.small}>({p.desc})</Text></Text>)}
+          {people.map((p) => <Bullet key={p.name}>{p.name} <Text style={s.dim}>({p.desc})</Text></Bullet>)}
         </Fact>
       ) : null}
       {it.popM > 0 ? <View style={s.meter}><View style={[s.meterFill, { width: `${sizeWidth(it.popM)}%`, backgroundColor: REGION_COLOR[it.group] || t.fg }]} /></View> : null}
@@ -342,16 +347,20 @@ const mk = (z: number) => StyleSheet.create({
   rowSub: { color: t.muted, fontSize: 12 * z, letterSpacing: 0.7, marginTop: 2 },
   pp: { color: t.fg, fontSize: 14 * z, fontWeight: "700", textAlign: "right" },
   star: { color: t.orange, fontSize: 18 * z },
-  bodyBox: { paddingLeft: 38, paddingRight: 16, paddingBottom: 18, gap: 14 },
-  body: { color: t.fg, fontSize: 17 * z, lineHeight: 25 * z },
-  small: { color: t.muted, fontSize: 13 * z },
-  fact: { gap: 4 },
+  bodyBox: { paddingLeft: 38, paddingRight: 16, paddingBottom: 20, gap: 20 },
+  body: { color: t.fg, fontSize: 16 * z, lineHeight: 24 * z },
+  dim: { color: t.muted },
+  head: { color: t.orange, fontSize: 13 * z, lineHeight: 18 * z, letterSpacing: 1.4, fontWeight: "700" },
+  fact: { gap: 8 },
+  bullet: { flexDirection: "row", gap: 10 },
+  dotTx: { color: t.orange, fontSize: 16 * z, lineHeight: 24 * z, width: 10 },
+  bulletTx: { flex: 1, color: t.fg, fontSize: 16 * z, lineHeight: 24 * z },
   meter: { height: 6, backgroundColor: t.line, borderRadius: 99, overflow: "hidden" },
   meterFill: { height: "100%" },
-  dl: { gap: 4 },
+  dl: { gap: 6 },
   dlRow: { flexDirection: "row", gap: 14 },
-  dt: { color: t.muted, fontSize: 15 * z, width: 110 },
-  dd: { color: t.fg, fontSize: 15 * z, flex: 1 },
+  dt: { color: t.muted, fontSize: 15 * z, lineHeight: 22 * z, width: 110 },
+  dd: { color: t.fg, fontSize: 15 * z, lineHeight: 22 * z, flex: 1 },
   favBtn: { alignSelf: "flex-start", borderWidth: 2, borderColor: t.fg, borderRadius: 999, minHeight: 44, paddingHorizontal: 18, justifyContent: "center" },
   favBtnTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   tabs: { flexDirection: "row", borderTopWidth: 1, borderColor: t.line, backgroundColor: t.surface },
