@@ -93,7 +93,7 @@ export default function App() {
 
   const view = useMemo(() => {
     if (!L) return { rows: [] as Item[], featuredOnly: false, totalFeatured: 0, nCountries: 0 };
-    const pool = L.items.filter((i) => (kind === "all" || i.kind === kind) && (region === "all" || i.group === region));
+    const pool = L.items.filter((i) => (kind === "all" || i.kind === kind) && (region === "all" || kind === "language" || kind === "faith" || i.group === region));
     const featuredOnly = !q.trim() && kind === "all";
     const featured = pool.filter((i) => i.featured);
     let rows = featuredOnly ? pickMix(featured, 25, seed) : (F.search(pool, q) as Item[]);
@@ -129,7 +129,7 @@ export default function App() {
     if (extra) rows = [extra, ...rows];
   }
   const count = view.featuredOnly
-    ? `Showing ${rows.length} of ${view.totalFeatured}. Pick a category or search to see more, including any of ${view.nCountries} countries.`
+    ? `Showing ${rows.length} of ${view.totalFeatured}. Tap a button or search to see more.`
     : `${rows.length} ${rows.length === 1 ? "result" : "results"}`;
 
   const header = (
@@ -144,7 +144,7 @@ export default function App() {
       <View style={s.pad}>
         <Text style={s.eyebrow}>Empowering minds, celebrating differences.</Text>
         <Text style={s.title}>World <Text style={{ fontStyle: "italic" }}>Facts</Text></Text>
-        <Text style={s.lede}>Search any people, country, language or faith. Every number comes from a public database, and the sources are listed at the bottom.</Text>
+        <Text style={s.lede}>Search for any people, country, language or faith. All the facts come from trusted sources, listed at the bottom.</Text>
         <LinearGradient colors={["#4CFC0F", "#F7FEF9"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.rule} />
 
         {fact ? (
@@ -160,30 +160,30 @@ export default function App() {
         <TextInput style={s.input} placeholder="Try Italian, Hindi or Islam" placeholderTextColor="#6b6b6b"
           value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
-          {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => setKind(k)} />)}
+          {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => { setKind(k); if (k === "language" || k === "faith") setRegion("all"); }} />)}
         </ScrollView>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
+        {kind === "language" || kind === "faith" ? null : <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
           <Chip on={region === "all"} label="All regions" onPress={() => setRegion("all")} />
           {Object.keys(F.GROUPS).map((g) => <Chip key={g} on={region === g} label={F.GROUPS[g]} onPress={() => setRegion(g)} dot={REGION_COLOR[g]} />)}
-        </ScrollView>
+        </ScrollView>}
 
         <Text style={s.muted}>{count}</Text>
         {kind === "language" ? (
           <View style={s.note}>
             <Text style={s.noteHead}>Why these languages?</Text>
-            <Text style={s.noteTx}>About 7,000 languages exist. We list the 120 most spoken, because the speaker numbers come from Unicode CLDR, which tracks widely used languages, and we only show numbers we can back up. Families come from Glottolog, the language catalogue. The small label under each name is its family, the group of related languages it belongs to.</Text>
+            <Text style={s.noteTx}>There are about 7,000 languages in the world! These are the 120 that the most people speak. Each one shows how many people speak it, where they live, and its language family. A language family is a group of languages that grew from the same old language.</Text>
           </View>
         ) : null}
         {kind === "people" ? (
           <View style={s.note}>
             <Text style={s.noteHead}>Why these peoples?</Text>
-            <Text style={s.noteTx}>Each people here is the people of one country, such as the Italians or the Ukrainians. Population, languages and famous people come from public databases for that country, so the population counts everyone who lives there, not one ethnic group. Peoples that don't match one country, such as the Kurds or the Roma, are not listed yet, because we have no public database we can check them against.</Text>
+            <Text style={s.noteTx}>Each people here means the people of one country, like the Italians in Italy. The numbers count everyone who lives in that country.</Text>
           </View>
         ) : null}
         {kind === "faith" ? (
           <View style={s.note}>
             <Text style={s.noteHead}>Why these groups?</Text>
-            <Text style={s.noteTx}>Faiths are grouped the way Pew Research Center counts them worldwide: Christians, Muslims, Hindus, Buddhists, Jews, people with no religion, and other religions. We show Sikhism on its own. Smaller faiths and folk traditions sit inside "Folk and other". Each group has many branches and traditions.</Text>
+            <Text style={s.noteTx}>These are the biggest groups of people who share a faith, plus people who follow none. The numbers come from a big study by the Pew Research Center. Smaller faiths are counted in "Folk and other".</Text>
           </View>
         ) : null}
         {!unlocked ? (
@@ -231,7 +231,7 @@ export default function App() {
                 </Text>
               </View>
             }
-            ListEmptyComponent={<Text style={s.empty}>Nothing matches that search. Try a country's common name, such as Russia or South Korea.</Text>}
+            ListEmptyComponent={<Text style={s.empty}>Nothing matches that search. Try a country name, like Italy or Brazil.</Text>}
             contentContainerStyle={{ paddingBottom: 24 }}
             renderItem={({ item, index }) => (
               <View style={[s.listWrap, index === 0 && s.listTop, index === rows.length - 1 && s.listBottom]}>
@@ -359,7 +359,7 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
       <View style={s.sheet}>
         <Text style={s.h2}>Keep exploring</Text>
         <Text style={s.body}>Every people, country, language and faith, famous people, records, and My Favorites. No ads.</Text>
-        <Text style={s.body}>You have used your free looks. Subscribe for {PRICE_LABEL}. It renews each year until you cancel, and you can cancel any time in your phone's subscription settings.</Text>
+        <Text style={s.body}>You have used your free looks. Ask a parent or guardian to subscribe for {PRICE_LABEL}. It renews each year until it is cancelled, and a parent can cancel any time in the phone's subscription settings.</Text>
         <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
           <Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text>
         </Pressable>
