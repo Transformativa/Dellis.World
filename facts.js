@@ -264,10 +264,11 @@
 
   /* "Something special" for a country: UNESCO World Heritage Sites (Wikidata). Returns "" when the country has none listed. */
   function heritageSentence(c, h) {
-    if (!h || !h.count) return "";
+    if (!h || !(h.examples || []).length) return "";
     var ex = (h.examples || []).slice(0, 3);
     var list = ex.length > 1 ? ex.slice(0, -1).join(", ") + " and " + ex[ex.length - 1] : ex[0] || "";
-    return lead(c) + " has " + h.count + " UNESCO World Heritage " + (h.count === 1 ? "Site" : "Sites") + ", places the whole world agrees to protect" + (list ? ", like " + list : "") + ".";
+    // No number: Wikidata also lists parts of a site as sites, so a count would be wrong.
+    return lead(c) + " is home to UNESCO World Heritage Sites, places the whole world agrees to protect" + (list ? ", like " + list : "") + ".";
   }
 
   /* A people that is not one country (Kurds, Maya...). Wikidata only. */

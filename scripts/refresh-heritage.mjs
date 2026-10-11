@@ -1,5 +1,5 @@
 // Monthly: UNESCO World Heritage Sites for every country, from Wikidata (CC0).
-// Writes data/heritage.json: { CODE: { count, examples: [3 names] } }. Names that are not kid friendly or too long are skipped as examples.
+// Writes data/heritage.json: { CODE: { count (not shown, can include parts of sites), examples: [3 names] } }. Names that are not kid friendly or too long are skipped as examples.
 import { readFile, writeFile } from "node:fs/promises";
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
