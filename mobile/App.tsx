@@ -373,18 +373,32 @@ function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => 
   const [ans, setAns] = useState("");
   const [wrong, setWrong] = useState(false);
   const check = () => {
-    if (Number(ans.trim()) === q.a * q.b) return onPass();
+    if (Number(ans) === q.a * q.b) return onPass();
     setWrong(true); setAns(""); setQ(make());
+  };
+  // Our own number keys: the phone's keyboard would hide this sheet and has no way to confirm or go back.
+  const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "⌫", "0", "OK"];
+  const press = (k: string) => {
+    if (k === "OK") return check();
+    if (k === "⌫") return setAns(ans.slice(0, -1));
+    if (ans.length < 4) setAns(ans + k);
   };
   return (
     <View style={s.scrim}>
       <View style={s.sheet}>
         <Text style={s.h2}>Ask a grown-up</Text>
         <Text style={s.body}>This part is for parents and guardians. To continue, what is {q.a} times {q.b}?</Text>
-        <TextInput style={s.input} value={ans} onChangeText={setAns} keyboardType="number-pad" placeholder="Your answer" placeholderTextColor="#6b6b6b" accessibilityLabel="Answer" />
+        <View style={s.gateAns} accessibilityLabel={"Your answer: " + (ans || "nothing yet")}><Text style={s.gateAnsTx}>{ans || " "}</Text></View>
         {wrong ? <Text style={s.muted}>That is not right. Try this new question.</Text> : null}
-        <Pressable style={s.btn} accessibilityRole="button" onPress={check}><Text style={s.btnTx}>Continue</Text></Pressable>
-        <Pressable onPress={onCancel} accessibilityRole="button"><Text style={s.muted}>Go back</Text></Pressable>
+        <View style={s.keys}>
+          {keys.map((k) => (
+            <Pressable key={k} onPress={() => press(k)} accessibilityRole="button" accessibilityLabel={k === "⌫" ? "Delete" : k === "OK" ? "Continue" : k}
+              style={[s.key, k === "OK" && { backgroundColor: t.fg }]}>
+              <Text style={[s.keyTx, k === "OK" && { color: t.bg }]}>{k}</Text>
+            </Pressable>
+          ))}
+        </View>
+        <Pressable onPress={onCancel} accessibilityRole="button" style={s.gateBack}><Text style={s.link}>Go back</Text></Pressable>
       </View>
     </View>
   );
@@ -441,6 +455,12 @@ const mk = (z: number) => StyleSheet.create({
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
   favHead: { flexDirection: "row", alignItems: "center", gap: 12 },
+  gateAns: { borderWidth: 1, borderColor: t.line, borderRadius: t.radius, backgroundColor: "#fff", minHeight: 52, justifyContent: "center", alignItems: "center" },
+  gateAnsTx: { fontSize: 26 * z, color: t.fg, letterSpacing: 4 },
+  keys: { flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" },
+  key: { width: "31%", minHeight: 50, borderRadius: t.radius, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", alignItems: "center", justifyContent: "center" },
+  keyTx: { fontSize: 22 * z, color: t.fg, fontWeight: "600" },
+  gateBack: { minHeight: 44, alignItems: "center", justifyContent: "center" },
   note: { marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
   noteHead: { color: t.orange, fontSize: 13 * z, fontWeight: "700", letterSpacing: 0.4 },
   noteTx: { color: t.fg, fontSize: 14 * z, lineHeight: 21 * z },

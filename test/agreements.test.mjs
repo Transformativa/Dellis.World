@@ -103,3 +103,9 @@ test("My Favorites: a saved card opens to read all of its facts", () => {
   assert.match(favs, /<Body it=\{it\}/, "an opened favorite shows the full facts");
   assert.match(favs, /"Hide"/); assert.match(favs, /"Read"/);
 });
+
+test("parent check: own number keys (the phone keyboard hid the sheet), and a way back", () => {
+  const gate = app.slice(app.indexOf("function ParentGate"), app.indexOf("function Paywall"));
+  assert.doesNotMatch(gate, /TextInput/, "the phone keyboard would cover the sheet and trap the child");
+  assert.match(gate, /Go back/); assert.match(gate, /"OK"/); assert.match(gate, /⌫/);
+});
