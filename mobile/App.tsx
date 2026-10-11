@@ -251,7 +251,7 @@ export default function App() {
             )}
           />
         ) : (
-          <Favs L={L} favs={favs} unlocked={unlocked} onUnlock={() => setPaywall(true)} />
+          <Favs L={L} favs={favs} unlocked={unlocked} onUnlock={() => setPaywall(true)} onToggle={toggleFav} />
         )}
 
         <View style={s.tabs}>
@@ -330,8 +330,9 @@ function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav:
   );
 }
 
-function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlocked: boolean; onUnlock: () => void }) {
+function Favs({ L, favs, unlocked, onUnlock, onToggle }: { L: Loaded; favs: string[]; unlocked: boolean; onUnlock: () => void; onToggle: (it: Item) => void }) {
   const s = useS();
+  const [open, setOpen] = useState<string | null>(null);
   if (!unlocked) {
     return (
       <ScrollView contentContainerStyle={s.pad}>
@@ -348,8 +349,16 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
       {!items.length ? <Text style={s.body}>Open anything and tap "Add to My Favorites". Your card builds here.</Text> : null}
       {items.map((it) => (
         <View key={it.id} style={s.card}>
-          <Text style={s.rowName}>{it.name}</Text>
-          <Text style={s.body}>{factsFor(it, L).fun}</Text>
+          <Pressable onPress={() => setOpen(open === it.id ? null : it.id)} accessibilityRole="button" accessibilityState={{ expanded: open === it.id }} style={[s.favHead, open === it.id && { marginBottom: 14 }]}>
+            <View style={{ flex: 1 }}>
+              <Text style={s.rowName}>{it.name}</Text>
+              <Text style={s.rowSub}>{KIND_LABEL[it.kind].toUpperCase()}</Text>
+            </View>
+            <Text style={s.smallLink}>{open === it.id ? "Hide" : "Read"}</Text>
+          </Pressable>
+          {open === it.id
+            ? <View style={{ marginLeft: -38 }}><Body it={it} L={L} fav onFav={() => { setOpen(null); onToggle(it); }} /></View>
+            : <Text style={s.body}>{factsFor(it, L).fun}</Text>}
         </View>
       ))}
     </ScrollView>
@@ -431,6 +440,7 @@ const mk = (z: number) => StyleSheet.create({
   chipTx: { color: t.fg, fontWeight: "700", fontSize: 15 * z },
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
+  favHead: { flexDirection: "row", alignItems: "center", gap: 12 },
   note: { marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
   noteHead: { color: t.orange, fontSize: 13 * z, fontWeight: "700", letterSpacing: 0.4 },
   noteTx: { color: t.fg, fontSize: 14 * z, lineHeight: 21 * z },

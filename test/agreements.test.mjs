@@ -97,3 +97,9 @@ test("kids app: a parent check guards buying and every link that leaves the app"
   assert.match(app, /setGate\(\(\) => async \(\) => \{ const r = await buy\(\)/);
   assert.match(app, /setGate\(\(\) => async \(\) => \{ const r = await restore\(\)/);
 });
+
+test("My Favorites: a saved card opens to read all of its facts", () => {
+  const favs = app.slice(app.indexOf("function Favs"), app.indexOf("function ParentGate"));
+  assert.match(favs, /<Body it=\{it\}/, "an opened favorite shows the full facts");
+  assert.match(favs, /"Hide"/); assert.match(favs, /"Read"/);
+});

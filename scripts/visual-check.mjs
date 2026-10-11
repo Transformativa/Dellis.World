@@ -35,7 +35,7 @@ if (!existsSync(path.join(mobile, "node_modules", "react-native-web"))) {
 }
 const out = mkdtempSync(path.join(os.tmpdir(), "worldfacts-web-"));
 console.log("Building the web version...");
-execFileSync("npx", ["expo", "export", "--platform", "web", "--output-dir", out], { cwd: mobile, stdio: "ignore", env: { ...process.env, EXPO_OFFLINE: "1", CI: "1" } });
+execFileSync("npx", ["expo", "export", "--clear", "--platform", "web", "--output-dir", out], { cwd: mobile, stdio: "ignore", env: { ...process.env, EXPO_OFFLINE: "1", CI: "1", EXPO_PUBLIC_DEV_UNLOCK: "1" } }); // the test unlock lets one screen show a subscribed phone; nothing is unlocked unless a screen asks for it
 
 // 2. Serve it.
 const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".ico": "image/x-icon", ".png": "image/png", ".ttf": "font/ttf", ".json": "application/json" };
@@ -69,6 +69,7 @@ async function open(setup = {}) {
   await page.waitForTimeout(1200);
   return { ctx, page, errors };
 }
+const FAVKEY = "favs:v1";
 const chip = (page, name) => page.getByRole("button", { name, exact: true }).first();
 
 // Compare two PNGs in the browser itself, so no extra libraries are needed.
@@ -190,6 +191,14 @@ if (UPDATE) {
       if (r.frac > MAX_DIFF) note(`${name}: looks different from the saved picture (${pct}% changed). Compare test/visual/baseline/${name}.png with test/visual/latest/${name}.png`);
     }
   }
+}
+{ // a subscribed phone: open a saved favorite and read its facts
+  const { ctx, page, errors } = await open({ "dev:unlocked": "1", [FAVKEY]: JSON.stringify(["c-ITA", "l-it"]) });
+  await page.getByText("My Favorites", { exact: true }).last().click(); await page.waitForTimeout(500);
+  await page.getByRole("button", { name: /^Italy/ }).first().click(); await page.waitForTimeout(600);
+  const body = await page.innerText("body");
+  for (const w of ["My Favorites", "Italy", "Hide", "Famous people from here", "In My Favorites"]) if (!body.toLowerCase().includes(w.toLowerCase())) note(`open favorite: missing "${w}"`);
+  await looksRight("open favorite", page, errors); await snap("09-favorite-open", page); await ctx.close();
 }
 await browser.close(); server.close(); rmSync(out, { recursive: true, force: true });
 if (problems.length) { console.log(`\nLOOK AND FEEL: ${problems.length} problem(s)`); process.exit(1); }
