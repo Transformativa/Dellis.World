@@ -88,3 +88,12 @@ test("kids app: country facts use no grown-up money words", async () => {
     assert.ok(!jargon.test(all), c.code + ": " + (all.match(jargon) || [""])[0]);
   }
 });
+
+test("kids app: a parent check guards buying and every link that leaves the app", () => {
+  assert.match(app, /function ParentGate/);
+  const opens = [...app.matchAll(/Linking\.openURL/g)].length;
+  const gated = [...app.matchAll(/setGate\(\(\) => \(\) => Linking\.openURL/g)].length;
+  assert.equal(opens, gated, "every Linking.openURL must go through the parent check");
+  assert.match(app, /setGate\(\(\) => async \(\) => \{ const r = await buy\(\)/);
+  assert.match(app, /setGate\(\(\) => async \(\) => \{ const r = await restore\(\)/);
+});

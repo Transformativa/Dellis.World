@@ -69,6 +69,7 @@ export default function App() {
   const [favs, setFavs] = useState<string[]>([]);
   const [unlocked, setUnlocked] = useState(false);
   const [paywall, setPaywall] = useState(false);
+  const [gate, setGate] = useState<null | (() => void)>(null); // parent check before anything that leaves the app
   const [looks, setLooks] = useState(0);
   const [size, setSize] = useState<Size>("medium");
   const [seed] = useState(() => Math.floor(Math.random() * 1e9));
@@ -136,7 +137,7 @@ export default function App() {
   const header = (
     <View>
       <View style={s.brandbar}>
-        <Pressable onPress={() => Linking.openURL("https://www.dellis.store")} accessibilityRole="link" accessibilityLabel="Dellis, visit dellis.store" style={s.wordmark}>
+        <Pressable onPress={() => setGate(() => () => Linking.openURL("https://www.dellis.store"))} accessibilityRole="link" accessibilityLabel="Dellis, visit dellis.store" style={s.wordmark}>
           <Image source={require("./assets/dellis-mark.png")} style={s.mark} />
           <Image source={require("./assets/dellis-wordmark.png")} style={s.word} resizeMode="contain" />
         </Pressable>
@@ -261,6 +262,9 @@ export default function App() {
           ))}
         </View>
 
+        <Modal visible={!!gate} animationType="fade" transparent onRequestClose={() => setGate(null)}>
+          {gate ? <ParentGate onPass={() => { const go = gate; setGate(null); go(); }} onCancel={() => setGate(null)} /> : <View />}
+        </Modal>
         <Modal visible={paywall} animationType="fade" transparent onRequestClose={() => setPaywall(false)}>
           <Paywall onClose={() => setPaywall(false)} onDone={() => { setUnlocked(true); setPaywall(false); }} />
         </Modal>
@@ -352,19 +356,46 @@ function Favs({ L, favs, unlocked, onUnlock }: { L: Loaded; favs: string[]; unlo
   );
 }
 
+/** Parent check (required for kids apps): a grown-up question before buying or opening a link outside the app. */
+function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => void }) {
+  const s = useS();
+  const make = () => ({ a: 12 + Math.floor(Math.random() * 8), b: 6 + Math.floor(Math.random() * 4) });
+  const [q, setQ] = useState(make);
+  const [ans, setAns] = useState("");
+  const [wrong, setWrong] = useState(false);
+  const check = () => {
+    if (Number(ans.trim()) === q.a * q.b) return onPass();
+    setWrong(true); setAns(""); setQ(make());
+  };
+  return (
+    <View style={s.scrim}>
+      <View style={s.sheet}>
+        <Text style={s.h2}>Ask a grown-up</Text>
+        <Text style={s.body}>This part is for parents and guardians. To continue, what is {q.a} times {q.b}?</Text>
+        <TextInput style={s.input} value={ans} onChangeText={setAns} keyboardType="number-pad" placeholder="Your answer" placeholderTextColor="#6b6b6b" accessibilityLabel="Answer" />
+        {wrong ? <Text style={s.muted}>That is not right. Try this new question.</Text> : null}
+        <Pressable style={s.btn} accessibilityRole="button" onPress={check}><Text style={s.btnTx}>Continue</Text></Pressable>
+        <Pressable onPress={onCancel} accessibilityRole="button"><Text style={s.muted}>Go back</Text></Pressable>
+      </View>
+    </View>
+  );
+}
+
 function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
   const s = useS();
   const [msg, setMsg] = useState("");
+  const [gate, setGate] = useState<null | (() => void)>(null);
+  if (gate) return <ParentGate onPass={() => { const go = gate; setGate(null); go(); }} onCancel={() => setGate(null)} />;
   return (
     <View style={s.scrim}>
       <View style={s.sheet}>
         <Text style={s.h2}>Keep exploring</Text>
         <Text style={s.body}>Every people, country, language and faith, famous people, records, and My Favorites. No ads.</Text>
         <Text style={s.body}>You have used your free looks. Ask a parent or guardian to subscribe for {PRICE_LABEL}. It renews each year until it is cancelled, and a parent can cancel any time in the phone's subscription settings.</Text>
-        <Pressable style={s.btn} accessibilityRole="button" onPress={async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); }}>
+        <Pressable style={s.btn} accessibilityRole="button" onPress={() => setGate(() => async () => { const r = await buy(); setMsg(r.message); if (r.ok) onDone(); })}>
           <Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text>
         </Pressable>
-        <Pressable onPress={async () => { const r = await restore(); setMsg(r.message); if (r.ok) onDone(); }} accessibilityRole="button"><Text style={s.link}>Restore purchase</Text></Pressable>
+        <Pressable onPress={() => setGate(() => async () => { const r = await restore(); setMsg(r.message); if (r.ok) onDone(); })} accessibilityRole="button"><Text style={s.link}>Restore purchase</Text></Pressable>
         {msg ? <Text style={s.muted}>{msg}</Text> : null}
         <Pressable onPress={onClose} accessibilityRole="button"><Text style={s.muted}>Maybe later</Text></Pressable>
       </View>
