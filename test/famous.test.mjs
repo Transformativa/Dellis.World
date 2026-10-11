@@ -9,7 +9,7 @@ const live = JSON.parse(await readFile(new URL("../data/live.json", import.meta.
 test("chooseFamous keeps top five by sitelinks, skips blanks, dupes and blocked words", () => {
   const rows = [
     ["A", "painter", 10], ["B", "Nazi leader", 99], ["Q123", "poet", 80], ["C", "", 70],
-    ["D", "singer", 60], ["D", "singer", 61], ["E", "athlete", 50], ["F", "writer", 40], ["G", "chef", 30], ["H", "actor", 20],
+    ["D", "singer", 60], ["D", "singer", 61], ["E", "athlete", 50], ["F", "writer", 40], ["G", "scientist", 30], ["H", "actor", 20],
   ];
   const out = chooseFamous(rows, rules);
   assert.deepEqual(out.map((x) => x.name), ["D", "E", "F", "G", "H"]);
@@ -34,4 +34,9 @@ test("data/famous.json is well formed", async () => {
       assert.ok(!block.some((w) => p.desc.toLowerCase().includes(w)), `${code}: ${p.name} has a blocked word`);
     }
   }
+});
+
+test("kids app: only kid-friendly jobs are listed", () => {
+  const out = chooseFamous([["A", "politician and lawyer", 90], ["B", "Italian chef", 80], ["C", "British novelist", 70]], rules);
+  assert.deepEqual(out.map((x) => x.name), ["C"]);
 });

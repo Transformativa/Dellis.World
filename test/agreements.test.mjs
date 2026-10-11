@@ -67,3 +67,11 @@ test("monthly refresh keeps every data source current", () => {
   for (const s of ["scripts/refresh.mjs", "scripts/refresh-famous.mjs", "scripts/refresh-languages.mjs", "scripts/check-sources.mjs", "node --test"]) assert.ok(wf.includes(s), s);
   assert.match(wf, /data\/live\.json data\/famous\.json data\/languages\.json/);
 });
+
+test("kids app: wording in the app and the people we list is kid friendly", () => {
+  const bad = /\b(kill|killed|murder|dead|death|die[sd]?|war|wars|genocide|terror\w*|sex\w*|porn\w*|drug\w*|alcohol|gambl\w*|weapon\w*|massacre|slave\w*|suicide|abuse\w*|racis\w*|violen\w*)\b/i;
+  const strings = [...app.matchAll(/>([^<>{}]{12,})</g)].map((m) => m[1]).concat([...app.matchAll(/"([A-Z][^"\n]{20,})"/g)].map((m) => m[1]));
+  for (const s of strings) assert.ok(!bad.test(s), `not kid friendly: ${s}`);
+  const f = json("data/famous.json");
+  for (const [code, list] of Object.entries(f.countries)) for (const p of list) assert.ok(!bad.test(p.desc), `${code}: ${p.name}: ${p.desc}`);
+});

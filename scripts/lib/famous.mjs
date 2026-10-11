@@ -6,12 +6,15 @@ export function chooseFamous(rows, rules = {}, code = "", n = PER_COUNTRY) {
   const block = (rules.blockWords || []).map((w) => w.toLowerCase());
   const patterns = (rules.blockPatterns || []).map((p) => new RegExp(p, "i"));
   const exclude = new Set(rules.exclude || []);
+  // Kids app: a person is only listed when their one-line description names a kid-friendly job (writer, scientist, athlete...).
+  const jobs = rules.kidFriendlyJobs ? new RegExp("\\b(" + rules.kidFriendlyJobs + ")", "i") : null;
   const seen = new Set();
   const good = [];
   for (const [name, desc, sl] of rows || []) {
     if (!name || /^Q\d+$/.test(name)) continue; // no English label yet
     if (!desc || desc.length < 4) continue; // a description is what we show next to the name
     if (exclude.has(name)) continue;
+    if (jobs && !jobs.test(desc)) continue;
     const d = desc.toLowerCase();
     if (block.some((w) => d.includes(w))) continue;
     if (patterns.some((re) => re.test(desc))) continue;

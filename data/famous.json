@@ -7,16 +7,6 @@
  "countries": {
   "ARG": [
    {
-    "name": "Pope Francis",
-    "desc": "266th pope of the Catholic Church from 2013 to 2025",
-    "sl": 236
-   },
-   {
-    "name": "Che Guevara",
-    "desc": "Argentine Marxist revolutionary (1928–1967)",
-    "sl": 227
-   },
-   {
     "name": "Lionel Messi",
     "desc": "Argentine association football player (born 1987)",
     "sl": 225
@@ -33,11 +23,6 @@
    }
   ],
   "AUS": [
-   {
-    "name": "Julian Assange",
-    "desc": "Australian editor, publisher, and activist (born 1971)",
-    "sl": 137
-   },
    {
     "name": "Cate Blanchett",
     "desc": "Australian actor and producer (born 1969)",
@@ -76,11 +61,6 @@
     "sl": 47
    },
    {
-    "name": "Lotay Tshering",
-    "desc": "8th Prime Minister of Bhutan",
-    "sl": 42
-   },
-   {
     "name": "Ugyen Wangchuck",
     "desc": "First king of Bhutan (1862-1926)",
     "sl": 41
@@ -101,16 +81,6 @@
     "name": "Hebe Camargo",
     "desc": "Brazilian singer, television host and actress",
     "sl": 151
-   },
-   {
-    "name": "Jair Bolsonaro",
-    "desc": "38th President of Brazil (2019–2023)",
-    "sl": 150
-   },
-   {
-    "name": "Dilma Rousseff",
-    "desc": "36th President of Brazil (2011-2016)",
-    "sl": 137
    }
   ],
   "CAN": [
@@ -125,11 +95,6 @@
     "sl": 161
    },
    {
-    "name": "Justin Trudeau",
-    "desc": "23rd prime minister of Canada from 2015 to 2025",
-    "sl": 141
-   },
-   {
     "name": "Avril Lavigne",
     "desc": "Canadian singer-songwriter (born 1984)",
     "sl": 138
@@ -142,37 +107,12 @@
   ],
   "CHL": [
    {
-    "name": "Pablo Neruda",
-    "desc": "Chilean poet and politician (1904-1973)",
-    "sl": 167
-   },
-   {
-    "name": "Gabriela Mistral",
-    "desc": "Chilean poet, diplomat and educator (1889–1957)",
-    "sl": 125
-   },
-   {
-    "name": "Salvador Allende",
-    "desc": "28th president of Chile (1908–1973)",
-    "sl": 123
-   },
-   {
-    "name": "Michelle Bachelet",
-    "desc": "President of Chile (2006–2010; 2014–2018)",
-    "sl": 119
-   },
-   {
     "name": "Isabel Allende",
     "desc": "Chilean writer (born 1942)",
     "sl": 100
    }
   ],
   "CHN": [
-   {
-    "name": "Mao Zedong",
-    "desc": "Founder of the People's Republic of China (1893–1976)",
-    "sl": 232
-   },
    {
     "name": "Huang Xianfan",
     "desc": "Chinese historian, ethnologist and educator (1899-1982)",
@@ -182,16 +122,6 @@
     "name": "Jackie Chan",
     "desc": "Hong Kong actor and martial artist (born 1954)",
     "sl": 162
-   },
-   {
-    "name": "Deng Xiaoping",
-    "desc": "Chinese politician and paramount leader from 1978 to 1989",
-    "sl": 136
-   },
-   {
-    "name": "Hu Jintao",
-    "desc": "Former General Secretary of the Chinese Communist Party",
-    "sl": 122
    }
   ],
   "COL": [
@@ -211,11 +141,6 @@
     "sl": 167
    },
    {
-    "name": "Juan Manuel Santos",
-    "desc": "President of Colombia from 2010 to 2018",
-    "sl": 102
-   },
-   {
     "name": "James Rodríguez",
     "desc": "Colombian association football player",
     "sl": 90
@@ -228,42 +153,12 @@
     "sl": 171
    },
    {
-    "name": "Hosni Mubarak",
-    "desc": "President of Egypt from 1981 to 2011",
-    "sl": 137
-   },
-   {
-    "name": "Anwar Sadat",
-    "desc": "President of Egypt from 1970 to 1981",
-    "sl": 126
-   },
-   {
-    "name": "Mohamed Morsi",
-    "desc": "President of Egypt from 2012 to 2013",
-    "sl": 117
-   },
-   {
     "name": "Umm Kulthum",
     "desc": "Egyptian singer and actress (1886–1975)",
     "sl": 110
    }
   ],
   "ETH": [
-   {
-    "name": "Sahle-Work Zewde",
-    "desc": "President of Ethiopia",
-    "sl": 82
-   },
-   {
-    "name": "Meles Zenawi",
-    "desc": "Ethiopian politician; Prime Minister (1955-2012)",
-    "sl": 71
-   },
-   {
-    "name": "Haile Gebrselassie",
-    "desc": "Ethiopian long-distance runner and businessman (born 1973)",
-    "sl": 65
-   },
    {
     "name": "Abebe Bikila",
     "desc": "Ethiopian double Olympic marathon champion",
@@ -287,16 +182,6 @@
     "sl": 105
    },
    {
-    "name": "Sauli Niinistö",
-    "desc": "12th President of Finland",
-    "sl": 100
-   },
-   {
-    "name": "Sanna Marin",
-    "desc": "Prime Minister of Finland from 2019 to 2023",
-    "sl": 98
-   },
-   {
     "name": "Alvar Aalto",
     "desc": "Finnish architect and designer (1898–1976)",
     "sl": 97
@@ -304,29 +189,9 @@
   ],
   "FRA": [
    {
-    "name": "Napoleon",
-    "desc": "French military leader and Emperor of the French",
-    "sl": 287
-   },
-   {
-    "name": "Victor Hugo",
-    "desc": "French novelist, poet, dramatist and politician (1802–1885)",
-    "sl": 269
-   },
-   {
     "name": "René Descartes",
     "desc": "French philosopher, mathematician, and scientist (1596–1650)",
     "sl": 254
-   },
-   {
-    "name": "Charles de Gaulle",
-    "desc": "French general and statesman (1890–1970)",
-    "sl": 222
-   },
-   {
-    "name": "François Hollande",
-    "desc": "President of France from 2012 to 2017 (born 1954)",
-    "sl": 218
    }
   ],
   "DEU": [
@@ -336,32 +201,12 @@
     "sl": 321
    },
    {
-    "name": "Angela Merkel",
-    "desc": "Chancellor of Germany from 2005 to 2021 (born 1954)",
-    "sl": 220
-   },
-   {
-    "name": "Benedict XVI",
-    "desc": "Pope of the Catholic Church (2005–2013)",
-    "sl": 200
-   },
-   {
     "name": "Max Weber",
     "desc": "German sociologist, philosopher, and political economist",
     "sl": 172
-   },
-   {
-    "name": "Michael Schumacher",
-    "desc": "German racing driver (born 1969)",
-    "sl": 171
    }
   ],
   "GRC": [
-   {
-    "name": "Alexis Tsipras",
-    "desc": "Prime Minister of Greece (2015; 2015–2019)",
-    "sl": 95
-   },
    {
     "name": "Nikos Kazantzakis",
     "desc": "Greek writer, poet and philosopher (1883-1957)",
@@ -371,16 +216,6 @@
     "name": "Odysseas Elytis",
     "desc": "Greek poet and art critic (1911–1996)",
     "sl": 86
-   },
-   {
-    "name": "Kyriakos Mitsotakis",
-    "desc": "Prime Minister of Greece",
-    "sl": 82
-   },
-   {
-    "name": "Katerina Sakellaropoulou",
-    "desc": "Former president of the Hellenic Republic",
-    "sl": 77
    }
   ],
   "ISL": [
@@ -395,37 +230,12 @@
     "sl": 102
    },
    {
-    "name": "Vigdís Finnbogadóttir",
-    "desc": "4th President of Iceland",
-    "sl": 78
-   },
-   {
     "name": "Stefán Karl Stefánsson",
     "desc": "Icelandic actor (1975–2018)",
     "sl": 77
-   },
-   {
-    "name": "Katrín Jakobsdóttir",
-    "desc": "28th Prime Minister of Iceland",
-    "sl": 74
    }
   ],
   "IND": [
-   {
-    "name": "Mahatma Gandhi",
-    "desc": "Indian independence activist (1869–1948)",
-    "sl": 287
-   },
-   {
-    "name": "Jawaharlal Nehru",
-    "desc": "Prime Minister of India from 1947 to 1964",
-    "sl": 192
-   },
-   {
-    "name": "Indira Gandhi",
-    "desc": "Prime Minister of India (1966-1977; 1980-1984)",
-    "sl": 173
-   },
    {
     "name": "B. R. Ambedkar",
     "desc": "Indian jurist, economist, and social reformer (1891–1956)",
@@ -447,65 +257,14 @@
     "name": "Agnez Mo",
     "desc": "Indonesian singer and actress",
     "sl": 148
-   },
-   {
-    "name": "Sukarno",
-    "desc": "1st President of Indonesia (1901—1970)",
-    "sl": 127
-   },
-   {
-    "name": "Joko Widodo",
-    "desc": "7th President of Indonesia",
-    "sl": 122
-   },
-   {
-    "name": "Suharto",
-    "desc": "2nd President of Indonesia (1968—1998)",
-    "sl": 119
    }
   ],
-  "IRN": [
-   {
-    "name": "Ali Khamenei",
-    "desc": "Supreme Leader of Iran from 1989 to 2026",
-    "sl": 161
-   },
-   {
-    "name": "Mahmoud Ahmadinejad",
-    "desc": "6th President of Iran",
-    "sl": 145
-   },
-   {
-    "name": "Ruhollah Khomeini",
-    "desc": "Supreme Leader of Iran from 1979 to 1989",
-    "sl": 133
-   },
-   {
-    "name": "Hassan Rouhani",
-    "desc": "President of Iran from 2013 to 2021",
-    "sl": 123
-   },
-   {
-    "name": "Mohammad Khatami",
-    "desc": "President of Iran from 1997 to 2005",
-    "sl": 114
-   }
-  ],
+  "IRN": [],
   "ISR": [
    {
     "name": "Natalie Portman",
     "desc": "Israeli-American actress (born 1981)",
     "sl": 136
-   },
-   {
-    "name": "Ariel Sharon",
-    "desc": "Prime Minister of Israel from 2001 to 2006 (1928-2014)",
-    "sl": 119
-   },
-   {
-    "name": "Yitzhak Rabin",
-    "desc": "Israeli politician, statesman and general (1922–1995)",
-    "sl": 114
    },
    {
     "name": "Gal Gadot",
@@ -525,11 +284,6 @@
     "sl": 171
    },
    {
-    "name": "Silvio Berlusconi",
-    "desc": "Italian media tycoon and politician (1936–2023)",
-    "sl": 164
-   },
-   {
     "name": "Federico Fellini",
     "desc": "Italian filmmaker (1920–1993)",
     "sl": 162
@@ -538,11 +292,6 @@
     "name": "Umberto Eco",
     "desc": "Italian semiotician, essayist and philosopher",
     "sl": 151
-   },
-   {
-    "name": "John XXIII",
-    "desc": "Pope of the Catholic Church (1958–1963)",
-    "sl": 137
    }
   ],
   "JPN": [
@@ -565,11 +314,6 @@
     "name": "Akira Kurosawa",
     "desc": "Japanese filmmaker (1910–1998)",
     "sl": 177
-   },
-   {
-    "name": "Shinzō Abe",
-    "desc": "Prime Minister of Japan from 2006–2007 and 2012–2020",
-    "sl": 164
    }
   ],
   "KEN": [
@@ -579,24 +323,9 @@
     "sl": 128
    },
    {
-    "name": "Jomo Kenyatta",
-    "desc": "First President of independent Kenya",
-    "sl": 90
-   },
-   {
     "name": "Ngũgĩ wa Thiong'o",
     "desc": "Kenyan writer (1938–2025)",
     "sl": 85
-   },
-   {
-    "name": "Uhuru Kenyatta",
-    "desc": "4th President of Kenya (2013–2022)",
-    "sl": 68
-   },
-   {
-    "name": "Mwai Kibaki",
-    "desc": "3rd President of Kenya (1931–2022)",
-    "sl": 65
    }
   ],
   "MEX": [
@@ -604,11 +333,6 @@
     "name": "Frida Kahlo",
     "desc": "Mexican painter (1907–1954)",
     "sl": 200
-   },
-   {
-    "name": "Octavio Paz",
-    "desc": "Mexican writer, poet and diplomat (1914–1998)",
-    "sl": 121
    },
    {
     "name": "Lila Downs",
@@ -619,67 +343,10 @@
     "name": "Salma Hayek",
     "desc": "Mexican and American actress (born 1966)",
     "sl": 105
-   },
-   {
-    "name": "Emiliano Zapata",
-    "desc": "Mexican revolutionary (1879–1919)",
-    "sl": 97
    }
   ],
-  "MCO": [
-   {
-    "name": "Albert II, Prince of Monaco",
-    "desc": "Prince of Monaco (born 1958)",
-    "sl": 90
-   },
-   {
-    "name": "Charles Leclerc",
-    "desc": "Monegasque racing driver",
-    "sl": 69
-   },
-   {
-    "name": "Rainier III, Prince of Monaco",
-    "desc": "Prince of Monaco from 1949 to 2005 (1923-2005)",
-    "sl": 62
-   },
-   {
-    "name": "Princess Caroline of Monaco",
-    "desc": "Eldest child of Rainier III, Prince of Monaco",
-    "sl": 47
-   },
-   {
-    "name": "Princess Stéphanie of Monaco",
-    "desc": "Younger daughter of Rainier III, Prince of Monaco",
-    "sl": 43
-   }
-  ],
-  "MNG": [
-   {
-    "name": "Tsakhiagiin Elbegdorj",
-    "desc": "Mongolian politician",
-    "sl": 62
-   },
-   {
-    "name": "Khaltmaagiin Battulga",
-    "desc": "Mongolian President",
-    "sl": 46
-   },
-   {
-    "name": "Khorloogiin Choibalsan",
-    "desc": "Mongolian general and political leader",
-    "sl": 44
-   },
-   {
-    "name": "Nambaryn Enkhbayar",
-    "desc": "Mongolian politician",
-    "sl": 43
-   },
-   {
-    "name": "Arghun",
-    "desc": "Fourth Ilkhan of the Mongol Ilkhanate (1284–1291)",
-    "sl": 38
-   }
-  ],
+  "MCO": [],
+  "MNG": [],
   "MAR": [
    {
     "name": "Hassan II",
@@ -709,24 +376,9 @@
   ],
   "NPL": [
    {
-    "name": "Tenzing Norgay",
-    "desc": "Nepalese Indian Sherpa mountaineer (1914-1986)",
-    "sl": 94
-   },
-   {
-    "name": "Bidya Devi Bhandari",
-    "desc": "President of Nepal",
-    "sl": 82
-   },
-   {
     "name": "Suman Pokhrel",
     "desc": "Nepalese poet, lyricist, playwright and translator",
     "sl": 63
-   },
-   {
-    "name": "Ram Baran Yadav",
-    "desc": "Former President of Nepal",
-    "sl": 61
    },
    {
     "name": "Manisha Koirala",
@@ -768,19 +420,9 @@
     "sl": 174
    },
    {
-    "name": "Edmund Hillary",
-    "desc": "New Zealand mountaineer and philanthropist",
-    "sl": 135
-   },
-   {
     "name": "Russell Crowe",
     "desc": "New Zealand actor",
     "sl": 125
-   },
-   {
-    "name": "Jacinda Ardern",
-    "desc": "Prime Minister of New Zealand (2017–2023)",
-    "sl": 109
    },
    {
     "name": "Peter Jackson",
@@ -803,16 +445,6 @@
     "name": "Chimamanda Ngozi Adichie",
     "desc": "Nigerian writer (born 1977)",
     "sl": 96
-   },
-   {
-    "name": "Muhammadu Buhari",
-    "desc": "Former President of Nigeria",
-    "sl": 96
-   },
-   {
-    "name": "Goodluck Jonathan",
-    "desc": "President of Nigeria from 2010 to 2015",
-    "sl": 74
    }
   ],
   "PER": [
@@ -820,11 +452,6 @@
     "name": "Mario Vargas Llosa",
     "desc": "Peruvian, Spanish and Dominican novelist",
     "sl": 131
-   },
-   {
-    "name": "Alberto Fujimori",
-    "desc": "President of Peru from 1990 to 2000",
-    "sl": 85
    },
    {
     "name": "Joao Grimaldo",
@@ -835,100 +462,24 @@
     "name": "Percy Liza",
     "desc": "Peruvian footballer",
     "sl": 83
-   },
-   {
-    "name": "Javier Pérez de Cuéllar",
-    "desc": "5th Secretary-General of the United Nations",
-    "sl": 82
    }
   ],
   "PHL": [
-   {
-    "name": "Ferdinand Marcos",
-    "desc": "President of the Philippines from 1965 to 1986",
-    "sl": 136
-   },
-   {
-    "name": "Rodrigo Duterte",
-    "desc": "President of the Philippines from 2016 to 2022",
-    "sl": 113
-   },
-   {
-    "name": "Corazon Aquino",
-    "desc": "President of the Philippines from 1986 to 1992",
-    "sl": 110
-   },
-   {
-    "name": "Imelda Marcos",
-    "desc": "Philippine former First Lady (born 1929)",
-    "sl": 102
-   },
    {
     "name": "José Rizal",
     "desc": "Filipino nationalist, writer and polymath (1861–1896)",
     "sl": 89
    }
   ],
-  "RUS": [
-   {
-    "name": "Mikhail Gorbachev",
-    "desc": "Leader of the Soviet Union from 1985 to 1991 (1931–2022)",
-    "sl": 202
-   },
-   {
-    "name": "Anna Netrebko",
-    "desc": "Russian and Austrian operatic soprano",
-    "sl": 169
-   },
-   {
-    "name": "Dmitry Medvedev",
-    "desc": "President of Russia from 2008 to 2012",
-    "sl": 169
-   },
-   {
-    "name": "Boris Yeltsin",
-    "desc": "1st President of Russia (1931–2007)",
-    "sl": 161
-   },
-   {
-    "name": "Aleksandr Solzhenitsyn",
-    "desc": "Russian writer, poet and politician (1918–2008)",
-    "sl": 160
-   }
-  ],
+  "RUS": [],
   "SGP": [
-   {
-    "name": "Kuan Yew Lee",
-    "desc": "1st Prime Minister of Singapore",
-    "sl": 120
-   },
-   {
-    "name": "Lee Hsien Loong",
-    "desc": "3rd Prime Minister of Singapore from 2004 to 2024",
-    "sl": 77
-   },
-   {
-    "name": "Halimah Yacob",
-    "desc": "8th President of Singapore",
-    "sl": 74
-   },
    {
     "name": "Vanessa-Mae",
     "desc": "British violinist",
     "sl": 56
-   },
-   {
-    "name": "Goh Chok Tong",
-    "desc": "2nd Prime Minister of Singapore from 1990 to 2004",
-    "sl": 51
    }
   ],
   "ZAF": [
-   {
-    "name": "Nelson Mandela",
-    "desc": "President of South Africa and anti-apartheid activist (1918–2013)",
-    "sl": 295
-   },
    {
     "name": "Nadine Gordimer",
     "desc": "South African writer (1923–2014)",
@@ -952,37 +503,12 @@
   ],
   "KOR": [
    {
-    "name": "Ban Ki-moon",
-    "desc": "8th Secretary-General of the United Nations",
-    "sl": 153
-   },
-   {
-    "name": "Park Geun-hye",
-    "desc": "President of South Korea from 2013 to 2017",
-    "sl": 104
-   },
-   {
-    "name": "Moon Jae-in",
-    "desc": "12th President of South Korea",
-    "sl": 103
-   },
-   {
     "name": "Han Kang",
     "desc": "South Korean writer",
     "sl": 99
-   },
-   {
-    "name": "Park Chung-hee",
-    "desc": "3rd President of South Korea",
-    "sl": 98
    }
   ],
   "TWN": [
-   {
-    "name": "Tsai Ing-wen",
-    "desc": "14th and 15th President of the Republic of China (Taiwan)",
-    "sl": 114
-   },
    {
     "name": "Jolin Tsai",
     "desc": "Taiwanese singer, songwriter, and actress",
@@ -997,11 +523,6 @@
     "name": "Teresa Teng",
     "desc": "Taiwanese singer (1953-1995)",
     "sl": 81
-   },
-   {
-    "name": "Chen Shui-bian",
-    "desc": "10th and 11th President of the Republic of China (Taiwan)",
-    "sl": 58
    }
   ],
   "THA": [
@@ -1011,19 +532,9 @@
     "sl": 83
    },
    {
-    "name": "Yingluck Shinawatra",
-    "desc": "Prime Minister of Thailand from 2011 to 2014",
-    "sl": 81
-   },
-   {
     "name": "Lisa",
     "desc": "Thai rapper, singer, model, dancer and actress",
     "sl": 81
-   },
-   {
-    "name": "Thaksin Shinawatra",
-    "desc": "Prime Minister of Thailand from 2001 to 2006",
-    "sl": 79
    },
    {
     "name": "Jintara Poonlarp",
@@ -1038,11 +549,6 @@
     "sl": 137
    },
    {
-    "name": "Abdullah Gül",
-    "desc": "11th President of Turkey (born 1950)",
-    "sl": 115
-   },
-   {
     "name": "Dani Rodrik",
     "desc": "Turkish economist and publicist (born 1957)",
     "sl": 111
@@ -1051,40 +557,9 @@
     "name": "Ahmet Davutoğlu",
     "desc": "Turkish statesperson and writer (born 1959)",
     "sl": 89
-   },
-   {
-    "name": "Süleyman Demirel",
-    "desc": "9th President of Turkey (1924-2015)",
-    "sl": 89
    }
   ],
-  "ARE": [
-   {
-    "name": "Khalifa bin Zayed Al Nahyan",
-    "desc": "President of the United Arab Emirates from 2004 to 2022",
-    "sl": 80
-   },
-   {
-    "name": "Mohammed bin Rashid Al Maktoum",
-    "desc": "Monarch of Dubai and politician (born 1949)",
-    "sl": 72
-   },
-   {
-    "name": "Mohammed Bin Zayed Al Nahyan",
-    "desc": "President of the United Arab Emirates",
-    "sl": 62
-   },
-   {
-    "name": "Zayed bin Sultan Al Nahyan",
-    "desc": "Sheikh of Abu Dhabi from 1966 to 2003",
-    "sl": 58
-   },
-   {
-    "name": "Maktoum bin Rashid Al Maktoum",
-    "desc": "Emir of Dubai (1943–2006)",
-    "sl": 37
-   }
-  ],
+  "ARE": [],
   "GBR": [
    {
     "name": "Charlie Chaplin",
@@ -1092,19 +567,9 @@
     "sl": 262
    },
    {
-    "name": "Winston Churchill",
-    "desc": "British statesman, soldier and writer (1874–1965)",
-    "sl": 261
-   },
-   {
     "name": "Elizabeth II",
     "desc": "Queen of the United Kingdom from 1952 to 2022",
     "sl": 255
-   },
-   {
-    "name": "Margaret Thatcher",
-    "desc": "Prime Minister of the United Kingdom from 1979 to 1990",
-    "sl": 208
    },
    {
     "name": "Stephen Hawking",
@@ -1114,29 +579,9 @@
   ],
   "USA": [
    {
-    "name": "Barack Obama",
-    "desc": "44th President of the United States (2009–2017)",
-    "sl": 340
-   },
-   {
     "name": "Michael Jackson",
     "desc": "American singer, songwriter and dancer (1958–2009)",
     "sl": 322
-   },
-   {
-    "name": "Ronald Reagan",
-    "desc": "President of the United States from 1981 to 1989 and actor",
-    "sl": 304
-   },
-   {
-    "name": "Abraham Lincoln",
-    "desc": "President of the United States from 1861 to 1865",
-    "sl": 296
-   },
-   {
-    "name": "George W. Bush",
-    "desc": "43rd President of the United States (2001–2009)",
-    "sl": 280
    }
   ],
   "VAT": []
