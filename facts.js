@@ -273,7 +273,9 @@
 
   /* A people that is not one country (Kurds, Maya...). Wikidata only. */
   function ethnicEntry(g, countries) {
-    var pop = g.population || 0, stats = [], where = g.where || [], known = [];
+    var pop = g.population || 0, stats = [], known = [];
+    // Only real countries (Wikidata sometimes names old kingdoms or regions).
+    var where = (g.where || []).filter(function (w) { return !countries || countries.some(function (c) { return w.name === c.display || w.name === c.name; }); });
     if (pop) stats.push(["People", "about " + fmtPop(pop)]);
     if (where.length) {
       var hasNums = where.some(function (w) { return w.pop; });
@@ -285,7 +287,7 @@
       if (regs.length) stats.push([regs.length > 1 ? "Parts of the world" : "Part of the world", regs.join(", ")]);
     }
     if ((g.languages || []).length) stats.push(["Languages", g.languages.join(", ")]);
-    var s = g.about ? g.n + ": " + g.about.charAt(0).toLowerCase() + g.about.slice(1) + "." : "";
+    var s = g.about ? g.n + ": " + g.about + "." : "";
     return { id: g.id, n: g.n, aka: g.aka || [], g: "", p: pop / 1e6, pl: pop ? "about " + fmtPop(pop) : "", s: s, fun: "", special: "", known: known, stats: stats, records: [], famous: g.famous || [] };
   }
 

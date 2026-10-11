@@ -134,7 +134,7 @@ test("ethnicEntry adds who they are and where they live from the data", async ()
   const F2 = createRequire(import.meta.url)("../facts.js");
   const countries = [{ code: "TUR", display: "Turkey", name: "Turkey", group: "mena" }, { code: "IRN", display: "Iran", name: "Iran", group: "mena" }];
   const e = F2.ethnicEntry({ id: "k", n: "Kurds", about: "Iranic ethnic group native to Kurdistan", where: [{ name: "Turkey", pop: 15000000 }, { name: "Iran", pop: 8000000 }], famous: [] }, countries);
-  assert.match(e.s, /^Kurds: iranic ethnic group native to Kurdistan\.$/);
+  assert.match(e.s, /^Kurds: Iranic ethnic group native to Kurdistan\.$/);
   assert.equal(e.stats[0][0], "Where they live most");
   assert.match(e.stats[0][1], /Turkey \(about 15/);
   assert.equal(e.stats[1][0], "Part of the world");
