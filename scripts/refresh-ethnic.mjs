@@ -26,10 +26,11 @@ async function one(g, rules) {
   const qid = found[0].e.value.split("/").pop();
   const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);
   const langs = await sparql(`SELECT ?lLabel WHERE { wd:${qid} wdt:P2936 ?l. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 5`);
-  const rows = await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ?p wdt:P172 wd:${qid}; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>12) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 60`);
+  const rows = await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ?p wdt:P172 wd:${qid}; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>4) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 150`);
   const famous = chooseFamous(rows.map((r) => [r.pLabel?.value || "", r.pDescription?.value || "", Number(r.sl.value)]), rules, g.id);
-  const population = pop.length ? Math.round(Number(pop[0].v.value)) : 0;
-  if (!population && famous.length < 3) return null;
+  let population = pop.length ? Math.round(Number(pop[0].v.value)) : 0;
+  if (population < 100000) population = 0; // tiny numbers in Wikidata are usually a counting mistake or a small sub-count
+  if (famous.length < 3) return null; // a people page needs famous people to be worth opening
   return { id: g.id, n: g.n, aka: g.aka || [], qid, population, languages: langs.map((r) => r.lLabel.value).filter((x) => !/^Q\d+$/.test(x)), famous };
 }
 
