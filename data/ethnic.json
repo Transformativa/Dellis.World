@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generatedAt": "2026-10-11T00:28:06.722Z",
+  "generatedAt": "2026-10-11T00:31:16.977Z",
   "source": "Wikidata (CC0)",
-  "count": 27
+  "count": 24
  },
  "groups": {
   "kurds": {
@@ -52,6 +52,16 @@
      "name": "Rabindranath Tagore",
      "desc": "Bengali poet, philosopher and polymath (1861–1941)",
      "sl": 246
+    },
+    {
+     "name": "Arifur Rahman",
+     "desc": "Bangladeshi-Norwegian political cartoonist, illustrator and animator",
+     "sl": 11
+    },
+    {
+     "name": "Anasuya Sengupta",
+     "desc": "Indian-Bengali actress and production designer",
+     "sl": 8
     }
    ]
   },
@@ -72,6 +82,16 @@
      "name": "Kunal Nayyar",
      "desc": "English actor (born 1981)",
      "sl": 48
+    },
+    {
+     "name": "Amarjit Chandan",
+     "desc": "Punjabi poet",
+     "sl": 6
+    },
+    {
+     "name": "Sidharth",
+     "desc": "Indian artist (born 1956)",
+     "sl": 5
     }
    ]
   },
@@ -102,6 +122,11 @@
      "name": "Ahmad Zahir",
      "desc": "Afghan singer (1946-1979)",
      "sl": 26
+    },
+    {
+     "name": "Mermen Qamar Gul",
+     "desc": "Afghan-Canadian musician (1952–2022)",
+     "sl": 8
     }
    ]
   },
@@ -127,6 +152,16 @@
      "name": "Minggatu",
      "desc": "Mongolian astronomer",
      "sl": 14
+    },
+    {
+     "name": "Buyunchaokete",
+     "desc": "Chinese tennis player",
+     "sl": 12
+    },
+    {
+     "name": "Buren Bayaer",
+     "desc": "Chinese folk singer (1960–2018)",
+     "sl": 11
     }
    ]
   },
@@ -137,7 +172,28 @@
    "qid": "Q46118",
    "population": 12314800,
    "languages": [],
-   "famous": []
+   "famous": [
+    {
+     "name": "Turghun Almas",
+     "desc": "Uyghur historian and poet",
+     "sl": 10
+    },
+    {
+     "name": "Dilber Yunus",
+     "desc": "Finnish-Uyghur singer",
+     "sl": 9
+    },
+    {
+     "name": "Muyesser Abdul’ehed",
+     "desc": "Uyghur poet",
+     "sl": 9
+    },
+    {
+     "name": "Perhat Tursun",
+     "desc": "Uyghur writer and poet",
+     "sl": 9
+    }
+   ]
   },
   "arabs": {
    "id": "arabs",
@@ -179,7 +235,7 @@
    "n": "Persians",
    "aka": [],
    "qid": "Q484206",
-   "population": 10997,
+   "population": 0,
    "languages": [],
    "famous": [
     {
@@ -312,8 +368,8 @@
      "sl": 39
     },
     {
-     "name": "Ayra Starr",
-     "desc": "Beninese-Nigerian singer",
+     "name": "Wizkid",
+     "desc": "Nigerian singer and songwriter (born 1990)",
      "sl": 35
     }
    ]
@@ -380,6 +436,16 @@
      "name": "Maryam Booth",
      "desc": "Nigerian actress, model and fashion designer",
      "sl": 16
+    },
+    {
+     "name": "Ali Jita",
+     "desc": "Nigerian Hausa musician (born 1983)",
+     "sl": 12
+    },
+    {
+     "name": "Bala Ali",
+     "desc": "Nigerian footballer",
+     "sl": 10
     }
    ]
   },
@@ -407,15 +473,6 @@
      "sl": 27
     }
    ]
-  },
-  "maasai": {
-   "id": "maasai",
-   "n": "Maasai",
-   "aka": [],
-   "qid": "Q163022",
-   "population": 850000,
-   "languages": [],
-   "famous": []
   },
   "amazigh": {
    "id": "amazigh",
@@ -548,6 +605,16 @@
      "name": "Eugenio Espejo",
      "desc": "18th century Spanish physician",
      "sl": 16
+    },
+    {
+     "name": "Martín Chambi",
+     "desc": "Peruvian photographer (1891–1973)",
+     "sl": 11
+    },
+    {
+     "name": "Delfín Quishpe",
+     "desc": "Ecuadorian singer-songwriter",
+     "sl": 11
     }
    ]
   },
@@ -572,6 +639,21 @@
      "name": "Forrest Goodluck",
      "desc": "American actor",
      "sl": 16
+    },
+    {
+     "name": "Jeremiah Bitsui",
+     "desc": "American actor",
+     "sl": 10
+    },
+    {
+     "name": "R. C. Gorman",
+     "desc": "Diné (Navajo) painter and printmaker (1931–2005)",
+     "sl": 9
+    },
+    {
+     "name": "Luci Tapahonso",
+     "desc": "Navaho poet laureate",
+     "sl": 7
     }
    ]
   },
@@ -602,6 +684,11 @@
      "name": "Susan Aglukark",
      "desc": "Canadian Inuit musician",
      "sl": 13
+    },
+    {
+     "name": "Elisapie",
+     "desc": "Canadian Inuk musician, broadcaster, documentary filmmaker, activist, and actress",
+     "sl": 12
     }
    ]
   },
@@ -645,15 +732,6 @@
     }
    ]
   },
-  "aboriginal-australians": {
-   "id": "aboriginal-australians",
-   "n": "Aboriginal Australians",
-   "aka": [],
-   "qid": "Q12060728",
-   "population": 984000,
-   "languages": [],
-   "famous": []
-  },
   "koreans": {
    "id": "koreans",
    "n": "Koreans",
@@ -688,17 +766,6 @@
      "sl": 21
     }
    ]
-  },
-  "akan": {
-   "id": "akan",
-   "n": "Akan",
-   "aka": [],
-   "qid": "Q415693",
-   "population": 20000000,
-   "languages": [
-    "Akan"
-   ],
-   "famous": []
   },
   "native-hawaiians": {
    "id": "native-hawaiians",
