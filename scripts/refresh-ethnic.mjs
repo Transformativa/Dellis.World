@@ -20,8 +20,8 @@ async function sparql(q) {
 const esc = (s) => s.replace(/["\\]/g, "");
 
 async function one(g, rules) {
-  const label = esc(g.label || g.n);
-  const found = await sparql(`SELECT ?e ?sl WHERE { ?e rdfs:label "${label}"@en; wdt:P31/wdt:P279* wd:Q41710; wikibase:sitelinks ?sl } ORDER BY DESC(?sl) LIMIT 1`);
+  const labels = [].concat(g.label || g.n).map((l) => `"${esc(l)}"@en`).join(" ");
+  const found = await sparql(`SELECT ?e ?sl WHERE { VALUES ?lab { ${labels} } ?e rdfs:label ?lab; wdt:P31/wdt:P279* wd:Q41710; wikibase:sitelinks ?sl } ORDER BY DESC(?sl) LIMIT 1`);
   if (!found.length) return null;
   const qid = found[0].e.value.split("/").pop();
   const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);

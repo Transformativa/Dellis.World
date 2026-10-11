@@ -1,23 +1,224 @@
 {
  "_comment": "Peoples that are not the same as one country (like the Kurds). Each name is looked up in Wikidata as an ethnic group. Add a row to add a people. A people only shows in the app when Wikidata gives enough facts for it.",
  "groups": [
-  {"id":"kurds","n":"Kurds"},{"id":"roma","n":"Romani people","aka":["Roma","Gypsies"],"label":"Romani"},
-  {"id":"han-chinese","n":"Han Chinese","label":"Han Chinese"},{"id":"bengalis","n":"Bengalis","label":"Bengalis"},
-  {"id":"punjabis","n":"Punjabis","label":"Punjabis"},{"id":"tamils","n":"Tamils","label":"Tamils"},
-  {"id":"pashtuns","n":"Pashtuns","label":"Pashtuns"},{"id":"javanese","n":"Javanese","label":"Javanese people"},
-  {"id":"mongols","n":"Mongols","label":"Mongols"},{"id":"uyghurs","n":"Uyghurs","label":"Uyghurs"},
-  {"id":"arabs","n":"Arabs","label":"Arabs"},{"id":"persians","n":"Persians","label":"Persians"},
-  {"id":"jewish-people","n":"Jewish people","aka":["Jews"],"label":"Jewish people"},{"id":"armenians","n":"Armenians","label":"Armenians"},
-  {"id":"yoruba","n":"Yoruba","label":"Yoruba people"},{"id":"igbo","n":"Igbo","label":"Igbo people"},
-  {"id":"hausa","n":"Hausa","label":"Hausa people"},{"id":"oromo","n":"Oromo","label":"Oromo people"},
-  {"id":"zulu","n":"Zulu","label":"Zulu people"},{"id":"xhosa","n":"Xhosa","label":"Xhosa people"},
-  {"id":"maasai","n":"Maasai","label":"Maasai people"},{"id":"amazigh","n":"Amazigh","aka":["Berbers"],"label":"Berbers"},
-  {"id":"basques","n":"Basques","label":"Basques"},{"id":"sami","n":"Sámi","aka":["Sami"],"label":"Sámi people"},
-  {"id":"quechua","n":"Quechua","label":"Quechua people"},{"id":"maya","n":"Maya","label":"Maya peoples"},
-  {"id":"navajo","n":"Navajo","label":"Navajo"},{"id":"inuit","n":"Inuit","label":"Inuit"},
-  {"id":"maori","n":"Māori","aka":["Maori"],"label":"Māori"},{"id":"aboriginal-australians","n":"Aboriginal Australians","label":"Aboriginal Australians"},
-  {"id":"koreans","n":"Koreans","label":"Koreans"},{"id":"akan","n":"Akan","label":"Akan people"},
-  {"id":"native-hawaiians","n":"Native Hawaiians","label":"Native Hawaiians"},{"id":"tibetans","n":"Tibetans","label":"Tibetan people"},
-  {"id":"malays","n":"Malays","label":"Malays"}
+  {
+   "id": "kurds",
+   "n": "Kurds"
+  },
+  {
+   "id": "roma",
+   "n": "Romani people",
+   "aka": [
+    "Roma",
+    "Gypsies"
+   ],
+   "label": [
+    "Romani people",
+    "Roma",
+    "Romani"
+   ]
+  },
+  {
+   "id": "han-chinese",
+   "n": "Han Chinese",
+   "label": [
+    "Han Chinese",
+    "Han people"
+   ]
+  },
+  {
+   "id": "bengalis",
+   "n": "Bengalis",
+   "label": "Bengalis"
+  },
+  {
+   "id": "punjabis",
+   "n": "Punjabis",
+   "label": "Punjabis"
+  },
+  {
+   "id": "tamils",
+   "n": "Tamils",
+   "label": [
+    "Tamil people",
+    "Tamils"
+   ]
+  },
+  {
+   "id": "pashtuns",
+   "n": "Pashtuns",
+   "label": "Pashtuns"
+  },
+  {
+   "id": "javanese",
+   "n": "Javanese",
+   "label": [
+    "Javanese",
+    "Javanese people"
+   ]
+  },
+  {
+   "id": "mongols",
+   "n": "Mongols",
+   "label": "Mongols"
+  },
+  {
+   "id": "uyghurs",
+   "n": "Uyghurs",
+   "label": "Uyghurs"
+  },
+  {
+   "id": "arabs",
+   "n": "Arabs",
+   "label": "Arabs"
+  },
+  {
+   "id": "persians",
+   "n": "Persians",
+   "label": "Persians"
+  },
+  {
+   "id": "jewish-people",
+   "n": "Jewish people",
+   "aka": [
+    "Jews"
+   ],
+   "label": "Jewish people"
+  },
+  {
+   "id": "armenians",
+   "n": "Armenians",
+   "label": "Armenians"
+  },
+  {
+   "id": "yoruba",
+   "n": "Yoruba",
+   "label": "Yoruba people"
+  },
+  {
+   "id": "igbo",
+   "n": "Igbo",
+   "label": "Igbo people"
+  },
+  {
+   "id": "hausa",
+   "n": "Hausa",
+   "label": "Hausa people"
+  },
+  {
+   "id": "oromo",
+   "n": "Oromo",
+   "label": "Oromo people"
+  },
+  {
+   "id": "zulu",
+   "n": "Zulu",
+   "label": "Zulu people"
+  },
+  {
+   "id": "xhosa",
+   "n": "Xhosa",
+   "label": [
+    "Xhosa",
+    "Xhosa people"
+   ]
+  },
+  {
+   "id": "maasai",
+   "n": "Maasai",
+   "label": [
+    "Maasai",
+    "Maasai people"
+   ]
+  },
+  {
+   "id": "amazigh",
+   "n": "Amazigh",
+   "aka": [
+    "Berbers"
+   ],
+   "label": "Berbers"
+  },
+  {
+   "id": "basques",
+   "n": "Basques",
+   "label": "Basques"
+  },
+  {
+   "id": "sami",
+   "n": "Sámi",
+   "aka": [
+    "Sami"
+   ],
+   "label": "Sámi people"
+  },
+  {
+   "id": "quechua",
+   "n": "Quechua",
+   "label": "Quechua people"
+  },
+  {
+   "id": "maya",
+   "n": "Maya",
+   "label": [
+    "Maya peoples",
+    "Maya",
+    "Maya people"
+   ]
+  },
+  {
+   "id": "navajo",
+   "n": "Navajo",
+   "label": "Navajo"
+  },
+  {
+   "id": "inuit",
+   "n": "Inuit",
+   "label": "Inuit"
+  },
+  {
+   "id": "maori",
+   "n": "Māori",
+   "aka": [
+    "Maori"
+   ],
+   "label": "Māori"
+  },
+  {
+   "id": "aboriginal-australians",
+   "n": "Aboriginal Australians",
+   "label": [
+    "Indigenous Australians",
+    "Aboriginal Australians"
+   ]
+  },
+  {
+   "id": "koreans",
+   "n": "Koreans",
+   "label": "Koreans"
+  },
+  {
+   "id": "akan",
+   "n": "Akan",
+   "label": [
+    "Akan",
+    "Akan people"
+   ]
+  },
+  {
+   "id": "native-hawaiians",
+   "n": "Native Hawaiians",
+   "label": "Native Hawaiians"
+  },
+  {
+   "id": "tibetans",
+   "n": "Tibetans",
+   "label": "Tibetan people"
+  },
+  {
+   "id": "malays",
+   "n": "Malays",
+   "label": "Malays"
+  }
  ]
 }
