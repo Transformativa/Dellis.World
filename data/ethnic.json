@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generatedAt": "2026-10-11T00:31:16.977Z",
+  "generatedAt": "2026-10-11T00:33:53.782Z",
   "source": "Wikidata (CC0)",
-  "count": 24
+  "count": 26
  },
  "groups": {
   "kurds": {
@@ -37,6 +37,44 @@
      "name": "Al-Kamil",
      "desc": "Ayyubid Sultan of Egypt from 1218 to 1238",
      "sl": 38
+    }
+   ]
+  },
+  "roma": {
+   "id": "roma",
+   "n": "Romani people",
+   "aka": [
+    "Roma",
+    "Gypsies"
+   ],
+   "qid": "Q8060",
+   "population": 4373000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Bronisława Wajs",
+     "desc": "Polish-Romani classical poet and singer",
+     "sl": 28
+    },
+    {
+     "name": "Stoja Novaković",
+     "desc": "Serbian folk singer (born 1972)",
+     "sl": 21
+    },
+    {
+     "name": "Remedios Amaya",
+     "desc": "Spanish singer",
+     "sl": 20
+    },
+    {
+     "name": "Louise Doughty",
+     "desc": "English novelist, playwright and journalist",
+     "sl": 13
+    },
+    {
+     "name": "Anca Parghel",
+     "desc": "Singer, music teacher",
+     "sl": 12
     }
    ]
   },
@@ -127,6 +165,41 @@
      "name": "Mermen Qamar Gul",
      "desc": "Afghan-Canadian musician (1952–2022)",
      "sl": 8
+    }
+   ]
+  },
+  "javanese": {
+   "id": "javanese",
+   "n": "Javanese",
+   "aka": [],
+   "qid": "Q49209",
+   "population": 100000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Nh. Dini",
+     "desc": "Indonesian writer (1936-2018)",
+     "sl": 20
+    },
+    {
+     "name": "Krisdayanti",
+     "desc": "Indonesian singer and actress",
+     "sl": 20
+    },
+    {
+     "name": "Tiara Andini",
+     "desc": "Indonesian singer and actress (born 2001)",
+     "sl": 20
+    },
+    {
+     "name": "Inul Daratista",
+     "desc": "Indonesian singer and actress",
+     "sl": 17
+    },
+    {
+     "name": "Artika Sari Devi",
+     "desc": "Indonesian actress and model",
+     "sl": 16
     }
    ]
   },
