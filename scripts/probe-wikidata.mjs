@@ -11,23 +11,14 @@ async function sparql(name, query, show = 3, timeout = 65000) {
   } catch (e) { report.push({ name, error: String(e).slice(0, 120), ms: Date.now() - t }); }
   console.log(JSON.stringify(report.at(-1)).slice(0, 300));
 }
-const plain = (lo, hi) => `SELECT ?p ?sl WHERE { ?p wikibase:sitelinks ?sl . FILTER(?sl>=${lo} && ?sl<${hi}) ?p wdt:P31 wd:Q5 }`;
-await sparql("plain >=200", plain(200, 9999));
-await sparql("plain 120-200", plain(120, 200));
-await sparql("plain 80-120", plain(80, 120));
-await sparql("plain 60-80", plain(60, 80));
-await sparql("plain 45-60", plain(45, 60));
-const per = (q, th) => `SELECT ?p ?pLabel ?pDescription ?sl WHERE { ?p wdt:P27 wd:${q}; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>${th}) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 30`;
-await sparql("Kazakhstan >8", per("Q232", 8), 6);
-await sparql("Uzbekistan >8", per("Q265", 8), 6);
-await sparql("Ukraine >40", per("Q212", 40), 6);
-await sparql("Iceland >8", per("Q189", 8), 4);
-// how big is one batch of entity details?
-const t = Date.now();
-try {
-  const ids = ["Q1067", "Q254", "Q307", "Q1394", "Q7186", "Q937", "Q692", "Q5879"];
-  const res = await fetch("https://www.wikidata.org/w/api.php?format=json&action=wbgetentities&props=labels|descriptions|claims&languages=en&ids=" + ids.join("|"), { headers: { "User-Agent": UA } });
-  const j = await res.json();
-  report.push({ name: "wbgetentities 8", status: res.status, ms: Date.now() - t, sample: Object.values(j.entities).map((e) => `${e.labels?.en?.value}: P27=${(e.claims?.P27 || []).map((c) => c.mainsnak?.datavalue?.value?.id)} P19=${(e.claims?.P19 || []).map((c) => c.mainsnak?.datavalue?.value?.id)} P106=${(e.claims?.P106 || []).length}`) });
-} catch (e) { report.push({ name: "wbgetentities", error: String(e) }); }
+const OCC = { Q36180: "writer", Q1028181: "painter", Q169470: "physicist", Q36834: "composer", Q177220: "singer", Q49757: "poet", Q205375: "inventor", Q11631: "astronaut", Q11900058: "explorer", Q3665646: "basketball player", Q937857: "association football player", Q170790: "mathematician", Q593644: "chemist", Q33999: "actor", Q4964182: "philosopher", Q483501: "artist", Q901: "scientist", Q42973: "architect", Q2526255: "film director", Q11063: "astronomer", Q10833314: "tennis player", Q82955: "politician", Q6625963: "novelist", Q1622272: "university teacher", Q3055126: "naturalist", Q39631: "physician", Q81096: "engineer", Q2066131: "athlete", Q639669: "musician", Q214917: "playwright", Q2095: "food" };
+await sparql("occupation labels", `SELECT ?o ?oLabel WHERE { VALUES ?o { ${Object.keys(OCC).map((q) => "wd:" + q).join(" ")} } SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }`, 40);
+const usa = (occ, th) => `SELECT ?p ?pLabel ?pDescription ?sl WHERE { ?p wdt:P106 wd:${occ}; wdt:P27 wd:Q30; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>${th}) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 10`;
+await sparql("USA painter >30", usa("Q1028181", 30), 5);
+await sparql("USA physicist >30", usa("Q169470", 30), 5);
+await sparql("USA writer >60", usa("Q36180", 60), 5);
+await sparql("USA basketball >30", usa("Q3665646", 30), 5);
+await sparql("USA composer >30", usa("Q36834", 30), 5);
+await sparql("USA inventor >20", usa("Q205375", 20), 5);
+await sparql("USA values-all >70", `SELECT ?p ?pLabel ?pDescription ?sl WHERE { VALUES ?occ { wd:Q36180 wd:Q1028181 wd:Q169470 wd:Q36834 wd:Q177220 wd:Q49757 wd:Q205375 wd:Q11631 } ?p wdt:P106 ?occ; wdt:P27 wd:Q30; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>70) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 20`, 10);
 await writeFile("probe-report.json", JSON.stringify(report, null, 1));
