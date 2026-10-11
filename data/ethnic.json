@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedAt": "2026-10-11T13:24:39.417Z",
+  "generatedAt": "2026-10-11T13:46:38.354Z",
   "source": "Wikidata (CC0)",
   "count": 26
  },
@@ -10,6 +10,25 @@
    "n": "Kurds",
    "aka": [],
    "qid": "Q12223",
+   "about": "ethnic group in western Asia",
+   "where": [
+    {
+     "name": "Turkey",
+     "pop": 0
+    },
+    {
+     "name": "Azerbaijan",
+     "pop": 0
+    },
+    {
+     "name": "Armenia",
+     "pop": 0
+    },
+    {
+     "name": "Iran",
+     "pop": 0
+    }
+   ],
    "population": 0,
    "languages": [],
    "famous": [
@@ -48,6 +67,8 @@
     "Gypsies"
    ],
    "qid": "Q8060",
+   "about": "Indo-Aryan ethnic group",
+   "where": [],
    "population": 4373000,
    "languages": [],
    "famous": [
@@ -83,6 +104,8 @@
    "n": "Bengalis",
    "aka": [],
    "qid": "Q402913",
+   "about": "ethnic group native to Bangladesh and India",
+   "where": [],
    "population": 230000000,
    "languages": [],
    "famous": [
@@ -108,6 +131,8 @@
    "n": "Punjabis",
    "aka": [],
    "qid": "Q854323",
+   "about": "ethnolinguistic group native to the Punjab",
+   "where": [],
    "population": 146107170,
    "languages": [],
    "famous": [
@@ -138,6 +163,8 @@
    "n": "Pashtuns",
    "aka": [],
    "qid": "Q2556103",
+   "about": "Iranic ethnic group native to Afghanistan and Pakistan",
+   "where": [],
    "population": 53000000,
    "languages": [],
    "famous": [
@@ -173,6 +200,21 @@
    "n": "Javanese",
    "aka": [],
    "qid": "Q49209",
+   "about": "Javanic-speaking ethnic originally from central and eastern regions of Java Island",
+   "where": [
+    {
+     "name": "Indonesia",
+     "pop": 0
+    },
+    {
+     "name": "Singapore",
+     "pop": 0
+    },
+    {
+     "name": "Malaysia",
+     "pop": 0
+    }
+   ],
    "population": 100000000,
    "languages": [],
    "famous": [
@@ -208,6 +250,8 @@
    "n": "Mongols",
    "aka": [],
    "qid": "Q41975",
+   "about": "ethnic group native to Mongolia and neighbouring areas",
+   "where": [],
    "population": 10000000,
    "languages": [],
    "famous": [
@@ -243,6 +287,8 @@
    "n": "Uyghurs",
    "aka": [],
    "qid": "Q46118",
+   "about": "Turkic ethnic group of Central and East Asia",
+   "where": [],
    "population": 12314800,
    "languages": [],
    "famous": [
@@ -273,6 +319,13 @@
    "n": "Arabs",
    "aka": [],
    "qid": "Q35323",
+   "about": "Arabic-speaking ethnic and national groups, originally from the Arabian Peninsula",
+   "where": [
+    {
+     "name": "Arabian Peninsula",
+     "pop": 0
+    }
+   ],
    "population": 440000000,
    "languages": [],
    "famous": [
@@ -308,6 +361,21 @@
    "n": "Persians",
    "aka": [],
    "qid": "Q484206",
+   "about": "Iranian ethnic group who make up over half the population of Iran",
+   "where": [
+    {
+     "name": "Iran",
+     "pop": 0
+    },
+    {
+     "name": "Tajikistan",
+     "pop": 0
+    },
+    {
+     "name": "Afghanistan",
+     "pop": 0
+    }
+   ],
    "population": 0,
    "languages": [],
    "famous": [
@@ -345,6 +413,17 @@
     "Jews"
    ],
    "qid": "Q7325",
+   "about": "ethnoreligious group and nation from the Levant",
+   "where": [
+    {
+     "name": "Kingdom of Judah",
+     "pop": 0
+    },
+    {
+     "name": "Kingdom of Israel",
+     "pop": 0
+    }
+   ],
    "population": 14606000,
    "languages": [],
    "famous": [
@@ -380,6 +459,8 @@
    "n": "Armenians",
    "aka": [],
    "qid": "Q79797",
+   "about": "ethnic group native to the Armenian Highlands",
+   "where": [],
    "population": 0,
    "languages": [],
    "famous": [
@@ -415,6 +496,8 @@
    "n": "Yoruba",
    "aka": [],
    "qid": "Q190168",
+   "about": "ethnic group of Nigeria, Benin and Togo",
+   "where": [],
    "population": 47000000,
    "languages": [
     "Yoruba"
@@ -452,6 +535,8 @@
    "n": "Igbo",
    "aka": [],
    "qid": "Q244157",
+   "about": "ethnic group of southeastern Nigeria",
+   "where": [],
    "population": 35000000,
    "languages": [
     "Igbo",
@@ -490,6 +575,8 @@
    "n": "Hausa",
    "aka": [],
    "qid": "Q33938",
+   "about": "ethnic group in West Africa",
+   "where": [],
    "population": 40000000,
    "languages": [
     "Hausa"
@@ -527,6 +614,13 @@
    "n": "Zulu",
    "aka": [],
    "qid": "Q129962",
+   "about": "ethnic group in South Africa, Lesotho, and Eswatini (formerly Swaziland)",
+   "where": [
+    {
+     "name": "sub-Saharan Africa",
+     "pop": 0
+    }
+   ],
    "population": 10500000,
    "languages": [],
    "famous": [
@@ -554,6 +648,8 @@
     "Berbers"
    ],
    "qid": "Q45315",
+   "about": "ethnic group indigenous to North Africa",
+   "where": [],
    "population": 24000000,
    "languages": [],
    "famous": [
@@ -589,6 +685,8 @@
    "n": "Basques",
    "aka": [],
    "qid": "Q126756",
+   "about": "",
+   "where": [],
    "population": 0,
    "languages": [],
    "famous": [
@@ -626,6 +724,8 @@
     "Sami"
    ],
    "qid": "Q48199",
+   "about": "Finno-Ugric peoples",
+   "where": [],
    "population": 0,
    "languages": [],
    "famous": [
@@ -661,6 +761,8 @@
    "n": "Quechua",
    "aka": [],
    "qid": "Q134936",
+   "about": "ethnic group indigenous to South America",
+   "where": [],
    "population": 10000000,
    "languages": [],
    "famous": [
@@ -696,6 +798,8 @@
    "n": "Navajo",
    "aka": [],
    "qid": "Q108266",
+   "about": "ethnic group in North America",
+   "where": [],
    "population": 311000,
    "languages": [
     "English",
@@ -735,6 +839,8 @@
    "n": "Inuit",
    "aka": [],
    "qid": "Q189975",
+   "about": "group of Indigenous peoples of the Circumpolar Arctic",
+   "where": [],
    "population": 110783,
    "languages": [],
    "famous": [
@@ -772,6 +878,13 @@
     "Maori"
    ],
    "qid": "Q6122670",
+   "about": "indigenous Polynesian people of New Zealand",
+   "where": [
+    {
+     "name": "New Zealand",
+     "pop": 0
+    }
+   ],
    "population": 775836,
    "languages": [
     "English",
@@ -810,6 +923,13 @@
    "n": "Koreans",
    "aka": [],
    "qid": "Q484464",
+   "about": "people based in the Korean Peninsula and Manchuria",
+   "where": [
+    {
+     "name": "Korea",
+     "pop": 0
+    }
+   ],
    "population": 0,
    "languages": [],
    "famous": [
@@ -845,6 +965,8 @@
    "n": "Native Hawaiians",
    "aka": [],
    "qid": "Q1283606",
+   "about": "ethnic group of Polynesian origin",
+   "where": [],
    "population": 0,
    "languages": [],
    "famous": [
@@ -880,6 +1002,25 @@
    "n": "Malays",
    "aka": [],
    "qid": "Q142702",
+   "about": "ethnic group native to eastern Sumatra, the Malay Peninsula, the Riau Islands and the coast of Borneo",
+   "where": [
+    {
+     "name": "Indonesia",
+     "pop": 0
+    },
+    {
+     "name": "Singapore",
+     "pop": 0
+    },
+    {
+     "name": "Malaysia",
+     "pop": 0
+    },
+    {
+     "name": "Thailand",
+     "pop": 0
+    }
+   ],
    "population": 23500000,
    "languages": [],
    "famous": [
