@@ -1,4 +1,4 @@
-{"generatedAt":"2026-10-11T00:17:57.100Z","source":"World Bank Open Data","populationYear":2025,"count":219,
+{"generatedAt":"2026-10-11T02:43:57.569Z","source":"World Bank Open Data","populationYear":2025,"count":219,
   "countries": [
     {"code":"AFG","name":"Afghanistan","display":"Afghanistan","aka":["Afghan","Afghans"],"capital":"Kabul","pop":43844111,"area":652870,"group":"asia","income":"Low income","rank":true,"year":"2025"},
     {"code":"ALB","name":"Albania","display":"Albania","aka":["Albanian","Albanians"],"capital":"Tirana","pop":2349580,"area":28750,"group":"europe","income":"Upper middle income","rank":true,"year":"2025"},
