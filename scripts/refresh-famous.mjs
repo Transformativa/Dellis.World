@@ -11,7 +11,8 @@ const ENDPOINT = "https://query.wikidata.org/sparql";
 const UA = "DellisWorld/1.0 (https://github.com/Transformativa/Dellis.World)";
 const THRESHOLDS = [120, 50, 20, 8, 2];
 const OCCUPATIONS = ["Q36180","Q1028181","Q169470","Q36834","Q177220","Q49757","Q205375","Q11631","Q11900058","Q3665646","Q937857","Q170790","Q593644","Q33999","Q4964182","Q483501","Q901","Q42973","Q2526255","Q11063","Q10833314","Q6625963","Q39631","Q81096","Q2066131","Q639669","Q214917"];
-const CONCURRENCY = 4;
+const CONCURRENCY = Number(process.env.CONC) || 4;
+const LOG = []; // per-country notes, written to famous-report.json in --only mode
 const DEADLINE = Date.now() + 85 * 60 * 1000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const readJson = async (p) => JSON.parse(await readFile(new URL(p, import.meta.url), "utf8"));
@@ -25,7 +26,8 @@ async function sparql(query) {
         headers: { "User-Agent": UA, Accept: "application/sparql-results+json" },
         signal: AbortSignal.timeout(45000),
       });
-    } catch (e) { throw new Timeout(e.message); }
+    } catch (e) { LOG.push("fetch error: " + e.message); throw new Timeout(e.message); }
+    if (!res.ok) LOG.push("HTTP " + res.status);
     if (res.ok) return (await res.json()).results.bindings;
     if (res.status === 429 || res.status >= 500) {
       if (attempt === 2) throw new Timeout(`HTTP ${res.status}`);
@@ -70,7 +72,10 @@ async function main() {
   const live = await readJson("../data/live.json");
   const rules = await readJson("../data/famous-rules.json");
   const prev = await readJson("../data/famous.json").catch(() => ({ countries: {} }));
-  const codes = live.countries.map((c) => c.code);
+  const onlyArg = process.argv.indexOf("--only");
+  const only = onlyArg > 0 ? process.argv[onlyArg + 1].split(",") : null;
+  const codes = live.countries.map((c) => c.code).filter((c) => !only || only.includes(c));
+  const report = {};
   const seedArg = process.argv.indexOf("--seed");
   const seed = seedArg > 0 ? JSON.parse(await readFile(process.argv[seedArg + 1], "utf8")) : null;
 
@@ -87,13 +92,16 @@ async function main() {
       while (queue.length) {
         const code = queue.shift();
         if (Date.now() > DEADLINE) { skipped++; keep(code); continue; }
+        const t0 = Date.now(); LOG.length = 0;
         try {
           const rows = await fetchCountry(qid[code], rules.sameCountryQids?.[code]);
           const picked = chooseFamous(rows, rules, code);
+          report[code] = { rawRows: rows.length, picked: picked.map((p) => p.name), sampleRaw: rows.slice(0, 4), secs: Math.round((Date.now() - t0) / 1000), notes: [...LOG].slice(0, 8) };
           if (picked.length) countries[code] = picked; else keep(code);
           if (picked.length < 4) console.warn(`${code}: only ${picked.length} people`);
         } catch (e) {
           failed++;
+          report[code] = { error: e.message, secs: Math.round((Date.now() - t0) / 1000), notes: [...LOG].slice(0, 8) };
           console.warn(`${code}: ${e.message} (keeping previous)`);
           keep(code);
         }
@@ -101,8 +109,9 @@ async function main() {
       }
     };
     await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-    if (failed > codes.length * 0.3) { console.error(`${failed} of ${codes.length} countries failed. Not writing.`); process.exit(1); }
+    if (!only && failed > codes.length * 0.3) { console.error(`${failed} of ${codes.length} countries failed. Not writing.`); process.exit(1); }
   }
+  if (only) { await writeFile(new URL("../famous-report.json", import.meta.url), JSON.stringify(report, null, 1)); console.log("Report written."); return; }
   const have = Object.values(countries).filter((a) => a.length).length;
   if (have < 30 && !seed) { console.error(`Only ${have} countries have people. Not writing.`); process.exit(1); }
   const out = { meta: { generatedAt: new Date().toISOString(), source: "Wikidata (CC0)", count: have }, countries };

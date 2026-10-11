@@ -1,0 +1,33 @@
+name: Probe famous people
+on:
+  workflow_dispatch:
+    inputs:
+      codes:
+        description: "Country codes, comma separated"
+        default: "KAZ,UZB,UKR,ITA,USA"
+      conc:
+        description: "How many at once"
+        default: "1"
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/refresh-famous.mjs --only "${{ inputs.codes }}"
+        env:
+          CONC: ${{ inputs.conc }}
+      - name: Save the report on its own branch
+        if: always()
+        run: |
+          git config user.name "dellis-world-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b probe-output
+          git add -f famous-report.json
+          git commit -m "Famous probe report"
+          git push -f origin probe-output
