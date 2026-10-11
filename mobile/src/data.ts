@@ -41,7 +41,7 @@ export function buildItems(countries: any[], peoplesMap: any[], languages: any, 
     });
   }
   for (const g of Object.values<any>(ethnic?.groups || {})) {
-    const rec = F.ethnicEntry(g);
+    const rec = F.ethnicEntry(g, countries);
     out.push({
       kind: "people", id: "e-" + g.id, name: g.n, aka: g.aka || [], group: "", popM: rec.p, popLabel: label(rec.p),
       body: [g.n, ...(g.languages || [])].join(" "), featured: true, data: rec,

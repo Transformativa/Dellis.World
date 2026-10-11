@@ -26,12 +26,27 @@ async function one(g, rules) {
   const qid = found[0].e.value.split("/").pop();
   const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);
   const langs = await sparql(`SELECT ?lLabel WHERE { wd:${qid} wdt:P2936 ?l. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 5`);
+  const desc = await sparql(`SELECT ?d WHERE { wd:${qid} schema:description ?d. FILTER(lang(?d)="en") } LIMIT 1`);
+  // Population by country: Wikidata keeps these as population statements that name a country.
+  const byCountry = await sparql(`SELECT ?jLabel ?v ?t WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v; pq:P1001 ?j. OPTIONAL { ?s pq:P585 ?t } ?j wdt:P31/wdt:P279* wd:Q6256. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 300`);
+  const latest = {};
+  for (const r of byCountry) {
+    const n = r.jLabel?.value; if (!n || /^Q\d+$/.test(n)) continue;
+    const t = r.t?.value || "", v = Math.round(Number(r.v.value));
+    if (!latest[n] || t > latest[n].t) latest[n] = { t, v };
+  }
+  let where = Object.entries(latest).map(([name, o]) => ({ name, pop: o.v })).filter((w) => w.pop >= 10000).sort((a, b) => b.pop - a.pop).slice(0, 5);
+  if (!where.length) {
+    const origin = await sparql(`SELECT ?cLabel WHERE { wd:${qid} wdt:P495 ?c. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 4`);
+    where = origin.map((r) => ({ name: r.cLabel.value, pop: 0 })).filter((w) => !/^Q\d+$/.test(w.name));
+  }
   const rows = await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ?p wdt:P172 wd:${qid}; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>4) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 150`);
   const famous = chooseFamous(rows.map((r) => [r.pLabel?.value || "", r.pDescription?.value || "", Number(r.sl.value)]), rules, g.id);
   let population = pop.length ? Math.round(Number(pop[0].v.value)) : 0;
   if (population < 100000) population = 0; // tiny numbers in Wikidata are usually a counting mistake or a small sub-count
   if (famous.length < 3) return null; // a people page needs famous people to be worth opening
-  return { id: g.id, n: g.n, aka: g.aka || [], qid, population, languages: langs.map((r) => r.lLabel.value).filter((x) => !/^Q\d+$/.test(x)), famous };
+  const about = desc[0]?.d.value || "";
+  return { id: g.id, n: g.n, aka: g.aka || [], qid, about: about.length >= 15 && !/^ethnic group$/i.test(about) && !(rules.blockWords || []).some((w) => about.toLowerCase().includes(w)) ? about : "", where, population, languages: langs.map((r) => r.lLabel.value).filter((x) => !/^Q\d+$/.test(x)), famous };
 }
 
 const list = (await readJson("../data/ethnic-groups.json")).groups;

@@ -272,11 +272,21 @@
   }
 
   /* A people that is not one country (Kurds, Maya...). Wikidata only. */
-  function ethnicEntry(g) {
-    var pop = g.population || 0, stats = [];
+  function ethnicEntry(g, countries) {
+    var pop = g.population || 0, stats = [], where = g.where || [], known = [];
     if (pop) stats.push(["People", "about " + fmtPop(pop)]);
+    if (where.length) {
+      var hasNums = where.some(function (w) { return w.pop; });
+      stats.push([hasNums ? "Where they live most" : "Homeland", where.map(function (w) { return w.name + (w.pop ? " (about " + fmtPop(w.pop) + ")" : ""); }).join(", ")]);
+      var seen = {}, regs = [];
+      (countries || []).forEach(function (c) {
+        if (where.some(function (w) { return w.name === c.display || w.name === c.name; }) && GROUPS[c.group] && !seen[c.group]) { seen[c.group] = 1; regs.push(GROUPS[c.group]); }
+      });
+      if (regs.length) stats.push([regs.length > 1 ? "Parts of the world" : "Part of the world", regs.join(", ")]);
+    }
     if ((g.languages || []).length) stats.push(["Languages", g.languages.join(", ")]);
-    return { id: g.id, n: g.n, aka: g.aka || [], g: "", p: pop / 1e6, pl: pop ? "about " + fmtPop(pop) : "", s: "", fun: "", special: "", known: [], stats: stats, records: [], famous: g.famous || [] };
+    var s = g.about ? g.n + ": " + g.about.charAt(0).toLowerCase() + g.about.slice(1) + "." : "";
+    return { id: g.id, n: g.n, aka: g.aka || [], g: "", p: pop / 1e6, pl: pop ? "about " + fmtPop(pop) : "", s: s, fun: "", special: "", known: known, stats: stats, records: [], famous: g.famous || [] };
   }
 
   /* A faith: Pew Research Center figures only. */
