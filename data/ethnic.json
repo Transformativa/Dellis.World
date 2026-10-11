@@ -1,1 +1,774 @@
-{"meta":{"generatedAt":"2026-01-01T00:00:00Z","source":"Wikidata (CC0)","count":0},"groups":{}}
+{
+ "meta": {
+  "generatedAt": "2026-10-11T00:28:06.722Z",
+  "source": "Wikidata (CC0)",
+  "count": 27
+ },
+ "groups": {
+  "kurds": {
+   "id": "kurds",
+   "n": "Kurds",
+   "aka": [],
+   "qid": "Q12223",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Saladin",
+     "desc": "Sultan of Egypt and founder of the Ayyubid dynasty (1137–1193)",
+     "sl": 156
+    },
+    {
+     "name": "Yaşar Kemal",
+     "desc": "Kurdish writer and human rights activist (1923–2015)",
+     "sl": 55
+    },
+    {
+     "name": "Deniz Undav",
+     "desc": "German association football player",
+     "sl": 49
+    },
+    {
+     "name": "Zeki Çelik",
+     "desc": "Turkish association football player (born 1997)",
+     "sl": 40
+    },
+    {
+     "name": "Al-Kamil",
+     "desc": "Ayyubid Sultan of Egypt from 1218 to 1238",
+     "sl": 38
+    }
+   ]
+  },
+  "bengalis": {
+   "id": "bengalis",
+   "n": "Bengalis",
+   "aka": [],
+   "qid": "Q402913",
+   "population": 230000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Rabindranath Tagore",
+     "desc": "Bengali poet, philosopher and polymath (1861–1941)",
+     "sl": 246
+    }
+   ]
+  },
+  "punjabis": {
+   "id": "punjabis",
+   "n": "Punjabis",
+   "aka": [],
+   "qid": "Q854323",
+   "population": 146107170,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Zayn Malik",
+     "desc": "English singer",
+     "sl": 78
+    },
+    {
+     "name": "Kunal Nayyar",
+     "desc": "English actor (born 1981)",
+     "sl": 48
+    }
+   ]
+  },
+  "pashtuns": {
+   "id": "pashtuns",
+   "n": "Pashtuns",
+   "aka": [],
+   "qid": "Q2556103",
+   "population": 53000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Salman Khan",
+     "desc": "Indian actor and producer (born 1965)",
+     "sl": 105
+    },
+    {
+     "name": "Abdul Ahad Mohmand",
+     "desc": "Afghan astronaut",
+     "sl": 36
+    },
+    {
+     "name": "Idries Shah",
+     "desc": "Afghan Sufi teacher (1924-1996)",
+     "sl": 31
+    },
+    {
+     "name": "Ahmad Zahir",
+     "desc": "Afghan singer (1946-1979)",
+     "sl": 26
+    }
+   ]
+  },
+  "mongols": {
+   "id": "mongols",
+   "n": "Mongols",
+   "aka": [],
+   "qid": "Q41975",
+   "population": 10000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Al-Adil Kitbugha",
+     "desc": "Mamluk Sultan of Egypt 1294-1296",
+     "sl": 20
+    },
+    {
+     "name": "Empress Dowager Xiaozhuang",
+     "desc": "Empress dowager of Shunzhi Emperor, Qing Dynasty",
+     "sl": 14
+    },
+    {
+     "name": "Minggatu",
+     "desc": "Mongolian astronomer",
+     "sl": 14
+    }
+   ]
+  },
+  "uyghurs": {
+   "id": "uyghurs",
+   "n": "Uyghurs",
+   "aka": [],
+   "qid": "Q46118",
+   "population": 12314800,
+   "languages": [],
+   "famous": []
+  },
+  "arabs": {
+   "id": "arabs",
+   "n": "Arabs",
+   "aka": [],
+   "qid": "Q35323",
+   "population": 440000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Ibn Saud",
+     "desc": "King of Saudi Arabia from 1932 to 1953",
+     "sl": 95
+    },
+    {
+     "name": "Al-Jahiz",
+     "desc": "Arabic writer (776–869)",
+     "sl": 59
+    },
+    {
+     "name": "Wissam Ben Yedder",
+     "desc": "French footballer (born 1990)",
+     "sl": 49
+    },
+    {
+     "name": "Hussein bin Ali",
+     "desc": "Sharif and Emir of Mecca, then King of Hejaz and Sharifian Caliph (1854–1931)",
+     "sl": 48
+    },
+    {
+     "name": "Al-Muazzam Turanshah",
+     "desc": "Sultan of Egypt 1249-1250",
+     "sl": 27
+    }
+   ]
+  },
+  "persians": {
+   "id": "persians",
+   "n": "Persians",
+   "aka": [],
+   "qid": "Q484206",
+   "population": 10997,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Abu Bakr al-Razi",
+     "desc": "Persian polymath, physician, chemist and philosopher (854-925)",
+     "sl": 97
+    },
+    {
+     "name": "Ibn al-Muqaffa'",
+     "desc": "8th-century Persian author and translator",
+     "sl": 37
+    },
+    {
+     "name": "Sadaf Taherian",
+     "desc": "Iranian actress and model",
+     "sl": 28
+    },
+    {
+     "name": "Al-Darimi",
+     "desc": "Hadith compiler, author of \"Sunan\"",
+     "sl": 18
+    },
+    {
+     "name": "Allāḥqy",
+     "desc": "Iraqi poet",
+     "sl": 14
+    }
+   ]
+  },
+  "jewish-people": {
+   "id": "jewish-people",
+   "n": "Jewish people",
+   "aka": [
+    "Jews"
+   ],
+   "qid": "Q7325",
+   "population": 14606000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Albert Einstein",
+     "desc": "German-born theoretical physicist (1879–1955)",
+     "sl": 321
+    },
+    {
+     "name": "Sarah Bernhardt",
+     "desc": "French stage actress, painter and sculptor (1844–1923)",
+     "sl": 194
+    },
+    {
+     "name": "Steven Spielberg",
+     "desc": "American filmmaker (born 1946)",
+     "sl": 171
+    },
+    {
+     "name": "Isaac Asimov",
+     "desc": "American writer and biochemist (1920–1992)",
+     "sl": 163
+    },
+    {
+     "name": "Gustav Mahler",
+     "desc": "Austrian late-Romantic composer (1860–1911)",
+     "sl": 152
+    }
+   ]
+  },
+  "armenians": {
+   "id": "armenians",
+   "n": "Armenians",
+   "aka": [],
+   "qid": "Q79797",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Garry Kasparov",
+     "desc": "Russian chess grandmaster and activist",
+     "sl": 119
+    },
+    {
+     "name": "Aram Khachaturian",
+     "desc": "Soviet Armenian composer (1903–1978)",
+     "sl": 80
+    },
+    {
+     "name": "Tigran Petrosian",
+     "desc": "Soviet Armenian Grandmaster and World Chess Champion",
+     "sl": 76
+    },
+    {
+     "name": "Ivan Aivazovsky",
+     "desc": "Russian marine painter (1817–1900)",
+     "sl": 73
+    },
+    {
+     "name": "Tigranes the Great",
+     "desc": "King of Armenia",
+     "sl": 73
+    }
+   ]
+  },
+  "yoruba": {
+   "id": "yoruba",
+   "n": "Yoruba",
+   "aka": [],
+   "qid": "Q190168",
+   "population": 47000000,
+   "languages": [
+    "Yoruba"
+   ],
+   "famous": [
+    {
+     "name": "Wole Soyinka",
+     "desc": "Nigerian writer (born 1934)",
+     "sl": 112
+    },
+    {
+     "name": "Giannis Antetokounmpo",
+     "desc": "Nigerian-Greek basketball player (born 1994)",
+     "sl": 62
+    },
+    {
+     "name": "Fela Kuti",
+     "desc": "Nigerian musician and activist (1938–1997)",
+     "sl": 54
+    },
+    {
+     "name": "Funmilayo Ransome-Kuti",
+     "desc": "Nigerian educator, political campaigner, suffragist, and women's rights activist",
+     "sl": 39
+    },
+    {
+     "name": "Ayra Starr",
+     "desc": "Beninese-Nigerian singer",
+     "sl": 35
+    }
+   ]
+  },
+  "igbo": {
+   "id": "igbo",
+   "n": "Igbo",
+   "aka": [],
+   "qid": "Q244157",
+   "population": 35000000,
+   "languages": [
+    "Igbo",
+    "pidgin"
+   ],
+   "famous": [
+    {
+     "name": "Chimamanda Ngozi Adichie",
+     "desc": "Nigerian writer (born 1977)",
+     "sl": 96
+    },
+    {
+     "name": "Giannis Antetokounmpo",
+     "desc": "Nigerian-Greek basketball player (born 1994)",
+     "sl": 62
+    },
+    {
+     "name": "Buchi Emecheta",
+     "desc": "Nigerian writer (1944–2017)",
+     "sl": 47
+    },
+    {
+     "name": "Genevieve Nnaji",
+     "desc": "Nigerian actress, producer, and director",
+     "sl": 46
+    },
+    {
+     "name": "Dr. Alban",
+     "desc": "Nigerian-Swedish dentist, musician",
+     "sl": 42
+    }
+   ]
+  },
+  "hausa": {
+   "id": "hausa",
+   "n": "Hausa",
+   "aka": [],
+   "qid": "Q33938",
+   "population": 40000000,
+   "languages": [
+    "Hausa"
+   ],
+   "famous": [
+    {
+     "name": "Queen Amina",
+     "desc": "Hausa Muslim Warrior Queen of Zazzau",
+     "sl": 21
+    },
+    {
+     "name": "Zaynab Alkali",
+     "desc": "Nigerian novelist. She is also a poet and short story writer, recognized as the first female novelist in Northern Nigeria",
+     "sl": 20
+    },
+    {
+     "name": "Maryam Booth",
+     "desc": "Nigerian actress, model and fashion designer",
+     "sl": 16
+    }
+   ]
+  },
+  "zulu": {
+   "id": "zulu",
+   "n": "Zulu",
+   "aka": [],
+   "qid": "Q129962",
+   "population": 10500000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Lucky Dube",
+     "desc": "South African reggae musician (1964–2007)",
+     "sl": 38
+    },
+    {
+     "name": "Cetshwayo kaMpande",
+     "desc": "King of the Zulu Kingdom (1826–1884)",
+     "sl": 30
+    },
+    {
+     "name": "Mbekezeli Mbokazi",
+     "desc": "South African soccer player",
+     "sl": 27
+    }
+   ]
+  },
+  "maasai": {
+   "id": "maasai",
+   "n": "Maasai",
+   "aka": [],
+   "qid": "Q163022",
+   "population": 850000,
+   "languages": [],
+   "famous": []
+  },
+  "amazigh": {
+   "id": "amazigh",
+   "n": "Amazigh",
+   "aka": [
+    "Berbers"
+   ],
+   "qid": "Q45315",
+   "population": 24000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Ibn Battuta",
+     "desc": "14th century Muslim Maghrebi scholar and explorer",
+     "sl": 166
+    },
+    {
+     "name": "Abu Yusuf Yaqub ibn Abd Al-Haqq",
+     "desc": "Marinid Sultan of Algeria (r. 1258–1286)",
+     "sl": 24
+    },
+    {
+     "name": "Tashfin ibn Ali",
+     "desc": "6th Almoravid king (1143–1145)",
+     "sl": 22
+    },
+    {
+     "name": "Flavius Cresconius Corippus",
+     "desc": "Roman poet",
+     "sl": 22
+    },
+    {
+     "name": "Abu al-Hasan Ali ibn Uthman",
+     "desc": "Marinid sultan (c.1297–1351)",
+     "sl": 22
+    }
+   ]
+  },
+  "basques": {
+   "id": "basques",
+   "n": "Basques",
+   "aka": [],
+   "qid": "Q126756",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Jean Anouilh",
+     "desc": "French playwright (1910–1987)",
+     "sl": 77
+    },
+    {
+     "name": "Agustín I of Mexico",
+     "desc": "First constitutional emperor of Mexico (1783-1824)",
+     "sl": 56
+    },
+    {
+     "name": "Juan Tuñas",
+     "desc": "Cuban footballer (1917–2011)",
+     "sl": 19
+    },
+    {
+     "name": "Damaris Egurrola",
+     "desc": "Dutch association football player",
+     "sl": 19
+    },
+    {
+     "name": "Joxe Azurmendi",
+     "desc": "Basque writer and philosopher",
+     "sl": 17
+    }
+   ]
+  },
+  "sami": {
+   "id": "sami",
+   "n": "Sámi",
+   "aka": [
+    "Sami"
+   ],
+   "qid": "Q48199",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Anja Pärson",
+     "desc": "Swedish former alpine skier",
+     "sl": 46
+    },
+    {
+     "name": "Sofia Jannok",
+     "desc": "Swedish Sami singer",
+     "sl": 24
+    },
+    {
+     "name": "Tom Høgli",
+     "desc": "Norwegian-Saami association football player",
+     "sl": 19
+    },
+    {
+     "name": "Aleksandra Antonova",
+     "desc": "Kildin Sámi teacher, writer, poet, translator from the Soviet Union and Russia (1932– 2014)",
+     "sl": 14
+    },
+    {
+     "name": "Astrid Båhl",
+     "desc": "Norwegian Sámi artist",
+     "sl": 13
+    }
+   ]
+  },
+  "quechua": {
+   "id": "quechua",
+   "n": "Quechua",
+   "aka": [],
+   "qid": "Q134936",
+   "population": 10000000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Q'orianka Kilcher",
+     "desc": "American actress",
+     "sl": 35
+    },
+    {
+     "name": "Luzmila Carpio",
+     "desc": "Bolivian musician",
+     "sl": 17
+    },
+    {
+     "name": "Eugenio Espejo",
+     "desc": "18th century Spanish physician",
+     "sl": 16
+    }
+   ]
+  },
+  "navajo": {
+   "id": "navajo",
+   "n": "Navajo",
+   "aka": [],
+   "qid": "Q108266",
+   "population": 311000,
+   "languages": [
+    "English",
+    "Navajo",
+    "Plains Indian Sign Language"
+   ],
+   "famous": [
+    {
+     "name": "Jay Tavare",
+     "desc": "Native American film actor and blogger",
+     "sl": 16
+    },
+    {
+     "name": "Forrest Goodluck",
+     "desc": "American actor",
+     "sl": 16
+    }
+   ]
+  },
+  "inuit": {
+   "id": "inuit",
+   "n": "Inuit",
+   "aka": [],
+   "qid": "Q189975",
+   "population": 110783,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Kenojuak Ashevak",
+     "desc": "Inuit artist (1927–2013)",
+     "sl": 20
+    },
+    {
+     "name": "Tagaq",
+     "desc": "Canadian singer and author",
+     "sl": 19
+    },
+    {
+     "name": "Zacharias Kunuk",
+     "desc": "Director (born 1957)",
+     "sl": 15
+    },
+    {
+     "name": "Susan Aglukark",
+     "desc": "Canadian Inuit musician",
+     "sl": 13
+    }
+   ]
+  },
+  "maori": {
+   "id": "maori",
+   "n": "Māori",
+   "aka": [
+    "Maori"
+   ],
+   "qid": "Q6122670",
+   "population": 775836,
+   "languages": [
+    "English",
+    "Māori"
+   ],
+   "famous": [
+    {
+     "name": "Taika Waititi",
+     "desc": "New Zealand filmmaker, actor, and comedian (born 1975)",
+     "sl": 53
+    },
+    {
+     "name": "Wynton Rufer",
+     "desc": "New Zealand association football player",
+     "sl": 50
+    },
+    {
+     "name": "Winston Reid",
+     "desc": "New Zealand association football player",
+     "sl": 47
+    },
+    {
+     "name": "Temuera Morrison",
+     "desc": "New Zealand actor",
+     "sl": 38
+    },
+    {
+     "name": "Cliff Curtis",
+     "desc": "New Zealand actor",
+     "sl": 36
+    }
+   ]
+  },
+  "aboriginal-australians": {
+   "id": "aboriginal-australians",
+   "n": "Aboriginal Australians",
+   "aka": [],
+   "qid": "Q12060728",
+   "population": 984000,
+   "languages": [],
+   "famous": []
+  },
+  "koreans": {
+   "id": "koreans",
+   "n": "Koreans",
+   "aka": [],
+   "qid": "Q484464",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Lee Min-ho",
+     "desc": "South Korean actor, singer and model",
+     "sl": 78
+    },
+    {
+     "name": "Lee Joon-gi",
+     "desc": "South Korean actor and singer",
+     "sl": 37
+    },
+    {
+     "name": "Song Kang-ho",
+     "desc": "South Korean actor",
+     "sl": 37
+    },
+    {
+     "name": "Pavlo Li",
+     "desc": "Ukrainian actor (1998-2022)",
+     "sl": 24
+    },
+    {
+     "name": "Yoon Shi-yoon",
+     "desc": "South Korean actor, born 1986",
+     "sl": 21
+    }
+   ]
+  },
+  "akan": {
+   "id": "akan",
+   "n": "Akan",
+   "aka": [],
+   "qid": "Q415693",
+   "population": 20000000,
+   "languages": [
+    "Akan"
+   ],
+   "famous": []
+  },
+  "native-hawaiians": {
+   "id": "native-hawaiians",
+   "n": "Native Hawaiians",
+   "aka": [],
+   "qid": "Q1283606",
+   "population": 0,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Jason Momoa",
+     "desc": "American actor (born 1979)",
+     "sl": 77
+    },
+    {
+     "name": "Israel Kamakawiwoʻole",
+     "desc": "Hawaiian singer (1959–1997)",
+     "sl": 56
+    },
+    {
+     "name": "Auliʻi Cravalho",
+     "desc": "American actress and singer (born 2000)",
+     "sl": 36
+    },
+    {
+     "name": "Max Holloway",
+     "desc": "American mixed martial artist",
+     "sl": 29
+    },
+    {
+     "name": "Janet Mock",
+     "desc": "American writer, director, producer, TV host and transgender rights activist",
+     "sl": 23
+    }
+   ]
+  },
+  "malays": {
+   "id": "malays",
+   "n": "Malays",
+   "aka": [],
+   "qid": "Q142702",
+   "population": 23500000,
+   "languages": [],
+   "famous": [
+    {
+     "name": "Siti Nurhaliza",
+     "desc": "Malaysian singer, actress, and model",
+     "sl": 78
+    },
+    {
+     "name": "Sheikh Muszaphar Shukor",
+     "desc": "Malaysian surgeon and spaceflight participant",
+     "sl": 37
+    },
+    {
+     "name": "Rossa",
+     "desc": "Indonesian singer and actress",
+     "sl": 23
+    },
+    {
+     "name": "Elyana",
+     "desc": "Malaysian singer and actress",
+     "sl": 18
+    },
+    {
+     "name": "Noraniza Idris",
+     "desc": "Malaysian singer and actress",
+     "sl": 16
+    }
+   ]
+  }
+ }
+}
