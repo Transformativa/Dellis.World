@@ -113,15 +113,14 @@
       } else known.push("Its surface area is about " + fmtArea(c.area) + ".");
     }
     if (c.capital) known.push("Its capital is " + endSentence(c.capital));
-    if (c.income) known.push("The World Bank classes it as " + an(c.income.toLowerCase()) + " economy.");
 
     if (c.pop > 0 && c.area > 0) {
       var dens = c.pop / c.area;
       var dline = d + " has about " + fmtDensity(dens) + " people per square kilometre";
-      if (r.dens) dline += ", " + standing(r.dens, ctx.nArea, "most densely populated country", "least densely populated country").replace(/^the (\d+\w+) (most|least) densely populated country$/, "the $1 $2 densely populated country");
+      if (r.dens) dline += ", " + standing(r.dens, ctx.nArea, "most crowded country", "least crowded country");
       fun.push(dline + ".");
-      if (r.dens && r.dens > ctx.nArea - 15) special.push(d + " is among the 15 most sparsely populated countries, with about " + fmtDensity(dens) + " people per square kilometre.");
-      if (r.dens && r.dens <= 15) special.push(d + " is among the 15 most densely populated countries, with about " + fmtDensity(dens) + " people per square kilometre.");
+      if (r.dens && r.dens > ctx.nArea - 15) special.push(d + " is among the 15 countries with the most room per person, with about " + fmtDensity(dens) + " people per square kilometre.");
+      if (r.dens && r.dens <= 15) special.push(d + " is one of the 15 most crowded countries, with about " + fmtDensity(dens) + " people per square kilometre.");
     }
     if (r.pop) { var n1 = neighbourLine(c, ctx.byPop, "pop", ctx, fmtPop, "a population"); if (n1) fun.push(n1); }
     if (r.area) { var n2 = neighbourLine(c, ctx.byArea, "area", ctx, fmtArea, "a surface area"); if (n2) fun.push(n2); }
@@ -134,11 +133,11 @@
     else if (r.area && r.area <= 10) records.push({ text: "One of the 10 largest countries by area (" + ordinal(r.area) + ")", src: "World Bank data" });
     if (r.area && r.area === ctx.nArea) records.push({ text: "Smallest country in the world by area", src: "World Bank data" });
     else if (r.area && r.area > ctx.nArea - 10) special.push(d + " is one of the 10 smallest countries by area.");
-    if (r.dens === 1) records.push({ text: "Most densely populated country in the world", src: "World Bank data" });
-    if (r.dens === ctx.nArea) records.push({ text: "Least densely populated country in the world", src: "World Bank data" });
+    if (r.dens === 1) records.push({ text: "Most crowded country in the world", src: "World Bank data" });
+    if (r.dens === ctx.nArea) records.push({ text: "Least crowded country in the world", src: "World Bank data" });
 
-    special.push(d + (c.income ? " is " + an(c.income.toLowerCase()) + " economy in " : " is in ") + (GROUP_IN[c.group] || "the world") + ".");
-    if (!c.rank) fun.push(d + " is not counted in the world rankings here, because how it is classed politically is not settled the same way everywhere.");
+    special.push(d + " is in " + (GROUP_IN[c.group] || "the world") + ".");
+    if (!c.rank) fun.push(d + " is not in the world rankings here, because people around the world do not all agree on how to count it.");
     return { known: known, fun: fun, special: special, records: records };
   }
 
@@ -188,7 +187,7 @@
     }
     if (ctx.byDens.length) {
       var dn = ctx.byDens[0];
-      out.push(lead(dn) + " is the most densely populated country, with about " + fmtDensity(dn.pop / dn.area) + " people per square kilometre.");
+      out.push(lead(dn) + " is the most crowded country, with about " + fmtDensity(dn.pop / dn.area) + " people per square kilometre.");
     }
     if (ctx.totalPop) out.push("Together the " + ctx.nPop + " countries on this list have about " + fmtPop(ctx.totalPop) + " people.");
     asList(curatedWorld).forEach(function (t) { out.push(t); });

@@ -298,7 +298,7 @@ function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav:
     : [
         ["Population", d.pop ? "about " + F.fmtPop(d.pop) + (d.year ? " (" + d.year + ")" : "") : ""],
         ["Surface area", d.area ? "about " + F.fmtArea(d.area) : ""],
-        ["Capital", d.capital], ["Region", F.GROUPS[d.group]], ["Income level", d.income],
+        ["Capital", d.capital], ["Region", F.GROUPS[d.group]],
       ];
   return (
     <View style={s.bodyBox}>

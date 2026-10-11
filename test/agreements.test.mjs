@@ -75,3 +75,16 @@ test("kids app: wording in the app and the people we list is kid friendly", () =
   const f = json("data/famous.json");
   for (const [code, list] of Object.entries(f.countries)) for (const p of list) assert.ok(!bad.test(p.desc), `${code}: ${p.name}: ${p.desc}`);
 });
+
+test("kids app: country facts use no grown-up money words", async () => {
+  const { createRequire } = await import("node:module");
+  const F = createRequire(import.meta.url)("../facts.js");
+  const live = json("data/live.json");
+  const ctx = F.buildContext(live.countries);
+  const jargon = /\b(income|economy|economic|gdp|classed|politically|sparsely|densely)\b/i;
+  for (const c of live.countries) {
+    const f = F.countryFacts(c, ctx, null, new Date("2026-10-10"));
+    const all = JSON.stringify([f.known, f.fun, f.special, f.records]);
+    assert.ok(!jargon.test(all), c.code + ": " + (all.match(jargon) || [""])[0]);
+  }
+});
