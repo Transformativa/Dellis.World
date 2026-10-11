@@ -41,9 +41,10 @@ const Styles = createContext<ReturnType<typeof mk>>(null as any);
 const useS = () => useContext(Styles);
 
 function factsFor(it: Item, L: Loaded) {
-  return it.kind !== "country"
-    ? F.peopleFacts(it.data, now)
-    : F.countryFacts(it.data, L.ctx, null, now);
+  if (it.kind !== "country") return F.peopleFacts(it.data, now);
+  const f = F.countryFacts(it.data, L.ctx, null, now);
+  const wonder = F.heritageSentence(it.data, L.heritage?.countries?.[it.data.code]);
+  return wonder ? { ...f, special: wonder } : f;
 }
 
 /** A different fun fact each time the app opens (and on "Another fact"). */
@@ -158,13 +159,13 @@ export default function App() {
         ) : null}
 
         <TextInput style={s.input} placeholder="Try Italian, Hindi or Islam" placeholderTextColor="#6b6b6b"
-          value={q} onChangeText={setQ} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
+          value={q} onChangeText={(t) => { setOpenId(null); setQ(t); }} autoCorrect={false} clearButtonMode="while-editing" accessibilityLabel="Search" />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
-          {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => { setKind(k); if (k === "language" || k === "faith") setRegion("all"); }} />)}
+          {KINDS.map(([k, label]) => <Chip key={k} on={kind === k} label={label} onPress={() => { setOpenId(null); setKind(k); if (k === "language" || k === "faith") setRegion("all"); }} />)}
         </ScrollView>
         {kind === "language" || kind === "faith" ? null : <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
-          <Chip on={region === "all"} label="All regions" onPress={() => setRegion("all")} />
-          {Object.keys(F.GROUPS).map((g) => <Chip key={g} on={region === g} label={F.GROUPS[g]} onPress={() => setRegion(g)} dot={REGION_COLOR[g]} />)}
+          <Chip on={region === "all"} label="All regions" onPress={() => { setOpenId(null); setRegion("all"); }} />
+          {Object.keys(F.GROUPS).map((g) => <Chip key={g} on={region === g} label={F.GROUPS[g]} onPress={() => { setOpenId(null); setRegion(g); }} dot={REGION_COLOR[g]} />)}
         </ScrollView>}
 
         <Text style={s.muted}>{count}</Text>
@@ -194,13 +195,13 @@ export default function App() {
         <View style={s.tools}>
           <View style={s.sizeRow}>
             {(["small", "medium", "large"] as Size[]).map((n) => (
-              <Pressable key={n} onPress={() => pickSize(n)} accessibilityRole="button" accessibilityLabel={n + " text"} accessibilityState={{ selected: size === n }}
+              <Pressable key={n} onPress={() => { setOpenId(null); pickSize(n); }} accessibilityRole="button" accessibilityLabel={n + " text"} accessibilityState={{ selected: size === n }}
                 style={[s.sizeBtn, size === n && s.sizeOn]}>
                 <Text style={[s.sizeTx, size === n && s.sizeTxOn, { fontSize: n === "small" ? 13 : n === "medium" ? 16 : 21 }]}>A</Text>
               </Pressable>
             ))}
           </View>
-          <Pressable onPress={() => setSort(sort === "az" ? "size" : "az")} accessibilityRole="button" hitSlop={6}>
+          <Pressable onPress={() => { setOpenId(null); setSort(sort === "az" ? "size" : "az"); }} accessibilityRole="button" hitSlop={6}>
             <Text style={s.smallLink}>{sort === "az" ? "Sort: A to Z" : "Sort: Largest"}</Text>
           </Pressable>
           <Pressable onPress={random} accessibilityRole="button" hitSlop={6}><Text style={s.smallLink}>Random</Text></Pressable>
@@ -222,7 +223,7 @@ export default function App() {
                 <Text style={s.srcHead}>SOURCES</Text>
                 <Text style={s.srcTx}>
                   Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
-                  {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
+                  {"\n"}Famous people and World Heritage Sites: Wikidata (CC0). People are ranked by how many Wikipedia languages cover them.
                   {"\n"}Peoples: a people named after a country shows figures for the whole country (World Bank population, Unicode CLDR languages). Other peoples, like the Kurds, show Wikidata figures.
                   {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR and Glottolog"}. Speaker numbers are estimates that include second-language speakers. Only the 120 most spoken of about 7,000 languages are listed.
                   {"\n"}Faiths: {L.faiths?.meta?.citation} {L.faiths?.meta?.disclaimer} Figures are for {L.faiths?.meta?.asOf}.

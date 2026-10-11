@@ -40,6 +40,12 @@ jobs:
         continue-on-error: true
         run: node scripts/refresh-ethnic.mjs
 
+      # UNESCO World Heritage Sites per country (the "something special" line), from Wikidata.
+      - name: Fetch World Heritage Sites from Wikidata
+        id: heritage
+        continue-on-error: true
+        run: node scripts/refresh-heritage.mjs
+
       # Language use by country comes from Unicode CLDR (newest release). CLDR publishes twice a year, so most months nothing changes.
       - name: Fetch language data from Unicode CLDR
         id: languages
@@ -60,19 +66,19 @@ jobs:
 
       - name: Commit the new data
         run: |
-          if git diff --quiet -- data/live.json data/famous.json data/ethnic.json data/languages.json; then
+          if git diff --quiet -- data/live.json data/famous.json data/ethnic.json data/heritage.json data/languages.json; then
             echo "Nothing changed."
             exit 0
           fi
           git config user.name "dellis-world-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/live.json data/famous.json data/ethnic.json data/languages.json
+          git add data/live.json data/famous.json data/ethnic.json data/heritage.json data/languages.json
           git commit -m "chore: monthly world facts refresh ($(date -u +%Y-%m))"
           git pull --rebase origin main
           git push
 
       - name: Open an issue if the refresh failed
-        if: failure() || steps.famous.outcome == 'failure' || steps.ethnic.outcome == 'failure' || steps.languages.outcome == 'failure' || steps.sources.outcome == 'failure'
+        if: failure() || steps.famous.outcome == 'failure' || steps.ethnic.outcome == 'failure' || steps.heritage.outcome == 'failure' || steps.languages.outcome == 'failure' || steps.sources.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

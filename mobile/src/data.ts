@@ -4,13 +4,14 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "famous", "languages", "ethnic"] as const;
+const FILES = ["live", "famous", "languages", "ethnic", "heritage"] as const;
 // Everything shown comes from public databases: World Bank, Unicode CLDR, Glottolog, Wikidata and Pew Research.
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
   famous: require("./generated/famous.json"),
   languages: require("./generated/languages.json"),
   ethnic: require("./generated/ethnic.json"),
+  heritage: require("./generated/heritage.json"),
   faiths: require("./generated/faiths.json"),
   peoplesMap: require("./generated/peoples-countries.json"),
 };
@@ -19,7 +20,7 @@ export type Item = {
   kind: "people" | "country" | "language" | "faith"; id: string; name: string; aka: string[]; group: string; popM: number;
   popLabel: string; body: string; featured: boolean; data: any;
 };
-export type Loaded = { items: Item[]; ctx: any; live: any; famous: any; fresh: any; languages: any; faiths: any };
+export type Loaded = { items: Item[]; ctx: any; live: any; famous: any; fresh: any; languages: any; faiths: any; heritage: any };
 
 export { F };
 
@@ -76,7 +77,7 @@ export function assemble(d: Record<string, any>, now = new Date()): Loaded {
   const ctx = F.buildContext(d.live.countries);
   return {
     items: buildItems(d.live.countries, d.peoplesMap.peoples, d.languages, d.faiths, d.ethnic),
-    ctx, live: d.live, famous: d.famous, languages: d.languages, faiths: d.faiths, fresh: F.freshness(d.live.generatedAt, now),
+    ctx, live: d.live, famous: d.famous, languages: d.languages, faiths: d.faiths, heritage: d.heritage, fresh: F.freshness(d.live.generatedAt, now),
   };
 }
 

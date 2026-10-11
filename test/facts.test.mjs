@@ -120,3 +120,11 @@ test("ethnicEntry shows population, languages and famous people from the data on
   assert.deepEqual(e.stats.map((s) => s[0]), ["People", "Languages"]);
   assert.equal(e.known.length, 0);
 });
+
+test("heritageSentence gives one plain sentence from the heritage data, or nothing", () => {
+  const c = { code: "ITA", display: "Italy", name: "Italy" };
+  const t = F.heritageSentence(c, { count: 61, examples: ["Venice and its Lagoon", "Pompeii", "Florence"] });
+  assert.match(t, /^Italy has 61 UNESCO World Heritage Sites, places the whole world agrees to protect, like Venice and its Lagoon, Pompeii and Florence\.$/);
+  assert.equal(F.heritageSentence(c, null), "");
+  assert.match(F.heritageSentence(c, { count: 1, examples: [] }), /1 UNESCO World Heritage Site,/);
+});
