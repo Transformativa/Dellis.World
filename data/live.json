@@ -1,4 +1,4 @@
-{"generatedAt":"2026-10-10T15:00:00Z","source":"World Bank Open Data: country metadata, SP.POP.TOTL, AG.SRF.TOTL.K2","populationYear":2025,"count":219,
+{"generatedAt":"2026-10-11T00:17:57.100Z","source":"World Bank Open Data","populationYear":2025,"count":219,
   "countries": [
     {"code":"AFG","name":"Afghanistan","display":"Afghanistan","aka":["Afghan","Afghans"],"capital":"Kabul","pop":43844111,"area":652870,"group":"asia","income":"Low income","rank":true,"year":"2025"},
     {"code":"ALB","name":"Albania","display":"Albania","aka":["Albanian","Albanians"],"capital":"Tirana","pop":2349580,"area":28750,"group":"europe","income":"Upper middle income","rank":true,"year":"2025"},
@@ -189,7 +189,7 @@
     {"code":"SWE","name":"Sweden","display":"Sweden","aka":["Swedish","Swede","Swedes"],"capital":"Stockholm","pop":10596620,"area":528860,"group":"europe","income":"High income","rank":true,"year":"2025"},
     {"code":"CHE","name":"Switzerland","display":"Switzerland","aka":["Swiss"],"capital":"Bern","pop":9092436,"area":41291,"group":"europe","income":"High income","rank":true,"year":"2025"},
     {"code":"SYR","name":"Syrian Arab Republic","display":"Syria","aka":["Syrian Arab Republic","Syrian","Syrians"],"capital":"Damascus","pop":25620427,"area":185180,"group":"mena","income":"Low income","rank":true,"year":"2025"},
-    {"aka":["Republic of China","Chinese Taipei","Taiwanese"],"year":"2025","code":"TWN","name":"Taiwan","display":"Taiwan","capital":"Taipei","pop":23400000,"area":36197,"group":"asia","income":"","rank":false,"manual":true,"asOf":"2025","note":"Not in World Bank data. Left out of world rankings because its international recognition is contested."},
+    {"year":"2025","code":"TWN","name":"Taiwan","display":"Taiwan","capital":"Taipei","pop":23400000,"area":36197,"group":"asia","income":"","rank":false,"manual":true,"asOf":"2025","note":"Not in World Bank data. Left out of world rankings because its international recognition is contested.","aka":["Republic of China","Chinese Taipei","Taiwanese"]},
     {"code":"TJK","name":"Tajikistan","display":"Tajikistan","aka":["Tajik","Tajiks"],"capital":"Dushanbe","pop":10786734,"area":141379,"group":"asia","income":"Lower middle income","rank":true,"year":"2025"},
     {"code":"TZA","name":"Tanzania","display":"Tanzania","aka":["Tanzanian","Tanzanians"],"capital":"Dodoma","pop":70545865,"area":945500,"group":"africa","income":"Lower middle income","rank":true,"year":"2025"},
     {"code":"THA","name":"Thailand","display":"Thailand","aka":["Thai","Thais"],"capital":"Bangkok","pop":71619863,"area":513115,"group":"asia","income":"Upper middle income","rank":true,"year":"2025"},
@@ -213,7 +213,7 @@
     {"code":"VIR","name":"Virgin Islands (U.S.)","display":"US Virgin Islands","aka":["Virgin Islands (U.S.)"],"capital":"Charlotte Amalie","pop":103792,"area":348,"group":"americas","income":"High income","rank":false,"year":"2025"},
     {"code":"UZB","name":"Uzbekistan","display":"Uzbekistan","aka":["Uzbek","Uzbeks"],"capital":"Tashkent","pop":37053428,"area":448923,"group":"asia","income":"Lower middle income","rank":true,"year":"2025"},
     {"code":"VUT","name":"Vanuatu","display":"Vanuatu","aka":["Ni-Vanuatu","Ni-Vanuatus"],"capital":"Port-Vila","pop":335169,"area":12189,"group":"oceania","income":"Lower middle income","rank":true,"year":"2025"},
-    {"aka":["Holy See","Vatican","Vaticans"],"year":"2025","code":"VAT","name":"Vatican City","display":"Vatican City","capital":"Vatican City","pop":800,"area":0.44,"group":"europe","income":"","rank":true,"manual":true,"asOf":"2025","note":"Population is an approximate count of residents."},
+    {"year":"2025","code":"VAT","name":"Vatican City","display":"Vatican City","capital":"Vatican City","pop":800,"area":0.44,"group":"europe","income":"","rank":true,"manual":true,"asOf":"2025","note":"Population is an approximate count of residents.","aka":["Holy See","Vatican","Vaticans"]},
     {"code":"VEN","name":"Venezuela, RB","display":"Venezuela","aka":["Venezuela, RB","Venezuelan","Venezuelans"],"capital":"Caracas","pop":28516896,"area":912050,"group":"americas","income":"Lower middle income","rank":true,"year":"2025"},
     {"code":"VNM","name":"Viet Nam","display":"Vietnam","aka":["Viet Nam","Vietnamese"],"capital":"Hanoi","pop":101598527,"area":331338,"group":"asia","income":"Upper middle income","rank":true,"year":"2025"},
     {"code":"YEM","name":"Yemen, Rep.","display":"Yemen","aka":["Yemen, Rep.","Yemeni","Yemenis"],"capital":"Sana'a","pop":41773878,"area":527968,"group":"mena","income":"Low income","rank":true,"year":"2025"},

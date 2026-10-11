@@ -1,10 +1,49 @@
 {
  "meta": {
-  "generatedAt": "2026-10-10T16:17:54.043Z",
+  "generatedAt": "2026-10-11T01:43:40.895Z",
   "source": "Wikidata (CC0)",
-  "count": 42
+  "count": 48
  },
  "countries": {
+  "DZA": [
+   {
+    "name": "Yacine Kateb",
+    "desc": "Algerian writer (1929-1989)",
+    "sl": 33
+   },
+   {
+    "name": "Mohammed Dib",
+    "desc": "Algerian writer (1920–2003)",
+    "sl": 31
+   }
+  ],
+  "ATG": [
+   {
+    "name": "Daniel Bailey",
+    "desc": "Antiguan sprint athlete",
+    "sl": 25
+   },
+   {
+    "name": "Brendan Christian",
+    "desc": "Antigua and Barbuda sprinter",
+    "sl": 21
+   },
+   {
+    "name": "Cejhae Greene",
+    "desc": "Antiguan sprint athlete",
+    "sl": 15
+   },
+   {
+    "name": "Sonia Williams",
+    "desc": "Antigua and Barbuda sprinter",
+    "sl": 14
+   },
+   {
+    "name": "Norvel Pelle",
+    "desc": "American basketball player",
+    "sl": 11
+   }
+  ],
   "ARG": [
    {
     "name": "Lionel Messi",
@@ -20,6 +59,33 @@
     "name": "Diego Maradona",
     "desc": "Argentine football player and manager (1960–2020)",
     "sl": 175
+   }
+  ],
+  "BHR": [
+   {
+    "name": "Hamad II of Bahrain",
+    "desc": "King of Bahrain",
+    "sl": 78
+   },
+   {
+    "name": "Tarafa",
+    "desc": "Bahraini poet (0543-0569)",
+    "sl": 25
+   },
+   {
+    "name": "Ali Assad",
+    "desc": "Bahraini-Qatari footballer",
+    "sl": 23
+   },
+   {
+    "name": "Sayed Mohammed Jaffer",
+    "desc": "Bahraini footballer",
+    "sl": 22
+   },
+   {
+    "name": "Ismail Abdul-Latif",
+    "desc": "Bahraini footballer",
+    "sl": 21
    }
   ],
   "AUS": [
@@ -44,15 +110,96 @@
     "sl": 106
    }
   ],
+  "BRB": [
+   {
+    "name": "Rihanna",
+    "desc": "Barbadian singer (born 1988)",
+    "sl": 156
+   },
+   {
+    "name": "Shontelle",
+    "desc": "Barbadian singer and songwriter",
+    "sl": 28
+   },
+   {
+    "name": "Obadele Thompson",
+    "desc": "Barbadian track and field sprinter",
+    "sl": 27
+   },
+   {
+    "name": "Sada Williams",
+    "desc": "Barbadian sprinter",
+    "sl": 23
+   },
+   {
+    "name": "Ramon Gittens",
+    "desc": "Barbadian Olympic athlete",
+    "sl": 17
+   }
+  ],
+  "BLZ": [
+   {
+    "name": "Deon McCaulay",
+    "desc": "Belizean footballer",
+    "sl": 21
+   },
+   {
+    "name": "Arlen Escarpeta",
+    "desc": "Belizean actor",
+    "sl": 17
+   },
+   {
+    "name": "Janet Gibson",
+    "desc": "Belizean biologist",
+    "sl": 13
+   },
+   {
+    "name": "Shane Orio",
+    "desc": "Belizean footballer",
+    "sl": 13
+   },
+   {
+    "name": "Andy Palacio",
+    "desc": "Belizean musician (1960–2008)",
+    "sl": 13
+   }
+  ],
+  "BMU": [
+   {
+    "name": "Rebecca Heyliger",
+    "desc": "Bermudian swimmer",
+    "sl": 7
+   },
+   {
+    "name": "Arantxa King",
+    "desc": "Olympic long jumper",
+    "sl": 7
+   },
+   {
+    "name": "Richard Saunders",
+    "desc": "Bermudian-American photographer (1922–1987)",
+    "sl": 5
+   },
+   {
+    "name": "Julian Fletcher",
+    "desc": "Bermudian swimmer",
+    "sl": 5
+   },
+   {
+    "name": "Sam Nusum",
+    "desc": "Bermudian footballer",
+    "sl": 5
+   }
+  ],
   "BTN": [
    {
     "name": "Jigme Singye Wangchuck",
-    "desc": "King of Bhutan from 1972 to 2006",
+    "desc": "King of Bhutan from 1972–2006",
     "sl": 60
    },
    {
     "name": "Jetsun Pema",
-    "desc": "Queen consort of Bhutan",
+    "desc": "Queen consort of Bhutan as the wife of King Jigme Khesar Namgyel Wangchuck",
     "sl": 47
    },
    {
@@ -62,25 +209,73 @@
    },
    {
     "name": "Ugyen Wangchuck",
-    "desc": "First king of Bhutan (1862-1926)",
+    "desc": "King of Bhutan (1862-1926)",
     "sl": 41
+   },
+   {
+    "name": "Jigme Wangchuck",
+    "desc": "King of Bhutan (1906-1952)",
+    "sl": 36
    }
   ],
-  "BRA": [
+  "BLR": [
    {
-    "name": "Pelé",
-    "desc": "Brazilian footballer (1940–2022)",
-    "sl": 183
+    "name": "Mendele Mocher Sforim",
+    "desc": "Yiddish-Hebrew writer (1836-1917)",
+    "sl": 33
+   }
+  ],
+  "BEL": [
+   {
+    "name": "Frank De Winne",
+    "desc": "Belgian astronaut",
+    "sl": 31
+   }
+  ],
+  "BRN": [
+   {
+    "name": "Omar Ali Saifuddien III of Brunei",
+    "desc": "Sultan of Brunei (1914-1986)",
+    "sl": 31
    },
    {
-    "name": "Neymar",
-    "desc": "Brazilian footballer (born 1992)",
-    "sl": 156
+    "name": "Wu Chun",
+    "desc": "Bruneian actor and singer",
+    "sl": 24
    },
    {
-    "name": "Hebe Camargo",
-    "desc": "Brazilian singer, television host and actress",
-    "sl": 151
+    "name": "Queen Saleha of Brunei",
+    "desc": "Queen Consort of Brunei",
+    "sl": 21
+   },
+   {
+    "name": "Muhammad Jamalul Alam II",
+    "desc": "Sultan of Brunei (1889-1924)",
+    "sl": 20
+   },
+   {
+    "name": "Ahmad Tajuddin of Brunei",
+    "desc": "Sultan of Brunei (1913-1950)",
+    "sl": 19
+   }
+  ],
+  "BIH": [
+   {
+    "name": "Ivan Dodig",
+    "desc": "Croatian tennis player (born 1985)",
+    "sl": 35
+   },
+   {
+    "name": "Damir Džumhur",
+    "desc": "Bosnian-Herzegovinian tennis player (born 1992)",
+    "sl": 33
+   }
+  ],
+  "BGR": [
+   {
+    "name": "Georgi Ivanov",
+    "desc": "Bulgarian cosmonaut",
+    "sl": 31
    }
   ],
   "CAN": [
@@ -584,6 +779,23 @@
     "sl": 322
    }
   ],
-  "VAT": []
+  "VAT": [],
+  "BRA": [
+   {
+    "name": "Pelé",
+    "desc": "Brazilian footballer (1940–2022)",
+    "sl": 183
+   },
+   {
+    "name": "Neymar",
+    "desc": "Brazilian footballer (born 1992)",
+    "sl": 156
+   },
+   {
+    "name": "Hebe Camargo",
+    "desc": "Brazilian singer, television host and actress",
+    "sl": 151
+   }
+  ]
  }
 }
