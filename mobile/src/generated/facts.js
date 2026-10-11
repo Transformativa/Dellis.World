@@ -263,6 +263,14 @@
     };
   }
 
+  /* A people that is not one country (Kurds, Maya...). Wikidata only. */
+  function ethnicEntry(g) {
+    var pop = g.population || 0, stats = [];
+    if (pop) stats.push(["People", "about " + fmtPop(pop)]);
+    if ((g.languages || []).length) stats.push(["Languages", g.languages.join(", ")]);
+    return { id: g.id, n: g.n, aka: g.aka || [], g: "", p: pop / 1e6, pl: pop ? "about " + fmtPop(pop) : "", s: "", fun: "", special: "", known: [], stats: stats, records: [], famous: g.famous || [] };
+  }
+
   /* A faith: Pew Research Center figures only. */
   function faithEntry(f) {
     return { id: f.id, n: f.n, aka: f.aka || [], g: "", p: f.p || 0, pl: f.pl || "", s: "", fun: "", special: "", known: [], stats: f.stats || [], records: [] };
@@ -301,6 +309,6 @@
     GROUPS: GROUPS, STALE_AFTER_DAYS: STALE_AFTER_DAYS,
     ordinal: ordinal, fmtPop: fmtPop, fmtArea: fmtArea, fmtDensity: fmtDensity, norm: norm,
     buildContext: buildContext, countryFacts: countryFacts, peopleFacts: peopleFacts,
-    worldFactOfMonth: worldFactOfMonth, languageRecord: languageRecord, languageEntry: languageEntry, nationalEntry: nationalEntry, faithEntry: faithEntry, faithRecord: faithRecord, freshness: freshness, search: search, monthSeed: monthSeed
+    worldFactOfMonth: worldFactOfMonth, languageRecord: languageRecord, languageEntry: languageEntry, nationalEntry: nationalEntry, ethnicEntry: ethnicEntry, faithEntry: faithEntry, faithRecord: faithRecord, freshness: freshness, search: search, monthSeed: monthSeed
   };
 });

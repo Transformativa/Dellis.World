@@ -57,7 +57,7 @@ test("sources are credited in small print at the bottom", () => {
 
 test("everything shown comes from a database: the app ships no hand-written text files", () => {
   const sync = read("mobile/scripts/sync-data.mjs");
-  assert.match(sync, /\["live", "famous", "languages", "faiths", "peoples-countries"\]/);
+  assert.match(sync, /\["live", "famous", "languages", "faiths", "ethnic", "peoples-countries"\]/);
   for (const f of ["curated", "peoples", "famous-peoples", "languages-curated"]) assert.ok(!existsSync(new URL(`../mobile/src/generated/${f}.json`, import.meta.url)), f + " must not ship in the app");
   assert.doesNotMatch(read("mobile/src/data.ts"), /curated|famousPeoples/);
 });
@@ -65,7 +65,7 @@ test("everything shown comes from a database: the app ships no hand-written text
 test("monthly refresh keeps every data source current", () => {
   const wf = read(".github/workflows/refresh-monthly.yml");
   for (const s of ["scripts/refresh.mjs", "scripts/refresh-famous.mjs", "scripts/refresh-languages.mjs", "scripts/check-sources.mjs", "node --test"]) assert.ok(wf.includes(s), s);
-  assert.match(wf, /data\/live\.json data\/famous\.json data\/languages\.json/);
+  assert.match(wf, /data\/live\.json data\/famous\.json data\/ethnic\.json data\/languages\.json/);
 });
 
 test("kids app: wording in the app and the people we list is kid friendly", () => {

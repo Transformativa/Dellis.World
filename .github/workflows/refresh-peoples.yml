@@ -1,0 +1,28 @@
+name: Refresh peoples (on demand)
+
+# Runs only the peoples that are not one country (Kurds, Maya...). The monthly refresh does this too.
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  peoples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/refresh-ethnic.mjs
+      - run: node --test
+      - name: Commit
+        run: |
+          git config user.name "dellis-world-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ethnic.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh peoples from Wikidata"
+          git pull --rebase origin main
+          git push

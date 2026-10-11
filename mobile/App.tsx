@@ -177,7 +177,7 @@ export default function App() {
         {kind === "people" ? (
           <View style={s.note}>
             <Text style={s.noteHead}>Why these peoples?</Text>
-            <Text style={s.noteTx}>Each people here means the people of one country, like the Italians in Italy. The numbers count everyone who lives in that country.</Text>
+            <Text style={s.noteTx}>Some peoples here are the people of one country, like the Italians in Italy. Others, like the Kurds, live in many countries. Their facts come from public databases.</Text>
           </View>
         ) : null}
         {kind === "faith" ? (
@@ -291,7 +291,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
 function Body({ it, L, fav, onFav }: { it: Item; L: Loaded; fav: boolean; onFav: () => void }) {
   const s = useS();
   const f = factsFor(it, L);
-  const people: { name: string; desc: string }[] = L.famous?.countries?.[it.data.code] || [];
+  const people: { name: string; desc: string }[] = it.data.famous || L.famous?.countries?.[it.data.code] || [];
   const d = it.data;
   const stats: [string, string][] = it.kind !== "country"
     ? d.stats || []

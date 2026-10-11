@@ -4,12 +4,13 @@ const F = require("./generated/facts.js");
 
 // The app ships with a copy of the data and checks for a newer monthly copy when it opens.
 const BASE = "https://transformativa.github.io/Dellis.World/data/";
-const FILES = ["live", "famous", "languages"] as const;
+const FILES = ["live", "famous", "languages", "ethnic"] as const;
 // Everything shown comes from public databases: World Bank, Unicode CLDR, Glottolog, Wikidata and Pew Research.
 const bundled: Record<string, any> = {
   live: require("./generated/live.json"),
   famous: require("./generated/famous.json"),
   languages: require("./generated/languages.json"),
+  ethnic: require("./generated/ethnic.json"),
   faiths: require("./generated/faiths.json"),
   peoplesMap: require("./generated/peoples-countries.json"),
 };
@@ -24,7 +25,7 @@ export { F };
 
 const label = (m: number) => (m ? "~" + F.fmtPop(m * 1e6) : "");
 
-export function buildItems(countries: any[], peoplesMap: any[], languages: any, faiths: any): Item[] {
+export function buildItems(countries: any[], peoplesMap: any[], languages: any, faiths: any, ethnic: any = null): Item[] {
   const out: Item[] = [];
   const byCode: Record<string, any> = Object.fromEntries(countries.map((c) => [c.code, c]));
   const bigCountries = new Set([...countries].sort((a, b) => b.pop - a.pop).slice(0, 40).map((c) => c.code));
@@ -36,6 +37,13 @@ export function buildItems(countries: any[], peoplesMap: any[], languages: any, 
     out.push({
       kind: "people", id: "p-" + p.id, name: p.n, aka: [], group: c.group, popM: rec.p, popLabel: label(rec.p),
       body: [c.display, c.capital, ...(languages?.countryLanguages?.[p.code] || []).map((l: any) => l.name)].join(" "), featured: true, data: rec,
+    });
+  }
+  for (const g of Object.values<any>(ethnic?.groups || {})) {
+    const rec = F.ethnicEntry(g);
+    out.push({
+      kind: "people", id: "e-" + g.id, name: g.n, aka: g.aka || [], group: "", popM: rec.p, popLabel: label(rec.p),
+      body: [g.n, ...(g.languages || [])].join(" "), featured: true, data: rec,
     });
   }
   for (const c of countries) {
@@ -67,7 +75,7 @@ export function buildItems(countries: any[], peoplesMap: any[], languages: any, 
 export function assemble(d: Record<string, any>, now = new Date()): Loaded {
   const ctx = F.buildContext(d.live.countries);
   return {
-    items: buildItems(d.live.countries, d.peoplesMap.peoples, d.languages, d.faiths),
+    items: buildItems(d.live.countries, d.peoplesMap.peoples, d.languages, d.faiths, d.ethnic),
     ctx, live: d.live, famous: d.famous, languages: d.languages, faiths: d.faiths, fresh: F.freshness(d.live.generatedAt, now),
   };
 }
@@ -95,7 +103,7 @@ export async function refreshData(): Promise<boolean> {
   try {
     const last = Number((await AsyncStorage.getItem("data:checkedAt")) || 0);
     if (Date.now() - last < 12 * 3600 * 1000) return false;
-    for (const f of ["live", "famous", "languages"] as const) {
+    for (const f of FILES) {
       const res = await fetch(BASE + f + ".json", { headers: { "cache-control": "no-cache" } });
       if (!res.ok) continue;
       const json = await res.json();

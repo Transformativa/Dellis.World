@@ -111,3 +111,12 @@ test("number formatting", () => {
   assert.equal(F.ordinal(22), "22nd");
   assert.equal(F.ordinal(113), "113th");
 });
+
+test("ethnicEntry shows population, languages and famous people from the data only", async () => {
+  const { createRequire } = await import("node:module");
+  const F2 = createRequire(import.meta.url)("../facts.js");
+  const e = F2.ethnicEntry({ id: "k", n: "Kurds", population: 30000000, languages: ["Kurdish"], famous: [{ name: "A", desc: "Singer" }] });
+  assert.equal(e.famous.length, 1);
+  assert.deepEqual(e.stats.map((s) => s[0]), ["People", "Languages"]);
+  assert.equal(e.known.length, 0);
+});
