@@ -38,26 +38,28 @@ async function sparql(query) {
   }
 }
 const toRows = (rows) => rows.map((r) => [r.pLabel?.value || "", r.pDescription?.value || "", Number(r.sl.value)]);
+// Constants (wd:Q...) instead of a bound variable: Wikidata plans these much faster.
 const born = (c) => `?p wdt:P27 ${c}; wdt:P31 wd:Q5; wdt:P19/wdt:P17 ${c}; wikibase:sitelinks ?sl.`;
 const LABEL = `SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }`;
 
 async function oneQuery(ids) {
-  const c = "?c";
-  const vals = ids.map((q) => `wd:${q}`).join(" ");
   for (const th of THRESHOLDS) {
-    const rows = toRows(await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { VALUES ?c { ${vals} } ${born(c)} FILTER(?sl>${th}) ${LABEL} } ORDER BY DESC(?sl) LIMIT 60`));
+    const rows = [];
+    for (const q of ids) rows.push(...toRows(await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ${born("wd:" + q)} FILTER(?sl>${th}) ${LABEL} } ORDER BY DESC(?sl) LIMIT 60`)));
     if (rows.length >= 20 || th === THRESHOLDS.at(-1)) return rows;
   }
 }
 
 async function bigCountry(ids) {
-  const vals = ids.map((q) => `wd:${q}`).join(" ");
   const all = [];
+  const stop = Date.now() + 8 * 60 * 1000; // never spend more than 8 minutes on one country
   for (const occ of OCCUPATIONS) {
-    if (Date.now() > DEADLINE) break;
-    try {
-      all.push(...toRows(await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { VALUES ?c { ${vals} } ?p wdt:P106 wd:${occ}. ${born("?c")} FILTER(?sl>30) ${LABEL} } ORDER BY DESC(?sl) LIMIT 6`)));
-    } catch (e) { if (!(e instanceof Timeout)) throw e; }
+    if (Date.now() > DEADLINE || Date.now() > stop) break;
+    for (const q of ids) {
+      try {
+        all.push(...toRows(await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ?p wdt:P106 wd:${occ}. ${born("wd:" + q)} FILTER(?sl>30) ${LABEL} } ORDER BY DESC(?sl) LIMIT 6`)));
+      } catch (e) { if (!(e instanceof Timeout)) throw e; }
+    }
   }
   return all;
 }
