@@ -223,7 +223,7 @@ export default function App() {
                 <Text style={s.srcTx}>
                   Population and area: {L.live?.source || "World Bank Open Data"}{L.live?.populationYear ? ", " + L.live.populationYear : ""}. Figures are rounded and sources differ.
                   {"\n"}Famous people: Wikidata (CC0), ranked by how many Wikipedia languages cover them.
-                  {"\n"}Peoples: the figures are for the whole country (World Bank population, Unicode CLDR languages), not for one ethnic group.
+                  {"\n"}Peoples: a people named after a country shows figures for the whole country (World Bank population, Unicode CLDR languages). Other peoples, like the Kurds, show Wikidata figures.
                   {"\n"}Languages: {L.languages?.meta?.source || "Unicode CLDR and Glottolog"}. Speaker numbers are estimates that include second-language speakers. Only the 120 most spoken of about 7,000 languages are listed.
                   {"\n"}Faiths: {L.faiths?.meta?.citation} {L.faiths?.meta?.disclaimer} Figures are for {L.faiths?.meta?.asOf}.
                   {"\n"}Comparisons and records are calculated from the population and area figures above.

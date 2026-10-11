@@ -1,10 +1,199 @@
 {
  "meta": {
-  "generatedAt": "2026-10-10T16:17:54.043Z",
+  "generatedAt": "2026-10-11T02:47:50.326Z",
   "source": "Wikidata (CC0)",
-  "count": 42
+  "count": 197
  },
  "countries": {
+  "ALB": [
+   {
+    "name": "Masiela Lusha",
+    "desc": "Albanian American actress and author",
+    "sl": 87
+   },
+   {
+    "name": "Ismail Kadare",
+    "desc": "Albanian writer (1936–2024)",
+    "sl": 86
+   },
+   {
+    "name": "Bleona",
+    "desc": "Albanian singer and actress",
+    "sl": 65
+   },
+   {
+    "name": "Rudi Vata",
+    "desc": "Albanian association football player",
+    "sl": 45
+   },
+   {
+    "name": "Elseid Hysaj",
+    "desc": "Albanian association football player (born 1994)",
+    "sl": 43
+   }
+  ],
+  "AFG": [
+   {
+    "name": "Mohammed Zahir Shah",
+    "desc": "King of Afghanistan (1933-1973)",
+    "sl": 72
+   },
+   {
+    "name": "Amanullah Khan",
+    "desc": "King and Emir of Afghanistan (1892-1960)",
+    "sl": 56
+   },
+   {
+    "name": "Muhammad of Ghor",
+    "desc": "Ruler of Ghurid Sultanate from 1173 to 1206",
+    "sl": 49
+   },
+   {
+    "name": "Nadia Nadim",
+    "desc": "Danish footballer",
+    "sl": 39
+   },
+   {
+    "name": "Inayatullah Khan",
+    "desc": "King of Afghanistan in 1929",
+    "sl": 34
+   }
+  ],
+  "DZA": [
+   {
+    "name": "Assia Djebar",
+    "desc": "French Algerian writer, translator and film director (1936-2015)",
+    "sl": 62
+   },
+   {
+    "name": "Khaled",
+    "desc": "Algerian musician (born 1960)",
+    "sl": 51
+   },
+   {
+    "name": "Islam Slimani",
+    "desc": "Algerian association football player",
+    "sl": 43
+   },
+   {
+    "name": "Sofia Boutella",
+    "desc": "Algerian actress",
+    "sl": 42
+   },
+   {
+    "name": "Imane Khelif",
+    "desc": "Algerian boxer",
+    "sl": 41
+   }
+  ],
+  "AND": [
+   {
+    "name": "Óscar Sonejee",
+    "desc": "Andorran footballer",
+    "sl": 28
+   },
+   {
+    "name": "Marta Roure",
+    "desc": "Andorran singer",
+    "sl": 25
+   },
+   {
+    "name": "Marc Vales",
+    "desc": "Andorran footballer",
+    "sl": 19
+   },
+   {
+    "name": "Josep Gómes",
+    "desc": "Andorran footballer",
+    "sl": 18
+   },
+   {
+    "name": "Josep Ayala",
+    "desc": "Andorran association football player",
+    "sl": 18
+   }
+  ],
+  "AGO": [
+   {
+    "name": "Eduardo Camavinga",
+    "desc": "French footballer (born 2002)",
+    "sl": 59
+   },
+   {
+    "name": "William Carvalho",
+    "desc": "Portuguese association football player",
+    "sl": 45
+   },
+   {
+    "name": "José Eduardo Agualusa",
+    "desc": "Angolan journalist, writer",
+    "sl": 38
+   },
+   {
+    "name": "José Manuel Imbamba",
+    "desc": "Angolan Roman Catholic archbishop and university teacher",
+    "sl": 38
+   },
+   {
+    "name": "Manucho",
+    "desc": "Angolan association football player",
+    "sl": 31
+   }
+  ],
+  "ATG": [
+   {
+    "name": "Daniel Bailey",
+    "desc": "Antiguan sprint athlete",
+    "sl": 25
+   },
+   {
+    "name": "Brendan Christian",
+    "desc": "Antigua and Barbuda sprinter",
+    "sl": 21
+   },
+   {
+    "name": "Cejhae Greene",
+    "desc": "Antiguan sprint athlete",
+    "sl": 15
+   },
+   {
+    "name": "Sonia Williams",
+    "desc": "Antigua and Barbuda sprinter",
+    "sl": 14
+   },
+   {
+    "name": "Norvel Pelle",
+    "desc": "American basketball player",
+    "sl": 11
+   }
+  ],
+  "ARM": [
+   {
+    "name": "Henrikh Mkhitaryan",
+    "desc": "Armenian association football player (born 1989)",
+    "sl": 74
+   },
+   {
+    "name": "Levon Aronian",
+    "desc": "Armenian-American chess player",
+    "sl": 57
+   },
+   {
+    "name": "Armen Dzhigarkhanyan",
+    "desc": "Armenian, Soviet, Russian actor (1935-2020)",
+    "sl": 57
+   },
+   {
+    "name": "Sirusho",
+    "desc": "Armenian singer",
+    "sl": 51
+   },
+   {
+    "name": "Iveta Mukuchyan",
+    "desc": "Armenian singer and actress",
+    "sl": 45
+   }
+  ],
   "ARG": [
    {
     "name": "Lionel Messi",
@@ -13,13 +202,50 @@
    },
    {
     "name": "Jorge Luis Borges",
-    "desc": "Argentine writer, essayist, poet and translator",
+    "desc": "Argentine writer, essayist, poet and translator (1899–1986)",
     "sl": 194
    },
    {
     "name": "Diego Maradona",
     "desc": "Argentine football player and manager (1960–2020)",
     "sl": 175
+   },
+   {
+    "name": "Sergio Agüero",
+    "desc": "Argentine association football player",
+    "sl": 90
+   },
+   {
+    "name": "Alfredo Di Stéfano",
+    "desc": "Argentine-Spanish association football player (1926–2014)",
+    "sl": 90
+   }
+  ],
+  "BHR": [
+   {
+    "name": "Hamad II of Bahrain",
+    "desc": "King of Bahrain",
+    "sl": 78
+   },
+   {
+    "name": "Tarafa",
+    "desc": "Bahraini poet (0543-0569)",
+    "sl": 25
+   },
+   {
+    "name": "Ali Assad",
+    "desc": "Bahraini-Qatari footballer",
+    "sl": 23
+   },
+   {
+    "name": "Sayed Mohammed Jaffer",
+    "desc": "Bahraini footballer",
+    "sl": 22
+   },
+   {
+    "name": "Ismail Abdul-Latif",
+    "desc": "Bahraini footballer",
+    "sl": 21
    }
   ],
   "AUS": [
@@ -42,17 +268,211 @@
     "name": "Hugh Jackman",
     "desc": "Australian and English actor and singer (born 1968)",
     "sl": 106
+   },
+   {
+    "name": "Chris Hemsworth",
+    "desc": "Australian actor (born 1983)",
+    "sl": 93
+   }
+  ],
+  "AZE": [
+   {
+    "name": "Shakhriyar Mamedyarov",
+    "desc": "Azerbaijani chess player",
+    "sl": 51
+   },
+   {
+    "name": "Muslim Magomayev",
+    "desc": "Soviet-Azerbaijani singer",
+    "sl": 50
+   },
+   {
+    "name": "Teimour Radjabov",
+    "desc": "Azerbaijani chess player",
+    "sl": 48
+   },
+   {
+    "name": "Aygün Kazimova",
+    "desc": "Azerbaijani singer and actress",
+    "sl": 43
+   },
+   {
+    "name": "Eldar Qasımov",
+    "desc": "Azerbaijani singer",
+    "sl": 42
+   }
+  ],
+  "BRB": [
+   {
+    "name": "Rihanna",
+    "desc": "Barbadian singer (born 1988)",
+    "sl": 156
+   },
+   {
+    "name": "Shontelle",
+    "desc": "Barbadian singer and songwriter",
+    "sl": 28
+   },
+   {
+    "name": "Obadele Thompson",
+    "desc": "Barbadian track and field sprinter",
+    "sl": 27
+   },
+   {
+    "name": "Sada Williams",
+    "desc": "Barbadian sprinter",
+    "sl": 23
+   },
+   {
+    "name": "Ramon Gittens",
+    "desc": "Barbadian Olympic athlete",
+    "sl": 17
+   }
+  ],
+  "BGD": [
+   {
+    "name": "Muhammad Yunus",
+    "desc": "Bangladeshi banker, Nobel Peace Prize recipient and the former Chief Adviser of Bangladesh",
+    "sl": 122
+   },
+   {
+    "name": "Taslima Nasrin",
+    "desc": "Author, secular humanist, and feminist",
+    "sl": 66
+   },
+   {
+    "name": "Ali Akbar Khan",
+    "desc": "Hindustani musician (1922–2009)",
+    "sl": 32
+   },
+   {
+    "name": "Fazlur Khan",
+    "desc": "Bangladeshi architect (1929–1982)",
+    "sl": 28
+   },
+   {
+    "name": "Monica Ali",
+    "desc": "British writer, novelist (born 1967)",
+    "sl": 27
+   }
+  ],
+  "AUT": [
+   {
+    "name": "Ludwig Wittgenstein",
+    "desc": "Austrian philosopher and logician (1889–1951)",
+    "sl": 173
+   },
+   {
+    "name": "Karl Popper",
+    "desc": "Austrian-British philosopher of science and social and política e falsificationism and for criticism of Plato, Hegel and Marx as totalitarian opponents of open society (1902-1994)",
+    "sl": 128
+   },
+   {
+    "name": "Elfriede Jelinek",
+    "desc": "Austrian playwright and novelist",
+    "sl": 126
+   },
+   {
+    "name": "Stefan Zweig",
+    "desc": "Austrian writer (1881–1942)",
+    "sl": 126
+   },
+   {
+    "name": "Friedrich Hayek",
+    "desc": "Austrian and British economist (1899–1992)",
+    "sl": 112
+   }
+  ],
+  "BLR": [
+   {
+    "name": "Victoria Azarenka",
+    "desc": "Belarusian tennis player",
+    "sl": 76
+   },
+   {
+    "name": "Olga Korbut",
+    "desc": "Belarusian gymnast (*1955)",
+    "sl": 57
+   },
+   {
+    "name": "Aryna Sabalenka",
+    "desc": "Belarusian tennis player",
+    "sl": 57
+   },
+   {
+    "name": "Sergei Aleinikov",
+    "desc": "Soviet and Belarusian association football player",
+    "sl": 53
+   },
+   {
+    "name": "Aliaksandr Hleb",
+    "desc": "Belarusian footballer",
+    "sl": 52
+   }
+  ],
+  "BLZ": [
+   {
+    "name": "Deon McCaulay",
+    "desc": "Belizean footballer",
+    "sl": 21
+   },
+   {
+    "name": "Arlen Escarpeta",
+    "desc": "Belizean actor",
+    "sl": 17
+   },
+   {
+    "name": "Andy Palacio",
+    "desc": "Belizean musician (1960–2008)",
+    "sl": 13
+   },
+   {
+    "name": "Shane Orio",
+    "desc": "Belizean footballer",
+    "sl": 13
+   },
+   {
+    "name": "Janet Gibson",
+    "desc": "Belizean biologist",
+    "sl": 13
+   }
+  ],
+  "BMU": [
+   {
+    "name": "Rebecca Heyliger",
+    "desc": "Bermudian swimmer",
+    "sl": 7
+   },
+   {
+    "name": "Arantxa King",
+    "desc": "Olympic long jumper",
+    "sl": 7
+   },
+   {
+    "name": "Julian Fletcher",
+    "desc": "Bermudian swimmer",
+    "sl": 5
+   },
+   {
+    "name": "Richard Saunders",
+    "desc": "Bermudian-American photographer (1922–1987)",
+    "sl": 5
+   },
+   {
+    "name": "Sam Nusum",
+    "desc": "Bermudian footballer",
+    "sl": 5
    }
   ],
   "BTN": [
    {
     "name": "Jigme Singye Wangchuck",
-    "desc": "King of Bhutan from 1972 to 2006",
+    "desc": "King of Bhutan from 1972–2006",
     "sl": 60
    },
    {
     "name": "Jetsun Pema",
-    "desc": "Queen consort of Bhutan",
+    "desc": "Queen consort of Bhutan as the wife of King Jigme Khesar Namgyel Wangchuck",
     "sl": 47
    },
    {
@@ -62,8 +482,364 @@
    },
    {
     "name": "Ugyen Wangchuck",
-    "desc": "First king of Bhutan (1862-1926)",
+    "desc": "King of Bhutan (1862-1926)",
     "sl": 41
+   },
+   {
+    "name": "Jigme Wangchuck",
+    "desc": "King of Bhutan (1906-1952)",
+    "sl": 36
+   }
+  ],
+  "BEN": [
+   {
+    "name": "Angelique Kidjo",
+    "desc": "Beninese-French world music singer (born 1960)",
+    "sl": 64
+   },
+   {
+    "name": "Djimon Hounsou",
+    "desc": "Beninese actor",
+    "sl": 58
+   },
+   {
+    "name": "Stéphane Sessègnon",
+    "desc": "Beninese footballer",
+    "sl": 42
+   },
+   {
+    "name": "Ayra Starr",
+    "desc": "Beninese-Nigerian singer",
+    "sl": 35
+   },
+   {
+    "name": "Isabelle Yacoubou",
+    "desc": "French basketball player (born 1986)",
+    "sl": 29
+   }
+  ],
+  "BOL": [
+   {
+    "name": "Julio César Baldivieso",
+    "desc": "Bolivian association football player",
+    "sl": 45
+   },
+   {
+    "name": "Marcelo Martins Moreno",
+    "desc": "Bolivian association football player",
+    "sl": 35
+   },
+   {
+    "name": "Marco Etcheverry",
+    "desc": "Bolivian footballer",
+    "sl": 28
+   },
+   {
+    "name": "Erwin Sánchez",
+    "desc": "Bolivian footballer",
+    "sl": 26
+   },
+   {
+    "name": "Adela Zamudio",
+    "desc": "Bolivian writer",
+    "sl": 25
+   }
+  ],
+  "BIH": [
+   {
+    "name": "Edin Džeko",
+    "desc": "Bosnian association football player",
+    "sl": 69
+   },
+   {
+    "name": "Miralem Pjanić",
+    "desc": "Bosnian association football player",
+    "sl": 57
+   },
+   {
+    "name": "Ivica Osim",
+    "desc": "Bosnian association football player and manager (1941–2022)",
+    "sl": 55
+   },
+   {
+    "name": "Jasmila Žbanić",
+    "desc": "Bosnian film director",
+    "sl": 52
+   },
+   {
+    "name": "Vahid Halilhodžić",
+    "desc": "Bosnian association football player and manager (born 1952)",
+    "sl": 52
+   }
+  ],
+  "BWA": [
+   {
+    "name": "Letsile Tebogo",
+    "desc": "Botswana sprinter",
+    "sl": 40
+   },
+   {
+    "name": "Amantle Montsho",
+    "desc": "Botswana track and field athlete",
+    "sl": 36
+   },
+   {
+    "name": "Nijel Amos",
+    "desc": "Botswana middle distance runner",
+    "sl": 33
+   },
+   {
+    "name": "Isaac Makwala",
+    "desc": "Former Motswana sprinter",
+    "sl": 25
+   },
+   {
+    "name": "Collen Kebinatshipi",
+    "desc": "Botswana sprinter",
+    "sl": 24
+   }
+  ],
+  "BEL": [
+   {
+    "name": "Maurice Maeterlinck",
+    "desc": "Belgian playwright and essayist (1862–1949)",
+    "sl": 132
+   },
+   {
+    "name": "Leopold II of Belgium",
+    "desc": "King of the Belgians from 1865 to 1909 (1835–1909)",
+    "sl": 96
+   },
+   {
+    "name": "Jean-Claude Van Damme",
+    "desc": "Belgian actor and martial artist (born 1960)",
+    "sl": 95
+   },
+   {
+    "name": "Eden Hazard",
+    "desc": "Belgian footballer (born 1991)",
+    "sl": 93
+   },
+   {
+    "name": "Marguerite Yourcenar",
+    "desc": "French novelist and essayist (1903-1987)",
+    "sl": 92
+   }
+  ],
+  "BRN": [
+   {
+    "name": "Omar Ali Saifuddien III of Brunei",
+    "desc": "Sultan of Brunei (1914-1986)",
+    "sl": 31
+   },
+   {
+    "name": "Wu Chun",
+    "desc": "Bruneian actor and singer",
+    "sl": 24
+   },
+   {
+    "name": "Queen Saleha of Brunei",
+    "desc": "Queen Consort of Brunei",
+    "sl": 21
+   },
+   {
+    "name": "Muhammad Jamalul Alam II",
+    "desc": "Sultan of Brunei (1889-1924)",
+    "sl": 20
+   },
+   {
+    "name": "Ahmad Tajuddin of Brunei",
+    "desc": "Sultan of Brunei (1913-1950)",
+    "sl": 19
+   }
+  ],
+  "BFA": [
+   {
+    "name": "Wilfried Sanou",
+    "desc": "Burkinabé association football player",
+    "sl": 43
+   },
+   {
+    "name": "Bertrand Traoré",
+    "desc": "Burkinabé association football player (born 1995)",
+    "sl": 41
+   },
+   {
+    "name": "Hugues Fabrice Zango",
+    "desc": "Burkinabe athlete and doctor of electrical engineering",
+    "sl": 37
+   },
+   {
+    "name": "Edmond Tapsoba",
+    "desc": "Burkinabé association football player",
+    "sl": 36
+   },
+   {
+    "name": "Alban Lafont",
+    "desc": "French-Ivorian footballer (born 1999)",
+    "sl": 34
+   }
+  ],
+  "BDI": [
+   {
+    "name": "Saido Berahino",
+    "desc": "Burundian association football player",
+    "sl": 32
+   },
+   {
+    "name": "Vénuste Niyongabo",
+    "desc": "Burundian athlete",
+    "sl": 29
+   },
+   {
+    "name": "Gaël Bigirimana",
+    "desc": "Burundian footballer",
+    "sl": 28
+   },
+   {
+    "name": "Ntare V of Burundi",
+    "desc": "King of Burundi (1947-1972)",
+    "sl": 22
+   },
+   {
+    "name": "Mwambutsa IV Bangiricenge of Burundi",
+    "desc": "King of Burundi (1912-1977)",
+    "sl": 22
+   }
+  ],
+  "CPV": [
+   {
+    "name": "Cesária Évora",
+    "desc": "Cape Verdean singer-songwriter (1941–2011)",
+    "sl": 75
+   },
+   {
+    "name": "Vozinha",
+    "desc": "Cape Verdean association football player (born 1986)",
+    "sl": 53
+   },
+   {
+    "name": "Gelson Martins",
+    "desc": "Portuguese and Cape-Verdean association football player",
+    "sl": 40
+   },
+   {
+    "name": "Ryan Mendes",
+    "desc": "Cape Verdean footballer",
+    "sl": 35
+   },
+   {
+    "name": "Kevin Pina",
+    "desc": "Cape Verdean footballer",
+    "sl": 27
+   }
+  ],
+  "KHM": [
+   {
+    "name": "Norodom Sihamoni",
+    "desc": "King of Cambodia",
+    "sl": 87
+   },
+   {
+    "name": "Chan Vathanaka",
+    "desc": "Cambodian association football player",
+    "sl": 39
+   },
+   {
+    "name": "Norodom Suramarit",
+    "desc": "Cambodian king (1896-1960)",
+    "sl": 30
+   },
+   {
+    "name": "Norodom of Cambodia",
+    "desc": "King of Cambodia from 1860 to 1904",
+    "sl": 28
+   },
+   {
+    "name": "François Chau",
+    "desc": "Cambodian actor",
+    "sl": 26
+   }
+  ],
+  "BGR": [
+   {
+    "name": "Elias Canetti",
+    "desc": "Bulgarian-born Swiss and British Jewish modernist novelist, playwright, memoirist, and non-fiction writer (1905–1994)",
+    "sl": 112
+   },
+   {
+    "name": "Nina Dobrev",
+    "desc": "Bulgarian-Canadian actress",
+    "sl": 83
+   },
+   {
+    "name": "Julia Kristeva",
+    "desc": "Bulgarian philosopher, psychoanalyst & academic",
+    "sl": 77
+   },
+   {
+    "name": "Hristo Stoichkov",
+    "desc": "Bulgarian footballer and manager (born 1966)",
+    "sl": 71
+   },
+   {
+    "name": "Ivan Vazov",
+    "desc": "Bulgarian writer and poet (1850-1921)",
+    "sl": 69
+   }
+  ],
+  "CYM": [
+   {
+    "name": "Dow Travers",
+    "desc": "Caymanian alpine skier",
+    "sl": 10
+   },
+   {
+    "name": "Brett Fraser",
+    "desc": "All-American college swimmer, Cayman Island international swimmer, Olympian",
+    "sl": 8
+   },
+   {
+    "name": "Shalysa Wray",
+    "desc": "Caymanian athlete",
+    "sl": 8
+   },
+   {
+    "name": "Perry Merren",
+    "desc": "Caymanian cyclist",
+    "sl": 4
+   },
+   {
+    "name": "Lara Butler",
+    "desc": "Caymanian swimmer",
+    "sl": 4
+   }
+  ],
+  "CMR": [
+   {
+    "name": "Samuel Eto'o",
+    "desc": "Cameroonian association football player",
+    "sl": 91
+   },
+   {
+    "name": "Samuel Umtiti",
+    "desc": "French footballer (born 1993)",
+    "sl": 68
+   },
+   {
+    "name": "Roger Milla",
+    "desc": "Cameroonian footballer and manager (born 1952)",
+    "sl": 57
+   },
+   {
+    "name": "Vincent Aboubakar",
+    "desc": "Cameroonian association football player",
+    "sl": 54
+   },
+   {
+    "name": "Andrcu Onana",
+    "desc": "Cameroonian association football player (born 1996)",
+    "sl": 54
    }
   ],
   "BRA": [
@@ -79,49 +855,72 @@
    },
    {
     "name": "Hebe Camargo",
-    "desc": "Brazilian singer, television host and actress",
+    "desc": "Brazilian recording artist, television host, actress and singer (1929–2012)",
     "sl": 151
+   },
+   {
+    "name": "Paulo Coelho",
+    "desc": "Brazilian lyricist and novelist (born 1947)",
+    "sl": 133
+   },
+   {
+    "name": "Ronaldo",
+    "desc": "Brazilian association football player (born 1976)",
+    "sl": 124
    }
   ],
-  "CAN": [
+  "TCD": [
    {
-    "name": "Justin Bieber",
-    "desc": "Canadian singer-songwriter (born 1994)",
-    "sl": 180
+    "name": "Mahamat Saleh Haroun",
+    "desc": "Chadian film director, producer and screenwriter",
+    "sl": 34
    },
    {
-    "name": "Céline Dion",
-    "desc": "French Canadian singer (born 1968)",
-    "sl": 161
+    "name": "Ezechiel N'Douassel",
+    "desc": "Chadian footballer",
+    "sl": 21
    },
    {
-    "name": "Avril Lavigne",
-    "desc": "Canadian singer-songwriter (born 1984)",
-    "sl": 138
+    "name": "Casimir Ninga",
+    "desc": "Chadian footballer",
+    "sl": 18
    },
    {
-    "name": "Leonard Cohen",
-    "desc": "Canadian singer, songwriter and poet (1934–2016)",
-    "sl": 131
+    "name": "Japhet N'Doram",
+    "desc": "Chadian and French footballer",
+    "sl": 16
+   },
+   {
+    "name": "Issa Serge Coelo",
+    "desc": "Chadian film director",
+    "sl": 15
    }
   ],
-  "CHL": [
+  "CAF": [
    {
-    "name": "Isabel Allende",
-    "desc": "Chilean writer (born 1942)",
-    "sl": 100
-   }
-  ],
-  "CHN": [
-   {
-    "name": "Huang Xianfan",
-    "desc": "Chinese historian, ethnologist and educator (1899-1982)",
-    "sl": 172
+    "name": "Mapou Yanga-Mbiwa",
+    "desc": "French footballer (born 1989)",
+    "sl": 34
    },
    {
-    "name": "Jackie Chan",
-    "desc": "Hong Kong actor and martial artist (born 1954)",
-    "sl": 162
+    "name": "Romain Sato",
+    "desc": "Central African Republic basketball player (born 1981)",
+    "sl": 21
+   },
+   {
+    "name": "Foxi Kéthévoama",
+    "desc": "Football player",
+    "sl": 19
+   },
+   {
+    "name": "Habib Habibou",
+    "desc": "Football player",
+    "sl": 17
+   },
+   {
+    "name": "Goduine Koyalipou",
+    "desc": "Central African and French footballer",
+    "sl": 14
    }
   ],
   "COL": [
@@ -144,6 +943,362 @@
     "name": "James Rodríguez",
     "desc": "Colombian association football player",
     "sl": 90
+   },
+   {
+    "name": "Juanes",
+    "desc": "Colombian musician (born 1972)",
+    "sl": 77
+   }
+  ],
+  "CHL": [
+   {
+    "name": "Arturo Vidal",
+    "desc": "Chilean association football player",
+    "sl": 74
+   },
+   {
+    "name": "Alexis Sánchez",
+    "desc": "Chilean footballer (born 1988)",
+    "sl": 73
+   },
+   {
+    "name": "Claudio Bravo",
+    "desc": "Chilean association football player",
+    "sl": 62
+   },
+   {
+    "name": "Víctor Jara",
+    "desc": "Chilean teacher, theatre director, poet, singer-songwriter, and political activist (1932-1973)",
+    "sl": 59
+   },
+   {
+    "name": "Alejandro Jodorowsky",
+    "desc": "Chilean-French filmmaker and comics writer",
+    "sl": 59
+   }
+  ],
+  "COM": [
+   {
+    "name": "Djoumbé Fatima",
+    "desc": "Monarch (sultan/queen regnant) and regent of Mohéli (Mwali)",
+    "sl": 14
+   },
+   {
+    "name": "Samir Bertin d'Avesnes",
+    "desc": "French footballer",
+    "sl": 12
+   },
+   {
+    "name": "Abdallah Ali Mohamed",
+    "desc": "French association football player",
+    "sl": 11
+   },
+   {
+    "name": "Nawal",
+    "desc": "Comorian musician",
+    "sl": 10
+   },
+   {
+    "name": "Ibroihim Djoudja",
+    "desc": "Comorian association football player",
+    "sl": 9
+   }
+  ],
+  "CRI": [
+   {
+    "name": "Keylor Navas",
+    "desc": "Costa Rican association football player",
+    "sl": 72
+   },
+   {
+    "name": "Bryan Ruiz",
+    "desc": "Costa Rican footballer",
+    "sl": 55
+   },
+   {
+    "name": "Paulo Wanchope",
+    "desc": "Costa Rican association football player",
+    "sl": 52
+   },
+   {
+    "name": "Joel Campbell",
+    "desc": "Costa Rican footballer",
+    "sl": 45
+   },
+   {
+    "name": "Celso Borges",
+    "desc": "Costa Rican association football player",
+    "sl": 43
+   }
+  ],
+  "HRV": [
+   {
+    "name": "Luka Modrić",
+    "desc": "Croatian footballer (born 1985)",
+    "sl": 113
+   },
+   {
+    "name": "Mario Mandžukić",
+    "desc": "Croatian association football player (born 1986)",
+    "sl": 76
+   },
+   {
+    "name": "Ivan Perišić",
+    "desc": "Croatian footballer (born 1989)",
+    "sl": 72
+   },
+   {
+    "name": "Nina Badrić",
+    "desc": "Croatian singer",
+    "sl": 66
+   },
+   {
+    "name": "Davor Šuker",
+    "desc": "Croatian footballer",
+    "sl": 66
+   }
+  ],
+  "CHN": [
+   {
+    "name": "Huang Xianfan",
+    "desc": "Chinese historian, ethnologist and educator (1899-1982)",
+    "sl": 172
+   },
+   {
+    "name": "Jackie Chan",
+    "desc": "Hong Kong actor and martial artist (born 1954)",
+    "sl": 162
+   },
+   {
+    "name": "Liu Xiaobo",
+    "desc": "Chinese literary critic, writer, professor, and human rights activist (1955–2017)",
+    "sl": 117
+   },
+   {
+    "name": "Mo Yan",
+    "desc": "Chinese novelist and screenwriter",
+    "sl": 109
+   },
+   {
+    "name": "Gao Xingjian",
+    "desc": "Chinese novelist and playwright (1940- )",
+    "sl": 104
+   }
+  ],
+  "CUB": [
+   {
+    "name": "José Raúl Capablanca",
+    "desc": "Cuban chess player (1888-1942)",
+    "sl": 89
+   },
+   {
+    "name": "Camila Cabello",
+    "desc": "Cuban-Mexican-American singer",
+    "sl": 81
+   },
+   {
+    "name": "Gloria Estefan",
+    "desc": "Cuban-American singer (born 1957)",
+    "sl": 73
+   },
+   {
+    "name": "Ana de Armas",
+    "desc": "Cuban-Spanish actress and model (born 1988)",
+    "sl": 66
+   },
+   {
+    "name": "Andy Garcia",
+    "desc": "American actor and director (born 1956)",
+    "sl": 65
+   }
+  ],
+  "CYP": [
+   {
+    "name": "Barnabas",
+    "desc": "1st-century Cypriot Jewish apostle and missionary, Christian saint, companion of St. Paul and founder of the Cypriot Church",
+    "sl": 74
+   },
+   {
+    "name": "Christopher A. Pissarides",
+    "desc": "British-Cypriot economist",
+    "sl": 50
+   },
+   {
+    "name": "Marcos Baghdatis",
+    "desc": "Cypriot tennis player (born 1985)",
+    "sl": 42
+   },
+   {
+    "name": "Ivi Adamou",
+    "desc": "Greek Cypriot singer",
+    "sl": 41
+   },
+   {
+    "name": "Anna Vissi",
+    "desc": "Greek Cypriot singer",
+    "sl": 39
+   }
+  ],
+  "DJI": [
+   {
+    "name": "Hussein Ahmed Salah",
+    "desc": "Long-distance runner from Djibouti",
+    "sl": 25
+   },
+   {
+    "name": "Abdourahman Waberi",
+    "desc": "Djiboutian writer",
+    "sl": 24
+   },
+   {
+    "name": "Ayanleh Souleiman",
+    "desc": "Djiboutian middle distance runner",
+    "sl": 19
+   },
+   {
+    "name": "Lula Ali Ismail",
+    "desc": "Djibouti-Canadian filmmaker (* 1978)",
+    "sl": 14
+   },
+   {
+    "name": "Mumin Gala",
+    "desc": "Djiboutian athlete",
+    "sl": 12
+   }
+  ],
+  "CAN": [
+   {
+    "name": "Justin Bieber",
+    "desc": "Canadian singer-songwriter (born 1994)",
+    "sl": 180
+   },
+   {
+    "name": "Céline Dion",
+    "desc": "French Canadian singer (born 1968)",
+    "sl": 161
+   },
+   {
+    "name": "Avril Lavigne",
+    "desc": "Canadian singer-songwriter (born 1984)",
+    "sl": 138
+   },
+   {
+    "name": "Leonard Cohen",
+    "desc": "Canadian singer, songwriter and poet (1934–2016)",
+    "sl": 131
+   },
+   {
+    "name": "Alice Munro",
+    "desc": "Canadian writer (1931–2024)",
+    "sl": 128
+   }
+  ],
+  "DMA": [
+   {
+    "name": "Jean Rhys",
+    "desc": "British novelist (1890–1979)",
+    "sl": 45
+   },
+   {
+    "name": "Henry Wilcoxon",
+    "desc": "Actor of British West Indian origin (1905–1984)",
+    "sl": 19
+   },
+   {
+    "name": "Manjrekar James",
+    "desc": "Canadian association football player",
+    "sl": 17
+   },
+   {
+    "name": "Garth Joseph",
+    "desc": "Dominica basketball player",
+    "sl": 11
+   },
+   {
+    "name": "Julian Wade",
+    "desc": "Dominican footballer",
+    "sl": 10
+   }
+  ],
+  "DOM": [
+   {
+    "name": "Junot Díaz",
+    "desc": "Author",
+    "sl": 40
+   },
+   {
+    "name": "Óscar de la Renta",
+    "desc": "Dominican clothing designer (1932–2014)",
+    "sl": 36
+   },
+   {
+    "name": "Dania Ramirez",
+    "desc": "Dominican actress",
+    "sl": 35
+   },
+   {
+    "name": "Marileidy Paulino",
+    "desc": "Dominican Republic sprinter",
+    "sl": 34
+   },
+   {
+    "name": "Junior Firpo",
+    "desc": "Dominican Republic association football player (born 1996)",
+    "sl": 32
+   }
+  ],
+  "COD": [
+   {
+    "name": "Denis Mukwege",
+    "desc": "Congolese gynecologist and Nobel Peace Prize laureate",
+    "sl": 79
+   },
+   {
+    "name": "Steve Mandanda",
+    "desc": "French footballer (born 1985)",
+    "sl": 57
+   },
+   {
+    "name": "Dikembe Mutombo",
+    "desc": "Congolese-American basketball player (1966–2024)",
+    "sl": 48
+   },
+   {
+    "name": "Axel Tuanzebe",
+    "desc": "DR Congolese footballer (born 1997)",
+    "sl": 38
+   },
+   {
+    "name": "Gims",
+    "desc": "Congolese singer and rapper (born 1986)",
+    "sl": 37
+   }
+  ],
+  "ECU": [
+   {
+    "name": "Antonio Valencia",
+    "desc": "Portughez association football player",
+    "sl": 65
+   },
+   {
+    "name": "Enner Valencia",
+    "desc": "Ecuadorian association football player",
+    "sl": 59
+   },
+   {
+    "name": "Moisés Caicedo",
+    "desc": "Ecuatorian association football player (born 2001)",
+    "sl": 48
+   },
+   {
+    "name": "Alfredo Palacio",
+    "desc": "Ecuadorian physician",
+    "sl": 46
+   },
+   {
+    "name": "Piero Hincapié",
+    "desc": "Ecuadorian footballer (born 2002)",
+    "sl": 44
    }
   ],
   "EGY": [
@@ -156,6 +1311,163 @@
     "name": "Umm Kulthum",
     "desc": "Egyptian singer and actress (1886–1975)",
     "sl": 110
+   },
+   {
+    "name": "Mohamed Salah",
+    "desc": "Egyptian association football player (born 1992)",
+    "sl": 104
+   },
+   {
+    "name": "Omar Sharif",
+    "desc": "Egyptian actor (1932–2015)",
+    "sl": 89
+   },
+   {
+    "name": "Ahmed Zewail",
+    "desc": "Egyptian chemist",
+    "sl": 76
+   }
+  ],
+  "CZE": [
+   {
+    "name": "Milan Kundera",
+    "desc": "Franco-Czechoslovak poet and novelist (1929—2023)",
+    "sl": 115
+   },
+   {
+    "name": "Martina Navratilova",
+    "desc": "Czech-American tennis player",
+    "sl": 98
+   },
+   {
+    "name": "Miloš Forman",
+    "desc": "Czech American director, screenwriter, and professor (1932–2018)",
+    "sl": 88
+   },
+   {
+    "name": "Petr Čech",
+    "desc": "Czech footballer (born 1982)",
+    "sl": 75
+   },
+   {
+    "name": "Pavel Nedvěd",
+    "desc": "Czech association football player",
+    "sl": 65
+   }
+  ],
+  "SLV": [
+   {
+    "name": "Óscar Romero",
+    "desc": "Salvadoran Catholic archbishop and saint (1917–1980)",
+    "sl": 61
+   },
+   {
+    "name": "Jaime Rodríguez Jiménez",
+    "desc": "Salvadoran footballer",
+    "sl": 47
+   },
+   {
+    "name": "Prudencia Ayala",
+    "desc": "Salvadoran author and social activist (1885–1936)",
+    "sl": 24
+   },
+   {
+    "name": "Mágico González",
+    "desc": "Salvadoran footballer",
+    "sl": 24
+   },
+   {
+    "name": "Marcelo Arévalo",
+    "desc": "Salvadorian tennis player (born 1990)",
+    "sl": 24
+   }
+  ],
+  "ERI": [
+   {
+    "name": "Zersenay Tadese",
+    "desc": "Eritrean long-distance runner",
+    "sl": 31
+   },
+   {
+    "name": "Daniel Teklehaymanot",
+    "desc": "Eritrean racing cyclist",
+    "sl": 26
+   },
+   {
+    "name": "Ghirmay Ghebreslassie",
+    "desc": "Eritrean athletics competitor and marathon runner",
+    "sl": 25
+   },
+   {
+    "name": "Zeudi Araya",
+    "desc": "Eritrean actress, singer and film producer",
+    "sl": 24
+   },
+   {
+    "name": "Meb Keflezighi",
+    "desc": "American long distance runner",
+    "sl": 20
+   }
+  ],
+  "GNQ": [
+   {
+    "name": "Eric Moussambani Malonga",
+    "desc": "Equatoguinean swimmer",
+    "sl": 29
+   },
+   {
+    "name": "Genoveva Añonman",
+    "desc": "Equatorial Guinean association football player and manager",
+    "sl": 19
+   },
+   {
+    "name": "Jesús Owono",
+    "desc": "Equatorial Guinean association football player (born 2001)",
+    "sl": 17
+   },
+   {
+    "name": "María Nsue Angüe",
+    "desc": "Equatorial Guinean writer",
+    "sl": 16
+   },
+   {
+    "name": "Basilio Ndong",
+    "desc": "Equatorial Guinean association football player",
+    "sl": 16
+   }
+  ],
+  "SWZ": [
+   {
+    "name": "Mswati III",
+    "desc": "King of Eswatini",
+    "sl": 82
+   },
+   {
+    "name": "Sobhuza II",
+    "desc": "King of Swaziland (1899-1982)",
+    "sl": 45
+   },
+   {
+    "name": "Richard E. Grant",
+    "desc": "British-Swazi actor",
+    "sl": 41
+   },
+   {
+    "name": "Ntombi of Swaziland",
+    "desc": "Swazi Queen",
+    "sl": 28
+   },
+   {
+    "name": "Amanda du-Pont",
+    "desc": "Swazi actor",
+    "sl": 17
+   }
+  ],
+  "FRO": [
+   {
+    "name": "Poul Kallsberg",
+    "desc": "Faroese footballer (born 2003)",
+    "sl": 4
    }
   ],
   "ETH": [
@@ -168,6 +1480,102 @@
     "name": "Menilek II",
     "desc": "Emperor of Ethiopia and King of Shewa (1844-1913)",
     "sl": 56
+   },
+   {
+    "name": "Kenenisa Bekele",
+    "desc": "Ethiopian long-distance runner (track and field)",
+    "sl": 53
+   },
+   {
+    "name": "Tirunesh Dibaba",
+    "desc": "Ethiopian long distance track athlete",
+    "sl": 51
+   },
+   {
+    "name": "Sifan Hassan",
+    "desc": "Ethiopian-born Dutch middle- and long-distance runner",
+    "sl": 49
+   }
+  ],
+  "FJI": [
+   {
+    "name": "Seru Epenisa Cakobau",
+    "desc": "King of Fiji (1815–1883)",
+    "sl": 35
+   },
+   {
+    "name": "Roy Krishna",
+    "desc": "Fijian footballer",
+    "sl": 31
+   },
+   {
+    "name": "Vijay Singh",
+    "desc": "Fijian-Indian professional golfer (born 1963)",
+    "sl": 29
+   },
+   {
+    "name": "Simione Tamanisau",
+    "desc": "Fijian footballer",
+    "sl": 14
+   },
+   {
+    "name": "Apisai Domolailai",
+    "desc": "Fijian rugby union footballer",
+    "sl": 14
+   }
+  ],
+  "GAB": [
+   {
+    "name": "Mario Lemina",
+    "desc": "Gabonese-French association football player",
+    "sl": 42
+   },
+   {
+    "name": "Frédéric Bulot",
+    "desc": "Gabonese and French association football player",
+    "sl": 34
+   },
+   {
+    "name": "Bruno Ecuele Manga",
+    "desc": "Gabonese and French association football player",
+    "sl": 28
+   },
+   {
+    "name": "Aaron Boupendza",
+    "desc": "Gabonese footballer (1996–2025)",
+    "sl": 26
+   },
+   {
+    "name": "Guélor Kanga",
+    "desc": "Gabonese footballer",
+    "sl": 25
+   }
+  ],
+  "EST": [
+   {
+    "name": "Arvo Pärt",
+    "desc": "Estonian composer (born 1935)",
+    "sl": 69
+   },
+   {
+    "name": "Birgit Sarrap",
+    "desc": "Estonian singer (born 1988)",
+    "sl": 64
+   },
+   {
+    "name": "Paul Keres",
+    "desc": "Estonian chess player and sportsperson (1916–1975)",
+    "sl": 57
+   },
+   {
+    "name": "Marie Under",
+    "desc": "Estonian poet (1883-1980)",
+    "sl": 51
+   },
+   {
+    "name": "Betti Alver",
+    "desc": "Estonian novelist and poet (1906-1989)",
+    "sl": 48
    }
   ],
   "FIN": [
@@ -185,25 +1593,97 @@
     "name": "Alvar Aalto",
     "desc": "Finnish architect and designer (1898–1976)",
     "sl": 97
-   }
-  ],
-  "FRA": [
-   {
-    "name": "René Descartes",
-    "desc": "French philosopher, mathematician, and scientist (1596–1650)",
-    "sl": 254
-   }
-  ],
-  "DEU": [
-   {
-    "name": "Albert Einstein",
-    "desc": "German-born theoretical physicist (1879–1955)",
-    "sl": 321
    },
    {
-    "name": "Max Weber",
-    "desc": "German sociologist, philosopher, and political economist",
-    "sl": 172
+    "name": "Tove Jansson",
+    "desc": "Finnish children's writer and illustrator (1914–2001)",
+    "sl": 85
+   },
+   {
+    "name": "Frans Eemil Sillanpää",
+    "desc": "Finnish writer (1888–1964)",
+    "sl": 85
+   }
+  ],
+  "GEO": [
+   {
+    "name": "Khvicha Kvaratskhelia",
+    "desc": "Georgian footballer (born 2001)",
+    "sl": 66
+   },
+   {
+    "name": "Giya Kancheli",
+    "desc": "Soviet and Georgian composer (1935-2019)",
+    "sl": 64
+   },
+   {
+    "name": "Nona Gaprindashvili",
+    "desc": "Soviet chess player",
+    "sl": 63
+   },
+   {
+    "name": "David IV of Georgia",
+    "desc": "King of Georgia (1073-1125)",
+    "sl": 55
+   },
+   {
+    "name": "Katie Melua",
+    "desc": "English-Georgian singer and songwriter",
+    "sl": 55
+   }
+  ],
+  "GHA": [
+   {
+    "name": "Michael Essien",
+    "desc": "Ghanaian footballer (born 1982)",
+    "sl": 65
+   },
+   {
+    "name": "Marcel Desailly",
+    "desc": "French footballer (born 1968)",
+    "sl": 63
+   },
+   {
+    "name": "Asamoah Gyan",
+    "desc": "Ghanaian footballer (born 1985)",
+    "sl": 62
+   },
+   {
+    "name": "Sulley Muntari",
+    "desc": "Ghanaian footballer (born 1984)",
+    "sl": 60
+   },
+   {
+    "name": "Thomas Partey",
+    "desc": "Ghanaian footballer (born 1993)",
+    "sl": 50
+   }
+  ],
+  "GRD": [
+   {
+    "name": "Kirani James",
+    "desc": "Grenadian sprinter",
+    "sl": 40
+   },
+   {
+    "name": "Shandon Baptiste",
+    "desc": "Grenadian association football player",
+    "sl": 19
+   },
+   {
+    "name": "Shalrie Joseph",
+    "desc": "Grenadian footballer",
+    "sl": 12
+   },
+   {
+    "name": "Ricky Charles",
+    "desc": "Grenadian footballer (born 1975)",
+    "sl": 12
+   },
+   {
+    "name": "Peggy Antrobus",
+    "desc": "Grenadian activist, author, scholar",
+    "sl": 11
    }
   ],
   "GRC": [
@@ -216,6 +1696,200 @@
     "name": "Odysseas Elytis",
     "desc": "Greek poet and art critic (1911–1996)",
     "sl": 86
+   },
+   {
+    "name": "Vangelis",
+    "desc": "Greek composer (1943-2022)",
+    "sl": 76
+   },
+   {
+    "name": "Constantine II of Greece",
+    "desc": "King of Greece from 1964 to 1973 (1940–2023)",
+    "sl": 74
+   },
+   {
+    "name": "Nana Mouskouri",
+    "desc": "Greek singer (born 1934)",
+    "sl": 71
+   }
+  ],
+  "GTM": [
+   {
+    "name": "Oscar Isaac",
+    "desc": "Guatemalan-American actor",
+    "sl": 60
+   },
+   {
+    "name": "Luis von Ahn",
+    "desc": "Guatemalan entrepreneur and computer scientist",
+    "sl": 33
+   },
+   {
+    "name": "Carlos Ruiz",
+    "desc": "Guatemalan footballer",
+    "sl": 33
+   },
+   {
+    "name": "Ricardo Arjona",
+    "desc": "Guatemalan musician",
+    "sl": 21
+   }
+  ],
+  "GIN": [
+   {
+    "name": "Naby Keïta",
+    "desc": "Guinean association football player",
+    "sl": 47
+   },
+   {
+    "name": "Mory Kanté",
+    "desc": "Guinean musician (1950–2020)",
+    "sl": 34
+   },
+   {
+    "name": "Ilaix Moriba",
+    "desc": "Guinean-Spanish football player",
+    "sl": 34
+   },
+   {
+    "name": "Amadou Diawara",
+    "desc": "Guinean association football player",
+    "sl": 30
+   },
+   {
+    "name": "Pascal Feindouno",
+    "desc": "Guinean footballer",
+    "sl": 28
+   }
+  ],
+  "GNB": [
+   {
+    "name": "Ansu Fati",
+    "desc": "Bisau-Guinean association football player",
+    "sl": 65
+   },
+   {
+    "name": "Éder",
+    "desc": "Portuguese footballer",
+    "sl": 44
+   },
+   {
+    "name": "Bruma",
+    "desc": "Portuguese association football player",
+    "sl": 33
+   },
+   {
+    "name": "Mama Samba Baldé",
+    "desc": "Guinea-Bissauan footballer",
+    "sl": 21
+   }
+  ],
+  "HTI": [
+   {
+    "name": "Edwidge Danticat",
+    "desc": "Novelist, short story writer, memoirist",
+    "sl": 31
+   },
+   {
+    "name": "Garcelle Beauvais",
+    "desc": "Haitian-American actress",
+    "sl": 28
+   },
+   {
+    "name": "Bruny Surin",
+    "desc": "Canadian track and field athlete",
+    "sl": 27
+   },
+   {
+    "name": "Samuel Dalembert",
+    "desc": "Haitian-Canadian basketball player",
+    "sl": 26
+   },
+   {
+    "name": "Dany Laferrière",
+    "desc": "Haitian Canadian novelist, screenwriter and former journalist",
+    "sl": 26
+   }
+  ],
+  "GUY": [
+   {
+    "name": "Letitia Wright",
+    "desc": "Guyanese actress (born 1993)",
+    "sl": 48
+   },
+   {
+    "name": "CCH Pounder",
+    "desc": "Guyanese actress (born 1952)",
+    "sl": 33
+   },
+   {
+    "name": "Eddy Grant",
+    "desc": "British singer",
+    "sl": 31
+   },
+   {
+    "name": "Alex Bunbury",
+    "desc": "Canadian soccer player",
+    "sl": 20
+   },
+   {
+    "name": "Michael Anthony",
+    "desc": "Guyana boxer",
+    "sl": 17
+   }
+  ],
+  "HND": [
+   {
+    "name": "Saúl Martínez",
+    "desc": "Honduran association football player",
+    "sl": 44
+   },
+   {
+    "name": "Maynor Figueroa",
+    "desc": "Honduran footballer",
+    "sl": 43
+   },
+   {
+    "name": "David Suazo",
+    "desc": "Honduran footballer and manager (born 1959)",
+    "sl": 42
+   },
+   {
+    "name": "Wilson Palacios",
+    "desc": "Honduran footballer",
+    "sl": 41
+   },
+   {
+    "name": "Emilio Izaguirre",
+    "desc": "Honduran footballer",
+    "sl": 36
+   }
+  ],
+  "FRA": [
+   {
+    "name": "René Descartes",
+    "desc": "French philosopher, mathematician, and scientist (1596–1650)",
+    "sl": 254
+   },
+   {
+    "name": "Louis Pasteur",
+    "desc": "French chemist and microbiologist (1822-1895)",
+    "sl": 213
+   },
+   {
+    "name": "Jean-Paul Sartre",
+    "desc": "French existentialist philosopher (1905–1980)",
+    "sl": 201
+   },
+   {
+    "name": "Sarah Bernhardt",
+    "desc": "French stage actress, painter and sculptor (1844–1923)",
+    "sl": 194
+   },
+   {
+    "name": "Marcel Proust",
+    "desc": "French novelist, critic and essayist (1871–1922)",
+    "sl": 191
    }
   ],
   "ISL": [
@@ -233,6 +1907,43 @@
     "name": "Stefán Karl Stefánsson",
     "desc": "Icelandic actor (1975–2018)",
     "sl": 77
+   },
+   {
+    "name": "Magnús Scheving",
+    "desc": "Icelandic actor and athlete",
+    "sl": 64
+   },
+   {
+    "name": "Gylfi Sigurðsson",
+    "desc": "Icelandic association football player",
+    "sl": 54
+   }
+  ],
+  "HUN": [
+   {
+    "name": "John von Neumann",
+    "desc": "Hungarian and American mathematician and physicist (1903–1957)",
+    "sl": 122
+   },
+   {
+    "name": "Imre Kertész",
+    "desc": "Hungarian author (1929–2016)",
+    "sl": 104
+   },
+   {
+    "name": "Eugene Paul Wigner",
+    "desc": "Hungarian-American physicist and mathematician (1902–1995)",
+    "sl": 98
+   },
+   {
+    "name": "Ferenc Puskás",
+    "desc": "Hungarian association football player (1927–2006)",
+    "sl": 94
+   },
+   {
+    "name": "Dennis Gabor",
+    "desc": "Nobel Prize-winning physicist and inventor of holography",
+    "sl": 88
    }
   ],
   "IND": [
@@ -245,21 +1956,131 @@
     "name": "Satyajit Ray",
     "desc": "Indian filmmaker and writer (1921–1992)",
     "sl": 144
-   }
-  ],
-  "IDN": [
-   {
-    "name": "Anggun",
-    "desc": "Indonesian-born French singer-songwriter",
-    "sl": 149
    },
    {
-    "name": "Agnez Mo",
-    "desc": "Indonesian singer and actress",
-    "sl": 148
+    "name": "Shah Rukh Khan",
+    "desc": "Indian actor, producer and television personality",
+    "sl": 136
+   },
+   {
+    "name": "Salman Rushdie",
+    "desc": "Indian-born English and American novelist (born 1947)",
+    "sl": 129
+   },
+   {
+    "name": "Amitabh Bachchan",
+    "desc": "Indian film actor (born 1942)",
+    "sl": 126
    }
   ],
-  "IRN": [],
+  "IRQ": [
+   {
+    "name": "Nadia Murad",
+    "desc": "Yazidi human rights activist from Iraq and winner of the 2018 Nobel Peace Prize",
+    "sl": 103
+   },
+   {
+    "name": "Zaha Hadid",
+    "desc": "Iraqi British architect, designer and painter (1950–2016)",
+    "sl": 96
+   },
+   {
+    "name": "Aymen Hussein",
+    "desc": "Iraqi footballer",
+    "sl": 38
+   },
+   {
+    "name": "Karim Findi",
+    "desc": "Author, writer, journalist",
+    "sl": 36
+   },
+   {
+    "name": "Younis Mahmoud",
+    "desc": "Iraqi footballer",
+    "sl": 31
+   }
+  ],
+  "IRN": [
+   {
+    "name": "Shirin Ebadi",
+    "desc": "Iranian lawyer, human rights activist, and Nobel Peace Prize recipient",
+    "sl": 112
+   },
+   {
+    "name": "Maryam Mirzakhani",
+    "desc": "Iranian mathematician (1977–2017)",
+    "sl": 97
+   },
+   {
+    "name": "Abbas Kiarostami",
+    "desc": "Iranian film director, screenwriter, photographer and film producer (1940-2016)",
+    "sl": 73
+   },
+   {
+    "name": "Marjane Satrapi",
+    "desc": "Iranian-French graphic novelist, cartoonist, illustrator, film director, and children's book author (1969–2026)",
+    "sl": 67
+   },
+   {
+    "name": "Farah Pahlavi",
+    "desc": "Queen/empress consort of Iran from 1959 to 1979",
+    "sl": 64
+   }
+  ],
+  "IRL": [
+   {
+    "name": "Oscar Wilde",
+    "desc": "Irish poet, playwright, and aesthete (1854-1900)",
+    "sl": 224
+   },
+   {
+    "name": "James Joyce",
+    "desc": "Irish novelist and poet (1882–1941)",
+    "sl": 207
+   },
+   {
+    "name": "George Bernard Shaw",
+    "desc": "Irish playwright, critic, and polemicist (1856–1950)",
+    "sl": 186
+   },
+   {
+    "name": "Samuel Beckett",
+    "desc": "Irish writer (1906–1989)",
+    "sl": 140
+   },
+   {
+    "name": "Enya",
+    "desc": "Irish singer (born 1961)",
+    "sl": 114
+   }
+  ],
+  "IMN": [
+   {
+    "name": "Samantha Barks",
+    "desc": "British actress",
+    "sl": 35
+   },
+   {
+    "name": "Joe Locke",
+    "desc": "Manx actor",
+    "sl": 33
+   },
+   {
+    "name": "Brian Stowell",
+    "desc": "Manx writer",
+    "sl": 14
+   },
+   {
+    "name": "Anna Christian",
+    "desc": "Manx cyclist",
+    "sl": 8
+   },
+   {
+    "name": "Josephine Kermode",
+    "desc": "Manx poet and playwright",
+    "sl": 7
+   }
+  ],
   "ISR": [
    {
     "name": "Natalie Portman",
@@ -268,36 +2089,402 @@
    },
    {
     "name": "Gal Gadot",
-    "desc": "Israeli actress and model (born 1985)",
+    "desc": "Israeli actress, and model; Miss Israel 2004 (born 1985)",
     "sl": 94
    },
    {
     "name": "Ada Yonath",
-    "desc": "Israeli structural biologist and Nobel laureate",
+    "desc": "Israeli structural biologist and Nobel laureate (1939–2026)",
     "sl": 89
+   },
+   {
+    "name": "Ghil'ad Zuckermann",
+    "desc": "Linguist, language revivalist, professor, author, hyperpolyglot",
+    "sl": 88
+   },
+   {
+    "name": "Yuval Noah Harari",
+    "desc": "Israeli historian and author of popular science bestsellers",
+    "sl": 88
    }
   ],
-  "ITA": [
+  "CIV": [
    {
-    "name": "Enrico Fermi",
-    "desc": "Italian–American physicist (1901–1954)",
-    "sl": 171
+    "name": "Didier Drogba",
+    "desc": "Ivorian and French association football player",
+    "sl": 92
    },
    {
-    "name": "Federico Fellini",
-    "desc": "Italian filmmaker (1920–1993)",
-    "sl": 162
+    "name": "Yaya Touré",
+    "desc": "Ivorian association football player",
+    "sl": 76
    },
    {
-    "name": "Umberto Eco",
-    "desc": "Italian semiotician, essayist and philosopher",
-    "sl": 151
+    "name": "Salomon Kalou",
+    "desc": "Ivorian association football player",
+    "sl": 57
+   },
+   {
+    "name": "Gervinho",
+    "desc": "Ivorian association football player (born 1987)",
+    "sl": 56
+   },
+   {
+    "name": "Seydou Doumbia",
+    "desc": "Ivorian association football player (born 1987)",
+    "sl": 53
+   }
+  ],
+  "DEU": [
+   {
+    "name": "Albert Einstein",
+    "desc": "German-born theoretical physicist (1879–1955)",
+    "sl": 321
+   },
+   {
+    "name": "Max Weber",
+    "desc": "German sociologist, philosopher, and political economist (1864–1920)",
+    "sl": 172
+   },
+   {
+    "name": "Hermann Hesse",
+    "desc": "Nobel Prize winning German-Swiss poet, novelist and painter (1877–1962)",
+    "sl": 163
+   },
+   {
+    "name": "Johannes Brahms",
+    "desc": "German composer (1833–1897)",
+    "sl": 161
+   },
+   {
+    "name": "Martin Heidegger",
+    "desc": "German philosopher (1889–1976)",
+    "sl": 148
+   }
+  ],
+  "IDN": [
+   {
+    "name": "Anggun",
+    "desc": "Indonesian-born French singer-songwriter and television personality",
+    "sl": 149
+   },
+   {
+    "name": "Agnez Mo",
+    "desc": "Indonesian singer and actress",
+    "sl": 148
+   },
+   {
+    "name": "Hary Gunarto",
+    "desc": "Japanese scientist",
+    "sl": 55
+   },
+   {
+    "name": "Pramoedya Ananta Toer",
+    "desc": "Indonesian writer (1925–2006)",
+    "sl": 45
+   },
+   {
+    "name": "Laura Gemser",
+    "desc": "Dutch-based actress of Indonesian descent",
+    "sl": 36
+   }
+  ],
+  "JOR": [
+   {
+    "name": "Abdullah II of Jordan",
+    "desc": "King of the Hashemite Kingdom of Jordan",
+    "sl": 112
+   },
+   {
+    "name": "Hussein I of Jordan",
+    "desc": "King of Jordan from 1952 to 1999",
+    "sl": 80
+   },
+   {
+    "name": "Omar M. Yaghi",
+    "desc": "American chemist of Arabic descent (born 1965)",
+    "sl": 48
+   },
+   {
+    "name": "Yazan Abu Arab",
+    "desc": "Jordanian association football player",
+    "sl": 30
+   },
+   {
+    "name": "Ali Olwan",
+    "desc": "Jordanian footballer",
+    "sl": 28
+   }
+  ],
+  "JAM": [
+   {
+    "name": "Bob Marley",
+    "desc": "Jamaican reggae musician (1945–1981)",
+    "sl": 164
+   },
+   {
+    "name": "Usain Bolt",
+    "desc": "Jamaican sprinter",
+    "sl": 136
+   },
+   {
+    "name": "Shelly-Ann Fraser-Pryce",
+    "desc": "Jamaican track and field sprinter",
+    "sl": 61
+   },
+   {
+    "name": "Sean Paul",
+    "desc": "Jamaican dancehall singer and rapper (born 1973)",
+    "sl": 56
+   },
+   {
+    "name": "Asafa Powell",
+    "desc": "Jamaican sprinter",
+    "sl": 54
+   }
+  ],
+  "KAZ": [
+   {
+    "name": "Dimash Qudaibergen",
+    "desc": "Kazakh singer",
+    "sl": 47
+   },
+   {
+    "name": "Alexandra Elbakyan",
+    "desc": "Kazakh computer scientist and founder of Sci-Hub",
+    "sl": 43
+   },
+   {
+    "name": "Timur Bekmambetov",
+    "desc": "Russian film director",
+    "sl": 40
+   },
+   {
+    "name": "Olga Rypakova",
+    "desc": "Kazakh female Olympic track and field athlete",
+    "sl": 39
+   },
+   {
+    "name": "Gennady Golovkin",
+    "desc": "Kazakhstani boxer",
+    "sl": 36
+   }
+  ],
+  "KEN": [
+   {
+    "name": "Ngũgĩ wa Thiong'o",
+    "desc": "Kenyan writer (1938–2025)",
+    "sl": 85
+   },
+   {
+    "name": "Chris Froome",
+    "desc": "British cyclist (born 1985)",
+    "sl": 59
+   },
+   {
+    "name": "Eliud Kipchoge",
+    "desc": "Kenyan long-distance runner",
+    "sl": 56
+   },
+   {
+    "name": "Kelvin Kiptum",
+    "desc": "Kenyan long-distance runner (1999–2024)",
+    "sl": 54
+   },
+   {
+    "name": "Louis Leakey",
+    "desc": "Kenyan-British archaeologist and naturalist",
+    "sl": 53
+   }
+  ],
+  "KIR": [
+   {
+    "name": "Kaitinano Mwemweata",
+    "desc": "Kiribati athlete",
+    "sl": 11
+   },
+   {
+    "name": "Nooa Takooa",
+    "desc": "Sprinter",
+    "sl": 9
+   },
+   {
+    "name": "Lataisi Mwea",
+    "desc": "Kiribati athlete",
+    "sl": 7
+   },
+   {
+    "name": "Nabaruru Batiri",
+    "desc": "Kiribati footballer",
+    "sl": 7
+   },
+   {
+    "name": "Rabangaki Nawai",
+    "desc": "Kiribati sprinter",
+    "sl": 6
+   }
+  ],
+  "KWT": [
+   {
+    "name": "Roony Bardghji",
+    "desc": "Swedish association footballer",
+    "sl": 32
+   },
+   {
+    "name": "Mishary Rashid Al-Afasy",
+    "desc": "Imam of Grand Mosque (Kuwait), Quran reciter, preacher, Nasheed artist",
+    "sl": 31
+   },
+   {
+    "name": "Bader Al-Mutawa",
+    "desc": "Kuwaiti footballer",
+    "sl": 25
+   },
+   {
+    "name": "Bashar Abdullah",
+    "desc": "Kuwaiti footballer",
+    "sl": 20
+   },
+   {
+    "name": "Fathi Kameel",
+    "desc": "Kuwaiti footballer",
+    "sl": 20
+   }
+  ],
+  "KGZ": [
+   {
+    "name": "Chingiz Aĭtmatov",
+    "desc": "Soviet and Kyrgyz author (1928–2008)",
+    "sl": 100
+   },
+   {
+    "name": "Aisuluu Tynybekova",
+    "desc": "Olympic wrestler",
+    "sl": 26
+   },
+   {
+    "name": "Ilzat Akhmetov",
+    "desc": "Russian association football player",
+    "sl": 26
+   },
+   {
+    "name": "Mirlan Murzaev",
+    "desc": "Kyrgyzstani footballer",
+    "sl": 24
+   }
+  ],
+  "LAO": [
+   {
+    "name": "Sisavang Vong",
+    "desc": "King of Laos (1885-1959)",
+    "sl": 30
+   },
+   {
+    "name": "Anouvong",
+    "desc": "Last monarch of the Kingdom of Vientiane",
+    "sl": 18
+   },
+   {
+    "name": "Visay Phaphouvanin",
+    "desc": "Laotian footballer",
+    "sl": 18
+   },
+   {
+    "name": "Setthathirath",
+    "desc": "Laotian king",
+    "sl": 17
+   },
+   {
+    "name": "Nang Keo Phimpha",
+    "desc": "Queen of Lan Xang",
+    "sl": 16
+   }
+  ],
+  "LBN": [
+   {
+    "name": "Layal Abboud",
+    "desc": "Lebanese pop singer",
+    "sl": 101
+   },
+   {
+    "name": "Amin Maalouf",
+    "desc": "Francophone Lebanese writer based in Frances",
+    "sl": 71
+   },
+   {
+    "name": "Nancy Ajram",
+    "desc": "Lebanese singer and actress",
+    "sl": 61
+   },
+   {
+    "name": "Mika",
+    "desc": "British-Lebanese musician, singer and songwriter",
+    "sl": 60
+   },
+   {
+    "name": "Fairuz",
+    "desc": "Lebanese singer and actress",
+    "sl": 56
+   }
+  ],
+  "LVA": [
+   {
+    "name": "Mikhail Tal",
+    "desc": "Soviet-Latvian chess player (1936-1992)",
+    "sl": 80
+   },
+   {
+    "name": "Mikhail Baryshnikov",
+    "desc": "Latvian-American dancer, choreographer and actor",
+    "sl": 65
+   },
+   {
+    "name": "Jeļena Ostapenko",
+    "desc": "Latvian tennis player",
+    "sl": 48
+   },
+   {
+    "name": "Rainis",
+    "desc": "Latvian poet (1865–1929)",
+    "sl": 46
+   },
+   {
+    "name": "Marija Naumova",
+    "desc": "Latvian singer and songwriter (born 1973)",
+    "sl": 46
+   }
+  ],
+  "LSO": [
+   {
+    "name": "Moshoeshoe II of Lesotho",
+    "desc": "King of Lesotho (1938-1996)",
+    "sl": 31
+   },
+   {
+    "name": "Moshoeshoe I",
+    "desc": "King of Lesotho from 1822 to 1870",
+    "sl": 30
+   },
+   {
+    "name": "'Masenate Mohato Seeiso",
+    "desc": "Lesotho queen",
+    "sl": 22
+   },
+   {
+    "name": "Tebello Nyokong",
+    "desc": "South African chemist and professor",
+    "sl": 18
+   },
+   {
+    "name": "Lehlohonolo Seema",
+    "desc": "Mosotho footballer",
+    "sl": 13
    }
   ],
   "JPN": [
    {
     "name": "Matsuo Bashō",
-    "desc": "Japanese poet (1644–1694)",
+    "desc": "Japanese poet（1644–1694）",
     "sl": 202
    },
    {
@@ -314,18 +2501,570 @@
     "name": "Akira Kurosawa",
     "desc": "Japanese filmmaker (1910–1998)",
     "sl": 177
-   }
-  ],
-  "KEN": [
-   {
-    "name": "Wangari Muta Maathai",
-    "desc": "Kenyan environmentalist who won the Nobel Peace Prize",
-    "sl": 128
    },
    {
-    "name": "Ngũgĩ wa Thiong'o",
-    "desc": "Kenyan writer (1938–2025)",
-    "sl": 85
+    "name": "Hirohito",
+    "desc": "Emperor of Japan from 1926 to 1989",
+    "sl": 157
+   }
+  ],
+  "LBR": [
+   {
+    "name": "Alex Nimely",
+    "desc": "Liberian footballer",
+    "sl": 20
+   },
+   {
+    "name": "Darlington Nagbe",
+    "desc": "American soccer player",
+    "sl": 20
+   },
+   {
+    "name": "Sekou Oliseh",
+    "desc": "Liberian footballer",
+    "sl": 19
+   },
+   {
+    "name": "Christopher Wreh",
+    "desc": "Professional footballer",
+    "sl": 15
+   },
+   {
+    "name": "William Jebor",
+    "desc": "Liberian footballer (born 1991)",
+    "sl": 14
+   }
+  ],
+  "LBY": [
+   {
+    "name": "Idris I of Libya",
+    "desc": "King of Libya from 1951 to 1969",
+    "sl": 58
+   }
+  ],
+  "ITA": [
+   {
+    "name": "Enrico Fermi",
+    "desc": "Italian–American physicist (1901–1954)",
+    "sl": 171
+   },
+   {
+    "name": "Federico Fellini",
+    "desc": "Italian filmmaker (1920–1993)",
+    "sl": 162
+   },
+   {
+    "name": "Umberto Eco",
+    "desc": "Italian semiotician, essayist, philosopher, literary critic, and novelist (1932–2016)",
+    "sl": 151
+   },
+   {
+    "name": "Sophia Loren",
+    "desc": "Italian actress (born 1934)",
+    "sl": 133
+   },
+   {
+    "name": "Francesco Totti",
+    "desc": "Italian association football player",
+    "sl": 126
+   }
+  ],
+  "LIE": [
+   {
+    "name": "Tina Weirather",
+    "desc": "Liechtensteiner alpine skier",
+    "sl": 32
+   },
+   {
+    "name": "Josef Rheinberger",
+    "desc": "Liechtensteiner organist and composer (1839-1901)",
+    "sl": 25
+   },
+   {
+    "name": "Andreas Wenzel",
+    "desc": "Liechtensteiner alpine skier",
+    "sl": 24
+   },
+   {
+    "name": "Sandro Wieser",
+    "desc": "Liechtensteiner footballer",
+    "sl": 19
+   },
+   {
+    "name": "Paul Frommelt",
+    "desc": "Liechtensteiner alpine skier",
+    "sl": 19
+   }
+  ],
+  "MDG": [
+   {
+    "name": "King Andrianampoinimerina",
+    "desc": "King of Imerina",
+    "sl": 32
+   },
+   {
+    "name": "Radama II",
+    "desc": "King of Madagascar",
+    "sl": 29
+   },
+   {
+    "name": "Anicet Andrianantenaina",
+    "desc": "Malagasy footballer",
+    "sl": 21
+   }
+  ],
+  "LTU": [
+   {
+    "name": "Czesław Miłosz",
+    "desc": "Polish-American poet and Nobel laureate (1911–2004)",
+    "sl": 123
+   },
+   {
+    "name": "Emmanuel Levinas",
+    "desc": "Jewish-French-Lithuanian philosopher (1906-1995)",
+    "sl": 59
+   },
+   {
+    "name": "Arvydas Sabonis",
+    "desc": "Lithuanian basketball player and executive",
+    "sl": 55
+   },
+   {
+    "name": "Mindaugas",
+    "desc": "King of Lithuania",
+    "sl": 51
+   },
+   {
+    "name": "Rūta Meilutytė",
+    "desc": "Lithuanian swimmer (born 1997)",
+    "sl": 50
+   }
+  ],
+  "MWI": [
+   {
+    "name": "William Kamkwamba",
+    "desc": "Malawian inventor and author",
+    "sl": 28
+   },
+   {
+    "name": "Jabulani Linje",
+    "desc": "Malawian association football player",
+    "sl": 23
+   },
+   {
+    "name": "Russell Mwafulirwa",
+    "desc": "Malawian footballer",
+    "sl": 18
+   },
+   {
+    "name": "Tabitha Chawinga",
+    "desc": "Malawian association football player",
+    "sl": 17
+   },
+   {
+    "name": "Kinnah Phiri",
+    "desc": "Malawian football player and manager",
+    "sl": 15
+   }
+  ],
+  "MDV": [
+   {
+    "name": "Ali Ashfaq",
+    "desc": "Maldivian footballer",
+    "sl": 24
+   },
+   {
+    "name": "Aminath Faiza",
+    "desc": "Maldivian Dhivehi-language poet, author",
+    "sl": 11
+   },
+   {
+    "name": "Ibrahim Fazeel",
+    "desc": "Maldivian footballer",
+    "sl": 10
+   },
+   {
+    "name": "Ibrahim Nishwan",
+    "desc": "Maldivian swimmer",
+    "sl": 9
+   },
+   {
+    "name": "Afa Ismail",
+    "desc": "Maldivian sprinter",
+    "sl": 9
+   }
+  ],
+  "LUX": [
+   {
+    "name": "Gabriel Lippmann",
+    "desc": "Luxembourgish physicist nationalized French (1845-1921)",
+    "sl": 94
+   },
+   {
+    "name": "Jules A. Hoffmann",
+    "desc": "French biologist",
+    "sl": 58
+   },
+   {
+    "name": "Hugo Gernsback",
+    "desc": "American inventor, writer, editor and publisher (1884–1967)",
+    "sl": 43
+   },
+   {
+    "name": "Edward Steichen",
+    "desc": "American photographer, artist and curator (1879-1973)",
+    "sl": 36
+   },
+   {
+    "name": "Fränk Schleck",
+    "desc": "Luxembourgish cyclist",
+    "sl": 34
+   }
+  ],
+  "MYS": [
+   {
+    "name": "Siti Nurhaliza",
+    "desc": "Malaysian singer, actress, and model",
+    "sl": 78
+   },
+   {
+    "name": "Michelle Yeoh",
+    "desc": "Malaysian actress (born 1962)",
+    "sl": 77
+   },
+   {
+    "name": "P. Ramlee",
+    "desc": "Malaysian singer, actor and film director (1929–1973)",
+    "sl": 62
+   },
+   {
+    "name": "James Wan",
+    "desc": "Malaysian-Australian filmmaker (born 1977)",
+    "sl": 58
+   },
+   {
+    "name": "Abdul Halim of Kedah",
+    "desc": "5th Yang di-Pertuan Agong and Sultan of Kedah",
+    "sl": 46
+   }
+  ],
+  "MLI": [
+   {
+    "name": "Seydou Keita",
+    "desc": "Malian footballer (born 1980)",
+    "sl": 52
+   },
+   {
+    "name": "Salif Keita",
+    "desc": "Malian singer-songwriter, referred to as the \"Golden Voice of Africa\".",
+    "sl": 50
+   },
+   {
+    "name": "Aya Nakamura",
+    "desc": "Malian-French singer (born 1995)",
+    "sl": 44
+   },
+   {
+    "name": "Ali Farka Touré",
+    "desc": "Malian musician (1939–2006)",
+    "sl": 40
+   },
+   {
+    "name": "Mahamadou Diarra",
+    "desc": "Malian footballer",
+    "sl": 39
+   }
+  ],
+  "MLT": [
+   {
+    "name": "Destiny Chukunyere",
+    "desc": "Maltese singer",
+    "sl": 41
+   },
+   {
+    "name": "Frans Sammut",
+    "desc": "Maltese author (1945–2011)",
+    "sl": 35
+   },
+   {
+    "name": "Chiara Siracusa",
+    "desc": "Maltese singer",
+    "sl": 34
+   },
+   {
+    "name": "Michela Pace",
+    "desc": "Maltese singer",
+    "sl": 33
+   },
+   {
+    "name": "Ira Losco",
+    "desc": "Maltese singer and songwriter",
+    "sl": 32
+   }
+  ],
+  "MRT": [
+   {
+    "name": "Abderrahmane Sissako",
+    "desc": "Mauritanian film director and film producer (born 1961)",
+    "sl": 35
+   },
+   {
+    "name": "Med Hondo",
+    "desc": "Mauritanian actor (1935–2019)",
+    "sl": 30
+   },
+   {
+    "name": "Aly Abeid",
+    "desc": "Mauritanian association football player",
+    "sl": 18
+   },
+   {
+    "name": "Mohamedou Ould Slahi",
+    "desc": "Mauritanian author and former Guantánamo detainee",
+    "sl": 18
+   },
+   {
+    "name": "Dimi Mint Abba",
+    "desc": "Mauritanian singer",
+    "sl": 17
+   }
+  ],
+  "MHL": [
+   {
+    "name": "Kathy Jetn̄il-Kijiner",
+    "desc": "Poet from the Marshall Islands (born 1989)",
+    "sl": 15
+   },
+   {
+    "name": "Roman Cress",
+    "desc": "Marshallese sprinter",
+    "sl": 10
+   },
+   {
+    "name": "Phillip Kinono",
+    "desc": "Marshallese swimmer",
+    "sl": 7
+   },
+   {
+    "name": "Ann-Marie Hepler",
+    "desc": "Marshallese swimmer",
+    "sl": 6
+   }
+  ],
+  "MUS": [
+   {
+    "name": "Bruno Julie",
+    "desc": "First Olympic medalist for Mauritius",
+    "sl": 24
+   },
+   {
+    "name": "Nathacha Appanah",
+    "desc": "Mauritian-French author",
+    "sl": 21
+   },
+   {
+    "name": "Ananda Devi",
+    "desc": "Mauritian writer",
+    "sl": 20
+   },
+   {
+    "name": "Viveka Babajee",
+    "desc": "Mauritian actor (1973–2010)",
+    "sl": 16
+   },
+   {
+    "name": "Kimberley Le Court",
+    "desc": "Mauritian cyclist",
+    "sl": 15
+   }
+  ],
+  "FSM": [
+   {
+    "name": "Debra Daniel",
+    "desc": "Micronesian swimmer",
+    "sl": 9
+   },
+   {
+    "name": "Kerson Hadley",
+    "desc": "Micronesian swimmer",
+    "sl": 8
+   },
+   {
+    "name": "Maria Ikelap",
+    "desc": "Micronesian athlete",
+    "sl": 8
+   },
+   {
+    "name": "Dionisio Augustine",
+    "desc": "Micronesian swimmer",
+    "sl": 8
+   },
+   {
+    "name": "Mau Piailug",
+    "desc": "Micronesian navigator from the Carolinian island of Satawal and a teacher of traditional, non-instrument wayfinding methods for deep-sea voyaging",
+    "sl": 7
+   }
+  ],
+  "MDA": [
+   {
+    "name": "Natalia Barbu",
+    "desc": "Moldovan singer",
+    "sl": 40
+   },
+   {
+    "name": "Pasha Parfeni",
+    "desc": "Moldovan singer (born 1986)",
+    "sl": 38
+   },
+   {
+    "name": "Natalia Gordienko",
+    "desc": "Moldovan singer",
+    "sl": 38
+   },
+   {
+    "name": "Dan Balan",
+    "desc": "Moldovan singer",
+    "sl": 34
+   },
+   {
+    "name": "Aliona Moon",
+    "desc": "Moldovan singer",
+    "sl": 34
+   }
+  ],
+  "MNG": [
+   {
+    "name": "Jügderdemidiin Gürragchaa",
+    "desc": "Mongolian cosmonaut",
+    "sl": 33
+   },
+   {
+    "name": "Enkhbatyn Badar-Uugan",
+    "desc": "Boxer",
+    "sl": 27
+   },
+   {
+    "name": "Rinchen Barsbold",
+    "desc": "Mongolian paleontologist and geologist (1935–2025)",
+    "sl": 22
+   },
+   {
+    "name": "Pürevdorjiin Serdamba",
+    "desc": "Boxer",
+    "sl": 21
+   },
+   {
+    "name": "Dashdorjiin Natsagdorj",
+    "desc": "Mongolian writer and poet (1906–1937)",
+    "sl": 21
+   }
+  ],
+  "MCO": [
+   {
+    "name": "Léo Ferré",
+    "desc": "French-born Monégasque poet and singer",
+    "sl": 41
+   },
+   {
+    "name": "Valentin Vacherot",
+    "desc": "Monegasque tennis player (born 1998)",
+    "sl": 19
+   },
+   {
+    "name": "Armand Forcherio",
+    "desc": "Monégasque football player and manager",
+    "sl": 17
+   },
+   {
+    "name": "François Joseph Bosio",
+    "desc": "Monegasque sculptor (1768-1845)",
+    "sl": 15
+   },
+   {
+    "name": "Victor Langellotti",
+    "desc": "Monegasque cyclist",
+    "sl": 12
+   }
+  ],
+  "MNE": [
+   {
+    "name": "Stevan Jovetić",
+    "desc": "Montenegrin footballer (born 1989)",
+    "sl": 51
+   },
+   {
+    "name": "Mirko Vučinić",
+    "desc": "Montenegrin footballer",
+    "sl": 50
+   },
+   {
+    "name": "Dejan Savićević",
+    "desc": "Montenegrin footballer",
+    "sl": 48
+   },
+   {
+    "name": "Stefan Savić",
+    "desc": "Montenegrin association football player",
+    "sl": 46
+   },
+   {
+    "name": "Anto Drobnjak",
+    "desc": "Montenegrin footballer",
+    "sl": 45
+   }
+  ],
+  "MAR": [
+   {
+    "name": "Hassan II",
+    "desc": "King of Morocco from 1961 to 1999",
+    "sl": 75
+   },
+   {
+    "name": "Mohammed V of Morocco",
+    "desc": "King of Morocco (1909-1961)",
+    "sl": 56
+   },
+   {
+    "name": "Fatema Mernissi",
+    "desc": "1940-2015, Moroccan sociologist, writer and feminist",
+    "sl": 56
+   },
+   {
+    "name": "Hicham El Guerrouj",
+    "desc": "Moroccan middle and long distance runner",
+    "sl": 48
+   },
+   {
+    "name": "Youssef En-Nesyri",
+    "desc": "Moroccan association football player",
+    "sl": 46
+   }
+  ],
+  "MOZ": [
+   {
+    "name": "Maria Mutola",
+    "desc": "Mozambican athlete",
+    "sl": 43
+   },
+   {
+    "name": "Mia Couto",
+    "desc": "Mozambican writer",
+    "sl": 36
+   },
+   {
+    "name": "Abel Xavier",
+    "desc": "Portuguese-Mozambican association football player",
+    "sl": 35
+   },
+   {
+    "name": "Reinildo Mandava",
+    "desc": "Mozambican footballer (born 1994)",
+    "sl": 34
+   },
+   {
+    "name": "Simão Mate Junior",
+    "desc": "Mozambican association football player",
+    "sl": 33
    }
   ],
   "MEX": [
@@ -343,74 +3082,202 @@
     "name": "Salma Hayek",
     "desc": "Mexican and American actress (born 1966)",
     "sl": 105
+   },
+   {
+    "name": "Anthony Quinn",
+    "desc": "Mexican and American actor (1915–2001)",
+    "sl": 84
+   },
+   {
+    "name": "Lupita Nyong'o",
+    "desc": "Mexican-Kenyan actress and film director (born 1983)",
+    "sl": 79
    }
   ],
-  "MCO": [],
-  "MNG": [],
-  "MAR": [
+  "MMR": [
    {
-    "name": "Hassan II",
-    "desc": "King of Morocco from 1961 to 1999",
-    "sl": 75
+    "name": "Thibaw Min",
+    "desc": "Last king of Burma (1859–1916)",
+    "sl": 31
    },
    {
-    "name": "Mohammed V of Morocco",
-    "desc": "King of Morocco (1909-1961)",
-    "sl": 56
+    "name": "Mindon Min",
+    "desc": "King of Burma (1808–1878)",
+    "sl": 25
    },
    {
-    "name": "Fatema Mernissi",
-    "desc": "Moroccan sociologist, writer and feminist (1940-2015)",
-    "sl": 56
+    "name": "Bodawpaya",
+    "desc": "1745-1819, sixth king of the Konbaung Dynasty of Burma.",
+    "sl": 21
    },
    {
-    "name": "Hicham El Guerrouj",
-    "desc": "Moroccan middle and long distance runner",
-    "sl": 48
+    "name": "Bagyidaw",
+    "desc": "King of Burma (1784-1846)",
+    "sl": 19
    },
    {
-    "name": "Youssef En-Nesyri",
-    "desc": "Moroccan association football player",
-    "sl": 46
+    "name": "Tharrawaddy Min",
+    "desc": "King of Burma",
+    "sl": 15
+   }
+  ],
+  "NRU": [
+   {
+    "name": "Aweida",
+    "desc": "King of Nauru",
+    "sl": 16
+   },
+   {
+    "name": "Margaret Hendrie",
+    "desc": "Nauruan writer (1924–1990)",
+    "sl": 14
+   },
+   {
+    "name": "Alopua Petoa",
+    "desc": "Tuvuluan footballer",
+    "sl": 13
+   },
+   {
+    "name": "Jonah Harris",
+    "desc": "Nauruan track and field athlete",
+    "sl": 9
    }
   ],
   "NPL": [
    {
     "name": "Suman Pokhrel",
-    "desc": "Nepalese poet, lyricist, playwright and translator",
+    "desc": "Nepalese poet, lyricist, playwright, translator and artist",
     "sl": 63
    },
    {
     "name": "Manisha Koirala",
     "desc": "Nepalese actress (born 1970)",
     "sl": 56
+   },
+   {
+    "name": "Birendra of Nepal",
+    "desc": "King of Nepal (1945–2001)",
+    "sl": 53
+   },
+   {
+    "name": "Udit Narayan Jha",
+    "desc": "Nepalese playback singer",
+    "sl": 41
+   },
+   {
+    "name": "Mahendra I of Nepal",
+    "desc": "King of Nepal (1920-1972)",
+    "sl": 37
+   }
+  ],
+  "NAM": [
+   {
+    "name": "Frankie Fredericks",
+    "desc": "Namibian track and field sprinter",
+    "sl": 35
+   },
+   {
+    "name": "Nǃxau",
+    "desc": "Bush farmer, actor",
+    "sl": 34
+   },
+   {
+    "name": "Christine Mboma",
+    "desc": "Namibian runner",
+    "sl": 26
+   },
+   {
+    "name": "Collin Benjamin",
+    "desc": "Namibian footballer and manager",
+    "sl": 25
+   },
+   {
+    "name": "Percy Montgomery",
+    "desc": "South African rugby union footballer and coach",
+    "sl": 22
    }
   ],
   "NLD": [
    {
-    "name": "Vincent van Gogh",
-    "desc": "Dutch painter (1853–1890)",
-    "sl": 266
+    "name": "Gustav Leonhardt",
+    "desc": "Dutch keyboard player, conductor, musicologist, teacher and editor (1928–2012)",
+    "sl": 31
    },
    {
-    "name": "Johan Cruyff",
-    "desc": "Dutch footballer and manager (1947–2016)",
-    "sl": 128
+    "name": "Arie Schans",
+    "desc": "Dutch association football player and manager",
+    "sl": 24
    },
    {
-    "name": "Hendrik Lorentz",
-    "desc": "Dutch physicist (1853–1928)",
-    "sl": 117
+    "name": "Hannah Hoekstra",
+    "desc": "Dutch actress",
+    "sl": 18
    },
    {
-    "name": "William Alexander of the Netherlands",
-    "desc": "King of the Netherlands (born 1967)",
-    "sl": 109
+    "name": "M.J. Hans Taihuttu",
+    "desc": "Indonesian footballer",
+    "sl": 15
    },
    {
-    "name": "Pieter Zeeman",
-    "desc": "Dutch physicist (1865–1943)",
-    "sl": 102
+    "name": "Wietse Venema",
+    "desc": "Dutch computer scientist",
+    "sl": 14
+   }
+  ],
+  "NIC": [
+   {
+    "name": "Claribel Alegría",
+    "desc": "Nicaraguan writer (1924-2018)",
+    "sl": 36
+   },
+   {
+    "name": "Barbara Carrera",
+    "desc": "Nicaraguan-American model and actress",
+    "sl": 32
+   },
+   {
+    "name": "Gioconda Belli",
+    "desc": "Nicaraguan writer",
+    "sl": 29
+   }
+  ],
+  "NER": [
+   {
+    "name": "Moussa Maâzou",
+    "desc": "Nigerien footballer",
+    "sl": 23
+   },
+   {
+    "name": "Abdoul Razak Issoufou",
+    "desc": "Nigerien taekwondo athlete",
+    "sl": 22
+   }
+  ],
+  "PRK": [
+   {
+    "name": "Ji Yun-nam",
+    "desc": "North Korean footballer",
+    "sl": 36
+   },
+   {
+    "name": "Hong Yong-jo",
+    "desc": "North Korean footballer",
+    "sl": 33
+   },
+   {
+    "name": "Ri Myong-guk",
+    "desc": "North Korean footballer",
+    "sl": 32
+   },
+   {
+    "name": "Ri Kwang-chon",
+    "desc": "North Korean footballer",
+    "sl": 26
+   },
+   {
+    "name": "Cha Jong-hyok",
+    "desc": "North Korean footballer",
+    "sl": 26
    }
   ],
   "NZL": [
@@ -426,8 +3293,45 @@
    },
    {
     "name": "Peter Jackson",
-    "desc": "New Zealand film director, screenwriter and producer",
+    "desc": "New Zealand film director, screenwriter, producer and actor (born 1961)",
     "sl": 101
+   },
+   {
+    "name": "Rosé",
+    "desc": "South Korean-New Zealand singer (born 1997)",
+    "sl": 87
+   },
+   {
+    "name": "Lorde",
+    "desc": "New Zealand singer, songwriter and producer (born 1996)",
+    "sl": 75
+   }
+  ],
+  "MKD": [
+   {
+    "name": "Kaliopi",
+    "desc": "Macedonian singer and songwriter (born 1966)",
+    "sl": 60
+   },
+   {
+    "name": "Toše Proeski",
+    "desc": "Macedonian musician (1981–2007)",
+    "sl": 51
+   },
+   {
+    "name": "Goran Pandev",
+    "desc": "Macedonian association football player (born 1983)",
+    "sl": 50
+   },
+   {
+    "name": "Boban Babunski",
+    "desc": "Macedonian association football player",
+    "sl": 49
+   },
+   {
+    "name": "Goce Sedloski",
+    "desc": "Macedonian association football player",
+    "sl": 47
    }
   ],
   "NGA": [
@@ -445,12 +3349,265 @@
     "name": "Chimamanda Ngozi Adichie",
     "desc": "Nigerian writer (born 1977)",
     "sl": 96
+   },
+   {
+    "name": "Mikel John Obi",
+    "desc": "Nigerian association football player (born 1987)",
+    "sl": 67
+   },
+   {
+    "name": "Hakeem Olajuwon",
+    "desc": "Nigerian-American basketball player",
+    "sl": 60
+   }
+  ],
+  "OMN": [
+   {
+    "name": "Qaboos bin Said Al Said",
+    "desc": "Sultan of Oman from 1970 to 2020 (1940–2020)",
+    "sl": 91
+   },
+   {
+    "name": "Ali Al-Habsi",
+    "desc": "Omani association football player",
+    "sl": 37
+   },
+   {
+    "name": "Said bin Taimur Al Said",
+    "desc": "Sultan of Muscat and Oman (1910-1972)",
+    "sl": 37
+   },
+   {
+    "name": "Said bin Sultan Al Busaidi",
+    "desc": "Sultan of Muscat and Oman (1791–1856)",
+    "sl": 26
+   },
+   {
+    "name": "Jokha al-Harthi",
+    "desc": "Arabic scholar and writer",
+    "sl": 26
+   }
+  ],
+  "PLW": [
+   {
+    "name": "Rodman Teltull",
+    "desc": "Palauan athlete",
+    "sl": 9
+   },
+   {
+    "name": "Ruby Joy Gabriel",
+    "desc": "Palauan sprinter",
+    "sl": 8
+   },
+   {
+    "name": "Shawn Dingilius-Wallace",
+    "desc": "Palauan swimmer",
+    "sl": 8
+   },
+   {
+    "name": "Peoria Koshiba",
+    "desc": "Female sprinter from Palau",
+    "sl": 7
+   },
+   {
+    "name": "Ulai Otobed",
+    "desc": "Palauan physician",
+    "sl": 7
+   }
+  ],
+  "PAK": [
+   {
+    "name": "Abdus Salam",
+    "desc": "Theoretical physicist, and Nobel Prize in Physics recipient",
+    "sl": 87
+   },
+   {
+    "name": "Nusrat Fateh Ali Khan",
+    "desc": "Pakistani musician, primarily a singer of qawwali (1948-1997)",
+    "sl": 60
+   },
+   {
+    "name": "Tariq Ali",
+    "desc": "British political activist, writer, and historian (born 1943)",
+    "sl": 54
+   },
+   {
+    "name": "Fatima Jinnah",
+    "desc": "Pakistani dental surgeon, biographer and stateswoman (1893–1967)",
+    "sl": 46
+   },
+   {
+    "name": "Faiz Ahmad Faiz",
+    "desc": "Pakistani Urdu poet and author (1911–1984)",
+    "sl": 37
+   }
+  ],
+  "PNG": [
+   {
+    "name": "Annie La Fleur",
+    "desc": "Olympic medalist in basketball",
+    "sl": 12
+   },
+   {
+    "name": "Toea Wisil",
+    "desc": "Papua New Guinea sprinter",
+    "sl": 12
+   },
+   {
+    "name": "Raymond Gunemba",
+    "desc": "Papua New Guinean association football player",
+    "sl": 12
+   },
+   {
+    "name": "Alwin Komolong",
+    "desc": "Papuan association football player",
+    "sl": 12
+   },
+   {
+    "name": "Ryan Pini",
+    "desc": "Swimmer",
+    "sl": 11
+   }
+  ],
+  "PAN": [
+   {
+    "name": "Jordana Brewster",
+    "desc": "American actress",
+    "sl": 55
+   },
+   {
+    "name": "Jorge Dely Valdés",
+    "desc": "Panamanian association football player",
+    "sl": 45
+   },
+   {
+    "name": "Jaime Penedo",
+    "desc": "Panamanian footballer",
+    "sl": 37
+   },
+   {
+    "name": "Felipe Baloy",
+    "desc": "Panamanian footballer",
+    "sl": 36
+   },
+   {
+    "name": "Aníbal Godoy",
+    "desc": "Panamanian association football player",
+    "sl": 36
+   }
+  ],
+  "NOR": [
+   {
+    "name": "Roald Amundsen",
+    "desc": "Norwegian explorer; first person to reach the South Pole (1872–1928)",
+    "sl": 191
+   },
+   {
+    "name": "Henrik Ibsen",
+    "desc": "Norwegian playwright and theatre director (1828–1906)",
+    "sl": 171
+   },
+   {
+    "name": "Knut Hamsun",
+    "desc": "Norwegian novelist (1859–1952)",
+    "sl": 135
+   },
+   {
+    "name": "Bjørnstjerne Bjørnson",
+    "desc": "Norwegian writer (1832–1910)",
+    "sl": 126
+   },
+   {
+    "name": "Edvard Munch",
+    "desc": "Norwegian painter (1863–1944)",
+    "sl": 120
+   }
+  ],
+  "PRY": [
+   {
+    "name": "José Luis Chilavert",
+    "desc": "Paraguayan association football player",
+    "sl": 51
+   },
+   {
+    "name": "Roque Santa Cruz",
+    "desc": "Paraguayan footballer",
+    "sl": 50
+   },
+   {
+    "name": "Augusto Roa Bastos",
+    "desc": "Paraguayan writer (1917–2005)",
+    "sl": 48
+   },
+   {
+    "name": "Francisco Arce",
+    "desc": "Paraguayan association football player and manager",
+    "sl": 46
+   },
+   {
+    "name": "Nelson Valdez",
+    "desc": "Paraguayan footballer",
+    "sl": 44
+   }
+  ],
+  "PHL": [
+   {
+    "name": "José Rizal",
+    "desc": "Filipino nationalist, writer and polymath (1861–1896)",
+    "sl": 89
+   },
+   {
+    "name": "Paulino Alcántara",
+    "desc": "Spanish footballer (1896-1964)",
+    "sl": 46
+   },
+   {
+    "name": "Lea Salonga",
+    "desc": "Filipino actress and singer (born 1971)",
+    "sl": 45
+   },
+   {
+    "name": "Jake Zyrus",
+    "desc": "Filipino singer",
+    "sl": 45
+   },
+   {
+    "name": "apl.de.ap",
+    "desc": "Filipino musician",
+    "sl": 43
+   }
+  ],
+  "PRT": [
+   {
+    "name": "Cristiano Ronaldo",
+    "desc": "Portuguese association football player (born 1985)",
+    "sl": 214
+   },
+   {
+    "name": "José Saramago",
+    "desc": "Portuguese novelist (1922–2010)",
+    "sl": 136
+   },
+   {
+    "name": "Fernando Pessoa",
+    "desc": "Portuguese poet, writer, and philosopher (1888–1935); creator of the heteronymic system including Alberto Caeiro, Ricardo Reis, Álvaro de Campos, and Bernardo Soares",
+    "sl": 106
+   },
+   {
+    "name": "Luís Figo",
+    "desc": "Portuguese football player and philatelist (born 1972)",
+    "sl": 80
+   },
+   {
+    "name": "Diogo Jota",
+    "desc": "Portuguese footballer (1996-2025)",
+    "sl": 72
    }
   ],
   "PER": [
    {
     "name": "Mario Vargas Llosa",
-    "desc": "Peruvian, Spanish and Dominican novelist",
+    "desc": "Peruvian, Spanish and Dominican novelist and writer (1936–2025)",
     "sl": 131
    },
    {
@@ -462,21 +3619,519 @@
     "name": "Percy Liza",
     "desc": "Peruvian footballer",
     "sl": 83
-   }
-  ],
-  "PHL": [
+   },
    {
-    "name": "José Rizal",
-    "desc": "Filipino nationalist, writer and polymath (1861–1896)",
-    "sl": 89
+    "name": "César Vallejo",
+    "desc": "Peruvian writer",
+    "sl": 65
+   },
+   {
+    "name": "Claudio Pizarro",
+    "desc": "Peruvian footballer",
+    "sl": 55
    }
   ],
-  "RUS": [],
+  "QAT": [
+   {
+    "name": "Hassan Al Haidos",
+    "desc": "Qatari footballer",
+    "sl": 39
+   },
+   {
+    "name": "Akram Afif",
+    "desc": "Qatari association football player (born 1996)",
+    "sl": 38
+   },
+   {
+    "name": "Ahmed Yasser",
+    "desc": "Qatari association football player",
+    "sl": 31
+   },
+   {
+    "name": "Abdelkarim Hassan",
+    "desc": "Qatari footballer",
+    "sl": 30
+   },
+   {
+    "name": "Saad Al Sheeb",
+    "desc": "Football player",
+    "sl": 30
+   }
+  ],
+  "COG": [
+   {
+    "name": "Serge Ibaka",
+    "desc": "Congolese-Spanish basketball player",
+    "sl": 41
+   },
+   {
+    "name": "Alain Mabanckou",
+    "desc": "Congolese writer (born 1966)",
+    "sl": 35
+   },
+   {
+    "name": "Delvin N'Dinga",
+    "desc": "Republic of the Congo footballer",
+    "sl": 25
+   },
+   {
+    "name": "Aurlus Mabélé",
+    "desc": "Congolese singer and composer",
+    "sl": 18
+   },
+   {
+    "name": "Férébory Doré",
+    "desc": "Footballer",
+    "sl": 16
+   }
+  ],
+  "RWA": [
+   {
+    "name": "Ncuti Gatwa",
+    "desc": "Rwandan-Scottish actor",
+    "sl": 42
+   },
+   {
+    "name": "Scholastique Mukasonga",
+    "desc": "Franco-Rwandan writer",
+    "sl": 28
+   },
+   {
+    "name": "Sonia Rolland",
+    "desc": "French actress",
+    "sl": 23
+   }
+  ],
+  "ROU": [
+   {
+    "name": "Herta Müller",
+    "desc": "German-Romanian novelist, poet and essayist (born 1953)",
+    "sl": 127
+   },
+   {
+    "name": "Eugène Ionesco",
+    "desc": "Romanian-French playwright (1909–1994)",
+    "sl": 103
+   },
+   {
+    "name": "Nadia Comăneci",
+    "desc": "Romanian gymnast and five-time Olympic gold medalist (born 1961)",
+    "sl": 91
+   },
+   {
+    "name": "Tristan Tzara",
+    "desc": "Romanian-French poet (1896–1963)",
+    "sl": 84
+   },
+   {
+    "name": "Emil Cioran",
+    "desc": "Romanian-French philosopher and essayist (1911–1995)",
+    "sl": 83
+   }
+  ],
+  "KNA": [
+   {
+    "name": "Kim Collins",
+    "desc": "Saint Kitts and Nevis sprinter",
+    "sl": 33
+   },
+   {
+    "name": "Keith Gumbs",
+    "desc": "Saint Kitts and Nevis footballer (born 1972)",
+    "sl": 17
+   },
+   {
+    "name": "Antoine Adams",
+    "desc": "Saint Kitts and Nevis sprinter",
+    "sl": 15
+   },
+   {
+    "name": "Caryl Phillips",
+    "desc": "Kittian-British writer (born 1958)",
+    "sl": 14
+   },
+   {
+    "name": "Jason Rogers",
+    "desc": "Saint Kitts and Nevis sprinter",
+    "sl": 13
+   }
+  ],
+  "LCA": [
+   {
+    "name": "Derek Walcott",
+    "desc": "Saint Lucian–Trinidadian poet and playwright (1930–2017)",
+    "sl": 96
+   },
+   {
+    "name": "Arthur Lewis",
+    "desc": "Saint Lucian economist (1915–1991)",
+    "sl": 56
+   },
+   {
+    "name": "Julien Alfred",
+    "desc": "Saint Lucian sprinter (born 2001)",
+    "sl": 42
+   },
+   {
+    "name": "Levern Spencer",
+    "desc": "Saint Lucian high jumper",
+    "sl": 19
+   },
+   {
+    "name": "Chris Boucher",
+    "desc": "Saint Lucia-born Canadian basketball player",
+    "sl": 17
+   }
+  ],
+  "VCT": [
+   {
+    "name": "Adonal Foyle",
+    "desc": "American basketball player",
+    "sl": 17
+   },
+   {
+    "name": "Sancho Lyttle",
+    "desc": "Spanish basketball player (born 1983)",
+    "sl": 15
+   },
+   {
+    "name": "Cornelius Stewart",
+    "desc": "Saint Vincent and the Grenadines footballer",
+    "sl": 14
+   },
+   {
+    "name": "Ezra Hendrickson",
+    "desc": "Saint Vincent and the Grenadines footballer and manager",
+    "sl": 14
+   },
+   {
+    "name": "Kevin Lyttle",
+    "desc": "Saint Vincent and the Grenadines musician",
+    "sl": 13
+   }
+  ],
+  "WSM": [
+   {
+    "name": "Frankie Adams",
+    "desc": "New Zealand actress and amateur boxer",
+    "sl": 20
+   },
+   {
+    "name": "David Tua",
+    "desc": "New Zealand professional heavyweight boxer",
+    "sl": 20
+   },
+   {
+    "name": "Albert Wendt",
+    "desc": "Contemporary Samoan poet and writer (born 1939)",
+    "sl": 15
+   },
+   {
+    "name": "Silao Malo",
+    "desc": "Football player",
+    "sl": 11
+   },
+   {
+    "name": "Brian Lima",
+    "desc": "Samoan rugby union footballer",
+    "sl": 10
+   }
+  ],
+  "STP": [
+   {
+    "name": "Naide Gomes",
+    "desc": "Portuguese retired athlete",
+    "sl": 26
+   },
+   {
+    "name": "Conceição Lima",
+    "desc": "São Tomé and Príncipe poet",
+    "sl": 16
+   },
+   {
+    "name": "Olinda Beja",
+    "desc": "São Tomé and Príncipe poet, writer and narrator",
+    "sl": 13
+   },
+   {
+    "name": "Sara Pinto Coelho",
+    "desc": "Portuguese writer",
+    "sl": 11
+   },
+   {
+    "name": "Francisco Tenreiro",
+    "desc": "São Toméan writer (1921-1963)",
+    "sl": 9
+   }
+  ],
+  "SMR": [
+   {
+    "name": "Valentina Monetta",
+    "desc": "Sammarinese singer",
+    "sl": 47
+   },
+   {
+    "name": "Massimo Bonini",
+    "desc": "Sammarinese footballer",
+    "sl": 30
+   },
+   {
+    "name": "Anita Simoncini",
+    "desc": "Sammarinese singer",
+    "sl": 28
+   },
+   {
+    "name": "Davide Gualtieri",
+    "desc": "Sammarinese footballer",
+    "sl": 19
+   },
+   {
+    "name": "Aldo Simoncini",
+    "desc": "Sammarinese footballer",
+    "sl": 18
+   }
+  ],
+  "POL": [
+   {
+    "name": "John Paul II",
+    "desc": "Pope, cardinal, bishop, priest, author",
+    "sl": 209
+   },
+   {
+    "name": "Henryk Sienkiewicz",
+    "desc": "Polish writer, novelist, journalist, philanthropist and Nobel Prize laureate (1846–1916)",
+    "sl": 139
+   },
+   {
+    "name": "Wisława Szymborska",
+    "desc": "Polish poet, Nobel Prize winner (1923–2012)",
+    "sl": 121
+   },
+   {
+    "name": "Isaac Bashevis Singer",
+    "desc": "Polish-American writer (1904–1991)",
+    "sl": 113
+   },
+   {
+    "name": "Robert Lewandowski",
+    "desc": "Polish association football player (born 1988)",
+    "sl": 106
+   }
+  ],
+  "SAU": [
+   {
+    "name": "Abdullah of Saudi Arabia",
+    "desc": "King of Saudi Arabia from 2005 to 2015 (1924–2015)",
+    "sl": 109
+   },
+   {
+    "name": "Ibn Saud",
+    "desc": "King of Saudi Arabia from 1932 to 1953",
+    "sl": 95
+   },
+   {
+    "name": "King Faisal bin Abdulaziz Al Saud",
+    "desc": "King of Saudi Arabia from 1964 to 1975",
+    "sl": 82
+   },
+   {
+    "name": "Fahd bin Abdulaziz Al Saud",
+    "desc": "King of Saudi Arabia from 1982 to 2005",
+    "sl": 79
+   },
+   {
+    "name": "Khalid of Saudi Arabia",
+    "desc": "King of Saudi Arabia (1911-1982)",
+    "sl": 66
+   }
+  ],
+  "RUS": [
+   {
+    "name": "Valentina Tereshkova",
+    "desc": "Russian cosmonaut and pilot, first woman to have flown in space (born 1937)",
+    "sl": 132
+   },
+   {
+    "name": "Valery Leontiev",
+    "desc": "Russian singer",
+    "sl": 129
+   },
+   {
+    "name": "Maria Sharapova",
+    "desc": "Russian tennis player",
+    "sl": 113
+   },
+   {
+    "name": "Alla Pugacheva",
+    "desc": "Soviet-Russian singer, composer, and actress",
+    "sl": 109
+   },
+   {
+    "name": "Mikhail Kalashnikov",
+    "desc": "Soviet and Russian small arms designer (1919–2013)",
+    "sl": 98
+   }
+  ],
+  "SYC": [
+   {
+    "name": "Antoine Abel",
+    "desc": "Seychellois writer and poet (1934–2004)",
+    "sl": 14
+   },
+   {
+    "name": "Roland Raforme",
+    "desc": "Seychellois boxer (* 1966)",
+    "sl": 8
+   },
+   {
+    "name": "Dwayne Didon",
+    "desc": "Seychellois swimmer",
+    "sl": 8
+   },
+   {
+    "name": "Lissa Labiche",
+    "desc": "Seychellois athlete",
+    "sl": 8
+   },
+   {
+    "name": "Magie Faure-Vidot",
+    "desc": "Seychellois poet",
+    "sl": 8
+   }
+  ],
+  "SEN": [
+   {
+    "name": "Patrice Evra",
+    "desc": "French footballer (born 1981)",
+    "sl": 69
+   },
+   {
+    "name": "Idrissa Gueye",
+    "desc": "Senegalese association football player",
+    "sl": 51
+   },
+   {
+    "name": "Ousmane Sembène",
+    "desc": "Senegalese film director, producer, screenwriter, actor, and author (1923–2007)",
+    "sl": 50
+   },
+   {
+    "name": "Ismaïla Sarr",
+    "desc": "Senegalese association football player (born 1998)",
+    "sl": 46
+   },
+   {
+    "name": "Nicolas Jackson",
+    "desc": "Senegalese association football player",
+    "sl": 44
+   }
+  ],
+  "SRB": [
+   {
+    "name": "Novak Djokovic",
+    "desc": "Serbian tennis player (born 1987)",
+    "sl": 153
+   },
+   {
+    "name": "Nemanja Vidić",
+    "desc": "Serbian association football player (born 1981)",
+    "sl": 78
+   },
+   {
+    "name": "Marina Abramović",
+    "desc": "Serbian performance artist (born 1946)",
+    "sl": 72
+   },
+   {
+    "name": "Ana Ivanovic",
+    "desc": "Serbian tennis player",
+    "sl": 70
+   },
+   {
+    "name": "Mileva Marić",
+    "desc": "Serbian mathematician and wife of Albert Einstein (1875–1948)",
+    "sl": 67
+   }
+  ],
   "SGP": [
    {
     "name": "Vanessa-Mae",
     "desc": "British violinist",
     "sl": 56
+   },
+   {
+    "name": "Stefanie Sun",
+    "desc": "Singaporean singer",
+    "sl": 34
+   },
+   {
+    "name": "Joseph Schooling",
+    "desc": "Singaporean swimmer and Olympic medalist",
+    "sl": 34
+   },
+   {
+    "name": "Fann Wong",
+    "desc": "Singaporean actress and singer",
+    "sl": 28
+   },
+   {
+    "name": "Anders Aplin",
+    "desc": "Singaporean association football player",
+    "sl": 28
+   }
+  ],
+  "SLE": [
+   {
+    "name": "Nathaniel Chalobah",
+    "desc": "English footballer (born 1994)",
+    "sl": 34
+   },
+   {
+    "name": "Rodney Strasser",
+    "desc": "Sierra Leonean footballer",
+    "sl": 28
+   },
+   {
+    "name": "Michaela DePrince",
+    "desc": "Sierra Leonean-American ballet dancer (1995–2024)",
+    "sl": 26
+   },
+   {
+    "name": "Mohamed Kallon",
+    "desc": "Sierra Leonean footballer",
+    "sl": 26
+   },
+   {
+    "name": "Eunice Barber",
+    "desc": "Sierra Leonean athlete competing in heptathlon and long jump",
+    "sl": 25
+   }
+  ],
+  "SLB": [
+   {
+    "name": "Henry Fa'arodo",
+    "desc": "Solomon Island professional footballer",
+    "sl": 15
+   },
+   {
+    "name": "Benjamin Totori",
+    "desc": "Solomon Island footballer",
+    "sl": 13
+   },
+   {
+    "name": "Commins Menapi",
+    "desc": "Solomon Island footballer (1977–2017)",
+    "sl": 13
+   },
+   {
+    "name": "Raphael Le'ai",
+    "desc": "Solomon Islands footballer",
+    "sl": 11
+   },
+   {
+    "name": "Sharon Firisua",
+    "desc": "Solomon Island track and field athlete",
+    "sl": 10
    }
   ],
   "ZAF": [
@@ -486,19 +4141,78 @@
     "sl": 125
    },
    {
-    "name": "Desmond Tutu",
-    "desc": "South African archbishop and Nobel Peace Prize winner",
-    "sl": 119
-   },
-   {
     "name": "Charlize Theron",
     "desc": "South African and American actress (born 1975)",
     "sl": 118
    },
    {
     "name": "J. M. Coetzee",
-    "desc": "South African and Australian writer and scholar",
+    "desc": "South African and Australian writer and scholar (born 1940)",
     "sl": 117
+   },
+   {
+    "name": "Miriam Makeba",
+    "desc": "South African singer and civil rights activist (1932–2008)",
+    "sl": 97
+   },
+   {
+    "name": "Sydney Brenner",
+    "desc": "South African-British biologist, Nobel prize in Physiology or Medicine 2002 (1927–2019)",
+    "sl": 71
+   }
+  ],
+  "SOM": [
+   {
+    "name": "Waris Dirie",
+    "desc": "Somali model, author, actress, activist",
+    "sl": 57
+   },
+   {
+    "name": "Iman",
+    "desc": "Somali model and actress",
+    "sl": 55
+   },
+   {
+    "name": "K’naan",
+    "desc": "Somali-Canadian musician (born 1978)",
+    "sl": 41
+   },
+   {
+    "name": "Barkhad Abdi",
+    "desc": "Somali-American actor",
+    "sl": 40
+   },
+   {
+    "name": "Nuruddin Farah",
+    "desc": "Somali writer",
+    "sl": 39
+   }
+  ],
+  "SVK": [
+   {
+    "name": "Marek Hamšík",
+    "desc": "Slovak footballer (born 1987)",
+    "sl": 65
+   },
+   {
+    "name": "Martin Škrtel",
+    "desc": "Slovak association football player",
+    "sl": 55
+   },
+   {
+    "name": "Dominika Cibulková",
+    "desc": "Slovak tennis player",
+    "sl": 48
+   },
+   {
+    "name": "Juraj Kucka",
+    "desc": "Slovak association football player",
+    "sl": 47
+   },
+   {
+    "name": "Ľubomír Moravčík",
+    "desc": "Slovak and French association football player",
+    "sl": 47
    }
   ],
   "KOR": [
@@ -506,23 +4220,276 @@
     "name": "Han Kang",
     "desc": "South Korean writer",
     "sl": 99
+   },
+   {
+    "name": "Psy",
+    "desc": "South Korean singer (born 1977)",
+    "sl": 97
+   },
+   {
+    "name": "Yun Hyon-seok",
+    "desc": "South Korean poet, writer and LGBT activist",
+    "sl": 79
+   },
+   {
+    "name": "Jennie",
+    "desc": "South Korean singer-songwriter and rapper (born 1996)",
+    "sl": 79
+   },
+   {
+    "name": "Lee Min-ho",
+    "desc": "South Korean actor, singer and model",
+    "sl": 78
+   }
+  ],
+  "SSD": [
+   {
+    "name": "Luol Deng",
+    "desc": "South Sudanese-British basketball player",
+    "sl": 42
+   },
+   {
+    "name": "Alek Wek",
+    "desc": "South Sudanese-British model and designer",
+    "sl": 34
+   },
+   {
+    "name": "Thon Maker",
+    "desc": "Australian basketball player (born 1997)",
+    "sl": 21
+   },
+   {
+    "name": "Rose Lokonyen",
+    "desc": "South-Sudanese athlete",
+    "sl": 19
+   },
+   {
+    "name": "James Moga",
+    "desc": "South Sudanese footballer",
+    "sl": 18
+   }
+  ],
+  "SVN": [
+   {
+    "name": "Slavoj Žižek",
+    "desc": "Slovenian philosopher (born 1949)",
+    "sl": 99
+   },
+   {
+    "name": "Tadej Pogačar",
+    "desc": "Slovenian cyclist (born 1998)",
+    "sl": 61
+   },
+   {
+    "name": "Jan Oblak",
+    "desc": "Slovenian association football player (born 1993)",
+    "sl": 59
+   },
+   {
+    "name": "Luka Dončić",
+    "desc": "Slovenian basketball player (born 1999)",
+    "sl": 58
+   },
+   {
+    "name": "Samir Handanović",
+    "desc": "Slovenian association football player (born 1984)",
+    "sl": 56
+   }
+  ],
+  "LKA": [
+   {
+    "name": "Susanthika Jayasinghe",
+    "desc": "Sri Lankan sprinter",
+    "sl": 24
+   },
+   {
+    "name": "Shehan Karunatilaka",
+    "desc": "Sri Lankan writer",
+    "sl": 23
+   },
+   {
+    "name": "Asha de Vos",
+    "desc": "Marine biologist",
+    "sl": 22
+   }
+  ],
+  "SDN": [
+   {
+    "name": "al-Tayyib Salih",
+    "desc": "Sudanese novelist and short story writer (1929–2009)",
+    "sl": 38
+   },
+   {
+    "name": "Alexander Siddig",
+    "desc": "Sudanese-born English actor",
+    "sl": 33
+   },
+   {
+    "name": "Abubaker Kaki Khamis",
+    "desc": "Athletics competitor, middle distance runner",
+    "sl": 27
+   },
+   {
+    "name": "Ismail Ahmed Ismail",
+    "desc": "Sudanese runner",
+    "sl": 26
+   }
+  ],
+  "SUR": [
+   {
+    "name": "Jeangu Macrooy",
+    "desc": "Surinamese singer-songwriter (born 1993)",
+    "sl": 31
+   },
+   {
+    "name": "Dion Malone",
+    "desc": "Surinamese footballer",
+    "sl": 19
+   },
+   {
+    "name": "Cynthia McLeod",
+    "desc": "Surinamese novelist",
+    "sl": 18
+   },
+   {
+    "name": "Tyrone Spong",
+    "desc": "Surinamese martial artist",
+    "sl": 18
+   },
+   {
+    "name": "Melvin Manhoef",
+    "desc": "Surinamese-Dutch professional kickboxer and mixed martial artist",
+    "sl": 17
+   }
+  ],
+  "SYR": [
+   {
+    "name": "Yusra Mardini",
+    "desc": "German Syrian swimmer",
+    "sl": 47
+   },
+   {
+    "name": "Michel Aflaq",
+    "desc": "Syrian philosopher, sociologist and Arab nationalist (1910–1989)",
+    "sl": 43
+   },
+   {
+    "name": "Michael Ansara",
+    "desc": "American stage, screen, and voice actor (1922–2013)",
+    "sl": 42
+   },
+   {
+    "name": "Ghassan Massoud",
+    "desc": "Syrian actor and filmmaker",
+    "sl": 37
+   },
+   {
+    "name": "Muhammed Faris Al-Aqidi",
+    "desc": "Syrian cosmonaut (1951–2024)",
+    "sl": 30
+   }
+  ],
+  "CHE": [
+   {
+    "name": "Le Corbusier",
+    "desc": "Swiss-French architect, designer, urbanist, and writer (1886–1965)",
+    "sl": 200
+   },
+   {
+    "name": "Roger Federer",
+    "desc": "Swiss tennis player (born 1981)",
+    "sl": 160
+   },
+   {
+    "name": "Paracelsus",
+    "desc": "Swiss physician, philosopher, theologian, and alchemist (c. 1493–1541)",
+    "sl": 107
+   },
+   {
+    "name": "Ferdinand de Saussure",
+    "desc": "Swiss linguist and philosopher (1857–1913)",
+    "sl": 107
+   },
+   {
+    "name": "Jean Piaget",
+    "desc": "Swiss psychologist, biologist, logician, philosopher and academic (1896–1980)",
+    "sl": 105
+   }
+  ],
+  "TJK": [
+   {
+    "name": "Dilshod Nazarov",
+    "desc": "Tajikistani track and field athlete",
+    "sl": 29
+   },
+   {
+    "name": "Manija Dawlat",
+    "desc": "Tajikistani musician",
+    "sl": 19
+   },
+   {
+    "name": "Rashid Rakhimov",
+    "desc": "Tajik footballer",
+    "sl": 19
+   },
+   {
+    "name": "Parvizdzhon Umarbaev",
+    "desc": "Tajik footballer",
+    "sl": 19
+   },
+   {
+    "name": "Manuchekhr Dzhalilov",
+    "desc": "Footballer",
+    "sl": 19
    }
   ],
   "TWN": [
    {
     "name": "Jolin Tsai",
-    "desc": "Taiwanese singer, songwriter, and actress",
+    "desc": "Taiwanese singer, songwriter, and actress (born 1980)",
     "sl": 90
    },
    {
     "name": "Ang Lee",
-    "desc": "Taiwanese film director, screenwriter and producer",
+    "desc": "Taiwanese film director, screenwriter and producer (born 1954)",
     "sl": 83
    },
    {
     "name": "Teresa Teng",
-    "desc": "Taiwanese singer (1953-1995)",
+    "desc": "Taiwanese ROC singer (1953-1995)",
     "sl": 81
+   },
+   {
+    "name": "Shu Qi",
+    "desc": "Taiwanese actress (born 1976)",
+    "sl": 46
+   },
+   {
+    "name": "Chou Tzuyu",
+    "desc": "Taiwanese singer (born 1999)",
+    "sl": 46
+   }
+  ],
+  "TZA": [
+   {
+    "name": "Abdulrazak Gurnah",
+    "desc": "Tanzanian-born British writer, winner of the Nobel Prize in Literature (2021) (born 1948)",
+    "sl": 89
+   },
+   {
+    "name": "Mbwana Samatta",
+    "desc": "Tanzanian association football player",
+    "sl": 28
+   },
+   {
+    "name": "Hasheem Thabeet",
+    "desc": "Tanzanian basketball player (born 1987)",
+    "sl": 28
+   },
+   {
+    "name": "Filbert Bayi",
+    "desc": "Tanzanian athlete",
+    "sl": 23
    }
   ],
   "THA": [
@@ -533,13 +4500,293 @@
    },
    {
     "name": "Lisa",
-    "desc": "Thai rapper, singer, model, dancer and actress",
+    "desc": "Thai rapper, singer, model, dancer and actress (born 1997)",
     "sl": 81
    },
    {
     "name": "Jintara Poonlarp",
     "desc": "Thai female singer",
     "sl": 78
+   },
+   {
+    "name": "Chulalongkorn",
+    "desc": "King of Siam (1853-1910)",
+    "sl": 72
+   },
+   {
+    "name": "Mongkut",
+    "desc": "King of Siam from 1851 to 1868",
+    "sl": 58
+   }
+  ],
+  "BHS": [
+   {
+    "name": "Steven Gardiner",
+    "desc": "Bahamian sprinter",
+    "sl": 36
+   },
+   {
+    "name": "Shaunae Miller",
+    "desc": "Bahamian sprinter",
+    "sl": 36
+   },
+   {
+    "name": "Mark Knowles",
+    "desc": "Bahamian tennis player",
+    "sl": 28
+   },
+   {
+    "name": "Deandre Ayton",
+    "desc": "Bahamian basketball player (born 1998)",
+    "sl": 27
+   },
+   {
+    "name": "Buddy Hield",
+    "desc": "Bahamian basketball player (born 1992)",
+    "sl": 25
+   }
+  ],
+  "SWE": [
+   {
+    "name": "Basshunter",
+    "desc": "Swedish singer, record producer, and DJ",
+    "sl": 221
+   },
+   {
+    "name": "Carl Linnaeus",
+    "desc": "Swedish botanist, physician, and zoologist (1707–1778); developed the foundations of modern taxonomy",
+    "sl": 215
+   },
+   {
+    "name": "Alfred Nobel",
+    "desc": "Swedish chemist and inventor (1833–1896)",
+    "sl": 192
+   },
+   {
+    "name": "Ingmar Bergman",
+    "desc": "Swedish director and screenwriter (1918–2007)",
+    "sl": 163
+   },
+   {
+    "name": "Selma Lagerlöf",
+    "desc": "Swedish writer (1858–1940)",
+    "sl": 155
+   }
+  ],
+  "GMB": [
+   {
+    "name": "Musa Barrow",
+    "desc": "Gambian association football player",
+    "sl": 30
+   },
+   {
+    "name": "Yankuba Minteh",
+    "desc": "Gambian association football player",
+    "sl": 27
+   },
+   {
+    "name": "Omar Colley",
+    "desc": "Gambian footballer",
+    "sl": 24
+   },
+   {
+    "name": "Jaysuma Saidy Ndure",
+    "desc": "Gambian-Norwegian athlete",
+    "sl": 22
+   },
+   {
+    "name": "Momodou Ceesay",
+    "desc": "Gambian footballer (born 1988)",
+    "sl": 20
+   }
+  ],
+  "TON": [
+   {
+    "name": "Tupou VI of Tonga",
+    "desc": "King of Tonga",
+    "sl": 59
+   },
+   {
+    "name": "George Tupou V of Tonga",
+    "desc": "King of Tonga",
+    "sl": 52
+   },
+   {
+    "name": "Tāufaʻāhau Tupou IV of Tonga",
+    "desc": "King of Tonga (1918–2006)",
+    "sl": 40
+   },
+   {
+    "name": "George Tupou II",
+    "desc": "King of Tonga (1874-1918)",
+    "sl": 25
+   },
+   {
+    "name": "Paea Wolfgramm",
+    "desc": "Tongan boxer",
+    "sl": 22
+   }
+  ],
+  "TLS": [
+   {
+    "name": "Augusto Ramos Soares",
+    "desc": "East Timorese distance runner",
+    "sl": 13
+   },
+   {
+    "name": "Paulo Gali",
+    "desc": "Timor Leste footballer",
+    "sl": 10
+   },
+   {
+    "name": "Miro Baldo Bento",
+    "desc": "Indonesian footballer",
+    "sl": 9
+   },
+   {
+    "name": "Aguida Amaral",
+    "desc": "East Timorese marathon runner",
+    "sl": 9
+   },
+   {
+    "name": "Francisco Borja da Costa",
+    "desc": "East Timorese poet",
+    "sl": 9
+   }
+  ],
+  "TGO": [
+   {
+    "name": "Emmanuel Adebayor",
+    "desc": "Togolese soccer player",
+    "sl": 71
+   },
+   {
+    "name": "Moustapha Salifou",
+    "desc": "Togolese association football player",
+    "sl": 33
+   },
+   {
+    "name": "Kossi Agassa",
+    "desc": "Togolese footballer",
+    "sl": 32
+   },
+   {
+    "name": "Mohamed Kader",
+    "desc": "Togolese footballer Player",
+    "sl": 28
+   },
+   {
+    "name": "Adekanmi Olufadé",
+    "desc": "Togolese and French association football player",
+    "sl": 26
+   }
+  ],
+  "TUN": [
+   {
+    "name": "Abdellatif Kechiche",
+    "desc": "Tunisian-French film director",
+    "sl": 44
+   },
+   {
+    "name": "Ziad Tlemçani",
+    "desc": "Tunisian association football player",
+    "sl": 43
+   },
+   {
+    "name": "Ons Jabeur",
+    "desc": "Tunisian tennis player",
+    "sl": 42
+   },
+   {
+    "name": "Ferjani Sassi",
+    "desc": "Tunisian association football player",
+    "sl": 36
+   },
+   {
+    "name": "Albert Memmi",
+    "desc": "French writer of Tunisian-Jewish origin",
+    "sl": 34
+   }
+  ],
+  "TTO": [
+   {
+    "name": "V. S. Naipaul",
+    "desc": "Trinidadian-British writer (1932–2018)",
+    "sl": 110
+   },
+   {
+    "name": "Dwight Yorke",
+    "desc": "Trinidad and Tobago association football player",
+    "sl": 50
+   },
+   {
+    "name": "Silvio Spann",
+    "desc": "Trinidad and Tobago association football player",
+    "sl": 43
+   },
+   {
+    "name": "Haddaway",
+    "desc": "Trinidadian -German singer",
+    "sl": 37
+   },
+   {
+    "name": "Kenwyne Jones",
+    "desc": "Trinidad and Tobago footballer (born 1984)",
+    "sl": 33
+   }
+  ],
+  "TKM": [
+   {
+    "name": "Oleg Kononenko",
+    "desc": "Russian cosmonaut",
+    "sl": 35
+   },
+   {
+    "name": "Kurban Berdyev",
+    "desc": "Russian footballer Russian footballer and manager",
+    "sl": 31
+   },
+   {
+    "name": "Ruslan Mingazov",
+    "desc": "Turkmenistan association football player",
+    "sl": 23
+   },
+   {
+    "name": "Wladimir Baýramow",
+    "desc": "Turkmenistan footballer",
+    "sl": 22
+   },
+   {
+    "name": "Rolan Gusev",
+    "desc": "Russian footballer",
+    "sl": 21
+   }
+  ],
+  "ESP": [
+   {
+    "name": "Pablo Picasso",
+    "desc": "Spanish painter and sculptor (1881–1973)",
+    "sl": 265
+   },
+   {
+    "name": "Salvador Dalí",
+    "desc": "Spanish artist (1904–1989)",
+    "sl": 247
+   },
+   {
+    "name": "Francisco Goya",
+    "desc": "Spanish painter and printmaker (1746–1828)",
+    "sl": 186
+   },
+   {
+    "name": "Diego Velázquez",
+    "desc": "Spanish painter (1599–1660)",
+    "sl": 167
+   },
+   {
+    "name": "Rafael Nadal",
+    "desc": "Spanish tennis player (born 1986)",
+    "sl": 155
    }
   ],
   "TUR": [
@@ -557,9 +4804,207 @@
     "name": "Ahmet Davutoğlu",
     "desc": "Turkish statesperson and writer (born 1959)",
     "sl": 89
+   },
+   {
+    "name": "Hande Yener",
+    "desc": "Turkish singer (born 1973)",
+    "sl": 80
+   },
+   {
+    "name": "Aziz Sancar",
+    "desc": "Turkish geneticist; Nobel Prize in Chemistry 2015",
+    "sl": 77
    }
   ],
-  "ARE": [],
+  "TUV": [
+   {
+    "name": "Etimoni Timuani",
+    "desc": "Tuvuluan footballer",
+    "sl": 15
+   },
+   {
+    "name": "Afaese Manoa",
+    "desc": "Tuvaluan author, composer and SDA pastor",
+    "sl": 10
+   },
+   {
+    "name": "Okilani Tinilau",
+    "desc": "Tuvaluan sprinter and footballer",
+    "sl": 10
+   },
+   {
+    "name": "Toakai Puapua",
+    "desc": "Tuvaluan footballer",
+    "sl": 7
+   },
+   {
+    "name": "Katepu Sieni",
+    "desc": "Tuvuluan footballer",
+    "sl": 7
+   }
+  ],
+  "ARE": [
+   {
+    "name": "Omar Abdulrahman",
+    "desc": "Emirati footballer",
+    "sl": 28
+   },
+   {
+    "name": "Khalid Eisa",
+    "desc": "Emirati footballer",
+    "sl": 25
+   },
+   {
+    "name": "Adnan Al Talyani",
+    "desc": "Emirati association football player",
+    "sl": 25
+   },
+   {
+    "name": "Ahlam",
+    "desc": "Emirati actress and singer",
+    "sl": 25
+   },
+   {
+    "name": "Hazza Al Mansouri",
+    "desc": "Emirati astronaut",
+    "sl": 25
+   }
+  ],
+  "UGA": [
+   {
+    "name": "Irshad Manji",
+    "desc": "Canadian educator (born 1968)",
+    "sl": 39
+   },
+   {
+    "name": "Stephen Kiprotich",
+    "desc": "Ugandan long-distance runner",
+    "sl": 36
+   },
+   {
+    "name": "Phill Lewis",
+    "desc": "American actor, comedian and director (born 1968)",
+    "sl": 32
+   },
+   {
+    "name": "Jacob Kiplimo",
+    "desc": "Ugandan male long-distance runner",
+    "sl": 26
+   },
+   {
+    "name": "Halimah Nakaayi",
+    "desc": "Ugandan middle-distance runner",
+    "sl": 26
+   }
+  ],
+  "UKR": [
+   {
+    "name": "Anatoliy Solovyanenko",
+    "desc": "Ukrainian singer (1932-1999)",
+    "sl": 120
+   },
+   {
+    "name": "Andriy Shevchenko",
+    "desc": "Ukrainian association football player",
+    "sl": 88
+   },
+   {
+    "name": "Sofia Rotaru",
+    "desc": "Ukrainian singer, songwriter and actress",
+    "sl": 78
+   },
+   {
+    "name": "Ruslana Lyzhychko",
+    "desc": "Ukrainian singer",
+    "sl": 75
+   },
+   {
+    "name": "Olga Kurylenko",
+    "desc": "Ukrainian-French actress and model",
+    "sl": 69
+   }
+  ],
+  "URY": [
+   {
+    "name": "Luis Suárez",
+    "desc": "Uruguayan association football player",
+    "sl": 114
+   },
+   {
+    "name": "Natalia Oreiro",
+    "desc": "Uruguayan actress, singer, host, and model",
+    "sl": 98
+   },
+   {
+    "name": "Diego Forlán",
+    "desc": "Uruguayan association football player and manager (born 1979)",
+    "sl": 87
+   },
+   {
+    "name": "Edinson Cavani",
+    "desc": "Uruguayan association football player",
+    "sl": 85
+   },
+   {
+    "name": "Diego Godín",
+    "desc": "Uruguayan association football player (born 1986)",
+    "sl": 76
+   }
+  ],
+  "UZB": [
+   {
+    "name": "Rustam Kasimdzhanov",
+    "desc": "Uzbekistani chess player",
+    "sl": 51
+   },
+   {
+    "name": "Abdukodir Khusanov",
+    "desc": "Uzbek association football player",
+    "sl": 43
+   },
+   {
+    "name": "Eldor Shomurodov",
+    "desc": "Uzbekistani association football player",
+    "sl": 41
+   },
+   {
+    "name": "Fozil Musaev",
+    "desc": "Uzbekistani association football player",
+    "sl": 39
+   },
+   {
+    "name": "Abbosbek Fayzullaev",
+    "desc": "Uzbek footballer",
+    "sl": 38
+   }
+  ],
+  "VUT": [
+   {
+    "name": "Brian Kaltak",
+    "desc": "Vanuatuan footballer",
+    "sl": 12
+   },
+   {
+    "name": "Seule Soromon",
+    "desc": "Vanuatuan footballer",
+    "sl": 10
+   },
+   {
+    "name": "Richard Iwai",
+    "desc": "Vanuatuan footballer",
+    "sl": 10
+   },
+   {
+    "name": "Jean Kaltack",
+    "desc": "Footballer",
+    "sl": 10
+   },
+   {
+    "name": "François Sakama",
+    "desc": "Vanuatuan footballer",
+    "sl": 9
+   }
+  ],
   "GBR": [
    {
     "name": "Charlie Chaplin",
@@ -568,22 +5013,187 @@
    },
    {
     "name": "Elizabeth II",
-    "desc": "Queen of the United Kingdom from 1952 to 2022",
+    "desc": "Queen of the United Kingdom from 1952 to 2022 (1926–2022)",
     "sl": 255
    },
    {
     "name": "Stephen Hawking",
-    "desc": "British theoretical physicist, cosmologist and author",
+    "desc": "British theoretical physicist, cosmologist and author (1942–2018)",
     "sl": 201
+   },
+   {
+    "name": "Agatha Christie",
+    "desc": "English mystery and detective writer (1890–1976)",
+    "sl": 197
+   },
+   {
+    "name": "Alan Turing",
+    "desc": "English computer scientist (1912–1954)",
+    "sl": 190
+   }
+  ],
+  "VAT": [],
+  "YEM": [
+   {
+    "name": "Khadija al-Salami",
+    "desc": "Yemeni female film producer",
+    "sl": 20
+   },
+   {
+    "name": "Boushra Almutawakel",
+    "desc": "Yemeni photographer",
+    "sl": 17
+   },
+   {
+    "name": "Ali Al-Nono",
+    "desc": "Yemeni footballer",
+    "sl": 15
+   },
+   {
+    "name": "Umar bin Hafiz",
+    "desc": "Islamic scholar and teacher",
+    "sl": 14
+   },
+   {
+    "name": "Ala Al-Sasi",
+    "desc": "Footballer",
+    "sl": 14
+   }
+  ],
+  "ZMB": [
+   {
+    "name": "Wilbur Smith",
+    "desc": "South African novelist (1933–2021)",
+    "sl": 50
+   },
+   {
+    "name": "Patson Daka",
+    "desc": "Zambian association football player",
+    "sl": 37
+   },
+   {
+    "name": "Emmanuel Mayuka",
+    "desc": "Zambian footballer",
+    "sl": 31
+   },
+   {
+    "name": "Christopher Katongo",
+    "desc": "Zambian footballer",
+    "sl": 29
+   },
+   {
+    "name": "Dambisa Moyo, Baroness Moyo",
+    "desc": "Zambian-born economist",
+    "sl": 28
+   }
+  ],
+  "VEN": [
+   {
+    "name": "Garbiñe Muguruza",
+    "desc": "Spanish-Venezuelan tennis player",
+    "sl": 63
+   },
+   {
+    "name": "Salomón Rondón Misterwiskers",
+    "desc": "Real Madrid C.F football player and investiror",
+    "sl": 51
+   },
+   {
+    "name": "Dayana Mendoza",
+    "desc": "Venezuelan model, actress and beauty pageant contestant",
+    "sl": 40
+   },
+   {
+    "name": "Gustávo Dudamel",
+    "desc": "Venezuelan conductor and violinist",
+    "sl": 39
+   },
+   {
+    "name": "Danny",
+    "desc": "Portuguese footballer",
+    "sl": 39
+   }
+  ],
+  "VNM": [
+   {
+    "name": "Lê Công Vinh",
+    "desc": "Vietnamese professional football player",
+    "sl": 47
+   },
+   {
+    "name": "Nguyễn Công Phượng",
+    "desc": "Vietnamese association football player",
+    "sl": 42
+   },
+   {
+    "name": "Gia Long",
+    "desc": "Founder and 1st emperor of the Nguyễn dynasty of Vietnam (r. 1802-04)",
+    "sl": 39
+   },
+   {
+    "name": "Quang Trung",
+    "desc": "Vietnamese emperor",
+    "sl": 39
+   },
+   {
+    "name": "Nguyễn Du",
+    "desc": "Vietnamese poet (1765-1820)",
+    "sl": 37
+   }
+  ],
+  "ZWE": [
+   {
+    "name": "Tsitsi Dangarembga",
+    "desc": "Zimbabwean author and filmmaker",
+    "sl": 48
+   },
+   {
+    "name": "Cara Black",
+    "desc": "Zimbabwean tennis player",
+    "sl": 40
+   },
+   {
+    "name": "NoViolet Bulawayo",
+    "desc": "Zimbabwean writer and educator",
+    "sl": 30
+   },
+   {
+    "name": "Tino Kadewere",
+    "desc": "Zimbabwean association football player",
+    "sl": 27
+   },
+   {
+    "name": "Benjani Mwaruwari",
+    "desc": "Zimbabwean footballer (born 1978)",
+    "sl": 26
    }
   ],
   "USA": [
    {
     "name": "Michael Jackson",
-    "desc": "American singer, songwriter and dancer (1958–2009)",
+    "desc": "American singer, songwriter, record producer, and dancer (1958–2009)",
     "sl": 322
+   },
+   {
+    "name": "Mark Twain",
+    "desc": "American author and humorist (1835–1910)",
+    "sl": 252
+   },
+   {
+    "name": "Marilyn Monroe",
+    "desc": "American actress and model (1926–1962)",
+    "sl": 241
+   },
+   {
+    "name": "Edgar Allan Poe",
+    "desc": "American writer and literary critic (1809–1849)",
+    "sl": 225
+   },
+   {
+    "name": "Corbin Bleu",
+    "desc": "American actor (born 1989)",
+    "sl": 224
    }
-  ],
-  "VAT": []
+  ]
  }
 }
