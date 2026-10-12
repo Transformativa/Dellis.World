@@ -119,3 +119,9 @@ test("parent check: quick taps never lose a digit (the answer is kept in a ref, 
 test("region filter: choosing a region with All lists everything in it, not only the featured picks", () => {
   assert.match(app, /const featuredOnly = !q\.trim\(\) && kind === "all" && region === "all"/);
 });
+
+test("no population figure: peoples and faiths say 'Size not published', never an invented number", () => {
+  const app = readFileSync(new URL("../mobile/App.tsx", import.meta.url), "utf8");
+  assert.match(app, /Size not published/);
+  assert.match(app, /item\.kind === "people" \|\| item\.kind === "faith"/);
+});

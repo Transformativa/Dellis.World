@@ -244,7 +244,8 @@ export default function App() {
                     <Text style={s.rowSub}>{KIND_LABEL[item.kind] + (item.kind === "language" ? " · " + (item.data.family ? String(item.data.family).split(" (")[0].toUpperCase() : "SPEAKER DATA ONLY") : F.GROUPS[item.group] ? " · " + F.GROUPS[item.group].toUpperCase() : "")}</Text>
                   </View>
                   {favs.includes(item.id) ? <Text style={s.star}>★</Text> : null}
-                  <Text style={s.pp}>{item.popLabel}</Text>
+                  {item.popLabel ? <Text style={s.pp}>{item.popLabel}</Text>
+                    : item.kind === "people" || item.kind === "faith" ? <Text style={s.ppNone}>Size not published</Text> : null}
                 </Pressable>
                 {openId === item.id ? <Body it={item} L={L} fav={favs.includes(item.id)} onFav={() => toggleFav(item)} /> : null}
               </View>
@@ -486,6 +487,7 @@ const mk = (z: number) => StyleSheet.create({
   rowName: { fontFamily: DISPLAY, color: t.fg, fontSize: 20 * z, lineHeight: 24 * z },
   rowSub: { color: t.muted, fontSize: 12 * z, letterSpacing: 0.7, marginTop: 2 },
   pp: { color: t.fg, fontSize: 14 * z, fontWeight: "700", textAlign: "right" },
+  ppNone: { color: t.fg, opacity: 0.6, fontSize: 12 * z, textAlign: "right" }, // no figure in the public databases: say so, never guess
   star: { color: t.orange, fontSize: 18 * z },
   bodyBox: { paddingLeft: 38, paddingRight: 16, paddingBottom: 20, gap: 20 },
   body: { color: t.fg, fontSize: 16 * z, lineHeight: 24 * z },
