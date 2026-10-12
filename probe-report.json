@@ -1,0 +1,45 @@
+[
+ {
+  "n": "Kurds",
+  "qid": "Q12223",
+  "rows": []
+ },
+ {
+  "n": "Persians",
+  "qid": "Q484206",
+  "rows": [
+   {
+    "v": "55000000"
+   },
+   {
+    "v": "10997",
+    "t": "2022-01-01T00:00:00Z",
+    "mLabel": "census"
+   }
+  ]
+ },
+ {
+  "n": "Armenians",
+  "qid": "Q79797",
+  "rows": []
+ },
+ {
+  "n": "Basques",
+  "qid": "Q126756",
+  "rows": []
+ },
+ {
+  "n": "Sámi",
+  "qid": null
+ },
+ {
+  "n": "Koreans",
+  "qid": "Q484464",
+  "rows": []
+ },
+ {
+  "n": "Native Hawaiians",
+  "qid": "Q1283606",
+  "rows": []
+ }
+]
