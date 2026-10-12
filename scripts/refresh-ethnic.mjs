@@ -24,7 +24,8 @@ async function one(g, rules) {
   const found = await sparql(`SELECT ?e ?sl WHERE { VALUES ?lab { ${labels} } ?e rdfs:label ?lab; wdt:P31/wdt:P279* wd:Q41710; wikibase:sitelinks ?sl } ORDER BY DESC(?sl) LIMIT 1`);
   if (!found.length) return null;
   const qid = found[0].e.value.split("/").pop();
-  const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);
+  // Worldwide figure: a population statement that does not name a country. (The newest statement overall is often a small one for a single country.)
+  const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. FILTER NOT EXISTS { ?s pq:P1001 [] } OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);
   const langs = await sparql(`SELECT ?lLabel WHERE { wd:${qid} wdt:P2936 ?l. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 5`);
   const desc = await sparql(`SELECT ?d WHERE { wd:${qid} schema:description ?d. FILTER(lang(?d)="en") } LIMIT 1`);
   // Population by country: Wikidata keeps these as population statements that name a country.
@@ -43,6 +44,8 @@ async function one(g, rules) {
   const rows = await sparql(`SELECT ?pLabel ?pDescription ?sl WHERE { ?p wdt:P172 wd:${qid}; wdt:P31 wd:Q5; wikibase:sitelinks ?sl. FILTER(?sl>4) SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". } } ORDER BY DESC(?sl) LIMIT 150`);
   const famous = chooseFamous(rows.map((r) => [r.pLabel?.value || "", r.pDescription?.value || "", Number(r.sl.value)]), rules, g.id);
   let population = pop.length ? Math.round(Number(pop[0].v.value)) : 0;
+  // No worldwide figure: add up the newest figure for each country (a floor, shown with "about").
+  if (population < 100000) population = Object.values(latest).reduce((sum, o) => sum + o.v, 0);
   if (population < 100000) population = 0; // tiny numbers in Wikidata are usually a counting mistake or a small sub-count
   if (famous.length < 3) return null; // a people page needs famous people to be worth opening
   const about = desc[0]?.d.value || "";
