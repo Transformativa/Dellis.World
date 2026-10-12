@@ -109,3 +109,13 @@ test("parent check: own number keys (the phone keyboard hid the sheet), and a wa
   assert.doesNotMatch(gate, /TextInput/, "the phone keyboard would cover the sheet and trap the child");
   assert.match(gate, /Go back/); assert.match(gate, /"OK"/); assert.match(gate, /⌫/);
 });
+
+test("parent check: quick taps never lose a digit (the answer is kept in a ref, not read from stale state)", () => {
+  const gate = app.slice(app.indexOf("function ParentGate"), app.indexOf("function Paywall"));
+  assert.match(gate, /useRef/); assert.match(gate, /ansRef\.current \+ k/);
+  assert.doesNotMatch(gate, /setAns\(ans \+ k\)/, "reading the old answer from state drops a digit on fast taps");
+});
+
+test("region filter: choosing a region with All lists everything in it, not only the featured picks", () => {
+  assert.match(app, /const featuredOnly = !q\.trim\(\) && kind === "all" && region === "all"/);
+});

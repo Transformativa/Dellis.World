@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   ActivityIndicator, FlatList, Image, Linking, Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View,
@@ -96,7 +96,7 @@ export default function App() {
   const view = useMemo(() => {
     if (!L) return { rows: [] as Item[], featuredOnly: false, totalFeatured: 0, nCountries: 0 };
     const pool = L.items.filter((i) => (kind === "all" || i.kind === kind) && (region === "all" || kind === "language" || kind === "faith" || i.group === region));
-    const featuredOnly = !q.trim() && kind === "all";
+    const featuredOnly = !q.trim() && kind === "all" && region === "all"; // a chosen region shows everything in it, not just the featured picks
     const featured = pool.filter((i) => i.featured);
     let rows = featuredOnly ? pickMix(featured, 25, seed) : (F.search(pool, q) as Item[]);
     if (sort === "size") rows = [...rows].sort((a, b) => b.popM - a.popM);
@@ -371,17 +371,19 @@ function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => 
   const make = () => ({ a: 12 + Math.floor(Math.random() * 8), b: 6 + Math.floor(Math.random() * 4) });
   const [q, setQ] = useState(make);
   const [ans, setAns] = useState("");
+  const ansRef = useRef(""); // the latest answer, so two quick taps never read an old value and drop a digit
+  const setAnswer = (v: string) => { ansRef.current = v; setAns(v); };
   const [wrong, setWrong] = useState(false);
   const check = () => {
-    if (Number(ans) === q.a * q.b) return onPass();
-    setWrong(true); setAns(""); setQ(make());
+    if (ansRef.current !== "" && Number(ansRef.current) === q.a * q.b) return onPass();
+    setWrong(true); setAnswer(""); setQ(make());
   };
   // Our own number keys: the phone's keyboard would hide this sheet and has no way to confirm or go back.
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "⌫", "0", "OK"];
   const press = (k: string) => {
     if (k === "OK") return check();
-    if (k === "⌫") return setAns(ans.slice(0, -1));
-    if (ans.length < 4) setAns(ans + k);
+    if (k === "⌫") return setAnswer(ansRef.current.slice(0, -1));
+    if (ansRef.current.length < 4) setAnswer(ansRef.current + k);
   };
   return (
     <View style={s.scrim}>

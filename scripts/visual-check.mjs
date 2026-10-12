@@ -172,6 +172,10 @@ async function snap(name, page) {
   const gate = await page.innerText("body");
   for (const w of ["Ask a grown-up", "times", "Go back"]) if (!gate.includes(w)) note(`parent check: missing "${w}"`);
   await looksRight("parent check", page, errors); await snap("10-parent-check", page);
+  // two quick taps must both count (a digit used to get lost when taps came fast)
+  await page.getByRole("button", { name: "1", exact: true }).click({ delay: 0 }); await page.getByRole("button", { name: "2", exact: true }).click({ delay: 0 });
+  await page.getByRole("button", { name: "3", exact: true }).click({ delay: 0 });
+  if (!(await page.locator('[aria-label="Your answer: 123"]').count())) note("parent check: three quick key taps should show 123");
   await page.getByRole("button", { name: "Go back" }).click(); await page.waitForTimeout(400);
   if (!(await page.innerText("body")).includes("Keep exploring")) note("parent check: Go back should return to the subscribe screen");
   await ctx.close();
@@ -182,6 +186,15 @@ async function snap(name, page) {
   await looksRight("favorites", page, errors); await snap("08-favorites", page); await ctx.close();
 }
 
+
+{ // a region with "All" selected lists every country in it, not only the featured picks
+  const { ctx, page, errors } = await open();
+  await chip(page, "Oceania").click(); await page.waitForTimeout(600);
+  const body = await page.innerText("body");
+  for (const w of ["Australia", "Fiji", "New Zealand", "Papua New Guinea"]) if (!body.includes(w)) note(`Oceania filter: missing "${w}"`);
+  if (!/COUNTRY/.test(body)) note("Oceania filter: no countries are listed");
+  await looksRight("region filter", page, errors); await snap("11-region-oceania", page); await ctx.close();
+}
 
 // 3. Compare with the saved pictures.
 if (UPDATE) {
