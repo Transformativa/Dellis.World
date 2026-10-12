@@ -24,8 +24,8 @@ async function one(g, rules) {
   const found = await sparql(`SELECT ?e ?sl WHERE { VALUES ?lab { ${labels} } ?e rdfs:label ?lab; wdt:P31/wdt:P279* wd:Q41710; wikibase:sitelinks ?sl } ORDER BY DESC(?sl) LIMIT 1`);
   if (!found.length) return null;
   const qid = found[0].e.value.split("/").pop();
-  // Worldwide figure: a population statement that does not name a country. (The newest statement overall is often a small one for a single country.)
-  const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. FILTER NOT EXISTS { ?s pq:P1001 [] } OPTIONAL { ?s pq:P585 ?t } } ORDER BY DESC(?t) LIMIT 1`);
+  // Worldwide figure: the largest population statement that does not name a country (a smaller one is usually a census of a single place).
+  const pop = await sparql(`SELECT ?v WHERE { wd:${qid} p:P1082 ?s. ?s ps:P1082 ?v. FILTER NOT EXISTS { ?s pq:P1001 [] } } ORDER BY DESC(?v) LIMIT 1`);
   const langs = await sparql(`SELECT ?lLabel WHERE { wd:${qid} wdt:P2936 ?l. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } LIMIT 5`);
   const desc = await sparql(`SELECT ?d WHERE { wd:${qid} schema:description ?d. FILTER(lang(?d)="en") } LIMIT 1`);
   // Population by country: Wikidata keeps these as population statements that name a country.
