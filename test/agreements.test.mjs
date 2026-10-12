@@ -125,3 +125,11 @@ test("no population figure: peoples and faiths say 'Size not published', never a
   assert.match(app, /Size not published/);
   assert.match(app, /item\.kind === "people" \|\| item\.kind === "faith"/);
 });
+
+test("purchases: real unlock only comes from a RevenueCat entitlement (public goog_ key, no secret keys)", () => {
+  const p = read("mobile/src/purchase.ts");
+  assert.match(p, /react-native-purchases/);
+  assert.match(p, /purchasePackage/); assert.match(p, /restorePurchases/);
+  assert.match(p, /KEY_ANDROID = "goog_/);
+  assert.doesNotMatch(p, /sk_[A-Za-z0-9]/, "never put a RevenueCat secret key in the app");
+});
