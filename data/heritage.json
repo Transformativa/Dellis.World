@@ -1,14 +1,16 @@
 {
  "meta": {
-  "generatedAt": "2026-10-12T01:47:39.439Z",
+  "generatedAt": "2026-10-12T01:52:57.125Z",
   "source": "Wikidata (CC0), UNESCO World Heritage list",
   "count": 173
  },
  "countries": {
-  "AFG": {
-   "count": 2,
+  "DZA": {
+   "count": 8,
    "examples": [
-    "Minaret and Archaeological Remains of Jam"
+    "Tassili n'Ajjer",
+    "Timgad",
+    "Djemila"
    ]
   },
   "ALB": {
@@ -19,38 +21,16 @@
     "Venetian Acropolis Castle"
    ]
   },
+  "AFG": {
+   "count": 2,
+   "examples": [
+    "Minaret and Archaeological Remains of Jam"
+   ]
+  },
   "AND": {
    "count": 1,
    "examples": [
     "Madriu-Perafita-Claror Valley"
-   ]
-  },
-  "DZA": {
-   "count": 8,
-   "examples": [
-    "Tassili n'Ajjer",
-    "Timgad",
-    "Djemila"
-   ]
-  },
-  "AGO": {
-   "count": 1,
-   "examples": [
-    "M'banza-Kongo"
-   ]
-  },
-  "ARG": {
-   "count": 14,
-   "examples": [
-    "Los Glaciares National Park",
-    "Valdes Peninsula",
-    "Cueva de las Manos"
-   ]
-  },
-  "ARM": {
-   "count": 3,
-   "examples": [
-    "Monasteries of Haghpat and Sanahin"
    ]
   },
   "ATG": {
@@ -61,12 +41,24 @@
     "Clarence House"
    ]
   },
-  "AUT": {
+  "AGO": {
+   "count": 1,
+   "examples": [
+    "M'banza-Kongo"
+   ]
+  },
+  "ARM": {
+   "count": 3,
+   "examples": [
+    "Monasteries of Haghpat and Sanahin"
+   ]
+  },
+  "ARG": {
    "count": 14,
    "examples": [
-    "Neusiedl Lake",
-    "Wachau",
-    "prehistoric pile dwellings around the Alps"
+    "Los Glaciares National Park",
+    "Valdes Peninsula",
+    "Cueva de las Manos"
    ]
   },
   "AUS": {
@@ -77,13 +69,6 @@
     "Heard Island and McDonald Islands"
    ]
   },
-  "BHR": {
-   "count": 3,
-   "examples": [
-    "Qal’at al Bahrain",
-    "Bahrain Pearling Trail"
-   ]
-  },
   "AZE": {
    "count": 6,
    "examples": [
@@ -91,10 +76,19 @@
     "Hyrcanian Forests"
    ]
   },
-  "BRB": {
-   "count": 1,
+  "AUT": {
+   "count": 14,
    "examples": [
-    "Garrison Historic Area"
+    "Neusiedl Lake",
+    "Wachau",
+    "prehistoric pile dwellings around the Alps"
+   ]
+  },
+  "BHR": {
+   "count": 3,
+   "examples": [
+    "Qal’at al Bahrain",
+    "Bahrain Pearling Trail"
    ]
   },
   "BGD": {
@@ -102,6 +96,12 @@
    "examples": [
     "Mosque City of Bagerhat",
     "Sundarbans Reserved Forest"
+   ]
+  },
+  "BRB": {
+   "count": 1,
+   "examples": [
+    "Garrison Historic Area"
    ]
   },
   "BLR": {
@@ -112,20 +112,26 @@
     "Mir Castle Complex"
    ]
   },
-  "BEN": {
-   "count": 4,
-   "examples": [
-    "Koutammakou",
-    "Royal Palaces of Abomey",
-    "W-Arly-Pendjari Complex"
-   ]
-  },
   "BEL": {
    "count": 62,
    "examples": [
     "Grand-Place",
     "Tournai Cathedral",
     "Stoclet Palace"
+   ]
+  },
+  "BLZ": {
+   "count": 1,
+   "examples": [
+    "Belize Barrier Reef"
+   ]
+  },
+  "BEN": {
+   "count": 4,
+   "examples": [
+    "Koutammakou",
+    "Royal Palaces of Abomey",
+    "W-Arly-Pendjari Complex"
    ]
   },
   "BOL": {
@@ -136,6 +142,14 @@
     "Inca road system"
    ]
   },
+  "BIH": {
+   "count": 5,
+   "examples": [
+    "Mehmed Paša Sokolović Bridge",
+    "Vjetrenica",
+    "Old Bridge Area of the Old City of Mostar"
+   ]
+  },
   "BWA": {
    "count": 2,
    "examples": [
@@ -143,18 +157,20 @@
     "Tsodilo"
    ]
   },
-  "BLZ": {
-   "count": 1,
+  "BRA": {
+   "count": 100,
    "examples": [
-    "Belize Barrier Reef"
+    "Brasília",
+    "Salvador",
+    "Jaú National Park"
    ]
   },
-  "BIH": {
-   "count": 5,
+  "BGR": {
+   "count": 11,
    "examples": [
-    "Mehmed Paša Sokolović Bridge",
-    "Vjetrenica",
-    "Old Bridge Area of the Old City of Mostar"
+    "Nesebar",
+    "Pirin National Park",
+    "Boyana Church"
    ]
   },
   "BFA": {
@@ -165,20 +181,10 @@
     "Royal Court of Tiébélé"
    ]
   },
-  "BRA": {
-   "count": 100,
+  "CPV": {
+   "count": 1,
    "examples": [
-    "Brasília",
-    "Salvador",
-    "Rocas Atoll"
-   ]
-  },
-  "BGR": {
-   "count": 11,
-   "examples": [
-    "Nesebar",
-    "Pirin National Park",
-    "Boyana Church"
+    "Cidade Velha"
    ]
   },
   "KHM": {
@@ -227,14 +233,6 @@
     "Sewell"
    ]
   },
-  "CHN": {
-   "count": 87,
-   "examples": [
-    "Mount Tai",
-    "Grand Canal",
-    "Temple of Heaven"
-   ]
-  },
   "COL": {
    "count": 11,
    "examples": [
@@ -243,18 +241,12 @@
     "Los Katíos National Park"
    ]
   },
-  "CPV": {
-   "count": 1,
+  "CHN": {
+   "count": 87,
    "examples": [
-    "Cidade Velha"
-   ]
-  },
-  "CRI": {
-   "count": 5,
-   "examples": [
-    "Stone spheres of Costa Rica",
-    "Cocos Island National Park",
-    "Talamanca Range-La Amistad Reserves"
+    "Mount Tai",
+    "Grand Canal",
+    "Temple of Heaven"
    ]
   },
   "COM": {
@@ -269,12 +261,26 @@
     "Euphrasian Basilica"
    ]
   },
+  "CRI": {
+   "count": 5,
+   "examples": [
+    "Stone spheres of Costa Rica",
+    "Cocos Island National Park",
+    "Talamanca Range-La Amistad Reserves"
+   ]
+  },
   "CUB": {
    "count": 12,
    "examples": [
     "Alexander von Humboldt National Park",
     "Viñales Valley",
     "Desembarco del Granma National Park"
+   ]
+  },
+  "CUW": {
+   "count": 2,
+   "examples": [
+    "Fortkerk"
    ]
   },
   "CYP": {
@@ -285,10 +291,12 @@
     "Paphos"
    ]
   },
-  "CUW": {
-   "count": 2,
+  "CZE": {
+   "count": 18,
    "examples": [
-    "Fortkerk"
+    "Old Town",
+    "Villa Tugendhat",
+    "Holašovice"
    ]
   },
   "DNK": {
@@ -320,22 +328,6 @@
     "Garamba National Park"
    ]
   },
-  "EGY": {
-   "count": 7,
-   "examples": [
-    "Abu Mena",
-    "Wadi Al-Hitan",
-    "Islamic Cairo"
-   ]
-  },
-  "CZE": {
-   "count": 18,
-   "examples": [
-    "Old Town",
-    "Villa Tugendhat",
-    "Holašovice"
-   ]
-  },
   "ECU": {
    "count": 7,
    "examples": [
@@ -344,16 +336,18 @@
     "Inca road system"
    ]
   },
+  "EGY": {
+   "count": 7,
+   "examples": [
+    "Abu Mena",
+    "Wadi Al-Hitan",
+    "Islamic Cairo"
+   ]
+  },
   "SLV": {
    "count": 1,
    "examples": [
     "Joya de Cerén"
-   ]
-  },
-  "ERI": {
-   "count": 1,
-   "examples": [
-    "Asmara: A Modernist African City"
    ]
   },
   "EST": {
@@ -363,12 +357,24 @@
     "Tallinn Old Town"
    ]
   },
+  "ERI": {
+   "count": 1,
+   "examples": [
+    "Asmara: A Modernist African City"
+   ]
+  },
   "ETH": {
    "count": 14,
    "examples": [
     "Axum",
     "Omo River",
     "Simien Mountains National Park"
+   ]
+  },
+  "FJI": {
+   "count": 1,
+   "examples": [
+    "Levuka Historical Port Town"
    ]
   },
   "FIN": {
@@ -387,12 +393,6 @@
     "Notre-Dame de Chartres"
    ]
   },
-  "FJI": {
-   "count": 1,
-   "examples": [
-    "Levuka Historical Port Town"
-   ]
-  },
   "GAB": {
    "count": 2,
    "examples": [
@@ -407,26 +407,18 @@
     "Historical Monuments of Mtskheta"
    ]
   },
-  "GHA": {
-   "count": 2,
-   "examples": [
-    "Asante Traditional Buildings"
-   ]
-  },
-  "GRC": {
-   "count": 24,
-   "examples": [
-    "Mount Olympus",
-    "Acropolis of Athens",
-    "Olympia"
-   ]
-  },
   "DEU": {
    "count": 100,
    "examples": [
     "Cologne Cathedral",
     "Dessau",
     "Aachen Cathedral"
+   ]
+  },
+  "GHA": {
+   "count": 2,
+   "examples": [
+    "Asante Traditional Buildings"
    ]
   },
   "GRL": {
@@ -437,6 +429,14 @@
     "Aasivissuit–Nipisat"
    ]
   },
+  "GRC": {
+   "count": 24,
+   "examples": [
+    "Mount Olympus",
+    "Acropolis of Athens",
+    "Olympia"
+   ]
+  },
   "GTM": {
    "count": 5,
    "examples": [
@@ -445,23 +445,16 @@
     "Tikal National Park"
    ]
   },
-  "GNB": {
-   "count": 1,
-   "examples": [
-    "Bijagos Archipelago Biosphere Reserve"
-   ]
-  },
   "GIN": {
    "count": 1,
    "examples": [
     "Mount Nimba Strict Nature Reserve"
    ]
   },
-  "HND": {
-   "count": 2,
+  "GNB": {
+   "count": 1,
    "examples": [
-    "Copán",
-    "Río Plátano Biosphere Reserve"
+    "Bijagos Archipelago Biosphere Reserve"
    ]
   },
   "HTI": {
@@ -472,12 +465,11 @@
     "National History Park"
    ]
   },
-  "ISL": {
-   "count": 3,
+  "HND": {
+   "count": 2,
    "examples": [
-    "Surtsey",
-    "Thingvellir National Park",
-    "Vatnajökull National Park"
+    "Copán",
+    "Río Plátano Biosphere Reserve"
    ]
   },
   "HUN": {
@@ -488,20 +480,20 @@
     "Hollókő"
    ]
   },
+  "ISL": {
+   "count": 3,
+   "examples": [
+    "Surtsey",
+    "Thingvellir National Park",
+    "Vatnajökull National Park"
+   ]
+  },
   "IND": {
    "count": 57,
    "examples": [
     "Taj Mahal",
     "Jaipur",
     "Fatehpur Sikri"
-   ]
-  },
-  "IRN": {
-   "count": 45,
-   "examples": [
-    "Persepolis",
-    "Susa",
-    "Naqsh-e Jahan Square"
    ]
   },
   "IDN": {
@@ -512,12 +504,12 @@
     "Lorentz National Park"
    ]
   },
-  "IRQ": {
-   "count": 7,
+  "IRN": {
+   "count": 45,
    "examples": [
-    "Samarra",
-    "Assur",
-    "Hatra"
+    "Persepolis",
+    "Susa",
+    "Bam"
    ]
   },
   "IRL": {
@@ -527,12 +519,20 @@
     "Brú na Bóinne"
    ]
   },
-  "CIV": {
-   "count": 5,
+  "IRQ": {
+   "count": 7,
    "examples": [
-    "Comoé National Park",
-    "Taï National Park",
-    "Mount Nimba Strict Nature Reserve"
+    "Samarra",
+    "Assur",
+    "Hatra"
+   ]
+  },
+  "ITA": {
+   "count": 100,
+   "examples": [
+    "Verona",
+    "Aeolian Islands",
+    "Porto Venere"
    ]
   },
   "ISR": {
@@ -541,6 +541,14 @@
     "Acre",
     "Masada",
     "White City"
+   ]
+  },
+  "CIV": {
+   "count": 5,
+   "examples": [
+    "Comoé National Park",
+    "Taï National Park",
+    "Mount Nimba Strict Nature Reserve"
    ]
   },
   "JAM": {
@@ -557,14 +565,6 @@
     "Kyoto Prefecture",
     "Himeji Castle",
     "Itsukushima Shrine"
-   ]
-  },
-  "ITA": {
-   "count": 100,
-   "examples": [
-    "Verona",
-    "Aeolian Islands",
-    "Porto Venere"
    ]
   },
   "JOR": {
@@ -605,6 +605,14 @@
     "Western Tian Shan"
    ]
   },
+  "LAO": {
+   "count": 4,
+   "examples": [
+    "Luang Prabang",
+    "Plain of Jars",
+    "Hin Nam No National Protected Area"
+   ]
+  },
   "LVA": {
    "count": 3,
    "examples": [
@@ -613,12 +621,12 @@
     "Old town of Kuldīga"
    ]
   },
-  "LAO": {
-   "count": 4,
+  "LBN": {
+   "count": 10,
    "examples": [
-    "Luang Prabang",
-    "Plain of Jars",
-    "Hin Nam No National Protected Area"
+    "Baalbek",
+    "Byblos",
+    "Anjar"
    ]
   },
   "LSO": {
@@ -635,10 +643,6 @@
     "Tadrart Acacus"
    ]
   },
-  "LUX": {
-   "count": 1,
-   "examples": []
-  },
   "LTU": {
    "count": 5,
    "examples": [
@@ -646,6 +650,10 @@
     "Struve Geodetic Arc",
     "Vilnius Old Town"
    ]
+  },
+  "LUX": {
+   "count": 1,
+   "examples": []
   },
   "MDG": {
    "count": 5,
@@ -671,14 +679,6 @@
     "Niah National Park"
    ]
   },
-  "MLI": {
-   "count": 4,
-   "examples": [
-    "Timbuktu",
-    "Bandiagara Escarpment",
-    "Old Towns of Djenné"
-   ]
-  },
   "MLT": {
    "count": 3,
    "examples": [
@@ -687,10 +687,24 @@
     "Megalithic Temples of Malta"
    ]
   },
+  "MLI": {
+   "count": 4,
+   "examples": [
+    "Timbuktu",
+    "Bandiagara Escarpment",
+    "Old Towns of Djenné"
+   ]
+  },
   "MHL": {
    "count": 1,
    "examples": [
     "Bikini Atoll"
+   ]
+  },
+  "MRT": {
+   "count": 2,
+   "examples": [
+    "Banc d'Arguin National Park"
    ]
   },
   "MUS": {
@@ -698,12 +712,6 @@
    "examples": [
     "Aapravasi Ghat",
     "Le Morne Brabant"
-   ]
-  },
-  "MRT": {
-   "count": 2,
-   "examples": [
-    "Banc d'Arguin National Park"
    ]
   },
   "MEX": {
@@ -726,12 +734,6 @@
     "Struve Geodetic Arc"
    ]
   },
-  "MNE": {
-   "count": 4,
-   "examples": [
-    "Durmitor National Park"
-   ]
-  },
   "MNG": {
    "count": 8,
    "examples": [
@@ -740,11 +742,10 @@
     "Petroglyphic Complexes of the Mongolian Altai"
    ]
   },
-  "MOZ": {
-   "count": 2,
+  "MNE": {
+   "count": 4,
    "examples": [
-    "Island of Mozambique",
-    "Maputo National Park"
+    "Durmitor National Park"
    ]
   },
   "MAR": {
@@ -762,12 +763,11 @@
     "Pyu Ancient Cities"
    ]
   },
-  "LBN": {
-   "count": 10,
+  "MOZ": {
+   "count": 2,
    "examples": [
-    "Baalbek",
-    "Byblos",
-    "Anjar"
+    "Island of Mozambique",
+    "Maputo National Park"
    ]
   },
   "NAM": {
@@ -775,6 +775,14 @@
    "examples": [
     "Twyfelfontein",
     "Namib Sand Sea"
+   ]
+  },
+  "NPL": {
+   "count": 4,
+   "examples": [
+    "Lumbini",
+    "Kathmandu Valley",
+    "Chitwan National Park"
    ]
   },
   "NZL": {
@@ -790,6 +798,14 @@
    "examples": [
     "León Cathedral",
     "Ruínas de León Viejo"
+   ]
+  },
+  "NER": {
+   "count": 3,
+   "examples": [
+    "Aïr and Ténéré National Nature Reserve",
+    "W-Arly-Pendjari Complex",
+    "Historic Center of Agadez"
    ]
   },
   "NGA": {
@@ -808,12 +824,12 @@
     "Historic Monuments and Sites in Kaesong"
    ]
   },
-  "NER": {
-   "count": 3,
+  "OMN": {
+   "count": 7,
    "examples": [
-    "Aïr and Ténéré National Nature Reserve",
-    "W-Arly-Pendjari Complex",
-    "Historic Center of Agadez"
+    "Bahla Fort",
+    "Aflaj Irrigation System of Oman",
+    "Land of Frankincense"
    ]
   },
   "MKD": {
@@ -822,14 +838,6 @@
     "Markovi Kuli",
     "Kokino",
     "Slatinski Izvor"
-   ]
-  },
-  "NPL": {
-   "count": 4,
-   "examples": [
-    "Lumbini",
-    "Kathmandu Valley",
-    "Chitwan National Park"
    ]
   },
   "NOR": {
@@ -846,12 +854,12 @@
     "Rock Islands Southern Lagoon"
    ]
   },
-  "OMN": {
+  "PAN": {
    "count": 7,
    "examples": [
-    "Bahla Fort",
-    "Aflaj Irrigation System of Oman",
-    "Land of Frankincense"
+    "Coiba",
+    "Darién National Park",
+    "The Colonial Transisthmian Route of Panamá"
    ]
   },
   "PAK": {
@@ -872,12 +880,12 @@
    "count": 2,
    "examples": []
   },
-  "PAN": {
-   "count": 7,
+  "POL": {
+   "count": 18,
    "examples": [
-    "Coiba",
-    "Darién National Park",
-    "The Colonial Transisthmian Route of Panamá"
+    "Białowieża Forest",
+    "Malbork Castle",
+    "Centennial Hall"
    ]
   },
   "PHL": {
@@ -896,14 +904,6 @@
     "Chan Chan"
    ]
   },
-  "POL": {
-   "count": 18,
-   "examples": [
-    "Białowieża Forest",
-    "Malbork Castle",
-    "Centennial Hall"
-   ]
-  },
   "PRT": {
    "count": 49,
    "examples": [
@@ -919,6 +919,12 @@
     "Odzala National Park"
    ]
   },
+  "QAT": {
+   "count": 1,
+   "examples": [
+    "Zubarah"
+   ]
+  },
   "ROU": {
    "count": 11,
    "examples": [
@@ -927,16 +933,12 @@
     "wooden churches of Maramureș"
    ]
   },
-  "QAT": {
-   "count": 1,
+  "RUS": {
+   "count": 48,
    "examples": [
-    "Zubarah"
-   ]
-  },
-  "KNA": {
-   "count": 1,
-   "examples": [
-    "Brimstone Hill Fortress National Park"
+    "Lake Baikal",
+    "Derbent",
+    "Curonian Spit"
    ]
   },
   "RWA": {
@@ -945,12 +947,10 @@
     "Nyungwe Forest"
    ]
   },
-  "RUS": {
-   "count": 48,
+  "KNA": {
+   "count": 1,
    "examples": [
-    "Lake Baikal",
-    "Derbent",
-    "Curonian Spit"
+    "Brimstone Hill Fortress National Park"
    ]
   },
   "LCA": {
@@ -969,20 +969,20 @@
    "count": 1,
    "examples": []
   },
-  "SRB": {
-   "count": 7,
-   "examples": [
-    "Studenica monastery",
-    "Gamzigrad",
-    "Visoki Dečani"
-   ]
-  },
   "SEN": {
    "count": 8,
    "examples": [
     "Niokolo-Koba National Park",
     "Gorée",
     "Djoudj National Bird Sanctuary"
+   ]
+  },
+  "SRB": {
+   "count": 7,
+   "examples": [
+    "Studenica monastery",
+    "Gamzigrad",
+    "Visoki Dečani"
    ]
   },
   "SAU": {
@@ -1000,11 +1000,25 @@
     "Gola-Tiwai complex"
    ]
   },
+  "SGP": {
+   "count": 1,
+   "examples": [
+    "Singapore Botanic Gardens"
+   ]
+  },
   "SYC": {
    "count": 2,
    "examples": [
     "Aldabra",
     "Vallée de Mai"
+   ]
+  },
+  "SVN": {
+   "count": 5,
+   "examples": [
+    "prehistoric pile dwellings around the Alps",
+    "Škocjan Caves",
+    "Heritage of Mercury. Almadén and Idrija"
    ]
   },
   "SVK": {
@@ -1015,24 +1029,10 @@
     "wooden churches of the Slovak Carpathians"
    ]
   },
-  "SGP": {
-   "count": 1,
-   "examples": [
-    "Singapore Botanic Gardens"
-   ]
-  },
   "SLB": {
    "count": 1,
    "examples": [
     "East Rennell"
-   ]
-  },
-  "SVN": {
-   "count": 5,
-   "examples": [
-    "prehistoric pile dwellings around the Alps",
-    "Škocjan Caves",
-    "Heritage of Mercury. Almadén and Idrija"
    ]
   },
   "ZAF": {
@@ -1062,13 +1062,7 @@
    "examples": [
     "San Cristóbal de La Laguna",
     "Cave of Altamira",
-    "Teide National Park"
-   ]
-  },
-  "SDN": {
-   "count": 3,
-   "examples": [
-    "Archaeological Sites of the Island of Meroe"
+    "Mosque-Cathedral of Cordoba"
    ]
   },
   "LKA": {
@@ -1077,6 +1071,12 @@
     "Kandy",
     "Anuradhapura",
     "Sigiriya"
+   ]
+  },
+  "SDN": {
+   "count": 3,
+   "examples": [
+    "Archaeological Sites of the Island of Meroe"
    ]
   },
   "SUR": {
@@ -1103,14 +1103,6 @@
     "Skogskyrkogården"
    ]
   },
-  "TJK": {
-   "count": 5,
-   "examples": [
-    "Pamir National Park",
-    "Sarazm",
-    "Tigrovaya Balka Nature Reserve"
-   ]
-  },
   "SYR": {
    "count": 10,
    "examples": [
@@ -1119,20 +1111,28 @@
     "Dead Cities"
    ]
   },
-  "THA": {
-   "count": 12,
-   "examples": [
-    "Ayutthaya Historical Park",
-    "Ban Chiang",
-    "Thungyai Naresuan Wildlife Sanctuary"
-   ]
-  },
   "TZA": {
    "count": 7,
    "examples": [
     "Serengeti National Park",
     "Ngorongoro Conservation Area",
     "Stone Town"
+   ]
+  },
+  "TJK": {
+   "count": 5,
+   "examples": [
+    "Pamir National Park",
+    "Sarazm",
+    "Tigrovaya Balka Nature Reserve"
+   ]
+  },
+  "THA": {
+   "count": 12,
+   "examples": [
+    "Ayutthaya Historical Park",
+    "Ban Chiang",
+    "Thungyai Naresuan Wildlife Sanctuary"
    ]
   },
   "GMB": {
@@ -1156,22 +1156,6 @@
     "Çatalhöyük"
    ]
   },
-  "TKM": {
-   "count": 5,
-   "examples": [
-    "Merv",
-    "Köneürgenç",
-    "Nisa"
-   ]
-  },
-  "UGA": {
-   "count": 3,
-   "examples": [
-    "Kasubi Tombs",
-    "Bwindi Impenetrable National Park",
-    "Rwenzori Mountains National Park"
-   ]
-  },
   "TUN": {
    "count": 10,
    "examples": [
@@ -1180,11 +1164,12 @@
     "Dougga"
    ]
   },
-  "ARE": {
-   "count": 3,
+  "TKM": {
+   "count": 5,
    "examples": [
-    "Jabal Al Fayah",
-    "Wadi Wurayah"
+    "Merv",
+    "Köneürgenç",
+    "Nisa"
    ]
   },
   "UKR": {
@@ -1195,12 +1180,19 @@
     "Saint Sophia Cathedral"
    ]
   },
-  "USA": {
-   "count": 29,
+  "ARE": {
+   "count": 3,
    "examples": [
-    "Statue of Liberty",
-    "Yellowstone National Park",
-    "Yosemite National Park"
+    "Jabal Al Fayah",
+    "Wadi Wurayah"
+   ]
+  },
+  "UGA": {
+   "count": 3,
+   "examples": [
+    "Kasubi Tombs",
+    "Bwindi Impenetrable National Park",
+    "Rwenzori Mountains National Park"
    ]
   },
   "GBR": {
@@ -1211,6 +1203,20 @@
     "Tower of London"
    ]
   },
+  "URY": {
+   "count": 3,
+   "examples": [
+    "Fray Bentos Industrial Landscape"
+   ]
+  },
+  "USA": {
+   "count": 29,
+   "examples": [
+    "Statue of Liberty",
+    "Yellowstone National Park",
+    "Yosemite National Park"
+   ]
+  },
   "UZB": {
    "count": 8,
    "examples": [
@@ -1219,37 +1225,16 @@
     "Silk Roads: Zarafshan-Karakum Corridor"
    ]
   },
-  "URY": {
-   "count": 3,
-   "examples": [
-    "Fray Bentos Industrial Landscape"
-   ]
-  },
-  "VAT": {
-   "count": 2,
-   "examples": [
-    "Vatican City"
-   ]
-  },
   "VUT": {
    "count": 1,
    "examples": [
     "Chief Roi Mata’s Domain"
    ]
   },
-  "VNM": {
-   "count": 12,
-   "examples": [
-    "Phong Nha–Ke Bang National Park",
-    "Ha Long Bay",
-    "Hội An"
-   ]
-  },
-  "ZMB": {
+  "VAT": {
    "count": 2,
    "examples": [
-    "Victoria Falls",
-    "Mosi-oa-Tunya / Victoria Falls"
+    "Vatican City"
    ]
   },
   "VEN": {
@@ -1260,12 +1245,27 @@
     "Coro and its Port"
    ]
   },
+  "VNM": {
+   "count": 12,
+   "examples": [
+    "Phong Nha–Ke Bang National Park",
+    "Ha Long Bay",
+    "Hội An"
+   ]
+  },
   "YEM": {
    "count": 5,
    "examples": [
     "Shibam",
     "Zabid",
     "Socotra Archipelago"
+   ]
+  },
+  "ZMB": {
+   "count": 2,
+   "examples": [
+    "Victoria Falls",
+    "Mosi-oa-Tunya / Victoria Falls"
    ]
   },
   "ZWE": {
