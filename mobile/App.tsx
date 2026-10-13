@@ -1,11 +1,14 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
-  ActivityIndicator, FlatList, Image, Linking, Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View,
+  ActivityIndicator, FlatList, Image, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, View,
 } from "react-native";
+import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"; // keeps content clear of the status bar and the phone's bottom buttons
+import { Text, TextInput } from "./src/Text";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts, Questrial_400Regular } from "@expo-google-fonts/questrial";
+import { Inter_400Regular, Inter_600SemiBold, Inter_700Bold } from "@expo-google-fonts/inter";
 import { F, Item, Loaded, loadData, refreshData } from "./src/data";
 import { FREE_LOOKS, PRICE_LABEL, buy, isUnlocked, restore } from "./src/purchase";
 import { loadFavs, saveFavs } from "./src/favs";
@@ -58,7 +61,11 @@ function randomFact(L: Loaded): { name: string; text: string } {
 }
 
 export default function App() {
-  const [fontsOk] = useFonts({ Questrial_400Regular });
+  return <SafeAreaProvider><AppInner /></SafeAreaProvider>;
+}
+
+function AppInner() {
+  const [fontsOk] = useFonts(Platform.OS === "android" ? { Questrial_400Regular, Inter_400Regular, Inter_600SemiBold, Inter_700Bold } : { Questrial_400Regular });
   const [L, setL] = useState<Loaded | null>(null);
   const [q, setQ] = useState("");
   const [kind, setKind] = useState<(typeof KINDS)[number][0]>("all");
@@ -138,8 +145,8 @@ export default function App() {
     <View>
       <View style={s.brandbar}>
         <Pressable onPress={() => setGate(() => () => Linking.openURL("https://www.dellis.store"))} accessibilityRole="link" accessibilityLabel="Dellis, visit dellis.store" style={s.wordmark}>
-          <Image source={require("./assets/dellis-mark.png")} style={s.mark} />
-          <Image source={require("./assets/dellis-wordmark.png")} style={s.word} resizeMode="contain" />
+          <Image source={require("./assets/dellis-mark.png")} style={s.mark} resizeMethod="resize" fadeDuration={0} />
+          <Image source={require("./assets/dellis-wordmark.png")} style={s.word} resizeMode="contain" resizeMethod="resize" fadeDuration={0} />
         </Pressable>
       </View>
 
@@ -369,6 +376,7 @@ function Favs({ L, favs, unlocked, onUnlock, onToggle }: { L: Loaded; favs: stri
 /** Parent check (required for kids apps): a grown-up question before buying or opening a link outside the app. */
 function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => void }) {
   const s = useS();
+  const ins = useSafeAreaInsets();
   const make = () => ({ a: 12 + Math.floor(Math.random() * 8), b: 6 + Math.floor(Math.random() * 4) });
   const [q, setQ] = useState(make);
   const [ans, setAns] = useState("");
@@ -381,6 +389,7 @@ function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => 
   };
   // Our own number keys: the phone's keyboard would hide this sheet and has no way to confirm or go back.
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "⌫", "0", "OK"];
+  const lastOut = useRef(0); // a touch already counted on touch-down must not count again when the finger lifts
   const press = (k: string) => {
     if (k === "OK") return check();
     if (k === "⌫") return setAnswer(ansRef.current.slice(0, -1));
@@ -388,14 +397,18 @@ function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => 
   };
   return (
     <View style={s.scrim}>
-      <View style={s.sheet}>
+      <View style={[s.sheet, { paddingBottom: 20 + ins.bottom }]}>
         <Text style={s.h2}>Ask a grown-up</Text>
         <Text style={s.body}>This part is for parents and guardians. To continue, what is {q.a} times {q.b}?</Text>
         <View style={s.gateAns} accessibilityLabel={"Your answer: " + (ans || "nothing yet")}><Text style={s.gateAnsTx}>{ans || " "}</Text></View>
         {wrong ? <Text style={s.muted}>That is not right. Try this new question.</Text> : null}
         <View style={s.keys}>
           {keys.map((k) => (
-            <Pressable key={k} onPress={() => press(k)} accessibilityRole="button" accessibilityLabel={k === "⌫" ? "Delete" : k === "OK" ? "Continue" : k}
+            <Pressable key={k}
+              onPressIn={k === "OK" ? undefined : () => press(k)} // digits count the moment the finger lands, so a drifting or rolling fingertip never loses one
+              onPressOut={() => { lastOut.current = Date.now(); }}
+              onPress={() => { if (k !== "OK" && Date.now() - lastOut.current < 300) return; press(k); }} // still works for screen readers
+              accessibilityRole="button" accessibilityLabel={k === "⌫" ? "Delete" : k === "OK" ? "Continue" : k}
               style={[s.key, k === "OK" && { backgroundColor: t.fg }]}>
               <Text style={[s.keyTx, k === "OK" && { color: t.bg }]}>{k}</Text>
             </Pressable>
@@ -409,12 +422,13 @@ function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => 
 
 function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
   const s = useS();
+  const ins = useSafeAreaInsets();
   const [msg, setMsg] = useState("");
   const [gate, setGate] = useState<null | (() => void)>(null);
   if (gate) return <ParentGate onPass={() => { const go = gate; setGate(null); go(); }} onCancel={() => setGate(null)} />;
   return (
     <View style={s.scrim}>
-      <View style={s.sheet}>
+      <View style={[s.sheet, { paddingBottom: 20 + ins.bottom }]}>
         <Text style={s.h2}>Keep exploring</Text>
         <Text style={s.body}>Every people, country, language and faith, famous people, records, and My Favorites. No ads.</Text>
         <Text style={s.body}>You have used your free looks. Ask a parent or guardian to subscribe for {PRICE_LABEL}. It renews each year until it is cancelled, and a parent can cancel any time in the phone's subscription settings.</Text>

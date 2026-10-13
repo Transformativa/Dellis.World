@@ -133,3 +133,14 @@ test("purchases: real unlock only comes from a RevenueCat entitlement (public go
   assert.match(p, /KEY_ANDROID = "goog_/);
   assert.doesNotMatch(p, /sk_[A-Za-z0-9]/, "never put a RevenueCat secret key in the app");
 });
+
+test("android look: content clear of system bars, same font as iPhone, keypad reacts on touch-down", () => {
+  const app = read("mobile/App.tsx"), tx = read("mobile/src/Text.tsx"), pkg = JSON.parse(read("mobile/package.json"));
+  assert.ok(pkg.dependencies["react-native-safe-area-context"], "safe-area package is needed so Android content is not under the status bar");
+  assert.match(app, /SafeAreaProvider/); assert.match(app, /from "react-native-safe-area-context"/);
+  assert.doesNotMatch(app, /SafeAreaView[^}]*\} from "react-native";/, "do not use the built-in SafeAreaView: it does nothing on Android");
+  assert.match(app, /paddingBottom: 20 \+ ins\.bottom/, "sheets must clear the phone's bottom buttons");
+  assert.match(tx, /Platform\.OS !== "android"/); assert.match(tx, /Inter_400Regular/);
+  assert.match(app, /onPressIn=\{k === "OK" \? undefined : \(\) => press\(k\)\}/, "digit keys must count on touch-down");
+  assert.match(app, /lastOut\.current/, "a touch must never be counted twice");
+});
