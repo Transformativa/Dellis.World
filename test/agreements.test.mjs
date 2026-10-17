@@ -104,16 +104,21 @@ test("My Favorites: a saved card opens to read all of its facts", () => {
   assert.match(favs, /"Hide"/); assert.match(favs, /"Read"/);
 });
 
-test("parent check: own number keys (the phone keyboard hid the sheet), and a way back", () => {
+test("parent check: on-screen digit keys only (the phone keyboard hid the sheet), and a way back", () => {
   const gate = app.slice(app.indexOf("function ParentGate"), app.indexOf("function Paywall"));
   assert.doesNotMatch(gate, /TextInput/, "the phone keyboard would cover the sheet and trap the child");
-  assert.match(gate, /Go back/); assert.match(gate, /"OK"/); assert.match(gate, /⌫/);
+  assert.match(gate, /Go back/); assert.match(gate, />OK</);
 });
 
-test("parent check: quick taps never lose a digit (the answer is kept in a ref, not read from stale state)", () => {
+// Owner changed this agreement on 2026-10-17: the single keypad lost a digit on some Android phones, so the parent check is now
+// a times-table question with a two-digit answer, picked from a "First digit" row and a "Second digit" row.
+test("parent check: two-digit answer, one row of keys per digit, each tap sets only its own digit", () => {
   const gate = app.slice(app.indexOf("function ParentGate"), app.indexOf("function Paywall"));
-  assert.match(gate, /useRef/); assert.match(gate, /ansRef\.current \+ k/);
-  assert.doesNotMatch(gate, /setAns\(ans \+ k\)/, "reading the old answer from state drops a digit on fast taps");
+  assert.match(gate, /First digit/); assert.match(gate, /Second digit/);
+  assert.match(gate, /6 \+ Math\.floor\(Math\.random\(\) \* 4\)/, "6 to 9 times 6 to 9 always has a two-digit answer");
+  assert.match(gate, /choose\(id, d\)/);
+  assert.doesNotMatch(gate, /ans \+ k|ansRef|slice\(0, -1\)/, "a typed-in answer built one tap at a time is what lost the second digit");
+  assert.match(gate, /Ask a grown-up/); assert.match(gate, /This part is for parents and guardians/);
 });
 
 test("region filter: choosing a region with All lists everything in it, not only the featured picks", () => {
@@ -141,6 +146,5 @@ test("android look: content clear of system bars, same font as iPhone, keypad re
   assert.doesNotMatch(app, /SafeAreaView[^}]*\} from "react-native";/, "do not use the built-in SafeAreaView: it does nothing on Android");
   assert.match(app, /paddingBottom: 20 \+ ins\.bottom/, "sheets must clear the phone's bottom buttons");
   assert.match(tx, /Platform\.OS !== "android"/); assert.match(tx, /Inter_400Regular/);
-  assert.match(app, /onPressIn=\{k === "OK" \? undefined : \(\) => press\(k\)\}/, "digit keys must count on touch-down");
-  assert.match(app, /lastOut\.current/, "a touch must never be counted twice");
+  assert.match(app, /onPressIn=\{\(\) => choose\(id, d\)\}/, "digit keys must count on touch-down");
 });

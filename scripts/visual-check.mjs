@@ -172,12 +172,24 @@ async function snap(name, page) {
   const gate = await page.innerText("body");
   for (const w of ["Ask a grown-up", "times", "Go back"]) if (!gate.includes(w)) note(`parent check: missing "${w}"`);
   await looksRight("parent check", page, errors); await snap("10-parent-check", page);
-  // two quick taps must both count (a digit used to get lost when taps came fast)
-  await page.getByRole("button", { name: "1", exact: true }).click({ delay: 0 }); await page.getByRole("button", { name: "2", exact: true }).click({ delay: 0 });
-  await page.getByRole("button", { name: "3", exact: true }).click({ delay: 0 });
-  if (!(await page.locator('[aria-label="Your answer: 123"]').count())) note("parent check: three quick key taps should show 123");
+  // wrong answer first: it must say so and ask a new question; then the right answer (two digits) must get through
+  const askedFor = async () => { const m = (await page.innerText("body")).match(/what is (\d+) times (\d+)\?/); return m ? Number(m[1]) * Number(m[2]) : NaN; };
+  const answer = async (n) => {
+    await page.getByRole("button", { name: "First digit " + Math.floor(n / 10), exact: true }).click({ delay: 0 });
+    await page.getByRole("button", { name: "Second digit " + (n % 10), exact: true }).click({ delay: 0 });
+  };
+  const right = await askedFor();
+  if (!(right >= 36 && right <= 81)) note("parent check: the answer should always have two digits (36 to 81)");
+  await answer(right); // quick taps, one after the other: both digits must show
+  if (!(await page.locator(`[aria-label="Your answer: ${right}"]`).count())) note(`parent check: the two taps should show ${right}`);
+  await page.getByRole("button", { name: "First digit 0", exact: true }).click(); await page.getByRole("button", { name: "Second digit 0", exact: true }).click();
+  await page.getByRole("button", { name: "Continue" }).click(); await page.waitForTimeout(300);
+  if (!(await page.innerText("body")).includes("That is not right")) note("parent check: a wrong answer should say so");
   await page.getByRole("button", { name: "Go back" }).click(); await page.waitForTimeout(400);
   if (!(await page.innerText("body")).includes("Keep exploring")) note("parent check: Go back should return to the subscribe screen");
+  await page.getByRole("button", { name: "Subscribe for $2.99 / year" }).last().click(); await page.waitForTimeout(500);
+  await answer(await askedFor()); await page.getByRole("button", { name: "Continue" }).click(); await page.waitForTimeout(600);
+  if ((await page.innerText("body")).includes("Ask a grown-up")) note("parent check: the right answer should get through");
   await ctx.close();
 }
 { // My Favorites when not subscribed

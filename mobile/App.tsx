@@ -377,43 +377,47 @@ function Favs({ L, favs, unlocked, onUnlock, onToggle }: { L: Loaded; favs: stri
 function ParentGate({ onPass, onCancel }: { onPass: () => void; onCancel: () => void }) {
   const s = useS();
   const ins = useSafeAreaInsets();
-  const make = () => ({ a: 12 + Math.floor(Math.random() * 8), b: 6 + Math.floor(Math.random() * 4) });
+  // A times-table question whose answer always has two digits (6 x 6 = 36 up to 9 x 9 = 81).
+  // The grown-up taps one key in the "First digit" row and one in the "Second digit" row. Each row sets only its own
+  // digit, so no tap depends on an earlier one (the old single keypad lost a digit on some Android phones).
+  const make = () => ({ a: 6 + Math.floor(Math.random() * 4), b: 6 + Math.floor(Math.random() * 4) });
   const [q, setQ] = useState(make);
-  const [ans, setAns] = useState("");
-  const ansRef = useRef(""); // the latest answer, so two quick taps never read an old value and drop a digit
-  const setAnswer = (v: string) => { ansRef.current = v; setAns(v); };
+  const [first, setFirst] = useState<number | null>(null);
+  const [second, setSecond] = useState<number | null>(null);
+  const pick = useRef<{ first: number | null; second: number | null }>({ first: null, second: null });
   const [wrong, setWrong] = useState(false);
+  const choose = (row: "first" | "second", d: number) => { pick.current[row] = d; row === "first" ? setFirst(d) : setSecond(d); };
   const check = () => {
-    if (ansRef.current !== "" && Number(ansRef.current) === q.a * q.b) return onPass();
-    setWrong(true); setAnswer(""); setQ(make());
+    const { first: f, second: n } = pick.current;
+    if (f !== null && n !== null && f * 10 + n === q.a * q.b) return onPass();
+    pick.current = { first: null, second: null };
+    setFirst(null); setSecond(null); setWrong(true); setQ(make());
   };
-  // Our own number keys: the phone's keyboard would hide this sheet and has no way to confirm or go back.
-  const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "⌫", "0", "OK"];
-  const lastOut = useRef(0); // a touch already counted on touch-down must not count again when the finger lifts
-  const press = (k: string) => {
-    if (k === "OK") return check();
-    if (k === "⌫") return setAnswer(ansRef.current.slice(0, -1));
-    if (ansRef.current.length < 4) setAnswer(ansRef.current + k);
-  };
+  const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const row = (label: string, id: "first" | "second", value: number | null) => (
+    <View style={{ gap: 6 }}>
+      <Text style={s.gateLabel}>{label}</Text>
+      <View style={s.keys}>
+        {digits.map((d) => (
+          <Pressable key={d} testID={id + "-" + d} accessibilityRole="button" accessibilityLabel={label + " " + d} accessibilityState={{ selected: value === d }}
+            onPressIn={() => choose(id, d)} onPress={() => choose(id, d)} hitSlop={4} // setting the same digit twice is harmless, so both touch-down and release may fire
+            style={[s.key, value === d && { backgroundColor: t.fg }]}>
+            <Text style={[s.keyTx, value === d && { color: t.bg }]}>{d}</Text>
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
   return (
     <View style={s.scrim}>
-      <View style={[s.sheet, { paddingBottom: 20 + ins.bottom }]}>
+      <View style={[s.sheet, { paddingBottom: 20 + ins.bottom, gap: 10 }]}>
         <Text style={s.h2}>Ask a grown-up</Text>
-        <Text style={s.body}>This part is for parents and guardians. To continue, what is {q.a} times {q.b}?</Text>
-        <View style={s.gateAns} accessibilityLabel={"Your answer: " + (ans || "nothing yet")}><Text style={s.gateAnsTx}>{ans || " "}</Text></View>
+        <Text style={s.body}>This part is for parents and guardians. To continue, what is {q.a} times {q.b}? The answer has two digits.</Text>
+        {row("First digit", "first", first)}
+        {row("Second digit", "second", second)}
+        <Text style={s.gateAnsTx} accessibilityLabel={"Your answer: " + (first ?? "_") + (second ?? "_")}>Your answer: {first ?? "?"}{second ?? "?"}</Text>
         {wrong ? <Text style={s.muted}>That is not right. Try this new question.</Text> : null}
-        <View style={s.keys}>
-          {keys.map((k) => (
-            <Pressable key={k}
-              onPressIn={k === "OK" ? undefined : () => press(k)} // digits count the moment the finger lands, so a drifting or rolling fingertip never loses one
-              onPressOut={() => { lastOut.current = Date.now(); }}
-              onPress={() => { if (k !== "OK" && Date.now() - lastOut.current < 300) return; press(k); }} // still works for screen readers
-              accessibilityRole="button" accessibilityLabel={k === "⌫" ? "Delete" : k === "OK" ? "Continue" : k}
-              style={[s.key, k === "OK" && { backgroundColor: t.fg }]}>
-              <Text style={[s.keyTx, k === "OK" && { color: t.bg }]}>{k}</Text>
-            </Pressable>
-          ))}
-        </View>
+        <Pressable onPress={check} accessibilityRole="button" accessibilityLabel="Continue" style={[s.key, s.gateOk, { backgroundColor: t.fg }]}><Text style={[s.keyTx, { color: t.bg }]}>OK</Text></Pressable>
         <Pressable onPress={onCancel} accessibilityRole="button" style={s.gateBack}><Text style={s.link}>Go back</Text></Pressable>
       </View>
     </View>
@@ -472,10 +476,11 @@ const mk = (z: number) => StyleSheet.create({
   chipTxOn: { color: t.bg },
   muted: { color: t.muted, fontSize: 15 * z },
   favHead: { flexDirection: "row", alignItems: "center", gap: 12 },
-  gateAns: { borderWidth: 1, borderColor: t.line, borderRadius: t.radius, backgroundColor: "#fff", minHeight: 52, justifyContent: "center", alignItems: "center" },
-  gateAnsTx: { fontSize: 26 * z, color: t.fg, letterSpacing: 4 },
+  gateAnsTx: { fontSize: 20 * z, color: t.fg, textAlign: "center", fontWeight: "600" },
+  gateLabel: { fontSize: 14 * z, color: t.muted, fontWeight: "600" },
+  gateOk: { width: "100%" },
   keys: { flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" },
-  key: { width: "31%", minHeight: 50, borderRadius: t.radius, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", alignItems: "center", justifyContent: "center" },
+  key: { width: "17%", minHeight: 48, borderRadius: t.radius, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", alignItems: "center", justifyContent: "center" },
   keyTx: { fontSize: 22 * z, color: t.fg, fontWeight: "600" },
   gateBack: { minHeight: 44, alignItems: "center", justifyContent: "center" },
   note: { marginTop: 10, padding: 14, borderRadius: 14, borderWidth: 1, borderColor: t.line, backgroundColor: "#fff", gap: 4 },
