@@ -8,7 +8,7 @@ export const FREE_LOOKS = 3; // entries a visitor can open before the trial scre
 
 // Public SDK keys are meant to live inside the app (they cannot read or change anything private).
 const KEY_ANDROID = "goog_vCbacmUlUcneXFMIeLLMGbOojwU";
-const KEY_IOS = ""; // add the appl_ key when the App Store side is set up
+const KEY_IOS = "appl_xTCEfYKfnYUGmZUDceIsfsRhiZR";
 
 // For testing only: builds made with EXPO_PUBLIC_DEV_UNLOCK=1 can unlock without paying.
 const DEV = process.env.EXPO_PUBLIC_DEV_UNLOCK === "1";
