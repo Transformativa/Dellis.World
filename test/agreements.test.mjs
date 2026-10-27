@@ -19,9 +19,10 @@ test("name and store identity", () => {
   for (const f of ["icon.png", "splash-icon.png", "dellis-mark.png", "dellis-wordmark.png"]) assert.ok(existsSync(new URL("../mobile/assets/" + f, import.meta.url)), f);
 });
 
-test("pricing: $2.99 a year, three free looks, no trial, and real purchases are never unlocked for free", () => {
+// Owner changed the price from $2.99 to $3.99 a year on 2026-10-27.
+test("pricing: $3.99 a year, three free looks, no trial, and real purchases are never unlocked for free", () => {
   const p = read("mobile/src/purchase.ts");
-  assert.match(p, /PRICE_LABEL = "\$2\.99 \/ year"/);
+  assert.match(p, /PRICE_LABEL = "\$3\.99 \/ year"/);
   assert.match(p, /FREE_LOOKS = 3\b/);
   assert.doesNotMatch(p, /TRIAL_LABEL|free trial|trial period/i);
   assert.equal(eas.build.production.env?.EXPO_PUBLIC_DEV_UNLOCK, undefined, "the production build must never carry the test unlock");

@@ -1,9 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
 
-// The unlock is a yearly auto-renewing subscription ($2.99 / year), sold through Google Play / the App Store
+// The unlock is a yearly auto-renewing subscription ($3.99 / year), sold through Google Play / the App Store
 // and managed by RevenueCat. This file is the only place that knows about purchases.
-export const PRICE_LABEL = "$2.99 / year";
+export const PRICE_LABEL = "$3.99 / year";
 export const FREE_LOOKS = 3; // entries a visitor can open before the trial screen
 
 // Public SDK keys are meant to live inside the app (they cannot read or change anything private).

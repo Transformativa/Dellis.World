@@ -165,10 +165,10 @@ async function snap(name, page) {
   await chip(page, "Countries").click(); await page.waitForTimeout(400);
   await page.getByRole("button", { name: /^Afghanistan/ }).first().click(); await page.waitForTimeout(600);
   const body = await page.innerText("body");
-  for (const w of ["Keep exploring", "Subscribe for $2.99 / year", "Restore purchase", "Maybe later"]) if (!body.includes(w)) note(`subscribe screen: missing "${w}"`);
+  for (const w of ["Keep exploring", "Subscribe for $3.99 / year", "Restore purchase", "Maybe later"]) if (!body.includes(w)) note(`subscribe screen: missing "${w}"`);
   await looksRight("subscribe screen", page, errors); await snap("07-subscribe", page);
   // the parent check: it must be readable, answerable with on-screen keys, and always possible to leave
-  await page.getByRole("button", { name: "Subscribe for $2.99 / year" }).last().click(); await page.waitForTimeout(500);
+  await page.getByRole("button", { name: "Subscribe for $3.99 / year" }).last().click(); await page.waitForTimeout(500);
   const gate = await page.innerText("body");
   for (const w of ["Ask a grown-up", "times", "Go back"]) if (!gate.includes(w)) note(`parent check: missing "${w}"`);
   await looksRight("parent check", page, errors); await snap("10-parent-check", page);
@@ -187,7 +187,7 @@ async function snap(name, page) {
   if (!(await page.innerText("body")).includes("That is not right")) note("parent check: a wrong answer should say so");
   await page.getByRole("button", { name: "Go back" }).click(); await page.waitForTimeout(400);
   if (!(await page.innerText("body")).includes("Keep exploring")) note("parent check: Go back should return to the subscribe screen");
-  await page.getByRole("button", { name: "Subscribe for $2.99 / year" }).last().click(); await page.waitForTimeout(500);
+  await page.getByRole("button", { name: "Subscribe for $3.99 / year" }).last().click(); await page.waitForTimeout(500);
   await answer(await askedFor()); await page.getByRole("button", { name: "Continue" }).click(); await page.waitForTimeout(600);
   if ((await page.innerText("body")).includes("Ask a grown-up")) note("parent check: the right answer should get through");
   await ctx.close();
