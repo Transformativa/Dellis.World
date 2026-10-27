@@ -57,7 +57,8 @@ export async function buy(): Promise<{ ok: boolean; message: string }> {
       : { ok: false, message: "The purchase did not finish. You have not been charged." };
   } catch (e: any) {
     if (e?.userCancelled) return { ok: false, message: "Purchase cancelled. You have not been charged." };
-    return { ok: false, message: "Something went wrong with the purchase. Please try again." };
+    const why = e?.readableErrorCode || e?.code; // short store error name, so a parent can tell us what happened
+    return { ok: false, message: "Something went wrong with the purchase. Please try again." + (why ? ` (${why})` : "") };
   }
 }
 
