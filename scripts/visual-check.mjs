@@ -53,8 +53,8 @@ mkdirSync(latestDir, { recursive: true });
 mkdirSync(baseDir, { recursive: true });
 
 // Every screen starts from the same state: same date, same "random" numbers, nothing saved.
-async function open(setup = {}) {
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: "en-US", timezoneId: "America/New_York" });
+async function open(setup = {}, viewport = { width: 390, height: 844 }) {
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 2, locale: "en-US", timezoneId: "America/New_York" });
   await ctx.addInitScript((storage) => {
     let x = 12345; Math.random = () => ((x = (x * 1664525 + 1013904223) % 4294967296) / 4294967296);
     try { localStorage.clear(); for (const [k, v] of Object.entries(storage)) localStorage.setItem(k, v); } catch {}
@@ -206,6 +206,21 @@ async function snap(name, page) {
   for (const w of ["Australia", "Fiji", "New Zealand", "Papua New Guinea"]) if (!body.includes(w)) note(`Oceania filter: missing "${w}"`);
   if (!/COUNTRY/.test(body)) note("Oceania filter: no countries are listed");
   await looksRight("region filter", page, errors); await snap("11-region-oceania", page); await ctx.close();
+}
+
+{ // iPad: the content sits in a centred, readable column (not stretched across the whole screen) and the subscribe sheet is centred too
+  const { ctx, page, errors } = await open({}, { width: 820, height: 1180 });
+  const box = await page.getByLabel("Search").first().boundingBox();
+  if (!box || box.width > 730) note(`iPad: the content is ${box ? Math.round(box.width) : "?"}px wide; it should stay in a column of 720px or less`);
+  if (box && Math.abs(box.x + box.width / 2 - 410) > 6) note("iPad: the content column is not centred");
+  await looksRight("ipad home", page, errors); await snap("12-ipad-home", page);
+  await ctx.close();
+  const two = await open({ freeLooks: "3" }, { width: 820, height: 1180 });
+  await chip(two.page, "Countries").click(); await two.page.waitForTimeout(400);
+  await two.page.getByRole("button", { name: /^Afghanistan/ }).first().click(); await two.page.waitForTimeout(600);
+  const sheet = await two.page.getByText("Keep exploring").first().boundingBox();
+  if (!sheet) note("iPad: the subscribe screen did not appear");
+  await looksRight("ipad subscribe", two.page, two.errors); await snap("13-ipad-subscribe", two.page); await two.ctx.close();
 }
 
 // 3. Compare with the saved pictures.

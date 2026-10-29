@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
-  ActivityIndicator, FlatList, Image, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, View,
+  ActivityIndicator, FlatList, Image, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, View, useWindowDimensions,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"; // keeps content clear of the status bar and the phone's bottom buttons
 import { Text, TextInput } from "./src/Text";
@@ -36,6 +36,8 @@ function pickMix(items: Item[], n: number, seed: number): Item[] {
 
 const SIZES = { small: 0.88, medium: 1, large: 1.25 } as const;
 type Size = keyof typeof SIZES;
+const WIDE = 700; // iPad and other big screens: centre the content in a readable column instead of stretching it
+const COLUMN = 720;
 const DISPLAY = "Questrial_400Regular";
 const lo = Math.log10(0.0005), hi = Math.log10(1500);
 const sizeWidth = (m: number) => Math.max(3, Math.min(100, Math.round(((Math.log10(Math.max(m, 0.0005)) - lo) / (hi - lo)) * 100)));
@@ -81,7 +83,9 @@ function AppInner() {
   const [size, setSize] = useState<Size>("medium");
   const [seed] = useState(() => Math.floor(Math.random() * 1e9));
   const [fact, setFact] = useState<{ name: string; text: string } | null>(null);
-  const s = useMemo(() => mk(SIZES[size]), [size]);
+  const { width } = useWindowDimensions();
+  const wide = width >= WIDE;
+  const s = useMemo(() => mk(SIZES[size] * (wide ? 1.15 : 1), wide), [size, wide]);
   const pickSize = (n: Size) => { setSize(n); AsyncStorage.setItem("textSize", n).catch(() => {}); };
 
   useEffect(() => {
@@ -241,7 +245,7 @@ function AppInner() {
               </View>
             }
             ListEmptyComponent={<Text style={s.empty}>Nothing matches that search. Try a country name, like Italy or Brazil.</Text>}
-            contentContainerStyle={{ paddingBottom: 24 }}
+            contentContainerStyle={[{ paddingBottom: 24 }, s.col]}
             renderItem={({ item, index }) => (
               <View style={[s.listWrap, index === 0 && s.listTop, index === rows.length - 1 && s.listBottom]}>
                 <Pressable onPress={() => openRow(item.id)} style={s.row} accessibilityRole="button" accessibilityState={{ expanded: openId === item.id }}>
@@ -343,7 +347,7 @@ function Favs({ L, favs, unlocked, onUnlock, onToggle }: { L: Loaded; favs: stri
   const [open, setOpen] = useState<string | null>(null);
   if (!unlocked) {
     return (
-      <ScrollView contentContainerStyle={s.pad}>
+      <ScrollView contentContainerStyle={[s.pad, s.col]}>
         <Text style={s.h2}>My Favorites</Text>
         <Text style={s.body}>Subscribe to unlock everything: every people, country, language and faith, and your own favorites card.</Text>
         <Pressable onPress={onUnlock} style={s.btn} accessibilityRole="button"><Text style={s.btnTx}>Subscribe for {PRICE_LABEL}</Text></Pressable>
@@ -352,7 +356,7 @@ function Favs({ L, favs, unlocked, onUnlock, onToggle }: { L: Loaded; favs: stri
   }
   const items = favs.map((id) => L.items.find((i) => i.id === id)).filter(Boolean) as Item[];
   return (
-    <ScrollView contentContainerStyle={[s.pad, { gap: 14 }]}>
+    <ScrollView contentContainerStyle={[s.pad, { gap: 14 }, s.col]}>
       <Text style={s.h2}>My Favorites</Text>
       {!items.length ? <Text style={s.body}>Open anything and tap "Add to My Favorites". Your card builds here.</Text> : null}
       {items.map((it) => (
@@ -447,7 +451,8 @@ function Paywall({ onClose, onDone }: { onClose: () => void; onDone: () => void 
   );
 }
 
-const mk = (z: number) => StyleSheet.create({
+const mk = (z: number, wide = false) => StyleSheet.create({
+  col: wide ? { width: "100%", maxWidth: COLUMN, alignSelf: "center" } : {},
   screen: { flex: 1, backgroundColor: t.bg },
   center: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: t.bg },
   pad: { padding: 16, gap: 14 },
@@ -534,5 +539,5 @@ const mk = (z: number) => StyleSheet.create({
   btn: { backgroundColor: t.fg, borderRadius: 999, minHeight: 48, alignItems: "center", justifyContent: "center", paddingHorizontal: 22 },
   btnTx: { color: t.bg, fontSize: 17 * z, fontWeight: "700" },
   scrim: { flex: 1, backgroundColor: "rgba(0,0,0,.4)", justifyContent: "flex-end" },
-  sheet: { backgroundColor: t.bg, padding: 20, gap: 14, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
+  sheet: { backgroundColor: t.bg, padding: 20, gap: 14, borderTopLeftRadius: 20, borderTopRightRadius: 20, ...(wide ? { width: "100%", maxWidth: 560, alignSelf: "center" } : {}) },
 });
